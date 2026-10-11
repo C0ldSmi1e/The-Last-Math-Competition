@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "reviewer": "root",
+  "report_tex_sha256": "468e6b46790f374457f21243bc4b810d672f3b826242df80660d2b6232f246ea",
+  "report_pdf_sha256": "fa74d689c1adaae0c68b5b7e6dd59b5dca2ca6c1fede6b82242f63d25a71b9b0",
+  "native_compilation": "success",
+  "export": "Existing Tectonic 0.17.0; initial restricted-network failure preserved, successful network-enabled retry.",
+  "pages": 5,
+  "visual_review": "All five 1600-pixel rendered page images inspected: complete legible text/equations/table, no clipping or overlap, no missing glyphs, correct pagination.",
+  "tex_log": "No warnings, overfull/underfull boxes, unresolved references, or missing glyphs reported.",
+  "rendered_images": {
+    "page-1.png": "2da639ad5bff4c574cec2a359d9bbb5b30272d55465568bc9080eea70a393751",
+    "page-2.png": "12bb339e666827a48a65c7ffe7edc0e1331b9551033d31ac46455dc7585c62fa",
+    "page-3.png": "5009a1f87cf5232a79b572e8146dc0dcf48164dd5d22e6f4ce43f6c775276095",
+    "page-4.png": "8a2cada5ea3e162dac1acf98ccbd16e3cbb6ec59f6d1a46c9eb3984391ffba23",
+    "page-5.png": "44eec56f38a5c1c2614ed48911c9905905a5b96ded89fec5e3eb2355504f00db"
+  },
+  "reviewed_at": "2026-10-11T03:10:34.357015+00:00"
+}

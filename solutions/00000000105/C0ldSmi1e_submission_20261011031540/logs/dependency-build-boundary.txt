@@ -1,0 +1,7 @@
+Command: PATH=/private/tmp/tlmc310-runtime/lean-4.19.0-darwin_aarch64/bin:$PATH lake build Mathlib.Analysis.NormedSpace.Connected
+
+✔ [1793/1796] Built Mathlib.Algebra.Module.Card
+✔ [1794/1796] Built Mathlib.SetTheory.Cardinal.CountableCover
+✔ [1795/1796] Built Mathlib.Topology.Algebra.Module.Cardinality
+✔ [1796/1796] Built Mathlib.Analysis.NormedSpace.Connected
+Build completed successfully.

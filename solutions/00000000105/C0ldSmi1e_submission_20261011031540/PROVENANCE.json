@@ -1,0 +1,38 @@
+{
+  "conjecture": "00000000105",
+  "original_input_directory": "/private/tmp/tlmc105-clean-author-input",
+  "input_file_hashes": {
+    "RULES.en.md": "200d9a783c08a5edfd1b508e6942b3b851a63c726506291f6de6a59773f1163a",
+    "RULES.zh-CN.md": "7c5b49bb84403feea1eb14d23d48491400c7749d58db345cd317231949a9e82b",
+    "lake-manifest.json": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "original.md": "33c32ffb87c63753fd516db3cbb47f980855fb115377945d1d463d8b260d12bc"
+  },
+  "toolchain": "leanprover/lean4:v4.19.0",
+  "mathlib_revision": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+  "stock_source": "/private/tmp/tlmc4607-restored-stock/mathlib",
+  "independence": {
+    "author_initial_inputs": [
+      "original.md",
+      "RULES.en.md",
+      "RULES.zh-CN.md",
+      "lean-toolchain",
+      "lake-manifest.json",
+      "SHA256SUMS.json"
+    ],
+    "other_sources_read": "Mathematical inputs were limited to the listed initial files, stock Mathlib APIs/source, and subsequently generated files in this clean project. The PDF workflow skill was read for report artifact handling after root authorized report creation.",
+    "excluded_sources": "No repository solution, selector, eligibility, reviewer, other-candidate, history, or external mathematical-solution files were read.",
+    "parallel_sublemma": "The clean child torus_topology authored TorusTopology.lean and BoundaryBound.lean from self-contained sublemma tasks and stock Mathlib only; the primary author integrated both checked results.",
+    "mathematical_strategy_origin": "Derived independently from the supplied conjecture by the clean primary author; no strategy supplied in initial task."
+  },
+  "semantic_interpretation": {
+    "surface_realization": "Homeomorphism onto the topological boundary of a convex polyhedral body in real three-space.",
+    "polyhedral_model": "Finite convex hull, including degenerate hulls; the central theorem covers every bounded convex subset, without assuming nonempty interior.",
+    "genus_one": "The standard model S^1 × S^1 and every space homeomorphic to it.",
+    "discarded_restrictions": "Distinct prime edge lengths and asymptotic vertex count are irrelevant because no convex realization exists for the torus even without these additional restrictions.",
+    "unbounded_polyhedron_convention": "The additional checked theorem no_torus_closed_convex_boundary excludes every closed convex subset of real three-space, including unbounded ones; compactness of a proposed torus boundary forces boundedness for proper closed convex sets."
+  },
+  "validation_command": "python3 verify.py --lake /private/tmp/tlmc310-runtime/lean-4.19.0-darwin_aarch64/bin/lake",
+  "dependency_source_modifications": false,
+  "report_authorship": "report.tex authored after exactly one successful PDF-operation marker; root handles native compilation, export, and visual verification."
+}

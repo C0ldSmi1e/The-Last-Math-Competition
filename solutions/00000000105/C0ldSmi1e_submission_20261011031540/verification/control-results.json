@@ -1,0 +1,52 @@
+[
+  {
+    "expected_rejected": false,
+    "failures": [],
+    "fixture": "Good"
+  },
+  {
+    "expected_rejected": true,
+    "failures": [
+      "UnrelatedNamespace.unseen: forbidden axiom UnrelatedNamespace.unseen"
+    ],
+    "fixture": "Axiom"
+  },
+  {
+    "expected_rejected": true,
+    "failures": [
+      "indirect: forbidden axiom opaqueAssumption",
+      "intermediate: forbidden axiom opaqueAssumption",
+      "opaqueAssumption: forbidden axiom opaqueAssumption"
+    ],
+    "fixture": "Transitive"
+  },
+  {
+    "expected_rejected": true,
+    "failures": [
+      "unfinished: forbidden axiom sorryAx"
+    ],
+    "fixture": "Sorry"
+  },
+  {
+    "expected_rejected": true,
+    "failures": [
+      "generatedNative: forbidden axiom Lean.ofReduceBool",
+      "generatedNative: forbidden axiom Lean.trustCompiler",
+      "generatedNative._nativeDecide_1._cstage1: unsafe dependency generatedNative._nativeDecide_1._cstage1",
+      "generatedNative._nativeDecide_1._cstage2: unsafe dependency generatedNative._nativeDecide_1._cstage2",
+      "generatedNative._proof_1: forbidden axiom Lean.ofReduceBool",
+      "generatedNative._proof_1: forbidden axiom Lean.trustCompiler"
+    ],
+    "fixture": "Native"
+  },
+  {
+    "expected_rejected": true,
+    "failures": [
+      "runtimeOnly: unsafe dependency runtimeOnly",
+      "runtimeOnly._cstage1: unsafe dependency runtimeOnly._cstage1",
+      "runtimeOnly._cstage2: unsafe dependency runtimeOnly._cstage2",
+      "runtimeOnly._cstage2: missing dependency _obj"
+    ],
+    "fixture": "Unsafe"
+  }
+]

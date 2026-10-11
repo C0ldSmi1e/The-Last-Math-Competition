@@ -1,0 +1,13 @@
+{
+  "status": "PASS_BOUNDED_FRESHNESS_REVIEW",
+  "candidate": "00000000105",
+  "upstream_main": "9b795e7a94a6076e49a65a6489e1caf9153abd23",
+  "same_source_rules_metadata_commit": true,
+  "new_matching_prior_submissions": false,
+  "capture_manifest_sha256": "5ca44e180a3696bcae27291333c12961efbf9fe9d099bfb32eecd302f81c9a8e",
+  "raw_requests_rehashed": 13,
+  "observed_through": "2026-10-11T03:11:50.362643+00:00",
+  "earlier_root_screen": "tlmc105-root-eligibility-review.json",
+  "scope": "Fresh main ref/path/history, updated upstream issues and comments, changed PR file paths, and targeted issue searches. No every-fork history completeness claim.",
+  "recorded_at": "2026-10-11T03:12:43.617061+00:00"
+}

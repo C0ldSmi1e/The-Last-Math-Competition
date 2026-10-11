@@ -1,0 +1,41 @@
+{
+  "source_files": [
+    "Proof.lean",
+    "TorusTopology.lean",
+    "BoundaryBound.lean",
+    "AxiomAudit.lean",
+    "verify.py",
+    "lakefile.lean",
+    "lean-toolchain",
+    "lake-manifest.json",
+    "report.tex",
+    "README.md",
+    "PROVENANCE.json",
+    "CAPSTONES.json",
+    "source/original.md",
+    "source/RULES.en.md",
+    "source/RULES.zh-CN.md",
+    "source/input-SHA256SUMS.json"
+  ],
+  "verification_records": [
+    "logs/axioms.txt",
+    "logs/build.txt",
+    "logs/dependency-build.txt",
+    "logs/dependency-build-boundary.txt",
+    "logs/dependency-pins.json",
+    "logs/lean-version.txt",
+    "logs/pdf-marker.json"
+  ],
+  "manifests": [
+    "SOURCE-SHA256SUMS.json",
+    "MATHEMATICS-SHA256SUMS.json"
+  ],
+  "final_generated_artifacts": [
+    "report.pdf"
+  ],
+  "excluded_scratch": [
+    "TorusProbe.lean",
+    "BoundaryProbe.lean",
+    ".lake/"
+  ]
+}

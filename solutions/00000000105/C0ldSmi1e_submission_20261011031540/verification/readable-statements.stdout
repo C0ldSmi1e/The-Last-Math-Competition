@@ -1,0 +1,34 @@
+TLMC105.no_torus_closed_convex_boundary {K : Set (EuclideanSpace ℝ (Fin 3))} (hclosed : IsClosed K) (hc : Convex ℝ K)
+  (e : Circle × Circle ≃ₜ ↑(frontier K)) : False
+TLMC105.no_torus_convex_boundary {K : Set (EuclideanSpace ℝ (Fin 3))} (hc : Convex ℝ K) (hb : Bornology.IsBounded K)
+  (e : Circle × Circle ≃ₜ ↑(frontier K)) : False
+TLMC105.no_torus_polytope_boundary (vertices : Finset (EuclideanSpace ℝ (Fin 3))) :
+  ¬Nonempty (Circle × Circle ≃ₜ ↑(frontier ((convexHull ℝ) ↑vertices)))
+TLMC105.genus_one_not_convex_polyhedral.{u_1} {S : Type u_1} [TopologicalSpace S] (hg : TLMC105.HasGenusOne S) :
+  ¬TLMC105.HasConvexPolyhedralRealization S
+TLMC105.torus_closed_surface_properties {ω : WithTop ℕ∞} :
+  CompactSpace (Circle × Circle) ∧
+    T2Space (Circle × Circle) ∧
+      SecondCountableTopology (Circle × Circle) ∧
+        PathConnectedSpace (Circle × Circle) ∧
+          IsManifold
+            ((modelWithCornersSelf ℝ (EuclideanSpace ℝ (Fin 1))).prod
+              (modelWithCornersSelf ℝ (EuclideanSpace ℝ (Fin 1))))
+            ω (Circle × Circle)
+TLMC105.torus_chart_dimension : Module.finrank ℝ (EuclideanSpace ℝ (Fin 1) × EuclideanSpace ℝ (Fin 1)) = 2
+TLMC105.conjecture_00000000105_counterexample :
+  TLMC105.HasGenusOne (Circle × Circle) ∧ ¬TLMC105.HasConvexPolyhedralRealization (Circle × Circle)
+TLMC105.exp_covering : IsCoveringMap ⇑Circle.exp
+TLMC105.no_exp_section (f : Circle → ℝ) (hf : Continuous f) (hs : ∀ (z : Circle), Circle.exp (f z) = z) : False
+TLMC105.no_circle_retract.{u_1} {V : Type u_1} [TopologicalSpace V] [ContractibleSpace V] (i : C(Circle, V))
+  (r : C(V, Circle)) (hri : ∀ (z : Circle), r (i z) = z) : False
+TLMC105.circle_retract_of_torus_sphere_homeomorph (e : Circle × Circle ≃ₜ ↑(Metric.sphere 0 1)) :
+  ∃ i r, ∀ (z : Circle), r (i z) = z
+TLMC105.no_torus_sphere_homeomorph (e : Circle × Circle ≃ₜ ↑(Metric.sphere 0 1)) : False
+TLMC105.bounded_of_convex_frontier_bounded.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  (hdim : 1 < Module.rank ℝ E) {s : Set E} (hc : IsClosed s) (hv : Convex ℝ s) (hs : s ≠ Set.univ)
+  (hf : Bornology.IsBounded (frontier s)) : Bornology.IsBounded s
+TLMC105.bounded_of_convex_compact_frontier {s : Set (EuclideanSpace ℝ (Fin 3))} (hc : IsClosed s) (hv : Convex ℝ s)
+  (hs : s ≠ Set.univ) (hf : IsCompact (frontier s)) : Bornology.IsBounded s
+TLMC105.HasGenusOne.{u_1} (S : Type u_1) [TopologicalSpace S] : Prop
+TLMC105.HasConvexPolyhedralRealization.{u_1} (S : Type u_1) [TopologicalSpace S] : Prop

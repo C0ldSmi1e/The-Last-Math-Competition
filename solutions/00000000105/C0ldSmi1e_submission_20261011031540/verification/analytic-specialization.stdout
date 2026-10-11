@@ -1,0 +1,7 @@
+TLMC105.torus_closed_surface_properties : CompactSpace (Circle × Circle) ∧
+  T2Space (Circle × Circle) ∧
+    SecondCountableTopology (Circle × Circle) ∧
+      PathConnectedSpace (Circle × Circle) ∧
+        IsManifold
+          ((modelWithCornersSelf ℝ (EuclideanSpace ℝ (Fin 1))).prod (modelWithCornersSelf ℝ (EuclideanSpace ℝ (Fin 1))))
+          ⊤ (Circle × Circle)

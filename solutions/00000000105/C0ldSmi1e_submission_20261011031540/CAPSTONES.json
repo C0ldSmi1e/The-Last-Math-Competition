@@ -1,0 +1,35 @@
+{
+  "namespace": "TLMC105",
+  "primary_capstones": [
+    "no_torus_closed_convex_boundary",
+    "no_torus_convex_boundary",
+    "no_torus_polytope_boundary",
+    "genus_one_not_convex_polyhedral",
+    "torus_closed_surface_properties",
+    "torus_chart_dimension",
+    "conjecture_00000000105_counterexample"
+  ],
+  "supporting_theorems": [
+    "exp_covering",
+    "no_exp_section",
+    "no_circle_retract",
+    "circle_retract_of_torus_sphere_homeomorph",
+    "no_torus_sphere_homeomorph",
+    "bounded_of_convex_frontier_bounded",
+    "bounded_of_convex_compact_frontier"
+  ],
+  "definitions": [
+    "HasGenusOne",
+    "HasConvexPolyhedralRealization"
+  ],
+  "ordinary_standard_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "proof_sources": [
+    "Proof.lean",
+    "TorusTopology.lean",
+    "BoundaryBound.lean"
+  ]
+}

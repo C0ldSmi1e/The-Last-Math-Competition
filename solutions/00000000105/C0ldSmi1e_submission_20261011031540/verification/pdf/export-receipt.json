@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/private/tmp/tlmc310-pdf/tectonic",
+    "--keep-logs",
+    "--outdir",
+    "/private/tmp/tlmc105-pdf/export-retry01",
+    "/private/tmp/tlmc105-proof/report.tex"
+  ],
+  "started_at": "2026-10-11T03:09:50.243470+00:00",
+  "completed_at": "2026-10-11T03:09:51.218153+00:00",
+  "exit_code": 0,
+  "report_tex_sha256": "468e6b46790f374457f21243bc4b810d672f3b826242df80660d2b6232f246ea",
+  "native_compile": "success",
+  "retry_reason": "Initial sandbox export could not fetch uncached longtable package; existing compiler needs network access for its standard bundle."
+}

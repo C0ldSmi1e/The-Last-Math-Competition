@@ -1,0 +1,6 @@
+{
+  "kind": "success",
+  "message": "The current source compiled successfully with the desktop editor's compiler.",
+  "main_tex_sha256": "1458e43eec941b1f7581b3390f8323862015b8cde0f301a057795d9d17cdf915",
+  "checked_at_utc": "2026-10-11T05:52:40.708500+00:00"
+}

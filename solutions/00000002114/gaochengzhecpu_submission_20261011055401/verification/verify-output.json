@@ -1,0 +1,1 @@
+{"result": "PASS", "exact_arithmetic": "fractions.Fraction", "recurrence_checked_through_n": 200, "histories_checked": 2047, "limit_proof": "Lean; finite checks do not certify a limit"}

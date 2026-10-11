@@ -1,0 +1,178 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\emergencystretch=2em
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\title{A balanced P\'olya urn without a positive\\quadratic large-deviation rate\\
+\large Disproof of Conjecture 00000002114}
+\author{gaochengzhecpu}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+The classical two-colour P\'olya urn with one initial ball of each
+colour and replacement matrix $I_2$ is balanced. Its count law is
+uniform. We prove that two separated closed tails of the colour
+proportion have zero exponential decay at speed $n$. Consequently
+no function $c(x-m)^2$ with $c>0$, for any centre $m$, can satisfy
+the closed-set upper bound of a large-deviation principle. This
+refutes the asserted implication from balance to positive
+definiteness. The finite count recursion and the asymptotic
+contradiction are both proved in Lean 4.
+\end{abstract}
+
+\section*{Model and scope}
+At each step a ball is selected uniformly, returned, and one more
+ball of its colour is added. Initially there is one red and one
+blue ball. In the standard convention, the replacement matrix is
+\[
+ R=\begin{pmatrix}1&0\\0&1\end{pmatrix}.
+\]
+An urn is balanced when the two row sums are equal
+\cite[Section 1]{bmw}. Here both sums equal $1$, and the total
+number of balls after $n$ draws is $n+2$.
+
+Let $K_n$ be the number of red draws and
+$X_n=(K_n+1)/(n+2)$ the red proportion. We use the conventional
+speed-$n$ large-deviation question for $X_n$. The conjecture imposes
+no irreducibility or strictly positive off-diagonal hypothesis;
+this standard balanced urn is therefore an admissible input.
+The result refutes the positive-definiteness assertion under
+balance. It does not assert that every balanced urn fails to have
+a large-deviation principle, or that the zero quadratic form is
+excluded by the first clause alone.
+
+\begin{lemma}\label{lem:law}
+For every $n\geq0$ and $0\leq k\leq n$,
+$\mathbb P(K_n=k)=1/(n+1)$.
+\end{lemma}
+\begin{proof}
+Write $p_n(k)=\mathbb P(K_n=k)$, with value zero outside
+$0\leq k\leq n$. The initial law is $p_0(0)=1$.
+For $1\leq k\leq n$, the two incoming transitions give
+\[
+ p_{n+1}(k)=p_n(k)\frac{n-k+1}{n+2}
+             +p_n(k-1)\frac{k}{n+2}
+           =\frac{1}{n+2}.
+\]
+At the two endpoints only one term survives:
+$p_{n+1}(0)=p_n(0)(n+1)/(n+2)$ and
+$p_{n+1}(n+1)=p_n(n)(n+1)/(n+2)$.
+Both equal $1/(n+2)$. Induction proves the formula.
+\end{proof}
+
+\newpage
+\section*{The large-deviation obstruction}
+Set $F_-=[0,1/4]$ and $F_+=[3/4,1]$. For $n\geq2$,
+the event $K_n=0$ implies $X_n\in F_-$, while $K_n=n$
+implies $X_n\in F_+$. Lemma~\ref{lem:law} therefore gives
+\[
+ \frac{1}{n+1}\leq\mathbb P(X_n\in F_\pm)\leq1.
+\]
+Taking logarithms and dividing by $n>0$ yields
+\[
+ -\frac{\log(n+1)}{n}
+ \leq\frac1n\log\mathbb P(X_n\in F_\pm)\leq0.
+\]
+Since $\log(n+1)/n\to0$, both middle expressions tend to zero.
+
+\begin{theorem}
+For every $c>0$ and $m\in\mathbb R$, the function
+$I(x)=c(x-m)^2$ cannot be a speed-$n$ large-deviation rate
+function for $X_n$, even when it is assigned $+\infty$ outside
+$[0,1]$.
+\end{theorem}
+\begin{proof}
+Such a rate would satisfy, for every closed set $F$,
+\[
+ \limsup_{n\to\infty}\frac1n\log\mathbb P(X_n\in F)
+ \leq-\inf_{x\in F}I(x).
+\]
+If $m\leq1/2$, then $x-m\geq1/4$ on $F_+$, so
+$\inf_{F_+}I\geq c/16>0$. The displayed upper bound says
+$0\leq-c/16$, a contradiction. If $m>1/2$, then
+$m-x\geq1/4$ on $F_-$, and the same contradiction follows
+using $F_-$. Both sets are contained in $[0,1]$, so extending
+the rate by infinity elsewhere has no effect on the argument.
+\end{proof}
+
+Thus balance does not imply a positive quadratic rate, even
+after allowing an arbitrary centre. In particular the usual
+candidate $c(x-1/2)^2$ is impossible. A positive definite
+quadratic form for centred red/blue proportions restricts to
+such a positive quadratic on their one-dimensional constraint
+line, so changing to the two-coordinate description does not
+remove this obstruction.
+
+\section*{What is formally checked}
+The Lean definition \texttt{mass} is the actual forward count
+recursion, with the zero endpoint separated and natural
+subtraction used only for the incoming blue term. Impossible
+states have mass zero. The theorem \texttt{mass\_formula}
+solves it for every $n,k$, and \texttt{mass\_total} proves
+normalization. Event probabilities are finite sums of these
+nonnegative masses at the actual proportion $(k+1)/(n+2)$;
+\texttt{prob\_unit} proves that $[0,1]$ has probability one.
+
+\newpage
+\texttt{right\_log\_limit} and \texttt{left\_log\_limit}
+prove the two real logarithmic limits, using the polynomial
+lower bound and the logarithm's asymptotic growth. The definition
+\texttt{ClosedUpperBound} writes the actual limsup/infimum
+upper bound restricted to nonempty closed sets in $[0,1]$
+with eventually positive probability. This is a necessary
+part of the usual large-deviation upper bound. Restricting to
+these sets avoids the zero-probability logarithm convention;
+both sets used in the proof have strictly positive probability
+for every $n\geq2$.
+
+The theorem \texttt{no\_positive\_quadratic} proves that
+this necessary condition fails for every $c>0$ and every real
+$m$, using the actual infimum of the quadratic on the selected
+closed interval. The final \texttt{counterexample} combines
+that conclusion with the explicit replacement matrix's balance.
+No existence theorem for a full LDP, or full classification of
+all urn rate functions, is claimed or needed.
+
+\section*{Reproduction and review}
+The project pins Lean 4.19.0 and Mathlib revision\\
+\texttt{c44e0c8ee63ca166450922a373c7409c5d26b00b}.
+From the submitted \texttt{lean/} directory, run
+\begin{verbatim}
+lake exe cache get
+lake build
+lake env lean -DwarningAsError=true Main.lean
+\end{verbatim}
+The complete submission is freshly built. The axiom audit
+contains only Lean's standard \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound}; there are no
+proof placeholders, custom axioms or external computation
+oracles.
+
+The supplementary \texttt{verify.py} uses Python's standard
+library and exact fractions. It reconstructs the Markov
+transition law through $n=200$, and independently enumerates
+all colour histories through $n=10$ with evolving ball counts.
+It checks the uniform masses, normalization, support and the
+two tail bounds. These finite checks are not used to justify
+the asymptotic claim; the general formula and limits are
+proved in Lean. Run \texttt{python verify.py}, and compile
+this source with \texttt{tectonic main.tex}.
+
+The exact bilingual conjecture is preserved in \texttt{SOURCE.md}.
+Build, provenance and review records are included in
+\texttt{verification/}. Review was an adversarial self-review
+by the author; no independent reviewer or subagent was used.
+
+\begin{thebibliography}{9}
+\bibitem{source} The Last Math Competition,
+Conjecture 00000002114. Exact source and upstream provenance
+included with this submission.
+\bibitem{bmw} C. Banderier, P. Marchal and M. Wallner,
+\emph{Periodic P\'olya urns and an application to Young tableaux},
+authors' preprint, February 7, 2018, Section 1.
+\href{https://www.math.univ-paris13.fr/~marchal/aofa18.pdf}{Primary source}.
+This reference supplies the standard urn and balance conventions;
+the counterexample calculations above are self-contained.
+\end{thebibliography}
+\end{document}

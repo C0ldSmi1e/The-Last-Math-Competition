@@ -1,0 +1,7 @@
+'Conjecture2114.mass_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Conjecture2114.mass_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Conjecture2114.prob_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Conjecture2114.tail_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Conjecture2114.right_log_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Conjecture2114.left_log_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Conjecture2114.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,52 @@
+{
+  "stage": "independent packaging and final report layout review",
+  "recorded_utc": "2026-10-11T02:38:36.749234+00:00",
+  "package": "/private/tmp/tlmc1568-submission-package",
+  "verdict": "PASS_WITH_ROOT_OWNED_FINAL_METADATA_AND_STAGING_CHECKS",
+  "actionable_core_issues_remaining": [],
+  "resolved_issue": "VERIFICATION.md and root engineering classification now correctly distinguish fresh compilation/kernel checking from the inspector dependency policy; trust_enforced is explicitly defined as the latter.",
+  "staging_precaution": "Preserved .gitignore excludes verification/. Parent acknowledged explicit force-add of this submission folder and exact staged-file comparison.",
+  "file_binding": {
+    "manifest_path": "/private/tmp/tlmc1568-independent-review/reviewed-package-files.json",
+    "manifest_sha256": "5934d75c8ac5904965350b090356ccbed36255f577d64ff3740f25de58dadf37",
+    "reviewed_files": 44,
+    "excluded_root_owned_files_present": []
+  },
+  "checks": {
+    "all_20_frozen_files_match": true,
+    "only_pre_layout_manifest_difference": "report.tex",
+    "four_proof_modules_match_prior_independent_review": true,
+    "original_and_both_rules_byte_identical_to_clean_input": true,
+    "stock_input_manifest_and_toolchain_included_and_identical": true,
+    "complete_independent_semantic_review_and_prior_report_preserved": true,
+    "full_final_report_diff_is_only_three_disclosed_layout_edits": true,
+    "final_report_tex_sha256": "dd336d96b2ff37cb6314bc99bdd1a5cd9052e998955e3d68448aa12ec56ebae4",
+    "final_report_pdf_sha256": "c2043e04df996742b84487fe1090370c9ad705034d8f54a713f14f7738bc3690",
+    "pdf_matches_root_visual_review_receipt": true,
+    "no_lake_olean_ilean_or_symlinks": true,
+    "verify_sh_is_executable": true,
+    "full_verifier_driver_and_inspector_template_read": true,
+    "reproduction_command_matches_driver_interface_and_included_template": true,
+    "archived_inspector_matches_included_template": true,
+    "archived_command_receipts_rehashed": 58,
+    "receipt_exit_or_source_hash_findings": [],
+    "fresh_build_and_all_four_strict_replay_commands_record_success": true,
+    "safe_roots_independently_recomputed_from_archived_dependency_graph": 43,
+    "closure_graph_nodes": 16024,
+    "safe_closure_forbidden_axiom_unsafe_or_missing_node_findings": [],
+    "import_identity_entries": 4068,
+    "runtime_helpers_outside_all_safe_closures": 2,
+    "correct_final_theorem_type_and_three_standard_axioms_in_audit": true,
+    "negative_control_fixtures_and_expected_exit_results_inspected": true,
+    "retained_logs_present_at_direct_auxiliary_check_paths": true,
+    "proof_math_or_package_files_modified_by_reviewer": false
+  },
+  "scope_limits": [
+    "No mathematics rebuild performed in this package stage, as instructed. This reviewer independently read mathematics and report and checked recorded execution evidence; engineering and root ran the builds.",
+    "No independent PDF rendering or visual review by this reviewer; PDF bytes match the parent visual-review receipt.",
+    "Eligibility contents were not inspected. Final eligibility and whole-submission SHA256SUMS are owned and checked by the parent.",
+    "Final repository staging and publication were not inspected or performed by this reviewer.",
+    "Stock Mathlib was not rebuilt and Lean runtime was not bootstrapped; included verification documentation discloses these limitations.",
+    "No external network, other candidate materials, author contact, or prior mathematical solutions were used."
+  ]
+}

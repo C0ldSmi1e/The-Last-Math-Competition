@@ -1,0 +1,30 @@
+{
+  "result": "PASS_ROOT_REPORT_AND_PDF_REVIEW",
+  "candidate_id": "00000001568",
+  "report_tex_sha256": "dd336d96b2ff37cb6314bc99bdd1a5cd9052e998955e3d68448aa12ec56ebae4",
+  "report_pdf_sha256": "c2043e04df996742b84487fe1090370c9ad705034d8f54a713f14f7738bc3690",
+  "delivery_pdf": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/conjecture-1568-report.pdf",
+  "delivery_pdf_sha256": "c2043e04df996742b84487fe1090370c9ad705034d8f54a713f14f7738bc3690",
+  "native_compiler": "success on finalsource",
+  "export_compiler": "ExistingTectonic exported finalsource with no warnings; missingstandardfont fetched after permittednetworkretry",
+  "root_read_full_report": true,
+  "independent_report_review": "/private/tmp/tlmc1568-independent-review/report-review-receipt.json",
+  "layout_delta": "Revision on separate line, emergency stretch, and linebreakbefore geometric lemma declaration; no mathematicaltext changes",
+  "root_inspected_all_rendered_pages": [
+    1,
+    2,
+    3
+  ],
+  "render_scale_pixels": 1500,
+  "layout_defects": [],
+  "pdf_operation_marker_count": 1,
+  "final_citation_emitted": false,
+  "root_auxiliary_replay": {
+    "path": "/private/tmp/tlmc1568-root-auxiliary-replay.log",
+    "sha256": "066e8bab19be960157354a7d143ecec1a4c32f113b08e8cf7c82abdc851c5359",
+    "exit_code": 0,
+    "fresh_authored_build": true
+  },
+  "independent_engineering_review": "/private/tmp/tlmc1568-root-engineering-review.json",
+  "recorded_at": "2026-10-11T02:29:08.213210+00:00"
+}

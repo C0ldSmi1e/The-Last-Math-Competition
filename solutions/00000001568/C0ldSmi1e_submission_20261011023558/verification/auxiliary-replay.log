@@ -1,0 +1,10 @@
+PASS: authored source, exact stock package pins, toolchain, and requested axiom audit
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+✔ [2808/2812] Built Counting
+✔ [2809/2812] Built Geometry
+✔ [2810/2812] Built Angular
+ℹ [2811/2812] Built Main
+info: ././././Main.lean:78:0: 'GeometricThrackle.geometric_thrackle_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully.
+'GeometricThrackle.geometric_thrackle_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS: authored source, exact stock package pins, toolchain, and requested axiom audit

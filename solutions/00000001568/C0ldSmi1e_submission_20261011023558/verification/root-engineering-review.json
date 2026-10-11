@@ -1,0 +1,55 @@
+{
+  "result": "PASS_ROOT_INDEPENDENT_ENGINEERING_REVIEW",
+  "audit_sha256": "18fe773a3973a4a8a904eb3a316779eb1072b895db02254f3a694aa37e01e459",
+  "summary_sha256": "8a0cbab423f664765b6a34db42f0a009f4c9aaf41a390bec250aaa803e3e5d91",
+  "safe_local_declarations": 43,
+  "closure_declarations": 16024,
+  "capstone": {
+    "name": "GeometricThrackle.geometric_thrackle_bound",
+    "type": "\u2200 {V : Type u_1} [inst : Fintype.{u_1} V] (G : SimpleGraph.{u_1} V)\n  [inst_1 : @DecidableRel.{u_1 + 1, u_1 + 1} V V (@SimpleGraph.Adj.{u_1} V G)],\n  @GeometricThrackle.Drawing.{u_1} V G \u2192\n    @LE.le.{0} Nat instLENat\n      (@Finset.card.{u_1} (Sym2.{u_1} V)\n        (@SimpleGraph.edgeFinset.{u_1} V G\n          (@SimpleGraph.fintypeEdgeSet.{u_1} V G (@Sym2.instFintype.{u_1} V inst) inst_1)))\n      (@Fintype.card.{u_1} V inst)",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "unsafe": false,
+    "unsafe_dependencies": [],
+    "trust_enforced": true
+  },
+  "compiler_runtime_helpers": [
+    {
+      "name": "GeometricThrackle.det._cstage1",
+      "module": "Geometry",
+      "type": "GeometricThrackle.Point \u2192 GeometricThrackle.Point \u2192 Real",
+      "unsafe": true,
+      "dependencies": [
+        "GeometricThrackle.Point",
+        "Real",
+        "Real.definition._@.Mathlib.Data.Real.Basic._hyg.471",
+        "Real.definition._@.Mathlib.Data.Real.Basic._hyg.579",
+        "Real.definition._@.Mathlib.Data.Real.Basic._hyg.664"
+      ]
+    },
+    {
+      "name": "GeometricThrackle.det._cstage2",
+      "module": "Geometry",
+      "type": "_obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "dependencies": [
+        "Real.definition._@.Mathlib.Data.Real.Basic._hyg.471",
+        "Real.definition._@.Mathlib.Data.Real.Basic._hyg.579",
+        "Real.definition._@.Mathlib.Data.Real.Basic._hyg.664",
+        "_obj"
+      ]
+    }
+  ],
+  "classification": "Only two compiler-generated determinant runtime stages. Neither is authored as unsafe, and neither is reachable from any safe authored declaration or theorem. Fresh compilation and strict source replay supply Lean kernel checking; the inspector enforces the permitted-axiom and unsafe-dependency policy on all 43 safe roots. Helpers are explicitly recorded, not accepted as proof dependencies.",
+  "negative_controls": "One valid fixture accepted; custom axiom, transitive custom axiom, sorry, native_decide and unsafe fixtures rejected as expected.",
+  "limitations": [
+    "Pinned cached Mathlib imports byte-matched stock; Mathlib itself not rebuilt.",
+    "Lean runtime not bootstrapped.",
+    "Report/PDF and auxiliary scripts checked separately."
+  ],
+  "recorded_at": "2026-10-11T02:27:06.113709+00:00",
+  "inspector_field_meaning": "trust_enforced records the dependency policy being enforced. The inspector is not a separate kernel rechecker."
+}

@@ -1,0 +1,77 @@
+{
+  "candidate_id": "00000001568",
+  "result": "NO_PRIOR_REPOSITORY_SOLUTION_FOUND",
+  "main_commit": "9b795e7a94a6076e49a65a6489e1caf9153abd23",
+  "source_sha256": "58f717e90b2b53cab1ecccf5eebd03009915e29a48920f682fdf9e3959a56888",
+  "main_metadata_proven": false,
+  "main_metadata_disproven": false,
+  "main_solution_path_present": false,
+  "main_candidate_path_commit_history": [],
+  "upstream_claim_catalog": {
+    "pull_requests_all_states": 991,
+    "issues_including_pull_requests": 997,
+    "complete_reviews_and_inline_comments_checked": true,
+    "discussions_and_feedback_checked": true
+  },
+  "source_keyword_and_updated_submission_leads_reviewed": 29,
+  "lead_dispositions": {
+    "154": "Literature-resolution discussion; Conway-Parker-Sloane mention concerns350, no geometricthrackle claim",
+    "412": "Conway polynomial oftorusknots, conjecture603",
+    "611": "Cayley graph/digraph conjecture8666; incidentalLovaszname",
+    "616": "Chromatic criticalgraph conjecture3462; incidentalLovaszname",
+    "705": "Distancesonalgebraiccurve conjecture1543; incidentalPachname",
+    "997": "Unrelated candidate: 00000008538",
+    "996": "Unrelated candidate: 00000004215",
+    "995": "Unrelated candidate: 00000003420",
+    "994": "Unrelated candidate: 00000000565",
+    "993": "Unrelated candidate: 00000007175",
+    "992": "Unrelated candidate: 00000006322",
+    "991": "Unrelated candidate: 00000008412",
+    "990": "Unrelated candidate: 00000009278",
+    "989": "Unrelated candidate: 00000004846",
+    "988": "Unrelated candidate: 00000003467",
+    "987": "Unrelated candidate: 00000006338",
+    "986": "Unrelated candidate: 00000001305",
+    "985": "Unrelated candidate: 00000000781",
+    "984": "Unrelated candidate: 00000007685",
+    "983": "Unrelated candidate: 00000004227",
+    "982": "Unrelated candidate: 00000006680",
+    "981": "Unrelated candidate: 00000003968",
+    "980": "Unrelated candidate: 00000001463",
+    "979": "Unrelated candidate: 00000002190",
+    "978": "Unrelated candidate: 00000008524",
+    "977": "Unrelated candidate: 00000004391",
+    "976": "Unrelated candidate: 00000000957",
+    "975": "Unrelated candidate: 00000007147",
+    "974": "Unrelated candidate: 00000000579"
+  },
+  "all_lead_candidate_filename_signals": [],
+  "final_freshness": {
+    "observed_from": "2026-10-11T02:38:30.334836+00:00",
+    "observed_through": "2026-10-11T02:38:38.704350+00:00",
+    "updated_since": "2026-10-11T02:26:30+00:00",
+    "requests": 9,
+    "main_unchanged": true,
+    "changed_pull_requests": [],
+    "new_relevant_signals": [],
+    "exact_id_and_path_search_results": [],
+    "capture_manifest_sha256": "37b3965c979430d293c6da998223d04e805985de4c6414d06a2644fde8ef9437"
+  },
+  "earlier_capture_manifests": [
+    "235bd745b1982c669443f554aac9488df2ba516cc33264ea0834cd4fa7844058",
+    "ae3b8da45d92053a5ff6e31601f9375de455062d3a9fc313996ad683cc681421"
+  ],
+  "local_replay_results": {
+    "initial_raw_checks": 672,
+    "continuation_raw_checks": 4292,
+    "combined_semantic_checks": 572,
+    "failures": []
+  },
+  "limits": [
+    "Repository eligibility check, not a historical novelty claim.",
+    "No exhaustive claim about every historical commit of every fork, or unpublished/private work.",
+    "Unchanged PR review entries and discussion feedback retain the 02:28 UTC baseline; final delta checks upstream PR/issue/comment/inline updates and exact candidate searches."
+  ],
+  "root_publication_eligibility_cleared": true,
+  "recorded_at": "2026-10-11T02:39:37.672167+00:00"
+}

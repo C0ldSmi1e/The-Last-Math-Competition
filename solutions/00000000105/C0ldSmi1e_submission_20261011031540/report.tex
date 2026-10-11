@@ -1,0 +1,217 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,longtable,array}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\T}{\mathbb T}
+\newcommand{\bd}{\partial}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\intr}{\operatorname{int}}
+\newcommand{\code}[1]{\texttt{\small #1}}
+\title{A convexity obstruction to Conjecture 00000000105}
+\author{Independent mathematical submission}
+\date{October 10, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The conjecture is false for genus one. We prove that the standard torus is not homeomorphic to the boundary of any closed convex subset of real three-space, bounded or unbounded. The argument also covers every bounded convex subset, whether closed or not, including degenerate convex sets. In particular, no convex polyhedron realizes the torus, irrespective of its edge lengths or number of vertices. A complete Lean 4.19.0 formalization proves the actual geometric and topological obstruction. It constructs the circle exponential covering, rules out circle retractions of contractible spaces, and uses stereographic projection and the established convex-body gauge homeomorphism. No Euler-characteristic identity or realization bridge is inserted as an assumption.
+\end{abstract}
+
+\section{Source and precise interpretation}
+The supplied English source states:
+\begin{quote}
+``Conjecture: Every closed surface of genus g can be realized by a convex polyhedron all of whose edge lengths are distinct primes, with O(g) vertices.''
+\end{quote}
+The accompanying Chinese sentence asserts the same convex-polyhedron realization, distinct-prime edge lengths, and an $O(g)$ vertex count. The original bilingual file is included unchanged as \code{source/original.md}; its SHA-256 digest and those of both rules files are preserved in the input manifest.
+
+We use the ordinary geometric meaning of realizing a closed surface by a convex polyhedron: a homeomorphism from the surface onto the boundary of a compact convex polyhedral body in $\R^3$. A finite convex hull is an explicit model of such a body. The main result below is stronger: it applies to every bounded convex subset of $\R^3$, so it also covers a definition using bounded intersections of finitely many closed halfspaces. Neither full dimension nor a nonempty interior is assumed in that result. An additional proved compact-boundary lemma removes boundedness for closed convex sets. Thus the result also rules out an unbounded closed polyhedron if one uses the broader halfspace-intersection convention.
+
+Write
+\[
+ S^1=\{z\in\C:|z|=1\},\qquad
+ \T^2=S^1\times S^1,\qquad
+ S^2=\{x\in\R^3:\|x\|=1\}.
+\]
+The standard closed orientable surface of genus one is the torus $\T^2$. Equivalently, a surface has genus one when it is homeomorphic to this standard model. This use of the genus-one model is independent of convexity. In particular, we do not define genus through an assumed formula for the faces of a hypothetical polyhedron.
+
+The formalization checks that $\T^2$ is compact, Hausdorff, second countable, and path connected, and has the real-analytic product manifold structure modeled on $\R\times\R$. The real dimension of that chart model is checked to be two. Since the model is the full real vector space, these are surface charts without boundary.
+
+\begin{theorem}\label{thm:main}
+For every closed convex set $K\subseteq\R^3$, bounded or unbounded, there is no homeomorphism
+\[
+\T^2\longrightarrow\bd K.
+\]
+The same conclusion holds for every bounded convex set, whether closed or not. Consequently, for every finite set $V\subseteq\R^3$, there is no homeomorphism $\T^2\longrightarrow\bd\conv(V)$.
+\end{theorem}
+
+For a disproof it is enough to use this one genus-one surface. The conclusion rules out the underlying realization before any edge-length or vertex-count restriction is imposed. Adding distinct prime edge lengths, or any upper bound on vertices, cannot create a realization that does not exist. No interpretation of the asymptotic expression at $g=0$ is needed.
+
+\section{The circle cannot be a retract of a contractible space}
+We give the argument used by the formal proof rather than appealing to a computed fundamental group. Let
+\[
+p:\R\longrightarrow S^1,\qquad p(t)=e^{it}.
+\]
+The elementary identities $p(s+t)=p(s)p(t)$ and $p(2\pi)=p(0)=1$ will be used below.
+
+\begin{lemma}\label{lem:cover}
+The map $p$ is a covering map.
+\end{lemma}
+\begin{proof}
+The usual local argument function shows that $p$ is a local homeomorphism. Put $\Gamma=p^{-1}(1)$ with its subspace topology. Local injectivity of $p$ implies that every point of $\Gamma$ is isolated; hence $\Gamma$ is discrete.
+
+Fix $z\in S^1$ and a local inverse $q:U\to\R$ on an open neighborhood $U$ of $z$. Thus $p(q(w))=w$ for $w\in U$. Define
+\[
+ \Phi:p^{-1}(U)\longrightarrow U\times\Gamma,
+ \qquad \Phi(t)=(p(t),t-q(p(t))).
+\]
+The second coordinate is in $\Gamma$, because
+$p(t-q(p(t)))=p(t)/p(q(p(t)))=1$. Its inverse is
+\[
+ \Psi(w,k)=q(w)+k.
+\]
+The exponential identity and $p(k)=1$ show directly that $\Phi\Psi$ and $\Psi\Phi$ are identity maps. Both maps are continuous, using the continuity of $q$ on $U$ and the subspace topology on $\Gamma$. Their first coordinate agrees with $p$, so they give an evenly covered neighborhood. This proves the assertion at every $z$.
+
+In Lean the auxiliary inverse is extended outside $U$ by the ordinary argument function, solely to make it a total function. Continuity is proved only on $U$; no global continuous argument is assumed.
+\end{proof}
+
+\begin{lemma}\label{lem:section}
+There is no continuous map $f:S^1\to\R$ with $p(f(z))=z$ for every $z\in S^1$.
+\end{lemma}
+\begin{proof}
+Suppose such an $f$ exists. The continuous maps
+\[
+ a(t)=f(p(t)),\qquad b(t)=t+f(1)
+\]
+are lifts of the same map $p:\R\to S^1$: $p(a(t))=p(t)$ and
+$p(b(t))=p(t)p(f(1))=p(t)$. They agree at $t=0$. Uniqueness of lifts on the connected space $\R$ gives $a=b$. At $t=2\pi$ this says
+$f(1)=2\pi+f(1)$, contradicting $\pi>0$.
+\end{proof}
+
+\begin{lemma}\label{lem:retract}
+If $X$ is a contractible topological space, there do not exist continuous maps $i:S^1\to X$ and $r:X\to S^1$ satisfying $r\circ i=\operatorname{id}_{S^1}$.
+\end{lemma}
+\begin{proof}
+Choose a contraction $H:[0,1]\times X\to X$ from the identity to a constant $x_0$. Reversing this homotopy and composing with $i$ and $r$ yields
+\[
+ G(t,z)=r(H(1-t,i(z))).
+\]
+It satisfies $G(0,z)=r(x_0)$ and $G(1,z)=z$. Choose $a\in\R$ with $p(a)=r(x_0)$. The homotopy lifting property of the covering $p$ lifts $G$, starting with the constant lift $a$, to a continuous map
+$L:[0,1]\times S^1\to\R$ with $p(L(t,z))=G(t,z)$. Then $z\mapsto L(1,z)$ is a continuous section of $p$, contradicting Lemma~\ref{lem:section}.
+
+This proof uses homotopy lifting, which needs no local path-connectedness hypothesis on $X$. It therefore applies to arbitrary contractible spaces, including the convex subsets used below.
+\end{proof}
+
+\section{A torus cannot be a sphere}
+\begin{lemma}\label{lem:torussphere}
+There is no homeomorphism $e:\T^2\to S^2$.
+\end{lemma}
+\begin{proof}
+Suppose $e$ exists and let $n=e(1,1)$. Stereographic projection from $n$ is a homeomorphism
+\[
+ \sigma:S^2\setminus\{n\}\longrightarrow n^\perp,
+\]
+where $n^\perp$ is the orthogonal complement of the line spanned by $n$ in $\R^3$. In particular, it is a real vector space and is contractible.
+
+Choose $s=-1\in S^1$, so $s\ne1$. The circle slice $z\mapsto(z,s)$ avoids $(1,1)$. Define
+\[
+ i(z)=\sigma(e(z,s)),\qquad
+ r(v)=\operatorname{pr}_1\bigl(e^{-1}(\sigma^{-1}(v))\bigr).
+\]
+These maps are continuous. The first is well defined because the slice avoids the pole; the inverse stereographic map is defined on the whole vector space. The inverse identities give $r(i(z))=z$. This contradicts Lemma~\ref{lem:retract}.
+\end{proof}
+
+The Lean theorem constructs these two continuous maps explicitly. It uses the stock stereographic partial homeomorphism, whose source is the complement of the north pole and whose target is the entire orthogonal complement. It does not assume that a sphere is simply connected.
+
+\section{Convex boundaries and degenerate sets}
+\begin{lemma}\label{lem:convexsphere}
+If $K\subseteq\R^3$ is convex and bounded with nonempty interior, its boundary is homeomorphic to $S^2$.
+\end{lemma}
+\begin{proof}
+For a convex set with nonempty interior, $\intr(\overline K)=\intr K$, so $\bd\overline K=\bd K$. Thus passing to the closure preserves the boundary in question. Translate an interior point to the origin. The closure $C$ of the translated set is a convex body containing a ball of some radius $r>0$ and contained in a ball of some radius $R>0$. Its Minkowski functional
+\[
+ \mu(x)=\inf\{t>0:x\in tC\}
+\]
+is positively homogeneous and subadditive. The two ball inclusions give
+\[
+ \frac{\|x\|}{R}\le\mu(x)\le\frac{\|x\|}{r}.
+\]
+Subadditivity applied in both directions implies
+$|\mu(x)-\mu(y)|\le\|x-y\|/r$, so $\mu$ is continuous. The boundary of $C$ is $\{x:\mu(x)=1\}$. Radial normalization therefore gives mutually inverse continuous maps
+\[
+ u\longmapsto \frac{u}{\mu(u)},\qquad
+ x\longmapsto \frac{x}{\|x\|}
+\]
+between $S^2$ and $\bd C$. Restoring the translation proves the result.
+
+More generally, the same gauge argument identifies the interiors, closures, and frontiers of a bounded convex set and a unit ball. The Lean proof directly uses the already proved Mathlib theorem
+\begin{center}
+\code{exists\_homeomorph\_image\_interior\_closure\_frontier\_eq\_unitBall}.
+\end{center}
+It produces a homeomorphism of the ambient real normed space whose image of $\bd K$ is $S^2$. Restricting that ambient homeomorphism gives the required boundary homeomorphism. Thus the bridge from geometric convexity to the actual boundary space is checked in the formal development.
+\end{proof}
+
+
+\begin{lemma}\label{lem:boundedfrontier}
+A proper closed convex subset $K\subseteq\R^3$ with bounded frontier is bounded.
+\end{lemma}
+\begin{proof}
+Choose $p\notin K$ and $R$ such that $\bd K\subseteq\overline B(p,R)$. If a point $x\in K$ satisfied $d=\|x-p\|>R$, the sphere $S(p,d)$ would be disjoint from $\bd K$. Because $K$ is closed, that sphere is covered by the two disjoint open sets $\intr K$ and $K^c$. A sphere in real dimension greater than one is connected, so it lies entirely in one of those sets. It cannot lie in $K^c$, since it contains $x$. Hence its reflected point $2p-x$ also lies in $K$. Convexity now puts their midpoint $p$ in $K$, a contradiction. Therefore every $x\in K$ lies in $\overline B(p,R)$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+First let $K$ be bounded and convex and suppose $e:\T^2\to\bd K$ is a homeomorphism. If $K$ has nonempty interior, compose $e$ with the homeomorphism in Lemma~\ref{lem:convexsphere}. This contradicts Lemma~\ref{lem:torussphere}.
+
+If $K$ has empty interior, the definition of frontier gives
+$\bd K=\overline K\setminus\intr K=\overline K$. This set is convex. It is nonempty, because it is homeomorphic to the nonempty torus. Every nonempty convex subset of a real topological vector space is contractible: a point $x_0$ contracts it by $(t,x)\mapsto(1-t)x+tx_0$. A homeomorphism from the torus to this set would exhibit $S^1$ as a retract, using $z\mapsto(z,1)$ and the first projection, transported through the homeomorphism. Lemma~\ref{lem:retract} again gives a contradiction.
+
+Now let $K$ be any closed convex set with such a homeomorphism. It is proper: $K=\R^3$ would have empty frontier. Its frontier is compact, as a homeomorphic image of the compact torus, and is therefore bounded. Lemma~\ref{lem:boundedfrontier} proves that $K$ itself is bounded, reducing to the result just established.
+
+Finally, the convex hull of a finite set in $\R^3$ is compact and therefore bounded. Applying the established result proves the finite-hull assertion. Degenerate hulls, the empty hull, and redundant generating points cause no exception.
+\end{proof}
+
+\section{Formal statements, verification, and scope}
+The project is pinned to Lean \code{v4.19.0} and Mathlib commit
+\begin{center}
+\code{c44e0c8ee63ca166450922a373c7409c5d26b00b}.
+\end{center}
+The geometric types use Mathlib's real Euclidean space, convex hull, topological frontier, and homeomorphism. The following definitions are used in the final statements:
+\begin{itemize}
+\item \code{HasGenusOne S}: a homeomorphism $S\cong S^1\times S^1$ exists.
+\item \code{HasConvexPolyhedralRealization S}: for some finite set of points $V\subseteq\R^3$, a homeomorphism $S\cong\bd\conv(V)$ exists.
+\end{itemize}
+The generating finite set need not be precisely the set of extreme vertices; allowing redundant points only makes the existence predicate more permissive. No cardinality claim is inferred from this representation.
+
+The primary capstones in namespace \code{TLMC105} are:
+\begin{longtable}{@{}p{0.54\textwidth}p{0.41\textwidth}@{}}
+\toprule
+Lean theorem & Content\\
+\midrule
+\code{no\_torus\_closed\_convex\_boundary} & No closed convex subset of $\R^3$, bounded or unbounded, has toroidal frontier.\\[4pt]
+\code{no\_torus\_convex\_boundary} & No bounded convex subset of $\R^3$ has toroidal frontier.\\[4pt]
+\code{no\_torus\_polytope\_boundary} & No finite convex hull realizes the torus.\\[4pt]
+\code{genus\_one\_not\_convex\_polyhedral} & Every space homeomorphic to the torus has the same obstruction.\\[4pt]
+\code{torus\_closed\_surface\_properties} & Compactness, separation, countability, path connectedness, and the product manifold structure.\\[4pt]
+\code{torus\_chart\_dimension} & The real chart-model dimension is two.\\[4pt]
+\code{conjecture\_00000000105\_counterexample} & The torus has genus one and has no convex-polyhedral realization.\\
+\bottomrule
+\end{longtable}
+
+\code{TorusTopology.lean} contains the stereographic retraction construction. \code{BoundaryBound.lean} proves the bounded-frontier lemma in real dimension greater than one and specializes it to $\R^3$. \code{Proof.lean} contains the exponential covering, section and retraction obstructions, convex-boundary proof, geometric realization definitions, and capstones. All mathematics uses ordinary proof terms; there are no project axioms or admitted proofs, and no native-evaluation or unsafe proof shortcuts.
+
+The verification command is
+\begin{center}
+\code{python3 verify.py --lake /path/to/lean-4.19.0/bin/lake}.
+\end{center}
+It checks exact dependency revisions and unchanged tracked dependency sources, verifies the original input hashes, builds the Lean sources with warnings treated as failures, and runs the transitive axiom audit with Lean warnings treated as errors. The audited theorems depend only on Lean's standard \code{propext}, \code{Classical.choice}, and \code{Quot.sound}. The actual version, build, dependency-pin, and axiom outputs are supplied under \code{logs/}. The axiom audit is a policy check on the transitive assumptions; source compilation is the step in which Lean's kernel checks the proof terms.
+
+This is a topological disproof of the source conjecture under its ordinary compact-polyhedral-surface meaning. It does not address different problems obtained by dropping convexity, allowing arbitrary abstract face identifications, or replacing the realized surface by an unrelated combinatorial invariant. Under the convention that a polyhedron may be an unbounded intersection of finitely many closed halfspaces, Theorem~\ref{thm:main} still excludes the realization: it applies directly to every closed convex set. No finite-hull equivalence or boundedness assumption is needed for that application.
+
+\end{document}

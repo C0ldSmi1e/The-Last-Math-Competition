@@ -1,0 +1,24 @@
+{
+  "frozen": true,
+  "files": {
+    "Proof.lean": "9a990ec7f184e69033a96aa7305d58034a305def12ed21a3cfb14022462c3bbf",
+    "TorusTopology.lean": "47285ebd3038294d260dcd988fed9cf9b99a19a05a0d7f78c7a7ddf0e9654150",
+    "BoundaryBound.lean": "b35015d5a835d0aa60b710cc5837441c50cd15ea43566def8801fede40b901c2",
+    "AxiomAudit.lean": "a516ddf1a8323a135fe9c3bcb5da3afd78986aaa1157cede600b787b4c78be40",
+    "lakefile.lean": "772e77de79232ac73e884254a8ef107de00802c21430cce887b0a332e6968175",
+    "lake-manifest.json": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+  },
+  "capstones": [
+    "TLMC105.conjecture_00000000105_counterexample",
+    "TLMC105.no_torus_closed_convex_boundary",
+    "TLMC105.no_torus_convex_boundary",
+    "TLMC105.no_torus_polytope_boundary",
+    "TLMC105.torus_closed_surface_properties",
+    "TLMC105.torus_chart_dimension",
+    "TLMC105.exp_covering",
+    "TLMC105.no_exp_section",
+    "TLMC105.no_circle_retract",
+    "TLMC105.bounded_of_convex_compact_frontier"
+  ]
+}

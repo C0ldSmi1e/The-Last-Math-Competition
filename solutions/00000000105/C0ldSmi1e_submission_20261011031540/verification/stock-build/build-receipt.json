@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/private/tmp/tlmc310-runtime/lean-4.19.0-darwin_aarch64/bin/lake",
+    "--no-cache",
+    "--wfail",
+    "build",
+    "Mathlib.Analysis.SpecialFunctions.Complex.Circle",
+    "Mathlib.Topology.Homotopy.Lifting",
+    "Mathlib.Analysis.Convex.GaugeRescale",
+    "Mathlib.Geometry.Manifold.Instances.Sphere",
+    "Mathlib.Analysis.Convex.Contractible"
+  ],
+  "cwd": "/private/tmp/tlmc105-review-stock/mathlib",
+  "source_clone": "/private/tmp/tlmc4607-restored-stock/mathlib",
+  "started_at": "2026-10-11T02:57:09.651352+00:00",
+  "ended_at": "2026-10-11T02:57:48.526981+00:00",
+  "exit_code": 0,
+  "scope": "Independent build of missing stock dependencies only; no authored conjecture source present."
+}

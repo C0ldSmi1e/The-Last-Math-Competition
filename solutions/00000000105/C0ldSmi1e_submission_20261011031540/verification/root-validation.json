@@ -1,0 +1,40 @@
+{
+  "status": "PASS_LOCAL_PREPUBLICATION_VALIDATION",
+  "candidate": "00000000105",
+  "scope": "Full original bilingual statement and current rules; complete proof/report; independent semantic review; executed strict compilation, dependency policy, auxiliary verifier and PDF checks. This is contributor validation, not maintainer acceptance.",
+  "source_manifest_sha256": "735928b90363041392c0c6a1dbdf09bbe590990719c1e3cdb7cca10c1aae5062",
+  "mathematical_manifest_sha256": "a35beb6b158e328accbedd85115f69a76798c392dee6169639c86009d6006ca8",
+  "semantic_review_sha256": "be3c7c57c76ae98c7420458a1ae2d41287781312f36b2f7538373a8872153b7d",
+  "engineering_summary_sha256": "bc6c763da70385f113787bff35ac468f60ec1ef7b17038642f0259feb549f677",
+  "engineering_archive_sha256": "5b21c5608f89d51948f61612770f6306c1aaf7789669cc6440705a7c9c43308e",
+  "proof_modules": [
+    "AxiomAudit",
+    "BoundaryBound",
+    "Proof",
+    "TorusTopology"
+  ],
+  "local_declarations": 44,
+  "dependency_closure_declarations": 32715,
+  "import_identities": 3576,
+  "command_receipts_rehashed": 59,
+  "runtime_unsafe_roots": 0,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "controls": "One valid fixture accepted; custom axiom, opaque transitive axiom, admitted proof, native_decide and unsafe declaration rejected as expected.",
+  "auxiliary_verifier": "Exact frozen Python verifier rerun successfully against independently built project. No numerical auxiliary computation is needed for this topological proof.",
+  "regularity_clarification": "The surface-properties theorem is universal in regularity; checked specialization to top establishes the analytic manifold claim.",
+  "stock_rebuild_scope": "46 missing stock modules independently built with warning failures; remaining stock objects byte matched. Full Mathlib and Lean runtime were not rebuilt.",
+  "kernel_vs_inspector": "Fresh Lean source compilation/replay performs kernel checking. The inspector enforces axiom/unsafe dependency policy, not an independent kernel implementation.",
+  "pdf": {
+    "pages": 5,
+    "tex_sha256": "468e6b46790f374457f21243bc4b810d672f3b826242df80660d2b6232f246ea",
+    "pdf_sha256": "fa74d689c1adaae0c68b5b7e6dd59b5dca2ca6c1fede6b82242f63d25a71b9b0",
+    "native_compiler": "success",
+    "visual": "all five pages inspected; no defects"
+  },
+  "eligibility": "Bounded current-repository checks found no prior solution; see freshness-review.json for exact scope/time.",
+  "recorded_at": "2026-10-11T03:15:40.748276+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "/private/tmp/tlmc105-independent-engineering/project/verify.py",
+    "--lake",
+    "/private/tmp/tlmc310-runtime/lean-4.19.0-darwin_aarch64/bin/lake"
+  ],
+  "started_at": "2026-10-11T03:11:32.785512+00:00",
+  "completed_at": "2026-10-11T03:11:41.778836+00:00",
+  "exit_code": 0,
+  "verifier_sha256": "ebdb64256c2ea52b7e3de7444b293f08882cab3fec36a808f5c947226bf3deb3",
+  "stdout_sha256": "bf2f5b57fc11b32dffeede0bf713725d2f725db4894390a96c82965d8f28cae9",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

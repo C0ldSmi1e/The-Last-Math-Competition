@@ -1,0 +1,32 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{xurl}
+\sloppy
+\let\oldus\_ \renewcommand{\_}{\oldus\allowbreak}
+\title{Conjecture 00000003420: the spectral formula of effective resistance}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Conjecture and reading}
+``The spectral formula of effective resistance: the resistance is a quadratic form of the pseudoinverse, with the eigendecomposition of the form the harmonic series of eigenvalues.''
+
+Conventions. $G$ is any finite connected simple graph (connectedness is a standing hypothesis; without it $e_i-e_j$ need not lie in the range of $L$), with unit conductances, and $L=D-A$ is Mathlib's \texttt{G.lapMatrix $\mathbb R$}. The electrical effective resistance between $i,j$ is $v_i-v_j$ for a potential $v$ with $Lv=e_i-e_j$. The pseudoinverse is the Moore--Penrose pseudoinverse. The vague phrase ``harmonic series of eigenvalues'' is read as the weighted reciprocal-eigenvalue expansion $\sum_{\lambda_k>0}(u_k(i)-u_k(j))^2/\lambda_k$. No other reading is claimed.
+
+\section*{Definitions}
+$L=U\,\mathrm{diag}(\lambda)\,U^T$ is Mathlib's spectral decomposition of the real symmetric matrix $L$ (\texttt{Matrix.IsHermitian.spectral\_theorem}), $U$ orthogonal with columns the orthonormal eigenvectors $u_k$. Put $d_k=\lambda_k^{-1}$ if $\lambda_k\ne0$ and $0$ otherwise, and $L^+=U\,\mathrm{diag}(d)\,U^T$ (Lean: \texttt{C3420.pinv}). With $b=e_i-e_j$ (\texttt{current}), a potential is $v$ with $Lv=b$ (\texttt{IsPotential}).
+
+\section*{Theorem}
+For every finite connected simple graph $G$: (a) $L^+$ satisfies the four Penrose equations $LL^+L=L$, $L^+LL^+=L^+$, $(LL^+)^T=LL^+$, $(L^+L)^T=L^+L$ and is the only matrix that does; (b) for all $i,j$ a potential exists; (c) for every potential $v$, $v_i-v_j=b^TL^+b=\sum_{\lambda_k>0}(u_k(i)-u_k(j))^2/\lambda_k$.
+
+\section*{Proof}
+Since $U^TU=UU^T=I$, $LL^+=U\,\mathrm{diag}(\epsilon)U^T=L^+L$ with $\epsilon_k=[\lambda_k\ne0]$, and $\lambda\,d\,\lambda=\lambda$, $d\,\lambda\,d=d$ give the four equations (diagonal matrices are symmetric). Uniqueness: if $X,Y$ both satisfy them then $AX=(AYA)X=(AY)^T(AX)^T=(AXAY)^T=(AY)^T=AY$ and likewise $XA=YA$, so $X=XAX=YAX=YAY=Y$.
+
+Existence: $(U^Tb)_k=u_k(i)-u_k(j)$. If $\lambda_k=0$ then $Lu_k=0$, so $u_k$ is constant on connected components (Mathlib \texttt{lapMatrix\_mulVec\_eq\_zero\_iff\_forall\_reachable}), hence constant since $G$ is connected, so $(U^Tb)_k=0$. Therefore $\mathrm{diag}(\epsilon)U^Tb=U^Tb$ and $L(L^+b)=U\,\mathrm{diag}(\epsilon)U^Tb=UU^Tb=b$.
+
+Value: if $Lv=b$ then, using $L=L^T$ and $L(L^+b)=b$, $v_i-v_j=v^Tb=v^TL(L^+b)=(Lv)^TL^+b=b^TL^+b$. Finally $b^TL^+b=(U^Tb)^T\mathrm{diag}(d)(U^Tb)=\sum_k d_k(u_k(i)-u_k(j))^2$, and since $L$ is positive semidefinite (Mathlib \texttt{posSemidef\_lapMatrix}) $\lambda_k\ge0$, so $d_k\neq0$ exactly when $\lambda_k>0$ and then $d_k=1/\lambda_k$.
+
+\section*{Lean}
+File \texttt{lean/Conjecture3420/Basic.lean}. Main theorem \texttt{C3420.main : C3420.Claim}, where \texttt{Claim := Conjecture} quantifies over all \texttt{V : Type} and graphs. Supporting: \texttt{moorePenrose}, \texttt{moorePenrose\_unique}, \texttt{LP\_current}, \texttt{potential\_value}, \texttt{quad\_eq}, \texttt{sum\_pos}. Neighbouring package 3419 (effective resistance as $v_a-v_b$) was consulted for the electrical definition. Axiom audit: propext, Classical.choice, Quot.sound only (no sorry, no native\_decide).
+\end{document}

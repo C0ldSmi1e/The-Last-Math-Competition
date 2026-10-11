@@ -1,0 +1,2 @@
+$ lake env lean StatementCheck.lean
+CLAIM_OK C3420.main : C3420.Claim

@@ -1,0 +1,12 @@
+Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+$ lake build
+✔ [8706/8709] Built Conjecture3420.Statement (58s)
+⚠ [8707/8709] Built Conjecture3420.Basic (69s)
+warning: Conjecture3420/Basic.lean:150:0: automatically included section variable(s) unused in theorem `C3420.mp_unique`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [8708/8709] Built Conjecture3420 (59s)
+Build completed successfully (8709 jobs).

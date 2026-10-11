@@ -1,0 +1,54 @@
+from pathlib import Path
+import hashlib,json,tarfile,subprocess,shutil,os
+P=Path
+package=P('/private/tmp/tlmc3348-engineering-package/verification')
+sha=lambda b:hashlib.sha256(b).hexdigest()
+checks=[]
+for name in ['verify.py','test_hardening.py','check_audit_graph.py','templates/ClosureAudit.lean.txt']:
+ a=package/'tools'/name;b=P('/private/tmp/tlmc3348-engineering-tools')/name
+ assert a.read_bytes()==b.read_bytes()
+ checks.append({'tool':name,'exact_tested_bytes':True,'sha256':sha(a.read_bytes())})
+for name in ['REPORT.md','summary.json','graph-consistency.json']:
+ assert (package/'results'/name).read_bytes()==(P('/private/tmp/tlmc3348-independent-engineering-final')/name).read_bytes()
+assert sha((package/'frozen.json').read_bytes())=='5e38bba343cb2bea78ee005d6a52b8a66846455dfe795664639c9cc020b42a5f'
+archive_checks=[]
+for meta in json.loads((package/'ARCHIVES.json').read_text()):
+ f=package/meta['archive'];assert sha(f.read_bytes())==meta['sha256']
+ index_path=f.with_suffix('').with_suffix('.manifest.json')
+ index=json.loads(index_path.read_text())
+ with tarfile.open(f,'r:gz') as archive:
+  members=archive.getmembers();assert len(members)==meta['files']
+  assert len({m.name for m in members})==len(members)
+  assert archive.extractfile('RAW-MANIFEST.json').read()==index_path.read_bytes()
+  assert {m.name for m in members}==set(index['files'])|{'RAW-MANIFEST.json'}
+  for member in members:
+   rel=P(member.name)
+   assert member.isfile() and not rel.is_absolute() and '..' not in rel.parts
+   assert not any(x in {'.lake','.git','project','__pycache__'} for x in rel.parts)
+   assert rel.suffix not in {'.lean','.olean','.ilean','.pyc','.o','.a','.so','.dylib'}
+   body=archive.extractfile(member).read()
+   if member.name!='RAW-MANIFEST.json':
+    row=index['files'][member.name];assert len(body)==row['bytes'] and sha(body)==row['sha256']
+  if f.name=='final-raw.tar.gz':
+   audit=archive.extractfile('final/declaration-audit.json').read()
+   target=P('/private/tmp/tlmc3348-package-audit.json');target.write_bytes(audit)
+  if f.name=='first-stopped-run.tar.gz':
+   stopped=json.loads(archive.extractfile('first-stopped-run/STOPPED-RUN-RECORD.json').read())
+   assert stopped['audit_reuse']['sha256']==sha(audit)
+ archive_checks.append({'archive':meta['archive'],'members':len(members),'all_hashes_and_lengths_verified':True,'compiled_artifacts_and_git_excluded':True})
+env=os.environ.copy();env['PYTHONDONTWRITEBYTECODE']='1'
+r=subprocess.run(['python3',str(package/'tools/check_audit_graph.py'),str(target)],capture_output=True,text=True,env=env)
+assert r.returncode==0,r.stderr
+(package/'results/packaged-graph-check.json').write_text(r.stdout)
+shutil.copy2('/private/tmp/tlmc3348-package-hardening-recheck/results.json',package/'results/packaged-hardening-check.json')
+for directory in package.rglob('__pycache__'):
+ shutil.rmtree(directory)
+record={'status':'PASS','exact_tool_checks':checks,'archives':archive_checks,'original_final_report_and_summaries_unchanged':True,'frozen_manifest_verified':True,'relocated_hardening_controls':'PASS','relocated_graph_checker':'PASS','archive_duplicate_audit_reference_verified':True}
+(package/'results/package-check.json').write_text(json.dumps(record,indent=2)+'\n')
+files={str(p.relative_to(package)):{'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size} for p in sorted(package.rglob('*')) if p.is_file() and p.name not in {'PACKAGE-MANIFEST.json','PACKAGE-MANIFEST.sha256'}}
+manifest={'files':files,'file_count_excluding_manifest_and_digest':len(files),'bytes_excluding_manifest_and_digest':sum(x['bytes'] for x in files.values()),'excludes':['PACKAGE-MANIFEST.json','PACKAGE-MANIFEST.sha256']}
+manifest_path=package/'PACKAGE-MANIFEST.json';manifest_path.write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+digest=sha(manifest_path.read_bytes())
+(package/'PACKAGE-MANIFEST.sha256').write_text(digest+'  PACKAGE-MANIFEST.json\n')
+all_files=[p for p in package.rglob('*') if p.is_file()]
+print(json.dumps({'package':str(package.parent),'file_count':len(all_files),'bytes':sum(p.stat().st_size for p in all_files),'manifest_sha256':digest,'archive_members':sum(x['members'] for x in archive_checks),'top_files':sorted(str(p.relative_to(package)) for p in all_files)},indent=2))

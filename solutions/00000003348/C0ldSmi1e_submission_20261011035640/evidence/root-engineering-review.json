@@ -1,0 +1,44 @@
+{
+  "status": "PASS_ROOT_ENGINEERING_REVIEW",
+  "manifest_members_rehashed": 216,
+  "receipts_rehashed_and_expected_exit_confirmed": 56,
+  "frozen_source_identity": true,
+  "hardened_driver_diff_reviewed": true,
+  "template_traversal_diff_reviewed": true,
+  "graph_and_adversarial_source_reviewed": true,
+  "executed": [
+    {
+      "argv": [
+        "python3",
+        "/private/tmp/tlmc3348-engineering-tools/check_audit_graph.py",
+        "/private/tmp/tlmc3348-independent-engineering-final/declaration-audit.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"roots\": 36,\n  \"graph_nodes\": 21404,\n  \"module_counts\": {\n    \"Counterexample\": 36\n  },\n  \"scope\": \"Internal graph/closure/trust consistency; not an independent Lean environment extraction or kernel recheck.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "/private/tmp/tlmc3348-engineering-tools/test_hardening.py",
+        "/private/tmp/tlmc3348-root-hardening-test"
+      ],
+      "exit_code": 0,
+      "stdout": "[\n  {\n    \"fixture\": \"unexpected_owned_output\",\n    \"rejected\": true,\n    \"reason\": \"Unexpected owned-library module: Hidden.olean\"\n  },\n  {\n    \"fixture\": \"owned_import_shadow\",\n    \"rejected\": true,\n    \"reason\": \"Shadowed or ambiguous imported module: Shadow\"\n  },\n  {\n    \"fixture\": \"untracked_package_source\",\n    \"rejected\": true,\n    \"reason\": \"Untracked package module source: FreshFixture\"\n  },\n  {\n    \"fixture\": \"changed_package_cache\",\n    \"rejected\": true,\n    \"reason\": \"Changed/unrecognized package cache import: FreshFixture\"\n  },\n  {\n    \"fixture\": \"changed_copied_source\",\n    \"rejected\": true,\n    \"reason\": \"Review input copy changed: FreshFixture.lean\"\n  },\n  {\n    \"fixture\": \"changed_exact_pin\",\n    \"rejected\": true,\n    \"reason\": \"Pinned input differs: lean-toolchain\"\n  },\n  {\n    \"fixture\": \"multiline_forbidden_and_comment_string_controls\",\n    \"passed\": true\n  }\n]\n",
+      "stderr": ""
+    }
+  ],
+  "local_declarations": 36,
+  "closure_declarations": 21404,
+  "import_identities": 4074,
+  "limits": [
+    "Cached dependency imports byte-matched supplied stock; full Mathlib was not rebuilt.",
+    "Supplied Lean runtime was not bootstrapped.",
+    "Semantic and PDF review are separate.",
+    "Unsafe generated runtime declarations are inventoried separately and require explicit classification if present.",
+    "PATH wrappers are safeguards only, not OS network isolation.",
+    "Auxiliary/configuration/metaprogrammatic source requires separate side-effect review.",
+    "Closure audit inspects dependencies; source compilation supplies kernel checking."
+  ],
+  "at": "2026-10-11T03:49:39.235972+00:00"
+}

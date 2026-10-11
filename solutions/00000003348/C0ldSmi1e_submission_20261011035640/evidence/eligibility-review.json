@@ -1,0 +1,31 @@
+{
+  "status": "PASS_BOUNDED_ROOT_PREPUBLICATION_ELIGIBILITY",
+  "candidate_id": "00000003348",
+  "main_sha": "9b795e7a94a6076e49a65a6489e1caf9153abd23",
+  "outer_manifest_sha256": "ea6b8240b7a5508c8f6909670aca0fc22ee286bffa4567b8b07eba379ef2ef4d",
+  "outer_members_rehashed": 171,
+  "raw_requests_rehashed_and_parsed": 19,
+  "source_rules_metadata_byte_match_main": true,
+  "candidate_metadata_unsolved": true,
+  "same_path_absent_and_history_empty": true,
+  "lead_classifications": {
+    "269": "Nevanlinna deficiency-spectrum cardinality, conjecture2231; no expansive-Julia Cantor claim.",
+    "274": "Composition/noncommutation dimension inequality, conjecture2404; shared polynomial Julia examples are not the expansive-Cantor claim.",
+    "557": "Entire-function order/dimension bound, conjecture2260; different hypotheses and claim.",
+    "652": "Integer orbits with real Julia hypothesis, conjecture7758; different claim.",
+    "664": "Difference-set gaps, conjecture8330; no Julia/expansion claim.",
+    "739": "2-adic map and dimension, conjecture745; different ambient dynamics and claim.",
+    "748": "p-adic Julia nonemptiness versus degree, conjecture751; no expansive-Cantor assertion.",
+    "750": "Polish group and Borel smoothness, conjecture2450; unrelated Cantor model.",
+    "772": "Cantor-measure Fourier non-decay, conjecture2410; no expansive-Julia assertion.",
+    "838": "Hall ray versus Cantor topology, conjecture320; different spectrum assertion.",
+    "913": "Nonexceptional Julia Hausdorff lower bound, conjecture7768; different hypothesis and dimension conclusion.",
+    "915": "Gapless positive-measure Cantor spectra, conjecture1624; different spectral claim."
+  },
+  "scope": "Current upstream path and paginated same-path commit API history; complete retained neutral catalog metadata plus bounded updated metadata and repository issue searches. No fork or full DAG history claim.",
+  "observed_through": "2026-10-11T03:50:19.011607+00:00",
+  "publication_requires_fresh_delta_check": false,
+  "reviewed_at": "2026-10-11T03:51:37.553381+00:00",
+  "final_capture": "/private/tmp/tlmc3348-eligibility-final",
+  "unchanged_lead_contexts": true
+}

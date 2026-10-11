@@ -1,0 +1,149 @@
+{
+  "status": "BOUNDED_METADATA_SCREEN_COMPLETE_PENDING_ROOT_CLASSIFICATION",
+  "candidate_id": "00000003348",
+  "main_sha": "9b795e7a94a6076e49a65a6489e1caf9153abd23",
+  "source_rules_metadata_identity_same_commit": true,
+  "scope": "Current upstream path and paginated same-path commit API history; complete retained neutral catalog metadata plus bounded updated metadata and repository issue searches. No fork or full DAG history claim.",
+  "cached_lead_numbers": [
+    269,
+    274,
+    557,
+    652,
+    664,
+    739,
+    748,
+    750,
+    772,
+    838,
+    913,
+    915
+  ],
+  "classification": "PENDING_ROOT_METADATA_ASSESSMENT",
+  "main_path_history": {
+    "repository": "The-Last-Math-Competition/The-Last-Math-Competition",
+    "sha": "9b795e7a94a6076e49a65a6489e1caf9153abd23",
+    "candidate_path": "solutions/00000003348",
+    "history_file": "main-candidate/history.json",
+    "path_file": "main-candidate/path.json",
+    "history_request_file": "main-candidate/history.json.page-000.json.request.json",
+    "path_request_file": "main-candidate/path.json.request.json",
+    "history_pagination_file": "main-candidate/history.json.pagination.json",
+    "history_empty": true,
+    "history_complete": true,
+    "path_absent": true,
+    "pass": true
+  },
+  "search_summary": [
+    {
+      "name": "canonical",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"3348\" in:title,body,comments",
+      "numbers": [],
+      "total": 0
+    },
+    {
+      "name": "padded",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"00000003348\" in:title,body,comments",
+      "numbers": [],
+      "total": 0
+    },
+    {
+      "name": "path",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"solutions/00000003348\" in:title,body,comments",
+      "numbers": [],
+      "total": 0
+    },
+    {
+      "name": "title",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition 3348 in:title",
+      "numbers": [],
+      "total": 0
+    },
+    {
+      "name": "topic-0",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"Julia\" in:title,body,comments",
+      "numbers": [
+        913,
+        739,
+        652,
+        557,
+        748,
+        274
+      ],
+      "total": 6
+    },
+    {
+      "name": "topic-1",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"expansive\" in:title,body,comments",
+      "numbers": [],
+      "total": 0
+    },
+    {
+      "name": "topic-2",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"uniformly expanding\" in:title,body,comments",
+      "numbers": [],
+      "total": 0
+    },
+    {
+      "name": "topic-3",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"Cantor\" in:title,body,comments",
+      "numbers": [
+        915,
+        269,
+        838,
+        772,
+        750,
+        664
+      ],
+      "total": 6
+    },
+    {
+      "name": "topic-4",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"pressure equation\" in:title,body,comments",
+      "numbers": [],
+      "total": 0
+    },
+    {
+      "name": "topic-5",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"一致扩张\" in:title,body,comments",
+      "numbers": [],
+      "total": 0
+    },
+    {
+      "name": "topic-6",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"康托尔\" in:title,body,comments",
+      "numbers": [],
+      "total": 0
+    },
+    {
+      "name": "topic-7",
+      "query": "repo:The-Last-Math-Competition/The-Last-Math-Competition \"压力方程\" in:title,body,comments",
+      "numbers": [],
+      "total": 0
+    }
+  ],
+  "all_lead_numbers": [
+    269,
+    274,
+    557,
+    652,
+    664,
+    739,
+    748,
+    750,
+    772,
+    838,
+    913,
+    915
+  ],
+  "delta_counts": {
+    "issues": 0,
+    "comments": 0,
+    "inline": 0
+  },
+  "delta_match_count": 0,
+  "publication_eligibility_granted": false,
+  "actual_requests": 19,
+  "elapsed_seconds": 15.110251457430422,
+  "unresolved_errors": [],
+  "observed_through": "2026-10-11T03:50:19.011607+00:00"
+}

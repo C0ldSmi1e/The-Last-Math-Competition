@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "source_sha256": "66c95372c4aa3614cbc1a5f9d439c6991b0f3a897f3419dc7d3b00673e547210",
+  "pdf_sha256": "f50b6b786e28f8de63e9c6fa5c5e14db882418c5726f4d9da32280754b8e17b9",
+  "pages": 4,
+  "rendered_pages": {
+    "page-1.png": "5d1d2ab20fdab2a9a6a16e3757db3c80ff7ba6e36a9f05e2471d2ab1932c7d68",
+    "page-2.png": "4da78395a9c09abf94005f961b383f0340e7961c3f9a449a5053b20b58055ac0",
+    "page-3.png": "f0c16184966bd95a5106c4d356bd62808bfab1d890277a53c4291a581666fc10",
+    "page-4.png": "ab778666f19ee78a18d39e7d7e34feec0ed951ea782623df357cd9dde747da8f"
+  },
+  "review": "Root visually inspected every final rendered page and read the report in full. No clipping, overlaps, missing glyphs, broken equations or TeX warnings. Long Lean identifiers wrap within margins.",
+  "native_editor_compile": "success after initial source creation, identifier wrapping, and derivative wording correction; editor opened (queued by app)",
+  "export_record": "/private/tmp/tlmc3348-pdf/export-03/export.json",
+  "historical_export_notes": "First export had2 overfull paragraphs, fixed. Second clean export superseded by precise derivative wording. Third export is final. No Lean source/config changes.",
+  "at": "2026-10-11T03:46:55.134123+00:00"
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "archive": "evidence/final-raw.tar.gz",
+    "files": 232,
+    "bytes": 4906914,
+    "sha256": "abdde9405b066dfff9f5d401300917a6bb9f589c3fb93c0b55a58bd3bc8d0722"
+  },
+  {
+    "archive": "evidence/first-stopped-run.tar.gz",
+    "files": 167,
+    "bytes": 997823,
+    "sha256": "c8e0994bbd51f1c73154fb8cfffdfee23b4c43566d48e687c610c6457dbabb97"
+  },
+  {
+    "archive": "evidence/preparation-raw.tar.gz",
+    "files": 216,
+    "bytes": 214093,
+    "sha256": "e0a1c430544e70d33f6f65fbc78fcee8b682dd25eb23ac40b497a92f58cd938f"
+  }
+]

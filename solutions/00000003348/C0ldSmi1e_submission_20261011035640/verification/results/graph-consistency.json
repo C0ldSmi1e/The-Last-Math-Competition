@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "roots": 36,
+  "graph_nodes": 21404,
+  "module_counts": {
+    "Counterexample": 36
+  },
+  "scope": "Internal graph/closure/trust consistency; not an independent Lean environment extraction or kernel recheck."
+}

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "Counterexample.lean": "f25d2eb1ae1a64c456645c739c88fc58f0c87c6675f4c70dda28eaf96069bfce",
+    "Checks.lean": "f37cbe068bb8e58ebe8132c1ee13a8382105555be5bc6de82b6a2a4d76f1cca4",
+    "lakefile.toml": "ac117c896288419873ec81469eb46ade148a5a8c1f0c6dbc95ae9c859411db44",
+    "lake-manifest.json": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+  },
+  "capstones": [
+    "ExpandingJuliaCounterexample.squarePolynomial_degree",
+    "ExpandingJuliaCounterexample.square_iterate",
+    "ExpandingJuliaCounterexample.filledJulia_square",
+    "ExpandingJuliaCounterexample.julia_square",
+    "ExpandingJuliaCounterexample.square_iterate_hasDerivAt",
+    "ExpandingJuliaCounterexample.norm_deriv_square_iterate",
+    "ExpandingJuliaCounterexample.norm_real_fderiv_square_iterate",
+    "ExpandingJuliaCounterexample.square_local_distance_expansion",
+    "ExpandingJuliaCounterexample.square_uniformlyExpanding",
+    "ExpandingJuliaCounterexample.julia_square_connected",
+    "ExpandingJuliaCounterexample.cantorType_totallyDisconnected",
+    "ExpandingJuliaCounterexample.julia_square_not_cantorType",
+    "ExpandingJuliaCounterexample.counterexample",
+    "ExpandingJuliaCounterexample.not_every_expanding_polynomial_has_cantor_julia",
+    "ExpandingJuliaCounterexample.not_every_expanding_polynomial_satisfies_conjunction"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS_ROOT_SEMANTIC_AND_ARTIFACT_REVIEW",
+  "original_sha256": "4c5b2b9cd847d97c48db0bf930fdcbb4c5ac5edc8cd2b05ac0ec362c73fc7232",
+  "proof_sha256": "f25d2eb1ae1a64c456645c739c88fc58f0c87c6675f4c70dda28eaf96069bfce",
+  "checks_sha256": "f37cbe068bb8e58ebe8132c1ee13a8382105555be5bc6de82b6a2a4d76f1cca4",
+  "report_sha256": "66c95372c4aa3614cbc1a5f9d439c6991b0f3a897f3419dc7d3b00673e547210",
+  "pdf_sha256": "f50b6b786e28f8de63e9c6fa5c5e14db882418c5726f4d9da32280754b8e17b9",
+  "scope": "Disproof under explicitly declared standard complex-polynomial Julia-boundary and Julia-locus uniform-expansion conventions. No separate pressure-dimension disproof.",
+  "checks": [
+    "Read exact bilingual source and operative contribution rules.",
+    "Read every final Lean definition and proof, including actual Polynomial evaluation/iteration, orbit-bound disk characterization, frontier circle, uniform actual derivatives, real tangent bridge, local metric estimate, and Cantor homeomorphism obstruction.",
+    "Reviewed independent original-first semantic assessment, strategy assessment, full proof review and document review.",
+    "Read complete report, verified primary cited definition passages, and corrected derivative coefficient wording identified by reviewer.",
+    "Native LaTeX compilation succeeded; final PDF exported without warnings and all4pages visually inspected.",
+    "Frozen mathematical/config files match independent engineering inputs exactly.",
+    "Engineering evidence hashes, expected command exits and full graph consistency checked separately."
+  ],
+  "author_independence": "A first author accidentally received prior agent summaries through an agent inventory and was stopped. Its incomplete project was excluded. Replacement fresh author received only exact original/rules/pins and stock library; independently derived and implemented the submitted proof. Root wrote report after proof freeze.",
+  "documentation_only_change_after_independent_document_review": "README spacing: Lean4.19.0 -> Lean 4.19.0; includes15 -> includes 15. No command or mathematical content changed.",
+  "remaining_before_publication": [
+    "Complete engineering package and final manifest reconciliation",
+    "Only personal submission path committed; exact remote commit/file identity verification"
+  ],
+  "at": "2026-10-11T03:54:58.863652+00:00"
+}

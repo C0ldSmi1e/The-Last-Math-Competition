@@ -1,0 +1,22 @@
+[
+  {
+    "fixture": "good",
+    "exit_code": 0,
+    "expected_rejected": false
+  },
+  {
+    "fixture": "missing_closure_member",
+    "exit_code": 1,
+    "expected_rejected": true
+  },
+  {
+    "fixture": "spurious_axiom",
+    "exit_code": 1,
+    "expected_rejected": true
+  },
+  {
+    "fixture": "inconsistent_edge",
+    "exit_code": 1,
+    "expected_rejected": true
+  }
+]

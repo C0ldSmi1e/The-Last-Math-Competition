@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "exact_tool_checks": [
+    {
+      "tool": "verify.py",
+      "exact_tested_bytes": true,
+      "sha256": "7819063a85d89ad45d9fb31e282c941c3d89b27beb00d7ec459870423c078b89"
+    },
+    {
+      "tool": "test_hardening.py",
+      "exact_tested_bytes": true,
+      "sha256": "598da8afd239ec02a5b2a1a9a6914bf7bd06117653289dab148ab5094c6ada3f"
+    },
+    {
+      "tool": "check_audit_graph.py",
+      "exact_tested_bytes": true,
+      "sha256": "c4b518f02a17db3778a09ddc3987016973ad67ff057c9d03e1b76ed3eeabae61"
+    },
+    {
+      "tool": "templates/ClosureAudit.lean.txt",
+      "exact_tested_bytes": true,
+      "sha256": "65cb76b47ad6bcfa369c446bc16887a8c6ec8409db96c21d17c9f7aca31babbd"
+    }
+  ],
+  "archives": [
+    {
+      "archive": "evidence/final-raw.tar.gz",
+      "members": 232,
+      "all_hashes_and_lengths_verified": true,
+      "compiled_artifacts_and_git_excluded": true
+    },
+    {
+      "archive": "evidence/first-stopped-run.tar.gz",
+      "members": 167,
+      "all_hashes_and_lengths_verified": true,
+      "compiled_artifacts_and_git_excluded": true
+    },
+    {
+      "archive": "evidence/preparation-raw.tar.gz",
+      "members": 216,
+      "all_hashes_and_lengths_verified": true,
+      "compiled_artifacts_and_git_excluded": true
+    }
+  ],
+  "original_final_report_and_summaries_unchanged": true,
+  "frozen_manifest_verified": true,
+  "relocated_hardening_controls": "PASS",
+  "relocated_graph_checker": "PASS",
+  "archive_duplicate_audit_reference_verified": true
+}

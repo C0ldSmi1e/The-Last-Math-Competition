@@ -1,0 +1,75 @@
+from pathlib import Path
+import hashlib,json,shutil,tarfile,io,gzip,difflib
+P=Path
+root=P('/private/tmp/tlmc3348-engineering-package');root.mkdir(exist_ok=False)
+dest=root/'verification';dest.mkdir()
+final=P('/private/tmp/tlmc3348-independent-engineering-final')
+first=P('/private/tmp/tlmc3348-independent-engineering')
+prep=P('/private/tmp/tlmc3348-engineering-prep')
+tools=P('/private/tmp/tlmc3348-engineering-tools')
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def copy(src,relative):
+ target=dest/relative;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,target)
+ assert src.read_bytes()==target.read_bytes()
+def add_tree(mapping,source,prefix):
+ for f in sorted(source.rglob('*')):
+  if not f.is_file():continue
+  rel=f.relative_to(source)
+  if any(x in {'project','.lake','.git','__pycache__'} for x in rel.parts):continue
+  if f.suffix in {'.olean','.ilean','.pyc','.o','.a','.dylib','.so'}:continue
+  name=str(P(prefix)/rel)
+  if f.suffix=='.lean':name+='.txt'
+  assert name not in mapping
+  mapping[name]=f.read_bytes()
+def add_generated(mapping,project,prefix):
+ if not project.exists():return
+ for f in sorted(project.rglob('*.lean')):
+  rel=f.relative_to(project)
+  if '.lake' in rel.parts or rel.name in {'Counterexample.lean','Checks.lean'}:continue
+  mapping[str(P(prefix)/rel)+'.txt']=f.read_bytes()
+def archive(name,mapping):
+ rows={key:{'sha256':sha(b),'bytes':len(b)} for key,b in sorted(mapping.items())}
+ raw={'files':rows,'file_count':len(rows),'uncompressed_bytes':sum(len(b) for b in mapping.values()),'manifest_excludes_itself':True}
+ manifest=(json.dumps(raw,indent=2,sort_keys=True)+'\n').encode()
+ mapping={**mapping,'RAW-MANIFEST.json':manifest}
+ target=dest/'evidence'/f'{name}.tar.gz';target.parent.mkdir(parents=True,exist_ok=True)
+ with target.open('wb') as stream:
+  with gzip.GzipFile(filename='',mode='wb',fileobj=stream,mtime=0) as zipped:
+   with tarfile.open(fileobj=zipped,mode='w|') as tar:
+    for filename,data in sorted(mapping.items()):
+     info=tarfile.TarInfo(filename);info.size=len(data);info.mode=0o644;info.mtime=0
+     tar.addfile(info,io.BytesIO(data))
+ (dest/'evidence'/f'{name}.manifest.json').write_bytes(manifest)
+ return {'archive':str(target.relative_to(dest)),'files':len(mapping),'bytes':target.stat().st_size,'sha256':sha(target.read_bytes())}
+for name in ['verify.py','test_hardening.py','check_audit_graph.py','templates/ClosureAudit.lean.txt']:
+ copy(tools/name,P('tools')/name)
+copy(P('/private/tmp/tlmc3348-review-input/frozen.json'),'frozen.json')
+for name in ['lean-toolchain','lake-manifest.json']:
+ copy(P('/private/tmp/tlmc3348-clean-author-input')/name,P('expected-pins')/name)
+for name in ['REPORT.md','summary.json','graph-consistency.json']:
+ copy(final/name,P('results')/name)
+for source,target in [(prep/'hardened-controls/summary.json','preparation-controls.json'),(prep/'hardening-adversarial/results.json','hardening-controls.json'),(prep/'graph-adversarial-corrected/results.json','graph-controls.json'),(prep/'stock-repair/summary.json','stock-repair.json')]:copy(source,P('results')/target)
+# Preserve full raw final evidence, excluding compiled projects and cache files.
+m={};add_tree(m,final,'final');add_generated(m,final/'project','final/generated-sources')
+archives=[archive('final-raw',m)]
+# The large first audit is byte-identical to the final audit and is referenced by hash.
+m={};add_tree(m,first,'first-stopped-run');add_generated(m,first/'project','first-stopped-run/generated-sources')
+audit=m.pop('first-stopped-run/declaration-audit.json');assert audit==(final/'declaration-audit.json').read_bytes()
+stopped={'status':'STOPPED_AT_IMPORT_IDENTITY_GATE','frozen_manifest_sha256':sha(P('/private/tmp/tlmc3348-review-input/frozen.json').read_bytes()),'exception':'AssertionError: Changed/unrecognized package cache import: Mathlib.Topology.Homotopy.Basic','exception_record':'Transcribed from the captured tool result; this Python exception had no separate subprocess receipt file. All 43 completed command receipts are preserved.','reason':'Nine stock modules were absent from pre-build cache and were compiled by Lake. Fresh source build, replay, and declaration audit succeeded before the identity gate stopped.','audit_reuse':{'archive':'final-raw.tar.gz','member':'final/declaration-audit.json','sha256':sha(audit),'bytes':len(audit)},'new_or_changed_modules':json.loads((prep/'stock-cache-repair-needed.json').read_text()),'subsequent_action':'Each missing pinned stock source was compiled separately with strict flags, followed by a fresh complete review. No author compiled artifact was reused.'}
+m['first-stopped-run/STOPPED-RUN-RECORD.json']=(json.dumps(stopped,indent=2)+'\n').encode()
+(dest/'results/stopped-run.json').write_text(json.dumps(stopped,indent=2)+'\n')
+archives.append(archive('first-stopped-run',m))
+# Preserve original prep evidence and every historical operational Lean source as text.
+m={};add_tree(m,prep,'preparation')
+for run in ['base-controls','hardened-controls','stock-repair','hardening-adversarial']:
+ add_generated(m,prep/run/'project',f'preparation/{run}/generated-sources')
+current=(tools/'check_audit_graph.py').read_text()
+old=current.replace("        if root['trust_enforced']: assert node['kind']!='unavailable'", "        assert node['kind']!='unavailable'")
+assert old!=current
+m['preparation/graph-checker-correction/initial-helper.reconstructed.py.txt']=old.encode()
+m['preparation/graph-checker-correction/final-helper.exact.py.txt']=current.encode()
+m['preparation/graph-checker-correction/correction.diff']=''.join(difflib.unified_diff(old.splitlines(True),current.splitlines(True),fromfile='initial-helper.reconstructed.py.txt',tofile='final-helper.exact.py.txt')).encode()
+m['preparation/graph-checker-correction/README.md']=b'''The initial supplemental graph checker rejected the genuine good operational fixture because generated unsafe compiler-stage roots can reference an unavailable _obj sentinel. The main inspector already inventories such runtime roots separately and does not enforce mathematical trust on them. The helper was corrected to reject unavailable nodes only on trust-enforced roots, then the full good/corrupted graph controls were rerun successfully. Candidate proof inventory has zero unsafe roots and zero missing dependencies. The initial source file here is reconstructed by reversing the single recorded one-line correction; it is not represented as a contemporaneously saved original. The first failure's good input/stdout/stderr and corrected controls are original retained bytes. This correction did not alter the main verifier or proof.\n'''
+archives.append(archive('preparation-raw',m))
+(dest/'ARCHIVES.json').write_text(json.dumps(archives,indent=2)+'\n')
+print(json.dumps(archives,indent=2))

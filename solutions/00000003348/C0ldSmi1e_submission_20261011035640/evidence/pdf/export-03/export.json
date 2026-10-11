@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/private/tmp/tlmc310-pdf/tectonic",
+    "--keep-logs",
+    "--outdir",
+    "/private/tmp/tlmc3348-pdf/export-03",
+    "/private/tmp/tlmc3348-clean-proof/report.tex"
+  ],
+  "started_at": "2026-10-11T03:45:49.915914+00:00",
+  "completed_at": "2026-10-11T03:45:50.277796+00:00",
+  "exit_code": 0,
+  "source_sha256": "66c95372c4aa3614cbc1a5f9d439c6991b0f3a897f3419dc7d3b00673e547210",
+  "stdout_sha256": "f3a0af5b9d6445ec17ede8710d56763545b326d8d8f1154f2eb7fdce02cc3a18",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,70 @@
+{
+  "status": "STOPPED_AT_IMPORT_IDENTITY_GATE",
+  "frozen_manifest_sha256": "5e38bba343cb2bea78ee005d6a52b8a66846455dfe795664639c9cc020b42a5f",
+  "exception": "AssertionError: Changed/unrecognized package cache import: Mathlib.Topology.Homotopy.Basic",
+  "exception_record": "Transcribed from the captured tool result; this Python exception had no separate subprocess receipt file. All 43 completed command receipts are preserved.",
+  "reason": "Nine stock modules were absent from pre-build cache and were compiled by Lake. Fresh source build, replay, and declaration audit succeeded before the identity gate stopped.",
+  "audit_reuse": {
+    "archive": "final-raw.tar.gz",
+    "member": "final/declaration-audit.json",
+    "sha256": "c96af01519e3bd2f9d2bfc79537bd834dc2b7e4bd4bebc06379e9d40f8a3f4e0",
+    "bytes": 40390604
+  },
+  "new_or_changed_modules": [
+    {
+      "module": "Mathlib.Topology.Homotopy.Basic",
+      "relative": "Mathlib/Topology/Homotopy/Basic.olean",
+      "before": null,
+      "after": "0bc07cb477480ec743d982bfdc79a86c314b1e2de35747fb456228b47f4d72d9"
+    },
+    {
+      "module": "Mathlib.Topology.Homotopy.Path",
+      "relative": "Mathlib/Topology/Homotopy/Path.olean",
+      "before": null,
+      "after": "f38b57e979ab475ce2f1b8070ba8af7bd7a601f4d484b43cb15b8efe71922522"
+    },
+    {
+      "module": "Mathlib.Topology.Homotopy.Equiv",
+      "relative": "Mathlib/Topology/Homotopy/Equiv.olean",
+      "before": null,
+      "after": "be0b428b985ebe1b62991e80d95e369978b667d60413ab6207ef3baf80584550"
+    },
+    {
+      "module": "Mathlib.Topology.Homotopy.Contractible",
+      "relative": "Mathlib/Topology/Homotopy/Contractible.olean",
+      "before": null,
+      "after": "eade090e472f5a4965a1ead0ae5b89e6300b4ecfcf2c3dc6e911a5f1600b6780"
+    },
+    {
+      "module": "Mathlib.Analysis.Convex.Contractible",
+      "relative": "Mathlib/Analysis/Convex/Contractible.olean",
+      "before": null,
+      "after": "9cbb57cc8ac61f3fc65ed0c27dd2ae72a8e9d6805851096c0c4cc24437fef4b0"
+    },
+    {
+      "module": "Mathlib.Algebra.Module.Card",
+      "relative": "Mathlib/Algebra/Module/Card.olean",
+      "before": null,
+      "after": "9e2e62c1553ed1cadf7ba2b321ba0575c057832105a9e3cea61fa17228f7c88a"
+    },
+    {
+      "module": "Mathlib.SetTheory.Cardinal.CountableCover",
+      "relative": "Mathlib/SetTheory/Cardinal/CountableCover.olean",
+      "before": null,
+      "after": "d4a1c723fd20ccf03d3b1d59fef44f110ccfe966be5cc6705cbe1f1c0288460c"
+    },
+    {
+      "module": "Mathlib.Topology.Algebra.Module.Cardinality",
+      "relative": "Mathlib/Topology/Algebra/Module/Cardinality.olean",
+      "before": null,
+      "after": "27f3144c3e84ee3b3429792d4e7e4f8c51f01124cb5aa52342be78fdfedb6ee7"
+    },
+    {
+      "module": "Mathlib.Analysis.NormedSpace.Connected",
+      "relative": "Mathlib/Analysis/NormedSpace/Connected.olean",
+      "before": null,
+      "after": "2a0a6ca3459f385ed5d7dbffaf4bf73d26cd60f4de3bfc7213ab21baa6b9c32d"
+    }
+  ],
+  "subsequent_action": "Each missing pinned stock source was compiled separately with strict flags, followed by a fresh complete review. No author compiled artifact was reused."
+}

@@ -1,0 +1,26 @@
+✔ [2811/2814] Built Counterexample
+ℹ [2813/2814] Built Checks
+info: ././././Checks.lean:26:0: 'ExpandingJuliaCounterexample.squarePolynomial_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:27:0: 'ExpandingJuliaCounterexample.square_iterate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:28:0: 'ExpandingJuliaCounterexample.filledJulia_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:29:0: 'ExpandingJuliaCounterexample.julia_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:30:0: 'ExpandingJuliaCounterexample.square_iterate_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:31:0: 'ExpandingJuliaCounterexample.norm_deriv_square_iterate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:32:0: 'ExpandingJuliaCounterexample.norm_real_fderiv_square_iterate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ././././Checks.lean:33:0: 'ExpandingJuliaCounterexample.square_local_distance_expansion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ././././Checks.lean:34:0: 'ExpandingJuliaCounterexample.square_uniformlyExpanding' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:35:0: 'ExpandingJuliaCounterexample.julia_square_connected' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:36:0: 'ExpandingJuliaCounterexample.cantorType_totallyDisconnected' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:37:0: 'ExpandingJuliaCounterexample.julia_square_not_cantorType' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:38:0: 'ExpandingJuliaCounterexample.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././Checks.lean:39:0: 'ExpandingJuliaCounterexample.not_every_expanding_polynomial_has_cantor_julia' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ././././Checks.lean:40:0: 'ExpandingJuliaCounterexample.not_every_expanding_polynomial_satisfies_conjunction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully.

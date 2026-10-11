@@ -1,0 +1,18 @@
+from pathlib import Path
+import json,subprocess,copy,hashlib
+p=Path('/private/tmp/tlmc3348-engineering-prep/graph-adversarial-corrected');p.mkdir(exist_ok=False)
+script=Path('/private/tmp/tlmc3348-engineering-tools/check_audit_graph.py')
+data=json.loads(Path('/private/tmp/tlmc3348-engineering-prep/hardened-controls/control-Good.json').read_text());results=[]
+for label,mutate in [('good',None),('missing_closure_member',lambda d:d['declarations'][0]['closure'].pop()),('spurious_axiom',lambda d:d['declarations'][0]['axioms'].append('Fake.Axiom')),('inconsistent_edge',lambda d:d['dependency_graph'][0]['dependencies'].append('Fake.Dependency'))]:
+ d=copy.deepcopy(data)
+ if mutate:mutate(d)
+ f=p/(label+'.json');f.write_text(json.dumps(d))
+ r=subprocess.run(['python3',str(script),str(f)],capture_output=True,text=True)
+ (p/(label+'.stdout')).write_text(r.stdout);(p/(label+'.stderr')).write_text(r.stderr)
+ assert (r.returncode==0)==(mutate is None),(label,r.stdout,r.stderr)
+ results.append({'fixture':label,'exit_code':r.returncode,'expected_rejected':mutate is not None})
+(p/'results.json').write_text(json.dumps(results,indent=2)+'\n')
+identity=Path('/private/tmp/tlmc3348-engineering-prep/hardened-tool-identities.json')
+files=sorted(Path('/private/tmp/tlmc3348-engineering-tools').rglob('*.py'))+sorted(Path('/private/tmp/tlmc3348-engineering-tools/templates').glob('*.txt'))
+identity.write_text(json.dumps({str(f):hashlib.sha256(f.read_bytes()).hexdigest() for f in files},indent=2)+'\n')
+print(json.dumps(results))

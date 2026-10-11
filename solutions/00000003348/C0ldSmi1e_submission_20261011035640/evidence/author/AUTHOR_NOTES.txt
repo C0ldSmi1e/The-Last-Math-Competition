@@ -1,0 +1,98 @@
+Independent author record for conjecture 00000003348
+
+Initial authorized reads only:
+/private/tmp/tlmc3348-clean-author-input/original.md
+/private/tmp/tlmc3348-clean-author-input/RULES.en.md
+/private/tmp/tlmc3348-clean-author-input/RULES.zh-CN.md
+/private/tmp/tlmc3348-clean-author-input/lean-toolchain
+/private/tmp/tlmc3348-clean-author-input/lake-manifest.json
+/private/tmp/tlmc3348-clean-author-input/SHA256SUMS.json
+
+The example and mathematical strategy were independently derived after those
+reads, before reading any candidate proof, selector, reviewer, or prior agent
+materials. No repository solution or other author's output was inspected.
+Permitted stock source consulted: /private/tmp/tlmc4607-restored-stock/mathlib.
+Project prepared by root with stock-only dependencies; project mutation began
+only after root confirmed preparation.
+
+Interpretation and scope:
+The brief bilingual statement does not give an ambient category, Julia-set
+construction, definition of pressure, potential, or dimension convention. We
+use complex polynomials of degree at least two, a standard subclass of maps
+with Julia sets. The filled Julia set is defined by bounded forward orbits;
+the Julia set is its boundary. The Julia locus is where uniform exponential
+expansion is asserted, as in standard holomorphic dynamics. We do not claim
+that complex squaring is expanding on the entire complex plane. Cantor type
+means the entire Julia subspace is homeomorphic to the standard Cantor space
+N -> Bool. Merely containing an embedded Cantor subset would be a different
+claim and is not refuted. Likewise any additional unstated restriction forcing
+a disconnected repeller would be a different conjecture.
+
+The polynomial is X^2. The formalization computes actual evaluation and
+iteration. The orbit-bound characterization of the filled Julia set is proved
+in both directions. The Julia identity follows from the topological frontier
+of the closed unit disk. Every complex and real Frechet tangent derivative of
+the nth iterate has norm 2^n times the vector norm on this set. The set is
+compact and invariant, and every iterate is genuinely complex differentiable.
+A supplementary local distance estimate has radius 1/2 and expansion factor
+3/2; it is not a global distance estimate. Connectedness and distinct points
+1, -1 disprove total disconnectedness. An actual homeomorphism-to-Cantor bridge
+establishes that the Julia set is not of Cantor type.
+
+No pressure or dimension is defined or computed. The conjecture asserts both
+a Cantor-type conclusion and a dimension-pressure conclusion. Failure of the
+necessary first clause refutes that conjunction regardless of the second
+clause. The generic additionalConclusion theorem only expresses this elementary
+logical fact; its arbitrary predicate does not purport to formalize pressure.
+The normal-family definition of Julia sets and its equivalence to the boundary
+definition for degree-at-least-two polynomials is used as a standard definition
+convention supported by the reference below, not newly formalized in Lean.
+
+Primary references consulted only for standard definitions/conventions:
+1. Davoud Cheraghi, One dimensional real and complex dynamics, lecture notes
+   dated December 8, 2014, Lecture 4, p.22, filled Julia definition and Lemma 4.1.
+   https://www.ma.imperial.ac.uk/~dcheragh/Research/CourseNotes.pdf
+   PDF page index21, bounded forward orbit definition and boundary equivalence.
+2. John Milnor, Dynamics in One Complex Variable, Harvard-hosted course copy,
+   Section14, printed page14-1 (PDF page index81): expansion on a compact invariant
+   set via uniform exponential growth of all tangent vectors under derivatives
+   of iterates.
+   https://abel.math.harvard.edu/archive/118r_spring_05/docs/milnor.pdf
+No theorem about this particular counterexample was imported as an assumption.
+The web search results also exposed other standard dynamics references, but no
+competition solutions were searched for, opened, or used.
+
+Development and verification history:
+- First broad-import build emitted a manifest inputRev mismatch because config
+  initially used the resolved commit while the supplied lock recorded v4.19.0.
+  Config was aligned to v4.19.0; the supplied lock still pins exact commit
+  c44e0c8ee63ca166450922a373c7409c5d26b00b. The broad build was interrupted and
+  replaced by targeted imports.
+- First targeted build failed due to an assumed Bool module path that does not
+  exist; removed it, as needed Bool topology instances were already imported.
+- Subsequent compile reported two elaboration issues: function equality of
+  square with z^2 needed an explicit funext bridge; Nat.lt_two_pow_self has an
+  implicit argument. The first attempted simplifier fix did not resolve the
+  equality; explicit function extensionality did.
+- Core proof including local distance expansion then built successfully.
+- Final extension added real derivative bridge, arbitrary-conjunction corollary,
+  boundary checks and axiom audits. The full default project build passed with
+  warningAsError=true, recorded in build.log.
+- Checks distinguish the origin's membership in the filled Julia set from its
+  nonmembership in Julia, its vanishing derivative, zeroth-iterate derivative,
+  and the noninjectivity of squaring witnessed by 1 and -1.
+- All 15 printed axiom audits report only propext, Classical.choice, Quot.sound.
+
+Capstones in namespace ExpandingJuliaCounterexample:
+filledJulia_square
+julia_square
+norm_deriv_square_iterate
+norm_real_fderiv_square_iterate
+square_local_distance_expansion
+square_uniformlyExpanding
+julia_square_not_cantorType
+counterexample
+not_every_expanding_polynomial_has_cantor_julia
+not_every_expanding_polynomial_satisfies_conjunction
+
+No LaTeX/PDF/submission report has yet been created; root coordinates that step.

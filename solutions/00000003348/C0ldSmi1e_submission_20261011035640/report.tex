@@ -1,0 +1,212 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\J}{J}
+\newcommand{\K}{K}
+\title{Conjecture 00000003348:\\An expanding polynomial whose Julia set is a circle}
+\author{C0ldSmi1e\thanks{AI-assisted contribution using OpenAI Codex. Separate AI review records accompany the submission; no external human review or maintainer acceptance is claimed.}}
+\date{11 October 2026 (UTC)}
+\begin{document}
+\maketitle
+\begin{abstract}
+Under the standard complex-polynomial interpretation, the conjecture is false.
+For $p(z)=z^2$, the filled Julia set defined by bounded forward orbits is the
+closed unit disk, and its boundary is the unit circle. Every derivative of an
+iterate expands every tangent vector on that circle by exactly $2^n$.
+The circle is connected and has distinct points, so it is not homeomorphic to
+Cantor space. This contradicts the conjecture's necessary Cantor-type clause;
+no conclusion about the separate pressure--dimension formula is asserted.
+The complete argument is formalized in Lean 4 with pinned Mathlib dependencies.
+\end{abstract}
+
+\section{The statement and the conventions being used}
+The supplied English text is:
+\begin{quote}
+Definition: Expansive maps: uniformly expanding dynamics. Conjecture: The
+embedding of expansive kernels: the Julia set of an expansive map is of Cantor
+type, with the dimension of the Cantor set the root of the pressure equation.
+(expansive Cantor pressure dimension root)
+\end{quote}
+The Chinese text likewise specifies uniform expansion and asserts both
+Cantor type and a dimension--pressure conclusion. Both exact texts are
+preserved in \texttt{original.md}. Neither text specifies an ambient class of
+maps, an expansion locus or metric, a Julia construction, a dimension
+convention, or a pressure potential. We disclose the following standard
+complex-dynamical reading, rather than claiming that the text determines a
+unique formal proposition.
+
+We work with polynomials $p\in\C[X]$ of degree at least two, acting on $\C$
+with its usual topology and Euclidean norm. Write $f=p.\mathrm{eval}$ and
+$f^{\circ 0}=\mathrm{id}$. Define
+\[
+ \K(p)=\{z\in\C:\exists R\in\R\ \forall n\in\N,
+                   |f^{\circ n}(z)|\le R\},\qquad
+ \J(p)=\partial\K(p).
+\]
+This is the standard filled-Julia and boundary-Julia convention for
+polynomials of degree at least two; see Cheraghi~\cite{cheraghi}, Lecture~4,
+p.~22, Lemma~4.1. Lean uses this boundary definition directly. It does not
+formalize normal families or newly prove the equivalence with that alternative
+Julia definition.
+
+Uniform expansion on a compact invariant set $S$ means that there are
+$C>0$ and $L>1$ with
+\[
+ \|D(f^{\circ n})_z(v)\|\ge C L^n\|v\|
+ \quad(n\ge0,\ z\in S,\ v\in T_z\C).
+\]
+This is the usual tangent-vector definition; see Milnor~\cite{milnor},
+\S14, p.~14-1. Our Lean predicate additionally requires differentiability of
+every iterate on $\C$ and expresses the bound by the complex derivative norm.
+For the example we also prove the corresponding real tangent-plane equality,
+so this scalar presentation is connected to the actual derivative acting on
+vectors. Expansion is asserted on $\J(p)$, as is conventional for expanding
+polynomial dynamics. It is not asserted on the entire plane or sphere.
+
+Cantor type means homeomorphism of the entire Julia subspace with the standard
+Cantor space $\{0,1\}^{\N}$, with its product topology. It does not mean merely
+containing an embedded Cantor subset. The introductory phrase about
+``embedding of expansive kernels'' supplies no separately defined object or
+condition; we infer no hidden disconnectedness or inverse-branch separation
+assumption from it. A different intended ambient category or an additional
+unstated hypothesis would require a different formal statement.
+
+\section{The counterexample}
+\begin{theorem}
+For $p(X)=X^2$, the Julia set $\J(p)$ is compact and forward invariant,
+$p$ is uniformly expanding on it, and $\J(p)$ is not of Cantor type.
+\end{theorem}
+\begin{proof}
+The polynomial has degree two and evaluation $f(z)=z^2$. Induction gives
+\[
+ f^{\circ n}(z)=z^{2^n},\qquad |f^{\circ n}(z)|=|z|^{2^n}
+ \quad(n\in\N).
+\]
+If $|z|\le1$, all these norms are at most one. If $|z|>1$, then for any
+proposed bound $R$, unboundedness of ordinary powers gives $n$ with
+$R<|z|^n$. Since $n\le2^n$ and the base exceeds one,
+\[
+ R<|z|^n\le |z|^{2^n}=|f^{\circ n}(z)|,
+\]
+contradicting that bound. Thus
+\[
+ \K(p)=\{z:|z|\le1\},\qquad
+ \J(p)=\partial\K(p)=\{z:|z|=1\}.
+\]
+The last equality is the actual topological boundary of a closed ball of
+positive radius in the complex plane. The resulting sphere is compact.
+It is forward invariant because $|z^2|=|z|^2=1$ on it.
+
+Every iterate is complex differentiable and
+\[
+ (f^{\circ n})'(z)=2^n z^{2^n-1}.
+\]
+For $|z|=1$, its norm is $2^n$. The complex derivative acts by scalar
+multiplication by $(f^{\circ n})'(z)=2^n z^{2^n-1}$, hence for every complex vector $v$,
+\[
+ \|D_{\C}(f^{\circ n})_z(v)\|=2^n\|v\|.
+\]
+Restriction of scalars gives the same equality for the real derivative on
+the underlying real plane. This includes $n=0$ and proves uniform expansion
+with the common constants $C=1$ and $L=2$.
+
+The unit sphere in a real normed space of dimension greater than one is
+connected; the complex plane has real dimension two. Thus $\J(p)$ is
+connected. Both $1$ and $-1$ belong to it and are distinct. If $\J(p)$ were
+totally disconnected, its connected subset equal to itself would be a
+subsingleton, a contradiction. Finally, Cantor space is totally disconnected,
+and a homeomorphism transports that property. Therefore no homeomorphism
+$\J(p)\cong\{0,1\}^{\N}$ exists.
+\end{proof}
+
+For completeness, the formalization also proves a directly metric expansion
+estimate. If $|z|=1$ and $|z-w|\le\tfrac12$, then the triangle inequality gives
+\[
+ 2=|2z|\le |z+w|+|z-w|,\qquad |z+w|\ge\tfrac32,
+\]
+and consequently
+\[
+ |f(z)-f(w)|=|z-w|\,|z+w|\ge\tfrac32|z-w|.
+\]
+The constants are uniform; $w$ may be any complex point in this neighbourhood.
+This is a local statement: $f(1)=f(-1)$ rules out a global distance-expansion
+inequality on every pair of Julia points.
+
+\section{Why this disproves the stated conjunction}
+The example satisfies the degree and uniform-expansion hypotheses in the
+declared standard setting but fails the Cantor-type conclusion. Hence
+\[
+ \neg\,\forall p,\quad
+ [\deg p\ge2\ \wedge\ p\text{ uniformly expanding on }\J(p)]
+ \ \Longrightarrow\ \J(p)\text{ of Cantor type}.
+\]
+Adding any second conclusion to the right-hand side cannot make this
+universal assertion true. The Lean corollary makes that logical point for
+every predicate $A:\C[X]\to\mathrm{Prop}$: the conjunction
+``$\J(p)$ is of Cantor type and $A(p)$'' still fails for the example.
+This arbitrary predicate is not a substitute definition of pressure or
+dimension. Neither quantity is computed, and the pressure--dimension identity
+itself is not disproved. One false necessary conjunct suffices.
+
+The origin provides a useful scope check: it belongs to $\K(p)$ but not
+$\J(p)$, and $f'(0)=0$. Thus the example would not satisfy a different
+condition requiring expansion on all of $\C$. The submitted interpretation
+does not claim that it does.
+
+\section{Formal correspondence and verification}
+The project uses Lean 4.19.0 and Mathlib v4.19.0, with the exact dependency
+revisions recorded in \texttt{lake-manifest.json}. All mathematical declarations
+are in the namespace \path{ExpandingJuliaCounterexample}. The main file is
+\texttt{Counterexample.lean}; \texttt{Checks.lean} contains boundary checks and
+15 named axiom inspections.
+
+\begin{itemize}
+\item \path{filledJulia_square} and \path{julia_square} derive the disk
+and circle from genuine polynomial iteration, orbit boundedness, and frontier.
+\item \path{square_iterate_hasDerivAt} proves the actual derivative;
+\path{norm_real_fderiv_square_iterate} supplies the real tangent equality;
+\path{square_uniformlyExpanding} packages compactness, invariance,
+differentiability, and uniform constants.
+\item \path{cantorType_totallyDisconnected} connects the genuine
+homeomorphism definition with total disconnectedness.
+\path{julia_square_not_cantorType} proves its failure for the actual Julia set.
+\item \texttt{counterexample} is the existential capstone. The final
+conjunction corollary is
+\path{not_every_expanding_polynomial_satisfies_conjunction}.
+\end{itemize}
+
+The author build passed with warnings treated as errors. The named axiom
+inspections use only the standard foundational axioms
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+There are no admitted proofs, added axioms, or uses of \texttt{native\_decide}
+in the submitted mathematical source. Boundary checks cover the origin,
+the zeroth iterate, and noninjectivity at $1,-1$.
+No numerical experiment or auxiliary computational identity is needed for
+the mathematics. The executable verification tools and their regression
+controls are documented separately in \texttt{VERIFICATION.md}, along with
+fresh replay, dependency inspection, exact hashes, and independent AI reviews.
+Source compilation provides Lean kernel checking; a dependency inspector
+is not an independent kernel implementation. These are local validation
+records, not hosted CI success or maintainer acceptance. The example is
+classical; no claim of a new mathematical discovery is made.
+
+\begin{thebibliography}{9}
+\bibitem{cheraghi}
+Davoud Cheraghi, \emph{One dimensional real and complex dynamics}, lecture
+notes, 8 December 2014, Lecture 4, p.~22, Lemma~4.1.
+\url{https://www.ma.imperial.ac.uk/~dcheragh/Research/CourseNotes.pdf}.
+\bibitem{milnor}
+John Milnor, \emph{Dynamics in One Complex Variable}, course copy,
+\S14, p.~14-1, definition of expansion on a compact invariant set.
+\url{https://abel.math.harvard.edu/archive/118r_spring_05/docs/milnor.pdf}.
+\end{thebibliography}
+\end{document}

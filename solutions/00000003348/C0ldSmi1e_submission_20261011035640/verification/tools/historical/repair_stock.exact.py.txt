@@ -1,0 +1,25 @@
+import importlib.util,json,pathlib,os,hashlib
+P=pathlib.Path
+spec=importlib.util.spec_from_file_location("verifier", "/private/tmp/tlmc3348-engineering-tools/verify.py")
+v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
+r=v.Review("/private/tmp/tlmc3348-review-stock/mathlib", "/private/tmp/tlmc310-runtime/lean-4.19.0-darwin_aarch64/bin", "/private/tmp/tlmc3348-engineering-prep/stock-repair")
+r.env["PATH"]="/private/tmp/tlmc3348-independent-engineering/offline-bin:"+r.env["PATH"]
+r.env.pop("LEAN_PATH",None)
+r.run([r.leanbin/"lake","--no-cache","--wfail","build","Mathlib.Analysis.NormedSpace.Connected"],cwd=r.stock)
+r.env["LEAN_PATH"]=":".join(map(str,r.module_paths))
+modules=[row["module"] for row in json.loads(P("/private/tmp/tlmc3348-engineering-prep/stock-cache-repair-needed.json").read_text())]
+remaining=set(modules);built=[]
+while remaining:
+    ready=[]
+    for module in sorted(remaining):
+        source=r.stock/P(*module.split(".")).with_suffix(".lean")
+        imports=v.re.findall(r"(?m)^\s*import\s+([A-Za-z_][A-Za-z_0-9.]*)",v.code_only(source.read_text()))
+        if not(set(imports)&remaining):ready.append(module)
+    assert ready
+    for module in ready:
+        relative=P(*module.split(".")).with_suffix(".lean")
+        output=r.stock/".lake/build/lib/lean"/relative.with_suffix(".olean")
+        r.run([r.leanbin/"lean","-DwarningAsError=true","-o",output,relative],cwd=r.stock)
+        built.append({"module":module,"source_sha256":v.sha(r.stock/relative),"olean_sha256":v.sha(output)})
+        remaining.remove(module)
+v.save(r.out/"summary.json",{"status":"PASS","purpose":"Build nine previously missing pinned Mathlib modules in review-owned stock; then replay each with warningAsError=true.","modules":built,"authored_modules_reused":False,"full_mathlib_rebuild":False})

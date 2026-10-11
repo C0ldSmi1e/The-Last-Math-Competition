@@ -1,0 +1,53 @@
+{
+  "authored_modules_reused": false,
+  "full_mathlib_rebuild": false,
+  "modules": [
+    {
+      "module": "Mathlib.Algebra.Module.Card",
+      "olean_sha256": "9e2e62c1553ed1cadf7ba2b321ba0575c057832105a9e3cea61fa17228f7c88a",
+      "source_sha256": "07c5bd60723e8fa90ca8e8cb4faea85f1ace44096b55c01dd3e6385e7cfb0cd7"
+    },
+    {
+      "module": "Mathlib.SetTheory.Cardinal.CountableCover",
+      "olean_sha256": "d4a1c723fd20ccf03d3b1d59fef44f110ccfe966be5cc6705cbe1f1c0288460c",
+      "source_sha256": "38d584af268766f0e09f008d85d8927a4e76558bff20ed23c22d9cba09a13e14"
+    },
+    {
+      "module": "Mathlib.Topology.Homotopy.Basic",
+      "olean_sha256": "0bc07cb477480ec743d982bfdc79a86c314b1e2de35747fb456228b47f4d72d9",
+      "source_sha256": "cf556b78fdd2311b8d065f3b627a087b555b2ae7bd488866a0e17c9b04bb4e1b"
+    },
+    {
+      "module": "Mathlib.Topology.Algebra.Module.Cardinality",
+      "olean_sha256": "27f3144c3e84ee3b3429792d4e7e4f8c51f01124cb5aa52342be78fdfedb6ee7",
+      "source_sha256": "d9825df746e7c717a71432a7e733fcc8a4f9f9da1b66a6e48a9fd78ae171fc41"
+    },
+    {
+      "module": "Mathlib.Topology.Homotopy.Equiv",
+      "olean_sha256": "be0b428b985ebe1b62991e80d95e369978b667d60413ab6207ef3baf80584550",
+      "source_sha256": "ee08fc45be8fb03a3791478740b6b19a82ca24028b8ecb4acf16b9d32b704042"
+    },
+    {
+      "module": "Mathlib.Topology.Homotopy.Path",
+      "olean_sha256": "f38b57e979ab475ce2f1b8070ba8af7bd7a601f4d484b43cb15b8efe71922522",
+      "source_sha256": "48f201b306478cfc5e6a889e776fcefa09874acf79a187e1773057b7188aadd5"
+    },
+    {
+      "module": "Mathlib.Topology.Homotopy.Contractible",
+      "olean_sha256": "eade090e472f5a4965a1ead0ae5b89e6300b4ecfcf2c3dc6e911a5f1600b6780",
+      "source_sha256": "544abfc7c0ed74833111515f7f93fcf189bc89a70e4dfb3d99c5fb0ec8ecf8e1"
+    },
+    {
+      "module": "Mathlib.Analysis.Convex.Contractible",
+      "olean_sha256": "9cbb57cc8ac61f3fc65ed0c27dd2ae72a8e9d6805851096c0c4cc24437fef4b0",
+      "source_sha256": "5e43955862d37b74c6017b1d4404abc31690434e0cf4c2e92cd01e5ed8748e9c"
+    },
+    {
+      "module": "Mathlib.Analysis.NormedSpace.Connected",
+      "olean_sha256": "2a0a6ca3459f385ed5d7dbffaf4bf73d26cd60f4de3bfc7213ab21baa6b9c32d",
+      "source_sha256": "a5700c5df59faa31a8750eb6963463038fd6fcd856c4fbd70de14073cf0fc6e1"
+    }
+  ],
+  "purpose": "Build nine previously missing pinned Mathlib modules in review-owned stock; then replay each with warningAsError=true.",
+  "status": "PASS"
+}

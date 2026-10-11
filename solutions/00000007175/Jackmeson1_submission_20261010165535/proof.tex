@@ -1,0 +1,29 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xurl}
+\sloppy
+\let\oldus\_ \renewcommand{\_}{\oldus\allowbreak}
+\newtheorem{thm}{Theorem}
+\title{Conjecture 00000007175: symmetric tridiagonal realizability and the leading-minor chain}
+\date{}
+\begin{document}
+\maketitle
+\section*{Conjecture and reading}
+Conjecture: ``Any real spectrum is realizable by a symmetric tridiagonal, and the positivity of the tridiagonal is the principal-minor chain.'' We formalize two clauses.
+\begin{itemize}
+\item \texttt{Realizable}: for every $n$ and every $\lambda:\{1..n\}\to\mathbb R$ (repetitions allowed) there is a real symmetric tridiagonal $n\times n$ matrix $A$ with $\chi_A(X)=\prod_i (X-\lambda_i)$, so multiplicities are retained.
+\item \texttt{MinorCriterion}: for every $n$ and every real symmetric tridiagonal $A$, $A$ is positive definite iff $\det A_{[k]}>0$ for all $0\le k\le n$, where $A_{[k]}$ is the top-left $k\times k$ block.
+\end{itemize}
+Tridiagonal means $A_{ij}=0$ whenever $|i-j|\ge 2$. The Lean statement is the block between STATEMENT BEGIN/END; \texttt{Claim := Realizable $\wedge$ MinorCriterion}. Not formalized: any other reading of ``chain'' (e.g.\ a three-term recurrence), and any link between the criterion and positivity of the realized eigenvalues.
+
+\section*{Proof}
+\textbf{Realizability.} The diagonal matrix $\mathrm{diag}(\lambda)$ is symmetric, tridiagonal, and $\chi=\prod(X-\lambda_i)$ (Mathlib \texttt{Matrix.charpoly\_diagonal}). Lean: \texttt{C7175.realizable}.
+
+\textbf{Criterion, $\Rightarrow$.} A principal submatrix of a positive definite matrix is positive definite (\texttt{Matrix.PosDef.submatrix} along the injective \texttt{Fin.castLE}), and positive definite matrices have positive determinant (\texttt{Matrix.PosDef.det\_pos}). Lean: \texttt{C7175.posDef\_minors}.
+
+\textbf{Criterion, $\Leftarrow$} (Sylvester), for every real symmetric matrix, by induction on $n$. For $n=0$ the statement is vacuous. For $n+1$, let $B$ be the leading $n\times n$ block; its leading minors are those of $A$, so $B$ is positive definite by induction. Reindex $\mathrm{Fin}(n+1)\simeq \mathrm{Fin}\,n\oplus\mathrm{Fin}\,1$ so $A=\begin{pmatrix}B&b\ b^T&c\end{pmatrix}$. Since $B$ is invertible, $\det A=\det B\cdot\det S$ with Schur complement $S=c-b^TB^{-1}b$ (\texttt{Matrix.det\_fromBlocks$_{11}$}). As $\det A>0$ and $\det B>0$, $S>0$. By \texttt{Matrix.PosDef.fromBlocks$_{11}$} (Schur complement criterion), $A$ is positive semidefinite; being of nonzero determinant it is positive definite (\texttt{Matrix.PosSemidef.posDef\_iff\_det\_ne\_zero}). Lean: \texttt{C7175.minors\_posDef}. The tridiagonal hypothesis is not needed.
+
+\section*{Lean and audit}
+File \texttt{Conjecture7175/Basic.lean} (139 lines). Theorems: \texttt{C7175.realizable}, \texttt{C7175.minorCriterion}, \texttt{C7175.main : Claim}. \texttt{\#print axioms C7175.main} gives: propext, Classical.choice, Quot.sound. No sorry, no native\_decide.
+\end{document}

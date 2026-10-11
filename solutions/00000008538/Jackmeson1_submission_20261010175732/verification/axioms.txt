@@ -1,0 +1,2 @@
+'C8538.main' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C8538.finite_main' depends on axioms: [propext, Classical.choice, Quot.sound]

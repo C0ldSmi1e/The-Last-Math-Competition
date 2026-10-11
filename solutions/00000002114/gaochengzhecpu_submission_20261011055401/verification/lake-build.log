@@ -1,0 +1,9 @@
+ℹ [1732/1733] Built Main
+info: .\.\.\.\Main.lean:242:0: 'Conjecture2114.mass_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: .\.\.\.\Main.lean:243:0: 'Conjecture2114.mass_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: .\.\.\.\Main.lean:244:0: 'Conjecture2114.prob_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: .\.\.\.\Main.lean:245:0: 'Conjecture2114.tail_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: .\.\.\.\Main.lean:246:0: 'Conjecture2114.right_log_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: .\.\.\.\Main.lean:247:0: 'Conjecture2114.left_log_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: .\.\.\.\Main.lean:248:0: 'Conjecture2114.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully.

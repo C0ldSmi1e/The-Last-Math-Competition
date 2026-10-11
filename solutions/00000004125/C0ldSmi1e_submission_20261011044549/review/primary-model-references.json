@@ -1,0 +1,20 @@
+{
+  "accessed_at": "2026-10-11T04:21:13.609497+00:00",
+  "purpose": "Primary references for names of concrete models only; mathematical facts used in the disproof must be formally proved locally.",
+  "references": [
+    {
+      "authors": "K. R. Goodearl and F. Wehrung",
+      "title": "The complete dimension theory of partially ordered systems with equivalence and orthogonality",
+      "url": "https://arxiv.org/pdf/math/0403057",
+      "location": "Proof of Lemma 5-1.10, PDF page92 (zero-based91), printed page92",
+      "support": "Identifies the random algebra with Borel subsets of the real unit interval modulo null sets, with induced Lebesgue measure."
+    },
+    {
+      "authors": "Saharon Shelah and Jindrich Zapletal",
+      "title": "Embeddings of Cohen algebras",
+      "url": "https://arxiv.org/abs/math/9502230",
+      "location": "Abstract; Adv. Math.126(1997),93-118",
+      "support": "Identifies the Cohen algebra C(kappa) with regular-open sets in binary product space for infinite kappa; the countable instance gives regular opens of Cantor space."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS_ROOT_FULL_PDF_INSPECTION",
+  "report_tex_sha256": "a5b83282a0f692c6a14e4aa922a1878913e02c81b5faa98783f9c838e3970611",
+  "pdf_sha256": "f506db0e729193b4dcc2484080807d6052677c860f24fb51b2daa072750d9917",
+  "pages": 4,
+  "all_pages_visually_inspected": true,
+  "no_missing_glyphs_clipping_overlap_or_overfull_boxes": true,
+  "native_compiler_success": true,
+  "export_exit_code": 0,
+  "page_image_hashes": {
+    "page-1.png": "7145f78233f797526a875c3a767d0c406061faff2c06826f950ad2daf268802f",
+    "page-2.png": "7e6322228f93c2a45aa14f5135e19f86de9710c8fe8ca3bcf7c342d523087cac",
+    "page-3.png": "9b08c7e8d6b7a9438d87dbbff918d6e409d74589b4a08794f0b36fedc8880938",
+    "page-4.png": "f13ec39760a5bdd4e2b53e43a57ec8cca8615d7673f51a2bfaa877cd05dd0be5"
+  },
+  "prior_export": "/private/tmp/tlmc4125-pdf-export-1",
+  "repairs": [
+    "Split final mapping-table row to avoid overfull box.",
+    "Clarified that supported representative depends on chosen Borel representative; no unique quotient representative claim."
+  ],
+  "mathematical_source_unchanged": true,
+  "recorded_at": "2026-10-11T04:37:58.533651+00:00"
+}

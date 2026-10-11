@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/private/tmp/tlmc4125-engineering-package/tools/verify_package.py",
+    "/private/tmp/tlmc4125-engineering-package"
+  ],
+  "returncode": 0,
+  "seconds": 0.0974891185760498,
+  "stdout_sha256": "9f760ac2c0d174eacbca54b8d545649b528280a2d7851a3f75a0c4e81bba3e37",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

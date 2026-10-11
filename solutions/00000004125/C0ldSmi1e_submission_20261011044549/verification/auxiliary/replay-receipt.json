@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/private/tmp/tlmc4125-engineering-prep/auxiliary-finite-review/reviewed_check_finite_algebras.py"
+  ],
+  "cwd": "/private/tmp/tlmc4125-engineering-prep/auxiliary-finite-review",
+  "returncode": 0,
+  "seconds": 0.028074026107788086,
+  "runtime": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 17.0.0 (clang-1700.4.4.1)]",
+  "source_sha256": "378fd3082339872d033869d54e866613bccc49c4c0a9d020d838c165c5d58e90",
+  "stdout_sha256": "b95f2a855c8d758c99d7bab2de6fca3cb4b0225deacb6461bc14ae2d0336ff3a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

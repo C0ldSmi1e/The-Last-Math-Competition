@@ -1,0 +1,13 @@
+{
+  "status": "PASS_ROOT_PREPARATION_EVIDENCE_REVIEW",
+  "manifest_members_rehashed": 293,
+  "manifest_sha256": "4d55a3a7630cee29efc2534b6ab885ddc9e1766267a16da96fd836253fd9e24d",
+  "command_receipts_rehashed": 58,
+  "tool_bytes_equal_previously_reviewed_toolkit": true,
+  "hardening_controls": 7,
+  "lean_controls": 6,
+  "independent_auxiliary_output_equal": true,
+  "candidate_proof_still_pending": true,
+  "root_validation_note": "Initial receipt checker compared numeric status1 to string nonzero on expected-failing adversarial control; reviewed actual forbidden-axiom rejection and corrected expected-status interpretation. No toolkit or candidate proof was changed.",
+  "recorded_at": "2026-10-11T04:24:09.168544+00:00"
+}

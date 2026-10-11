@@ -1,0 +1,11 @@
+{
+  "status": "PASS_ROOT_FINAL_PACKAGE_REVIEW",
+  "engineering_bundle_files": 28,
+  "engineering_archive_members": 583,
+  "review_archive_members": 347,
+  "engineering_manifest_sha256": "2c62d60ea4d7966d5277f7a9d9e3bda323eaad0e21060e33b858bd35b696ebfd",
+  "exact_frozen_source_identity": true,
+  "only_two_active_lean_modules": true,
+  "new_portable_helpers_reviewed_and_execution_receipts_validated": true,
+  "report_full_review_and_all_pages_visual_check": "PASS"
+}

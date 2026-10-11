@@ -1,0 +1,44 @@
+{
+  "auxiliary_finite_code_review_and_replay": "PASS",
+  "cache_repairs": 0,
+  "capstones_checked": 9,
+  "compiler_runtime_declarations": 54,
+  "failed_candidate_runs": 0,
+  "forbidden_proof_dependencies": [],
+  "fresh_strict_lake_build": "PASS",
+  "frozen_manifest_sha256": "592d1b211f14686d58e92df8c34a4f90a1d8ca2c7bb8d0c8b7101c096352ae56",
+  "full_graph_checker": "PASS",
+  "hardening_controls": 7,
+  "limits": [
+    "Cached dependency imports byte-matched supplied stock; full Mathlib was not rebuilt.",
+    "Supplied Lean runtime was not bootstrapped.",
+    "Semantic and PDF review are separate.",
+    "Unsafe generated runtime declarations are inventoried separately and require explicit classification if present.",
+    "PATH wrappers are safeguards only, not OS network isolation.",
+    "Auxiliary/configuration/metaprogrammatic source requires separate side-effect review.",
+    "Closure audit inspects dependencies; source compilation supplies kernel checking."
+  ],
+  "negative_graph_controls": 5,
+  "operational_controls": 6,
+  "original_driver_status": "PASS_PENDING_RUNTIME_HELPER_CLASSIFICATION",
+  "owned_declarations": 134,
+  "permitted_mathematical_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "resolved_imports": 4056,
+  "runtime_helper_classification": "CLASSIFIED_NOT_PROOF_DEPENDENCIES",
+  "safe_closure_declarations": 28360,
+  "safe_mathematical_declarations": 80,
+  "scope": "Independent engineering verification of frozen source and dependency trust; mathematical semantic and PDF review are separate.",
+  "source_side_effect_review": "PASS",
+  "status": "PASS",
+  "strict_direct_source_replay": [
+    "Conjecture4125.lean",
+    "Verification.lean"
+  ],
+  "total_closure_declarations": 28481,
+  "validated_command_receipts": 62,
+  "verification_module_note": "Verification.lean has zero exported declarations; its anonymous examples and nine print-axioms checks were all freshly compiled with warnings treated as errors."
+}

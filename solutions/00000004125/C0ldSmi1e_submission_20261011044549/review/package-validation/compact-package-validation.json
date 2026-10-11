@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "bundle_manifest_sha256": "2c62d60ea4d7966d5277f7a9d9e3bda323eaad0e21060e33b858bd35b696ebfd",
+  "bundle_files": 28,
+  "archive_members": 583,
+  "package_bytes": 9617792,
+  "verification_archive_bytes": 8242335,
+  "active_lean_files": [],
+  "all_five_derived_mutants_reconstructed": [
+    {
+      "file": "omitted_transitive_closure_member.json",
+      "sha256": "11d1611f4568242ae8d03f1586672e4f8c4cea9a267f32741c08865dda6834f9",
+      "bytes": 76268940,
+      "historical_identity_matched": true
+    },
+    {
+      "file": "unsafe_dependency_with_consistent_summaries.json",
+      "sha256": "92644e3e69999cba24f7496bf5e18383a5c2d898e9c62f885a5589a492a6d154",
+      "bytes": 76269126,
+      "historical_identity_matched": true
+    },
+    {
+      "file": "forbidden_axiom_with_consistent_summaries.json",
+      "sha256": "62d4c4dfa1075763bceced0c3963aadffe6bdbd334de8e3512700bfb39dec486",
+      "bytes": 76269101,
+      "historical_identity_matched": true
+    },
+    {
+      "file": "unavailable_trusted_dependency.json",
+      "sha256": "b45b87ed9f5652b9b55a26b64ee9cdbf21e1dba44bb57519e04a23670f8cc581",
+      "bytes": 76268959,
+      "historical_identity_matched": true
+    },
+    {
+      "file": "inconsistent_dependency_edge.json",
+      "sha256": "771fc45b1ac61ccc09bb2ab1b497e2910d04fb5bdd65c2ae260f34e69aa7244f",
+      "bytes": 76268934,
+      "historical_identity_matched": true
+    }
+  ],
+  "authoritative_audit_retained": true
+}

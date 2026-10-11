@@ -1,0 +1,851 @@
+{
+  "compiler_stage_definitions": 47,
+  "count": 54,
+  "evidence": [
+    "Owned source and configuration were fully read: no authored axiom, unsafe declaration, custom elaborator, macro, or execution hook.",
+    "All owned oleans were created by fresh strict compilation from the five frozen source/configuration files; no author olean was copied.",
+    "Every helper is attributed to the Conjecture4125 module and matches compiler-stage or specialization names generated while compiling its ordinary definitions.",
+    "All 80 safe owned roots and their full exported transitive closures exclude every unsafe/helper node and every nonstandard axiom.",
+    "The original full audit is retained, including runtime-only lcProof, specialization and erased-type findings. These findings have not been relabeled as mathematical dependencies."
+  ],
+  "limits": [
+    "Classification concerns ordinary compiler artifacts produced by the supplied trusted Lean runtime; the runtime was not bootstrapped.",
+    "There are unsafe runtime declarations in the overall imported environment. The verified claim is their complete absence from mathematical proof dependencies."
+  ],
+  "rows": [
+    {
+      "axioms": [
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.autGroup._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "(B : Type u_1) \u2192 [inst : PartialOrder.{u_1} B] \u2192 Group.{u_1} (@Conjecture4125.Aut.{u_1} B inst)",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.autGroup._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.autGroup._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.autGroup._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.autGroup._rarg._closed_1._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.autGroup._rarg._closed_1._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.autGroup._rarg._closed_2._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.autGroup._rarg._closed_2._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "DivInvMonoid.div'._at.Conjecture4125.autGroup._spec_5",
+        "Quot.sound",
+        "npowBinRecAuto._at.Conjecture4125.autGroup._spec_1",
+        "npowRec._at.Conjecture4125.autGroup._spec_6",
+        "zpowRec._at.Conjecture4125.autGroup._spec_7"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.autGroup._rarg._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.autGroup._rarg._cstage2",
+        "DivInvMonoid.div'._at.Conjecture4125.autGroup._spec_5",
+        "npowBinRecAuto._at.Conjecture4125.autGroup._spec_1",
+        "npowRec._at.Conjecture4125.autGroup._spec_6",
+        "zpowRec._at.Conjecture4125.autGroup._spec_7"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.autGroup._rarg._lambda_1._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.autGroup._rarg._lambda_1._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.booleanEquivToOrderIso._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "{B : Type u_1} \u2192\n  [inst : BooleanAlgebra.{u_1} B] \u2192\n    (e : Equiv.{u_1 + 1, u_1 + 1} B B) \u2192\n      (\u2200 (x y : B),\n          @Eq.{u_1 + 1} B\n            (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} (Equiv.{u_1 + 1, u_1 + 1} B B) B (fun x => B)\n              (@Equiv.instFunLike.{u_1 + 1, u_1 + 1} B B) e (x \u2294 y))\n            (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} (Equiv.{u_1 + 1, u_1 + 1} B B) B (fun x => B)\n                (@Equiv.instFunLike.{u_1 + 1, u_1 + 1} B B) e x \u2294\n              @DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} (Equiv.{u_1 + 1, u_1 + 1} B B) B (fun x => B)\n                (@Equiv.instFunLike.{u_1 + 1, u_1 + 1} B B) e y)) \u2192\n        @Conjecture4125.Aut.{u_1} B\n          (@SemilatticeInf.toPartialOrder.{u_1} B\n            (@Lattice.toSemilatticeInf.{u_1} B\n              (@GeneralizedCoheytingAlgebra.toLattice.{u_1} B\n                (@CoheytingAlgebra.toGeneralizedCoheytingAlgebra.{u_1} B\n                  (@BiheytingAlgebra.toCoheytingAlgebra.{u_1} B (@BooleanAlgebra.toBiheytingAlgebra.{u_1} B inst))))))",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.booleanEquivToOrderIso._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.booleanEquivToOrderIso._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.booleanEquivToOrderIso._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.booleanEquivToOrderIso._rarg._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _neutral \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.booleanEquivToOrderIso._rarg._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.cohenCylinder._closed_1._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.cohenCylinder._closed_1._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.cohenCylinder._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "Nat \u2192 Conjecture4125.CohenAlgebraCarrier",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.cohenCylinder._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.cohenCylinder._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.cohenCylinder._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.cohenFive._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "Fin (@OfNat.ofNat.{0} Nat 5 (instOfNatNat 5)) \u2192 Conjecture4125.CohenAlgebraCarrier",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.cohenFive._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.cohenFive._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.cohenFive._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomClass._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "Conjecture4125.BorelSet \u2192 Conjecture4125.RandomAlgebraCarrier",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomClass._cstage1"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomClass._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _neutral",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomClass._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomFive._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "Fin (@OfNat.ofNat.{0} Nat 5 (instOfNatNat 5)) \u2192 Conjecture4125.RandomAlgebraCarrier",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomFive._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomFive._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _neutral",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomFive._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomInterval._closed_1._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomInterval._closed_1._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomInterval._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "Fin (@OfNat.ofNat.{0} Nat 5 (instOfNatNat 5)) \u2192 Conjecture4125.BorelSet",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomInterval._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomInterval._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomInterval._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomSetoid._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "Setoid.{1} Conjecture4125.BorelSet",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomSetoid._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomSetoid._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomSetoid._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomZero._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "Conjecture4125.RandomAlgebraCarrier",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomZero._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.randomZero._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.randomZero._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.swapAtoms._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "@Conjecture4125.Aut.{0} Conjecture4125.Four\n  (@OmegaCompletePartialOrder.toPartialOrder.{0} Conjecture4125.Four\n    (@CompleteLattice.instOmegaCompletePartialOrder.{0} Conjecture4125.Four\n      (@CompleteAtomicBooleanAlgebra.toCompleteLattice.{0} Conjecture4125.Four\n        (@Set.instCompleteAtomicBooleanAlgebra.{0} Bool))))",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.swapAtoms._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.swapAtoms._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.swapAtoms._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "lcProof",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.unitRepresentative._cstage1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "Conjecture4125.BorelSet \u2192 Conjecture4125.BorelSet",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.unitRepresentative._cstage1",
+        "lcProof"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Conjecture4125.unitRepresentative._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Conjecture4125.unitRepresentative._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "DivInvMonoid.div'._at.Conjecture4125.autGroup._spec_5",
+        "Quot.sound"
+      ],
+      "classification": "generated compiler specialization placeholder",
+      "kind": "axiom",
+      "name": "DivInvMonoid.div'._at.Conjecture4125.autGroup._spec_5",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "(B : Type u_1) \u2192\n  (inst : PartialOrder.{u_1} B) \u2192\n    LE.{u_1} B \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "DivInvMonoid.div'._at.Conjecture4125.autGroup._spec_5"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "DivInvMonoid.div'._at.Conjecture4125.autGroup._spec_5._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "DivInvMonoid.div'._at.Conjecture4125.autGroup._spec_5._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "DivInvMonoid.div'._at.Conjecture4125.autGroup._spec_5._rarg._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "DivInvMonoid.div'._at.Conjecture4125.autGroup._spec_5._rarg._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4",
+        "Quot.sound"
+      ],
+      "classification": "generated compiler specialization placeholder",
+      "kind": "axiom",
+      "name": "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "(B : Type u_1) \u2192\n  (inst : PartialOrder.{u_1} B) \u2192\n    (fun x => @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst)\n        (@OfNat.ofNat.{0} Nat 0 (instOfNatNat 0)) \u2192\n      Nat \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4",
+        "Quot.sound",
+        "propext"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4._rarg._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj \u2192 _obj \u2192 _obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4",
+        "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4._rarg._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Quot.sound",
+        "npowBinRec._at.Conjecture4125.autGroup._spec_2"
+      ],
+      "classification": "generated compiler specialization placeholder",
+      "kind": "axiom",
+      "name": "npowBinRec._at.Conjecture4125.autGroup._spec_2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "(B : Type u_1) \u2192\n  (inst : PartialOrder.{u_1} B) \u2192 LE.{u_1} B \u2192 Nat \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRec._at.Conjecture4125.autGroup._spec_2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowBinRec._at.Conjecture4125.autGroup._spec_2._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRec._at.Conjecture4125.autGroup._spec_2._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowBinRec._at.Conjecture4125.autGroup._spec_2._rarg._closed_1._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRec._at.Conjecture4125.autGroup._spec_2._rarg._closed_1._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Quot.sound",
+        "npowBinRec.go._at.Conjecture4125.autGroup._spec_3"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowBinRec._at.Conjecture4125.autGroup._spec_2._rarg._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj \u2192 _obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRec._at.Conjecture4125.autGroup._spec_2._rarg._cstage2",
+        "npowBinRec.go._at.Conjecture4125.autGroup._spec_3"
+      ]
+    },
+    {
+      "axioms": [
+        "Quot.sound",
+        "npowBinRec.go._at.Conjecture4125.autGroup._spec_3"
+      ],
+      "classification": "generated compiler specialization placeholder",
+      "kind": "axiom",
+      "name": "npowBinRec.go._at.Conjecture4125.autGroup._spec_3",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "(B : Type u_1) \u2192\n  (inst : PartialOrder.{u_1} B) \u2192\n    Nat \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRec.go._at.Conjecture4125.autGroup._spec_3"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowBinRec.go._at.Conjecture4125.autGroup._spec_3._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRec.go._at.Conjecture4125.autGroup._spec_3._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowBinRec.go._at.Conjecture4125.autGroup._spec_3._rarg._closed_1._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRec.go._at.Conjecture4125.autGroup._spec_3._rarg._closed_1._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4",
+        "Quot.sound"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowBinRec.go._at.Conjecture4125.autGroup._spec_3._rarg._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj \u2192 _obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "Nat.binaryRec._at.Conjecture4125.autGroup._spec_4",
+        "npowBinRec.go._at.Conjecture4125.autGroup._spec_3._rarg._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowBinRec.go._at.Conjecture4125.autGroup._spec_3._rarg._lambda_1._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRec.go._at.Conjecture4125.autGroup._spec_3._rarg._lambda_1._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Quot.sound",
+        "npowBinRecAuto._at.Conjecture4125.autGroup._spec_1"
+      ],
+      "classification": "generated compiler specialization placeholder",
+      "kind": "axiom",
+      "name": "npowBinRecAuto._at.Conjecture4125.autGroup._spec_1",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "(B : Type u_1) \u2192\n  (inst : PartialOrder.{u_1} B) \u2192 LE.{u_1} B \u2192 Nat \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRecAuto._at.Conjecture4125.autGroup._spec_1"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowBinRecAuto._at.Conjecture4125.autGroup._spec_1._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRecAuto._at.Conjecture4125.autGroup._spec_1._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Quot.sound",
+        "npowBinRec._at.Conjecture4125.autGroup._spec_2"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowBinRecAuto._at.Conjecture4125.autGroup._spec_1._rarg._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj \u2192 _obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowBinRec._at.Conjecture4125.autGroup._spec_2",
+        "npowBinRecAuto._at.Conjecture4125.autGroup._spec_1._rarg._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Quot.sound",
+        "npowRec._at.Conjecture4125.autGroup._spec_6"
+      ],
+      "classification": "generated compiler specialization placeholder",
+      "kind": "axiom",
+      "name": "npowRec._at.Conjecture4125.autGroup._spec_6",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "(B : Type u_1) \u2192\n  (inst : PartialOrder.{u_1} B) \u2192\n    LE.{u_1} B \u2192\n      (x : Nat) \u2192\n        (x_1 : @Conjecture4125.Aut.{u_1} B inst) \u2192 (fun x => (fun x x => @Conjecture4125.Aut.{u_1} B inst) x x_1) x",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowRec._at.Conjecture4125.autGroup._spec_6"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowRec._at.Conjecture4125.autGroup._spec_6._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowRec._at.Conjecture4125.autGroup._spec_6._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Quot.sound",
+        "npowRec._at.Conjecture4125.autGroup._spec_6"
+      ],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "npowRec._at.Conjecture4125.autGroup._spec_6._rarg._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj \u2192 _obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "npowRec._at.Conjecture4125.autGroup._spec_6",
+        "npowRec._at.Conjecture4125.autGroup._spec_6._rarg._cstage2"
+      ]
+    },
+    {
+      "axioms": [
+        "Quot.sound",
+        "zpowRec._at.Conjecture4125.autGroup._spec_7"
+      ],
+      "classification": "generated compiler specialization placeholder",
+      "kind": "axiom",
+      "name": "zpowRec._at.Conjecture4125.autGroup._spec_7",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "(B : Type u_1) \u2192\n  (inst : PartialOrder.{u_1} B) \u2192\n    let _x_1 := fun f g =>\n      let _x_17 := inst.1;\n      let _x_18 := _x_17.1;\n      @RelIso.trans.{u_1, u_1, u_1} B B B (fun x1 x2 => @LE.le.{u_1} B _x_18 x1 x2)\n        (fun x1 x2 => @LE.le.{u_1} B _x_18 x1 x2) (fun x1 x2 => @LE.le.{u_1} B _x_18 x1 x2) g f;\n    let _x_2 := @Mul.mk.{u_1} (@Conjecture4125.Aut.{u_1} B inst) _x_1;\n    (_x_5 : LE.{u_1} B) \u2192\n      let _x_6 := @RelIso.refl.{u_1} B fun x1 x2 => @LE.le.{u_1} B _x_5 x1 x2;\n      let _x_7 := @One.mk.{u_1} (@Conjecture4125.Aut.{u_1} B inst) _x_6;\n      let _y_2 := _x_7;\n      let _y_3 := _x_2;\n      optParam.{u_1 + 1} (Nat \u2192 @Conjecture4125.Aut.{u_1} B inst \u2192 @Conjecture4125.Aut.{u_1} B inst)\n          (@npowRec.{u_1} (@Conjecture4125.Aut.{u_1} B inst) _y_2 _y_3) \u2192\n        (x : Int) \u2192\n          (x_1 : @Conjecture4125.Aut.{u_1} B inst) \u2192 (fun x => (fun x x => @Conjecture4125.Aut.{u_1} B inst) x x_1) x",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "zpowRec._at.Conjecture4125.autGroup._spec_7"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "zpowRec._at.Conjecture4125.autGroup._spec_7._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_neutral \u2192 _obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "zpowRec._at.Conjecture4125.autGroup._spec_7._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "zpowRec._at.Conjecture4125.autGroup._spec_7._rarg._closed_1._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "zpowRec._at.Conjecture4125.autGroup._spec_7._rarg._closed_1._cstage2"
+      ]
+    },
+    {
+      "axioms": [],
+      "classification": "generated compiler stage definition",
+      "kind": "definition",
+      "name": "zpowRec._at.Conjecture4125.autGroup._spec_7._rarg._cstage2",
+      "originating_module": "Conjecture4125",
+      "reachable_from_any_safe_owned_root": false,
+      "type": "_obj \u2192 _obj \u2192 _obj \u2192 _obj",
+      "unsafe": true,
+      "unsafe_dependencies": [
+        "zpowRec._at.Conjecture4125.autGroup._spec_7._rarg._cstage2"
+      ]
+    }
+  ],
+  "safe_closure_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "safe_closure_count": 28360,
+  "safe_root_count": 80,
+  "safe_runtime_intersection": [],
+  "specialization_axioms": 7,
+  "status": "CLASSIFIED_NOT_PROOF_DEPENDENCIES"
+}

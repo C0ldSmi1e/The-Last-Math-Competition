@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/private/tmp/tlmc4125-engineering-package/tools/replay_graph_controls.py",
+    "/private/tmp/tlmc4125-independent-engineering/declaration-audit.json",
+    "/private/tmp/tlmc4125-compact-final-graph-replay"
+  ],
+  "returncode": 0,
+  "seconds": 8.40822696685791,
+  "stdout_sha256": "b23a6cba8ef47337ec83c93e9c2414899132f48cd1250f3f517712383d6d720f",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

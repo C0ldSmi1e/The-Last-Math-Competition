@@ -1,0 +1,19 @@
+{
+  "status": "PASS_ORIGINAL_FIRST_ASSESSMENT_ROOT_REVIEW",
+  "original_sha256": "46ba8383eb6abbf690f55cba9aaf0c13ff14f337d92b09f71b6b004d45615aaf",
+  "source_versions_agree": true,
+  "eligibility_status": "PASS_BOUNDED_CURRENT_REPOSITORY_SCREEN",
+  "candidate_scope": "Disprove a necessary classification conjunct using actual completecccBoolean algebra and fullautomorphismgroup, with concrete namedobject exclusions. Other conjuncts neednotbe independently settled.",
+  "caveats": "Noatomless/infinite/nonabeliansimple restriction appears in original. Namedrandom/Cohen objects mustuse faithful standardmodels. No acceptanceclaim.",
+  "author_assignment": {
+    "agent": "/root/author_4125",
+    "fork_turns": "none",
+    "received": "Exactoriginal/rules/pins, stockruntime paths, operationalverification requirements only",
+    "selector_or_reviewer_strategy_provided": false
+  },
+  "review_files": {
+    "/private/tmp/tlmc4125-independent-review/read-manifest.md": "defaa24d8d6a98ffa690d9a474c67c384c98ad8813351e3c0878fe1159fe104b",
+    "/private/tmp/tlmc4125-independent-review/original-assessment.md": "611f411faa8f5279f5dc539b6fb37bc2ee22ee1bc33b46d28c2e12eac7137ea4"
+  },
+  "recorded_at": "2026-10-11T04:17:39.829186+00:00"
+}

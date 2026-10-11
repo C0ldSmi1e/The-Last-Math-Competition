@@ -1,0 +1,11 @@
+original_graph: expected outcome PASS
+omitted_transitive_closure_member: expected outcome PASS
+inconsistent_dependency_edge: expected outcome PASS
+forbidden_axiom_with_consistent_summaries: expected outcome PASS
+unsafe_dependency_with_consistent_summaries: expected outcome PASS
+unavailable_trusted_dependency: expected outcome PASS
+{
+  "status": "PASS",
+  "controls": 5,
+  "audit_sha256": "448829154a13f8a706aa936a14502ae508e2514e02dde12f269183f18009ab0b"
+}

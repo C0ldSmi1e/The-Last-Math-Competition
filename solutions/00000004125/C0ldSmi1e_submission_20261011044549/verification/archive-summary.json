@@ -1,0 +1,30 @@
+{
+  "frozen-input": {
+    "archive_bytes": 6704,
+    "archive_sha256": "f794ca05e3d7db699d86e4a4cc614d84eea493979d12f98a43503f8aac215678",
+    "excluded_entries": 0,
+    "members": 6,
+    "uncompressed_bytes": 20769
+  },
+  "preflight": {
+    "archive_bytes": 15474,
+    "archive_sha256": "143d993c863af7001fae167bdafb550926d61a3c304a2dded87a07222a0477d5",
+    "excluded_entries": 0,
+    "members": 37,
+    "uncompressed_bytes": 51514
+  },
+  "preparation": {
+    "archive_bytes": 1145995,
+    "archive_sha256": "ffcf6ff2fef2a55f57ca09618d1c828434bd32d59c517ba90262f879db772100",
+    "excluded_entries": 5,
+    "members": 284,
+    "uncompressed_bytes": 3662129
+  },
+  "verification": {
+    "archive_bytes": 8242335,
+    "archive_sha256": "5be53bd05731b218c7097110516fef5ddd8d3027d718be1330aff48935576c40",
+    "excluded_entries": 13,
+    "members": 256,
+    "uncompressed_bytes": 74924617
+  }
+}

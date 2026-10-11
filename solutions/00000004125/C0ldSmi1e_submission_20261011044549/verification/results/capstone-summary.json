@@ -1,0 +1,101 @@
+{
+  "Conjecture4125.aut_simple": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "closure_size": 6316,
+    "kind": "theorem",
+    "type": "@IsSimpleGroup.{0}\n  (@Conjecture4125.Aut.{0} Conjecture4125.Four\n    (@OmegaCompletePartialOrder.toPartialOrder.{0} Conjecture4125.Four\n      (@CompleteLattice.instOmegaCompletePartialOrder.{0} Conjecture4125.Four\n        (@CompleteAtomicBooleanAlgebra.toCompleteLattice.{0} Conjecture4125.Four\n          (@Set.instCompleteAtomicBooleanAlgebra.{0} Bool)))))\n  (@Conjecture4125.autGroup.{0} Conjecture4125.Four\n    (@OmegaCompletePartialOrder.toPartialOrder.{0} Conjecture4125.Four\n      (@CompleteLattice.instOmegaCompletePartialOrder.{0} Conjecture4125.Four\n        (@CompleteAtomicBooleanAlgebra.toCompleteLattice.{0} Conjecture4125.Four\n          (@Set.instCompleteAtomicBooleanAlgebra.{0} Bool)))))",
+    "unsafe_dependencies": []
+  },
+  "Conjecture4125.classification_carrier_consequence_false": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "closure_size": 28333,
+    "kind": "theorem",
+    "type": "Not Conjecture4125.ClassificationCarrierConsequence",
+    "unsafe_dependencies": []
+  },
+  "Conjecture4125.cohenFive_injective": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "closure_size": 1465,
+    "kind": "theorem",
+    "type": "@Function.Injective.{1, 1} (Fin (@OfNat.ofNat.{0} Nat 5 (instOfNatNat 5))) Conjecture4125.CohenAlgebraCarrier\n  Conjecture4125.cohenFive",
+    "unsafe_dependencies": []
+  },
+  "Conjecture4125.conjunction_with_classification_false": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "closure_size": 28334,
+    "kind": "theorem",
+    "type": "\u2200 (P Q : Prop), Not (And P (And Q Conjecture4125.ClassificationCarrierConsequence))",
+    "unsafe_dependencies": []
+  },
+  "Conjecture4125.four_counterexample": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "closure_size": 28332,
+    "kind": "theorem",
+    "type": "And\n  (@Conjecture4125.CCC.{0} Conjecture4125.Four\n    (@OmegaCompletePartialOrder.toPartialOrder.{0} Conjecture4125.Four\n      (@CompleteLattice.instOmegaCompletePartialOrder.{0} Conjecture4125.Four\n        (@CompleteAtomicBooleanAlgebra.toCompleteLattice.{0} Conjecture4125.Four\n          (@Set.instCompleteAtomicBooleanAlgebra.{0} Bool))))\n    (@HeytingAlgebra.toOrderBot.{0} Conjecture4125.Four\n      (@Order.Frame.toHeytingAlgebra.{0} Conjecture4125.Four\n        (@CompleteDistribLattice.toFrame.{0} Conjecture4125.Four\n          (@CompleteBooleanAlgebra.toCompleteDistribLattice.{0} Conjecture4125.Four\n            (@CompleteAtomicBooleanAlgebra.toCompleteBooleanAlgebra.{0} Conjecture4125.Four\n              (@Set.instCompleteAtomicBooleanAlgebra.{0} Bool)))))))\n  (And\n    (@IsSimpleGroup.{0}\n      (@Conjecture4125.Aut.{0} Conjecture4125.Four\n        (@OmegaCompletePartialOrder.toPartialOrder.{0} Conjecture4125.Four\n          (@CompleteLattice.instOmegaCompletePartialOrder.{0} Conjecture4125.Four\n            (@CompleteAtomicBooleanAlgebra.toCompleteLattice.{0} Conjecture4125.Four\n              (@Set.instCompleteAtomicBooleanAlgebra.{0} Bool)))))\n      (@Conjecture4125.autGroup.{0} Conjecture4125.Four\n        (@OmegaCompletePartialOrder.toPartialOrder.{0} Conjecture4125.Four\n          (@CompleteLattice.instOmegaCompletePartialOrder.{0} Conjecture4125.Four\n            (@CompleteAtomicBooleanAlgebra.toCompleteLattice.{0} Conjecture4125.Four\n              (@Set.instCompleteAtomicBooleanAlgebra.{0} Bool))))))\n    (And (Not (Nonempty.{1} (Equiv.{1, 1} Conjecture4125.Four Conjecture4125.RandomAlgebraCarrier)))\n      (Not (Nonempty.{1} (Equiv.{1, 1} Conjecture4125.Four Conjecture4125.CohenAlgebraCarrier)))))",
+    "unsafe_dependencies": []
+  },
+  "Conjecture4125.randomClass_eq_iff_null_symmDiff": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "closure_size": 24783,
+    "kind": "theorem",
+    "type": "\u2200 (s t : Conjecture4125.BorelSet),\n  Iff (@Eq.{1} Conjecture4125.RandomAlgebraCarrier (Conjecture4125.randomClass s) (Conjecture4125.randomClass t))\n    (@Eq.{1} ENNReal\n      (@DFunLike.coe.{1, 1, 1} (@MeasureTheory.Measure.{0} Real Real.measurableSpace) (Set.{0} Real) (fun x => ENNReal)\n        (@MeasureTheory.Measure.instFunLike.{0} Real Real.measurableSpace) Conjecture4125.unitMeasure\n        (@symmDiff.{0} (Set.{0} Real)\n          (@SemilatticeSup.toMax.{0} (Set.{0} Real)\n            (@Lattice.toSemilatticeSup.{0} (Set.{0} Real)\n              (@ConditionallyCompleteLattice.toLattice.{0} (Set.{0} Real)\n                (@CompleteLattice.toConditionallyCompleteLattice.{0} (Set.{0} Real)\n                  (@CompleteAtomicBooleanAlgebra.toCompleteLattice.{0} (Set.{0} Real)\n                    (@Set.instCompleteAtomicBooleanAlgebra.{0} Real))))))\n          (@Set.instSDiff.{0} Real)\n          (@Subtype.val.{1} (Set.{0} Real) (fun s => @MeasurableSet.{0} Real Real.measurableSpace s) s)\n          (@Subtype.val.{1} (Set.{0} Real) (fun s => @MeasurableSet.{0} Real Real.measurableSpace s) t)))\n      (@OfNat.ofNat.{0} ENNReal 0 (@Zero.toOfNat0.{0} ENNReal instENNRealZero)))",
+    "unsafe_dependencies": []
+  },
+  "Conjecture4125.randomClass_positive_iff": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "closure_size": 24792,
+    "kind": "theorem",
+    "type": "\u2200 (s : Conjecture4125.BorelSet),\n  Iff\n    (@LT.lt.{0} ENNReal (@Preorder.toLT.{0} ENNReal (@PartialOrder.toPreorder.{0} ENNReal ENNReal.instPartialOrder))\n      (@OfNat.ofNat.{0} ENNReal 0 (@Zero.toOfNat0.{0} ENNReal instENNRealZero))\n      (Conjecture4125.randomMass (Conjecture4125.randomClass s)))\n    (@Ne.{1} Conjecture4125.RandomAlgebraCarrier (Conjecture4125.randomClass s) Conjecture4125.randomZero)",
+    "unsafe_dependencies": []
+  },
+  "Conjecture4125.randomClass_unitRepresentative": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "closure_size": 24878,
+    "kind": "theorem",
+    "type": "\u2200 (s : Conjecture4125.BorelSet),\n  @Eq.{1} Conjecture4125.RandomAlgebraCarrier (Conjecture4125.randomClass s)\n    (Conjecture4125.randomClass (Conjecture4125.unitRepresentative s))",
+    "unsafe_dependencies": []
+  },
+  "Conjecture4125.randomFive_injective": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "closure_size": 27572,
+    "kind": "theorem",
+    "type": "@Function.Injective.{1, 1} (Fin (@OfNat.ofNat.{0} Nat 5 (instOfNatNat 5))) Conjecture4125.RandomAlgebraCarrier\n  Conjecture4125.randomFive",
+    "unsafe_dependencies": []
+  }
+}

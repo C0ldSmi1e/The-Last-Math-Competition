@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xurl}
+\usepackage{hyperref}
+\sloppy
+\let\oldus\_ \renewcommand{\_}{\oldus\allowbreak}
+\newcommand{\Icc}{\operatorname{Icc}}
+\title{Conjecture 00000008538: the radical and quotient of an incidence algebra \\ (false without finiteness; true for finite lattices)}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Statement and verdict}
+\textbf{Conjecture.} ``A lattice algebra is the incidence algebra of a lattice. The Jacobson radical of an
+incidence algebra is its strictly lower triangular part; and its quotient is the Mobius algebra, of dimension
+equal to the number of lattice elements.''
+
+\textbf{Verdict: DISPROVED as written.} The statement has no finiteness hypothesis. Take $K=\mathbb Q$ and the infinite,
+locally finite lattice $L=\mathbb N^{op}$ (the naturals with the reversed order, which has a top element). Then
+the conjunction fails: if the radical were the strictly triangular part $S$, the quotient $I/J$ would be $K$-linearly $K^L$, of
+dimension $|K^{\mathbb N}|=2^{\aleph_0}$, not $|L|=\aleph_0$. The statement is TRUE for finite lattices (second theorem below).
+So the honest boundary is: it holds for finite lattices and fails for infinite locally finite lattices.
+
+\section*{Reading (all choices explicit)}
+\begin{itemize}
+\item $K$ is a field, $L$ a lattice with a top element (so the Mobius algebra is unital) such that $L$ is locally finite,
+which Mathlib needs to make $I(L,K)$ a ring. The incidence algebra is Mathlib's \texttt{IncidenceAlgebra K L}: functions $f(x,y)$ vanishing unless
+$x\le y$, with $(fg)(x,y)=\sum_{x\le z\le y}f(x,z)g(z,y)$. This is the upper-triangular convention; ``lower'' is the transposed
+convention (passing to $L^{op}$). The counterexample does not depend on this, because the strictly triangular part is defined by $f(x,x)=0$.
+\item The Jacobson radical is \texttt{Ring.jacobson} of the ring $I(L,K)$, the intersection of the maximal left ideals. The strictly triangular part is
+\texttt{StrictlyTriangular K L} $=\{f: f(x,y)\neq 0\Rightarrow x<y\}$, compared with the radical as sets.
+\item The Mobius algebra is the monoid algebra $K[(L,\wedge,\top)]$ (\texttt{MobiusAlgebra K L}); ``its quotient is'' is a $K$-algebra isomorphism of $I/J$ with it.
+``Dimension equal to the number of lattice elements'' is \texttt{Module.rank K (I/J) = Cardinal.mk L}, which is the right reading for infinite $L$.
+\end{itemize}
+\textbf{Not refuted / contested.} A reader may take ``the number of lattice elements'' to presuppose that $L$ is finite. Under that reading the
+statement is the finite theorem, which we prove (it holds). We refute the statement as written, with no finiteness assumption. We do not decide
+whether the isomorphism clause alone fails for $\mathbb N^{op}$ (only the radical-plus-rank conjunction is refuted).
+
+\section*{Disproof}
+Let $I=I(L,K)$, $J=\operatorname{Rad}(I)$, $S=\{f: f(x,x)=0\ \forall x\}$ (equal to the strictly triangular set: $f(x,y)\ne0$ forces $x\le y$, and
+$f(x,x)=0$ excludes $x=y$; Lean \texttt{strict\_iff}). Suppose $J=S$ as sets.
+The diagonal map $\delta:I\to K^L$, $\delta(f)(a)=f(a,a)$, is a $K$-algebra homomorphism (\texttt{diag}). It is surjective: for $g\in K^L$ the
+function $(a,b)\mapsto[a=b]g(a)$ is an incidence function (\texttt{diag\_surj}). Its kernel is $S=J$. Hence $I/J\cong K^L$ as $K$-modules
+(\texttt{quotLinEquiv}: restriction of scalars of the quotient, \texttt{quotEquivOfEq}, first isomorphism theorem), so
+$\operatorname{rank}_K(I/J)=\operatorname{rank}_K(K^L)$. For infinite $L$, the Erdos--Kaplansky theorem in Mathlib (\texttt{rank\_fun\_infinite}) gives $\operatorname{rank}_K K^L=|K^L|$
+(\texttt{rank\_ne}). For $K=\mathbb Q$, $L=\mathbb N^{op}$: $|\mathbb Q^{\mathbb N}|=\aleph_0^{\aleph_0}=2^{\aleph_0}>\aleph_0=|L|$. So the third clause
+fails, contradicting the conjecture (\texttt{main}). Thus no field and infinite lattice pair with $J=S$ can satisfy the rank clause, and
+$\mathbb Q$, $\mathbb N^{op}$ (locally finite, with top, instances from Mathlib) is one.
+
+\section*{Boundary: the finite theorem}
+\texttt{finite\_main : FiniteConjecture}: for every field $K$ and finite lattice $L$, (1) $J=S$, (2) $I/J\cong K[(L,\wedge)]$ as $K$-algebras, (3) $\dim_K I/J=|L|$.
+Proof sketch (as in the earlier package). $J\subseteq S$: $f\mapsto f(a,a)$ is a surjective ring map onto the field $K$, whose radical is $0$.
+$S\subseteq J$: elements of $S$ are nilpotent (induction on $|\Icc(a,b)|$), so $1-rf$ is a unit for every $r$, hence $f$ lies in every maximal left ideal.
+The diagonal map gives $I/J\cong K^L$, and $K^L\cong K[L,\wedge]$ by Solomon's idempotents $e_a=\sum_{y\le a}\mu(y,a)y$ using Mathlib's
+\texttt{mu} (\texttt{mobPhi\_surj}) plus equality of dimensions.
+
+\section*{Lean}
+File \texttt{lean/Conjecture8538/Basic.lean} (identical to \texttt{Tlmc/C8538.lean}), imports only Mathlib. The statement block defines \texttt{MeetMonoid},
+\texttt{MobiusAlgebra}, \texttt{StrictlyTriangular}, \texttt{Conjecture} (all fields, all locally finite lattices with a top), \texttt{FiniteConjecture}
+and \texttt{Claim := $\neg$ Conjecture}. Main theorem \texttt{C8538.main : C8538.Claim}; boundary theorem \texttt{C8538.finite\_main : C8538.FiniteConjecture}.
+\texttt{\#print axioms} for both reports only \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no \texttt{sorry}, no \texttt{native\_decide}.
+Sources: Mathlib (\texttt{IncidenceAlgebra}, \texttt{rank\_fun\_infinite}, \texttt{Cardinal.aleph0\_power\_aleph0}); no external literature is cited.
+\end{document}

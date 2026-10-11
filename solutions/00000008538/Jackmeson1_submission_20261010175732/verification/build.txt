@@ -1,0 +1,85 @@
+Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+$ lake build
+✔ [8706/8709] Built Conjecture8538.Statement (75s)
+⚠ [8707/8709] Built Conjecture8538.Basic (89s)
+warning: Conjecture8538/Basic.lean:41:0: automatically included section variable(s) unused in theorem `C8538.strict_iff`:
+  [DecidableEq L]
+  [LocallyFiniteOrder L]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq L] [LocallyFiniteOrder L] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Conjecture8538/Basic.lean:107:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Conjecture8538/Basic.lean:109:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Conjecture8538/Basic.lean:105:0: automatically included section variable(s) unused in theorem `C8538.jac_diag`:
+  [Fintype L]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype L] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Conjecture8538/Basic.lean:114:0: automatically included section variable(s) unused in theorem `C8538.pow_zero_aux`:
+  [Fintype L]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype L] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Conjecture8538/Basic.lean:137:0: automatically included section variable(s) unused in theorem `C8538.zeroDiag_mul`:
+  [DecidableEq L]
+  [Fintype L]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq L] [Fintype L] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Conjecture8538/Basic.lean:214:0: automatically included section variable(s) unused in theorem `C8538.mobPhi_single`:
+  [LocallyFiniteOrder L]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [LocallyFiniteOrder L] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Conjecture8538/Basic.lean:242:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Conjecture8538/Basic.lean:241:0: automatically included section variable(s) unused in theorem `C8538.mob_finrank`:
+  [DecidableEq L]
+  [LocallyFiniteOrder L]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq L] [LocallyFiniteOrder L] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Conjecture8538/Basic.lean:250:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Conjecture8538/Basic.lean:251:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [8708/8709] Built Conjecture8538 (66s)
+Build completed successfully (8709 jobs).

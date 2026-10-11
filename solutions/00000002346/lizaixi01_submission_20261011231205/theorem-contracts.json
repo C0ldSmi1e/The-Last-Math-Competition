@@ -1,0 +1,15 @@
+{
+  "MomentCounterexample.constraint_degree": "MomentCounterexample.constraint.natDegree = 2",
+  "MomentCounterexample.objectivePolynomial_eval": "∀ a b c x : ℝ, (MomentCounterexample.objectivePolynomial a b c).eval x = MomentCounterexample.objective a b c x",
+  "MomentCounterexample.originalFeasible_iff": "∀ x : ℝ, MomentCounterexample.originalFeasible x ↔ -1 ≤ x ∧ x ≤ 1",
+  "MomentCounterexample.moment_bounds": "∀ {y : ℕ → ℝ}, MomentCounterexample.hierarchyFeasible 1 y → y 1 ^ 2 ≤ y 2 ∧ y 2 ≤ 1 ∧ -1 ≤ y 1 ∧ y 1 ≤ 1",
+  "MomentCounterexample.dirac_feasible": "∀ x : ℝ, MomentCounterexample.originalFeasible x → MomentCounterexample.hierarchyFeasible 1 (MomentCounterexample.diracMoments x)",
+  "MomentCounterexample.feasible_has_atomic_representation": "∀ {y : ℕ → ℝ}, MomentCounterexample.hierarchyFeasible 1 y → MomentCounterexample.atomicRepresentation y",
+  "MomentCounterexample.round_feasible": "∀ {y : ℕ → ℝ}, MomentCounterexample.hierarchyFeasible 1 y → ∀ a b c : ℝ, ∃ x : ℝ, MomentCounterexample.originalFeasible x ∧ MomentCounterexample.objective a b c x ≤ MomentCounterexample.relaxedObjective a b c y",
+  "MomentCounterexample.order_one_exact": "MomentCounterexample.exactAt 1",
+  "MomentCounterexample.exists_original_minimizer": "∀ a b c : ℝ, ∃ x₀ : ℝ, MomentCounterexample.originalFeasible x₀ ∧ ∀ x : ℝ, MomentCounterexample.originalFeasible x → MomentCounterexample.objective a b c x₀ ≤ MomentCounterexample.objective a b c x",
+  "MomentCounterexample.attained_exactness": "∀ a b c : ℝ, ∃ x₀ : ℝ, ∃ y₀ : ℕ → ℝ, MomentCounterexample.originalFeasible x₀ ∧ MomentCounterexample.hierarchyFeasible 1 y₀ ∧ MomentCounterexample.objective a b c x₀ = MomentCounterexample.relaxedObjective a b c y₀ ∧ (∀ x : ℝ, MomentCounterexample.originalFeasible x → MomentCounterexample.objective a b c x₀ ≤ MomentCounterexample.objective a b c x) ∧ (∀ y : ℕ → ℝ, MomentCounterexample.hierarchyFeasible 1 y → MomentCounterexample.relaxedObjective a b c y₀ ≤ MomentCounterexample.relaxedObjective a b c y)",
+  "MomentCounterexample.least_exact_order": "IsLeast {r : ℕ | MomentCounterexample.exactAt r} 1",
+  "MomentCounterexample.refutes_minimal_order_formula": "¬MomentCounterexample.minimalOrderFormula",
+  "MomentCounterexample.complete_counterexample": "MomentCounterexample.constraint.natDegree = 2 ∧ (∀ x : ℝ, MomentCounterexample.originalFeasible x ↔ -1 ≤ x ∧ x ≤ 1) ∧ IsLeast {r : ℕ | MomentCounterexample.exactAt r} 1 ∧ ¬MomentCounterexample.minimalOrderFormula"
+}

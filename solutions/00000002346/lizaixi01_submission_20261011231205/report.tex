@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{url}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\title{A first-order exact moment relaxation\\Counterexample to the minimal-order clause of 00000002346}
+\author{Independent arm A Root}
+\date{10 October 2026}
+\begin{document}
+\maketitle
+
+\paragraph{Frozen source and scope.}
+The exact original is supplied as \texttt{original.md}, SHA256
+\begin{center}\small\ttfamily
+96e98ae31d34fc2f2f1d3c3be07de34fb\\
+2fa137db7a79f0005562dd225304362.
+\end{center}
+Its English mathematical assertion is:
+\begin{quote}
+The minimal order for exactness of moment relaxations is $2d$ ($d$ the maximal degree of the defining polynomials of the semialgebraic set); the order is an explicit linear function $d\cdot\dim_{\R}(X)$ of the real dimension.
+\end{quote}
+The Chinese version repeats these two equalities. This package refutes the first necessary clause. It does not substitute a bound for an equality, and does not need to prove or refute the second clause separately: the conjunction cannot hold when its first clause fails.
+
+\paragraph{Meaning of the standard objects.}
+We use the normalized univariate moment--SOS relaxation of real polynomial optimization, in the convention that order $r$ uses moments through degree $2r$. Its moment matrix has monomials of degree at most $r$ as indices. For a degree-two constraint, its localizing matrix has monomials through degree $r-1$. These are the usual matrices of the moment formulation; see Lasserre's definitions and constrained relaxation \cite{lasserre}. No alternate hierarchy is introduced.
+The original does not specify an objective or a different convention for order. Our instance is exact for \emph{every quadratic objective}, not merely one fortunate numerical example. We also construct genuine representing probability laws for all its first-order feasible moment vectors.
+
+\paragraph{The concrete semialgebraic set.}
+Let
+\[
+g(X)=1-X^2,\qquad K=\{x\in\R:g(x)\geq0\}=[-1,1].
+\]
+There is one defining polynomial and its actual degree is $d=2$. For arbitrary $a,b,c\in\R$, optimize the actual polynomial
+\[
+f(x)=ax^2+bx+c.
+\]
+Order $r\geq1$ has normalized moment data $y_0=1$ with
+\[
+M_r(y)_{ij}=y_{i+j}\quad(0\leq i,j\leq r),\qquad
+M_{r-1}(g y)_{ij}=y_{i+j}-y_{i+j+2}\quad(0\leq i,j<r),
+\]
+both positive semidefinite. Its objective is $a y_2+b y_1+c$. A total sequence is used in Lean as an encoding; entries above $2r$ occur in none of these matrices or objectives.
+
+\newpage
+\section*{Exact proof}
+At order one, write $m=y_1$ and $q=y_2$. The matrices are exactly
+\[
+M_1(y)=\begin{pmatrix}1&m\\m&q\end{pmatrix},\qquad
+M_0(g y)=\begin{pmatrix}1-q\end{pmatrix}.
+\]
+Positive semidefiniteness of the first matrix, tested on $(-m,1)$, gives $m^2\leq q$. The second gives $q\leq1$. Consequently $-1\leq m\leq1$.
+
+Every $x\in K$ supplies feasible data $y_n=x^n$: the moment matrix is the outer product $(1,x)^T(1,x)$, and the localizing matrix is the nonnegative scalar $1-x^2$. Its relaxed objective equals $f(x)$ exactly.
+
+Conversely, consider any feasible $y$ and any $a,b,c$. If $a\geq0$, take $x=m$. Then
+\[
+f(m)=am^2+bm+c\leq aq+bm+c.
+\]
+If $a<0$ and $b\geq0$, take $x=-1$. The difference between the relaxed value and $f(-1)$ is
+\[
+a(q-1)+b(m+1)\geq0.
+\]
+If $a<0$ and $b<0$, take $x=1$. The corresponding difference is
+\[
+a(q-1)+b(m-1)\geq0.
+\]
+All three choices belong to the original set $K$. Thus every relaxed vector can be rounded to an original feasible point without increasing the objective.
+
+\begin{theorem}
+For every real $a,b,c,L$, $L$ is a lower bound on $f(K)$ if and only if it is a lower bound on the values of the first-order moment relaxation.
+\end{theorem}
+\begin{proof}
+One direction follows by rounding each feasible moment vector as above. The other follows by applying the relaxed lower bound to each actual point's Dirac moments. Both feasible sets are nonempty; these are two actual feasible-domain comparisons, with no impossible hypotheses. In particular there is no optimal-value gap. The original minimum has an explicit minimizing point (an endpoint or the clamped quadratic vertex), and its Dirac data attain the relaxed minimum, formalized by \texttt{attained\_exactness}.
+\end{proof}
+
+\paragraph{Actual moment representability.}
+The statement is stronger than optimal-value exactness alone. If $m^2=1$, the inequalities force $q=1$, and the Dirac law at $m$ represents $(1,m,q)$. Otherwise define
+\[
+t=\frac{q-m^2}{1-m^2}\in[0,1],\qquad
+(w_0,w_1,w_2)=\left(1-t,\frac{t(1-m)}2,\frac{t(1+m)}2\right).
+\]
+These nonnegative weights sum to one. On the three original feasible nodes $(m,-1,1)$ they give mean $m$ and second moment
+\[
+(1-t)m^2+t=q.
+\]
+They therefore define a genuine finite probability law with precisely the normalized truncated moments. The nodes, weights, nonnegativity, total mass, and both moment identities are all explicit in the formal theorem.
+
+\newpage
+\section*{Minimality and formal correspondence}
+For a degree-two defining polynomial, order zero does not contain the required second-degree moment or its nontrivial localizing constraint. The admissible orders are $r\geq1$. Order one is exact for all objectives admissible at that order, as proved above, so the least admissible exact order is one. The source's equality instead requires
+\[
+2d=2\cdot2=4.
+\]
+These differ. Even if ``order'' were counted by maximum moment degree rather than matrix order, this example uses moment degree two, which still differs from four. The formal result uses the usual matrix-order convention explicitly.
+
+\paragraph{Lean definitions.}
+The self-contained module \texttt{project/Moment.lean} uses actual real polynomials, the exact polynomial inequality, and the defining symmetric quadratic-form condition for positive semidefiniteness. Its \texttt{momentMatrix} and \texttt{localizingMatrix} have the entries stated on page one. \texttt{hierarchyFeasible} contains their positive-semidefinite conditions and normalization. \texttt{objectivePolynomial} is $aX^2+bX+c$ and its evaluation is proved equal to the objective. \texttt{atomicRepresentation} contains three original-domain nodes and nonnegative probability weights, with their exact first two moments. It assumes no representation or exactness theorem.
+
+\paragraph{Main theorem contracts.}
+All names below are in namespace \texttt{MomentCounterexample}.
+\begin{itemize}
+\item \texttt{feasible\_has\_atomic\_representation}: every feasible first-order vector has the explicit probability representation.
+\item \texttt{order\_one\_exact}: equality of all lower bounds for all real quadratic coefficients and all lower bounds $L$.
+\item \texttt{least\_exact\_order}: the least admissible exact order is one.
+\item \texttt{refutes\_minimal\_order\_formula}: the formula asserting that $2\deg(g)$ is that least order is false.
+\item \texttt{attained\_exactness}: original and relaxed feasible optimizers attaining the same minimum, for every quadratic objective.
+\end{itemize}
+
+\paragraph{Limits of the claim.}
+The package claims a refutation of an asserted universal exact minimal-order equality, using a standard explicit moment-relaxation instance. It does not claim a new universal upper bound, any upstream eligibility or first-solve status, or a proof about an alternate unspecified hierarchy. Independent external review must judge the correspondence to the original wording; author compilation is not semantic acceptance. No external reviewer assistance enters this proof.
+
+\begin{thebibliography}{1}
+\bibitem{lasserre} J. B. Lasserre, \emph{Global Optimization with Polynomials and the Problem of Moments}, SIAM Journal on Optimization 11(3), 796--817 (2001). DOI: \url{https://doi.org/10.1137/S1052623400366802}. Definitions in Section 2; constrained relaxation in Section 4.
+\end{thebibliography}
+\end{document}

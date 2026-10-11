@@ -1,0 +1,13 @@
+{
+  "original.md": "96e98ae31d34fc2f2f1d3c3be07de34fb2fa137db7a79f0005562dd225304362",
+  "PUBLICATION.md": "7553c4f4220028412a125a5c062c4da717aa94c2c9a2f61e1c5d6a3badf32ec0",
+  "README.md": "366fa55d2e9f887622f856abe2a8e8ccf17959de443aa62bb019172078b3c417",
+  "report.pdf": "73002df85be5ae332bd2e2415a5efdc71b1d78ee153d9f25c627481e89ca983a",
+  "report.tex": "15d778cdbb9a2bb7c325ecfd73325c978b117a86672b85af03d911033a3a5a0d",
+  "theorem-contracts.json": "c01986950fb4627a039baf02d211ffc4d889104d8be2c1d70cf6094d993282a7",
+  "VERIFICATION.json": "75cf03c749f2afb2028997ceddc5309ef2f64e75c1dc9ced7f3dbec98d099781",
+  "project/lake-manifest.json": "c58bfab5bad192c4b441266ad5e9d8ac94ed5e0b2cfe77909921fd2f2cbe1a2f",
+  "project/lakefile.lean": "9e3a25cf386ca8985871f442729c3dd19fef93dad81289a6bd66e2c952d5233f",
+  "project/lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+  "project/Moment.lean": "68ffb5cffbfa661c69abd95a71ad88ae70844550690a0220d26fbc4e1ad22dec"
+}

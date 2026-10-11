@@ -1,0 +1,17 @@
+{
+  "status": "PASS_ROOT_ENGINEERING_RECORD_REVIEW",
+  "safe_roots": 80,
+  "safe_closure_nodes": 28360,
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "runtime_helpers_excluded": 54,
+  "fresh_build_and_both_strict_replays": true,
+  "command_receipts_rehashed": 62,
+  "frozen_manifest_sha256": "592d1b211f14686d58e92df8c34a4f90a1d8ca2c7bb8d0c8b7101c096352ae56",
+  "declaration_audit_sha256": "448829154a13f8a706aa936a14502ae508e2514e02dde12f269183f18009ab0b",
+  "scope": "Independent graph traversal and receipt review, not a separate kernel checker. Source compilation and supplied Lean runtime remain trusted.",
+  "root_receipt_path_repair": "First review attempted logs/ paths absent in this toolkit; reran against actual receipts/*.stdout and *.stderr."
+}

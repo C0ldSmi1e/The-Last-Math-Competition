@@ -1,0 +1,31 @@
+{
+  "archive_sha256": "f794ca05e3d7db699d86e4a4cc614d84eea493979d12f98a43503f8aac215678",
+  "exclusions": [],
+  "members": {
+    "Conjecture4125.lean": {
+      "bytes": 12508,
+      "sha256": "5676c63a6a3ae6d7e3c11a1881b7e2f3ce9077e0779340185f90e65ea378ae9d"
+    },
+    "Verification.lean": {
+      "bytes": 3386,
+      "sha256": "0bcdaaad0792ff348a3792d67facf85dcd1f395abf21cfebbe7ca972fdb414e6"
+    },
+    "frozen.json": {
+      "bytes": 1040,
+      "sha256": "592d1b211f14686d58e92df8c34a4f90a1d8ca2c7bb8d0c8b7101c096352ae56"
+    },
+    "lake-manifest.json": {
+      "bytes": 3486,
+      "sha256": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637"
+    },
+    "lakefile.toml": {
+      "bytes": 324,
+      "sha256": "14c423b314369540da6a405d09bcfdba07ee2ac3b69b9678f68475442c406217"
+    },
+    "lean-toolchain": {
+      "bytes": 25,
+      "sha256": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+    }
+  },
+  "source_root": "/private/tmp/tlmc4125-review-input"
+}

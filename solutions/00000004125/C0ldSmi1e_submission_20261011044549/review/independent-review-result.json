@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "scope": "Original-first independent mathematical, semantic, frozen Lean source, full final LaTeX source, and auxiliary-evidence review",
+  "conjecture": "00000004125",
+  "proof_sha256": "5676c63a6a3ae6d7e3c11a1881b7e2f3ce9077e0779340185f90e65ea378ae9d",
+  "verification_sha256": "0bcdaaad0792ff348a3792d67facf85dcd1f395abf21cfebbe7ca972fdb414e6",
+  "report_sha256": "a5b83282a0f692c6a14e4aa922a1878913e02c81b5faa98783f9c838e3970611",
+  "pdf_sha256": "f506db0e729193b4dcc2484080807d6052677c860f24fb51b2daa072750d9917",
+  "independent_source_reelaboration_exit_codes": [
+    0,
+    0
+  ],
+  "capstone_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "auxiliary_computation_rerun_exit_code": 0,
+  "auxiliary_stdout_byte_identical": true,
+  "independent_exported_graph_safe_root_checks": 80,
+  "unresolved_mathematical_or_source_findings": [],
+  "limits": [
+    "No full Mathlib source rebuild or runtime bootstrap by this reviewer.",
+    "Rendered PDF inspection performed by parent; reviewer checked PDF identity only.",
+    "Separate engineering runtime-helper classification retains its own final record.",
+    "Local review is not maintainer acceptance."
+  ]
+}

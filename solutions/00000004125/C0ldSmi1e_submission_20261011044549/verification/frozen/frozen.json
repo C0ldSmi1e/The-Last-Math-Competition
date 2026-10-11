@@ -1,0 +1,22 @@
+{
+  "files": {
+    "Conjecture4125.lean": "5676c63a6a3ae6d7e3c11a1881b7e2f3ce9077e0779340185f90e65ea378ae9d",
+    "Verification.lean": "0bcdaaad0792ff348a3792d67facf85dcd1f395abf21cfebbe7ca972fdb414e6",
+    "lakefile.toml": "14c423b314369540da6a405d09bcfdba07ee2ac3b69b9678f68475442c406217",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "lake-manifest.json": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637"
+  },
+  "capstones": [
+    "Conjecture4125.aut_simple",
+    "Conjecture4125.randomClass_eq_iff_null_symmDiff",
+    "Conjecture4125.randomClass_unitRepresentative",
+    "Conjecture4125.randomClass_positive_iff",
+    "Conjecture4125.cohenFive_injective",
+    "Conjecture4125.randomFive_injective",
+    "Conjecture4125.four_counterexample",
+    "Conjecture4125.classification_carrier_consequence_false",
+    "Conjecture4125.conjunction_with_classification_false"
+  ],
+  "frozen_at": "2026-10-11T04:28:00.324066+00:00",
+  "source": "/private/tmp/tlmc4125-clean-proof"
+}

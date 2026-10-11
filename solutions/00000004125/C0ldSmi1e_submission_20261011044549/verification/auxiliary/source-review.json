@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "full_source_reviewed": true,
+  "source_sha256": "378fd3082339872d033869d54e866613bccc49c4c0a9d020d838c165c5d58e90",
+  "findings": [],
+  "reasoning": [
+    "All carrier permutations are exhaustively generated for powersets on 0, 1, 2, and 3 atoms.",
+    "Order reflection and preservation are tested on every pair. Bounds, complements, and joins of every subset of the finite carrier are checked. Meet preservation follows from these properties; it is not separately loop-tested.",
+    "Multiplication is permutation composition; lookup enforces closure, and two-sided inverses are found for every automorphism.",
+    "Every subset of the automorphism group is checked for identity, inverse and multiplication closure, then conjugation closure to determine normal subgroups. Nontriviality and exactly two normal subgroups implement the finite simple-group test."
+  ],
+  "limits": [
+    "Finite corroboration only; no general theorem or named-algebra bridge follows from these finite cases.",
+    "Expected cardinality and simplicity arrays are assertions against exhaustive results, not the enumeration method.",
+    "This auxiliary script does not contribute to Lean proof terms or kernel checking."
+  ]
+}

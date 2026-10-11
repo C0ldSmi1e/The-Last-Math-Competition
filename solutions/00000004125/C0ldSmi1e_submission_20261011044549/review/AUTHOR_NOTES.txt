@@ -1,0 +1,138 @@
+Conjecture 00000004125 — independent author handoff
+Frozen mathematics: 2026-10-11 04:26 UTC
+
+1. Initial read scope and independence
+
+The author began in a fresh subagent context with only the assigned task and the
+exact initial files in /private/tmp/tlmc4125-clean-author-input:
+00000004125.md, RULES.en.md, RULES.zh-CN.md, lean-toolchain,
+lake-manifest.json, SHA256SUMS.json. All six were read together before choosing
+an approach. The prompt supplied no mathematical strategy or prior solution.
+The author did not inspect candidate selectors, other conjecture directories,
+previous solutions, pull requests, other authors' analyses, reviewer reports,
+or agent listings. No list_agents call occurred. All later mathematical-library
+reads were stock pinned Mathlib definitions/theorems, chiefly order/atoms,
+Boolean algebras and order morphisms, finite groups of prime order, measure
+restriction/a.e. equality/Lebesgue interval measure, and discrete/product topology.
+No Internet source or solved competition work was consulted. Source was written
+only in /private/tmp/tlmc4125-clean-proof; stock packages and repository files
+were not edited.
+
+Before major implementation the author independently sent this strategy to root:
+use the actual Boolean algebra P(Bool), whose full automorphism group is C2, to
+refute the unrestricted classification clause; separate it from actual random
+and Cohen carriers by five distinct elements. Both language versions quantify
+over complete ccc Boolean algebras without an atomless qualifier. Root approved
+that scope after the strategy was selected. Root explicitly approved using the
+necessary carrier-equivalence consequence, provided the named carriers and the
+logical weakening were transparent. Later ordinary feedback requested the
+canonical unit-interval representative lemma; the author proved it. No prior
+solution or mathematical report was supplied or read. A permitted helper spawn
+was attempted with fork_turns:none for the random quotient bridge but failed
+with 'agent thread limit reached'; no helper contributed mathematical material.
+
+2. Mathematical result
+
+Four is literally Set Bool, with Mathlib's actual complete Boolean-algebra
+structure. CCC is the standard condition that every pairwise-disjoint set of
+nonzero elements is countable. It holds since Four is finite. Four has four
+elements and has atoms, which the conjecture's bilingual quantifier permits.
+
+Aut B is the full type B ≃o B, equipped with composition and inverse. It is not
+all permutations of the four-element carrier, nor a chosen subgroup. Every
+order automorphism preserves zero, one, meet, join, complement, and arbitrary
+joins; conversely a bijection preserving joins yields an order automorphism.
+The file proves every automorphism of Four is either the identity or the
+explicit swap of its two atoms. These two are unequal, and an explicit
+Aut Four ≃ Bool proves the group's order is exactly two. Mathlib's prime-order
+simplicity theorem proves IsSimpleGroup (Aut Four). This uses the conventional
+notion of a nontrivial simple group, which includes cyclic prime-order groups;
+neither language version requires a nonabelian simple group.
+
+The named comparison objects are genuine carriers:
+* RandomAlgebraCarrier is the quotient of Borel subsets of the real line by
+  almost-everywhere equality under Lebesgue volume restricted to [0,1]. Class
+  equality is proved equivalent to zero measure of symmetric difference.
+  Every class has the same class as its Borel representative intersected with
+  [0,1]. The measure descends to the quotient. The null class is Boolean zero,
+  and the positive-mass classes are precisely the nonzero Borel conditions in
+  the problem's positive-measure forcing presentation.
+* CohenAlgebraCarrier is the subtype of regular-open subsets of binary Cantor
+  space ℕ → Bool, with the standard discrete/product topology. Regular openness
+  is the actual equation interior (closure U) = U. Each coordinate-true cylinder
+  is clopen and hence regular open; distinct coordinates give distinct sets.
+
+For random, the five intervals [0,i/4], i∈Fin 5, give distinct classes by their
+measures 0, 1/4, 1/2, 3/4, 1. For Cohen, five coordinate cylinders are distinct.
+A carrier with an injection from Fin 5 cannot have a bijection with Four.
+Thus Four cannot be isomorphic to either named algebra, since any such
+isomorphism has an underlying equivalence.
+
+ClassificationCarrierConsequence states, with its full quantifier in Lean:
+  ∀ (B : Type) [CompleteBooleanAlgebra B],
+    CCC B → IsSimpleGroup (Aut B) →
+    Nonempty (B ≃ RandomAlgebraCarrier) ∨
+    Nonempty (B ≃ CohenAlgebraCarrier).
+It is explicitly labeled a necessary consequence, NOT the entire original
+conjecture. The author proves its negation by specializing to Four. The generic
+conjunction_with_classification_false theorem makes explicit that no truth
+values of the two other conjuncts can repair the false classification clause.
+
+3. Verification and boundaries
+
+Runtime: Lean 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release.
+Mathlib pin: c44e0c8ee63ca166450922a373c7409c5d26b00b (v4.19.0).
+Exact initial lean-toolchain and lake-manifest.json are preserved unchanged.
+The fresh lakefile.toml sets autoImplicit=false and warningAsError=true;
+both source files also explicitly set these options. Its library roots are
+Conjecture4125 and Verification, so the default build checks both owned files.
+
+Successful verification commands, from the clean-proof project directory:
+  PATH=/private/tmp/tlmc310-runtime/lean-4.19.0-darwin_aarch64/bin:$PATH lake env lean Conjecture4125.lean
+  PATH=/private/tmp/tlmc310-runtime/lean-4.19.0-darwin_aarch64/bin:$PATH lake env lean -o .lake/build/lib/lean/Conjecture4125.olean Conjecture4125.lean
+  PATH=/private/tmp/tlmc310-runtime/lean-4.19.0-darwin_aarch64/bin:$PATH lake env lean Verification.lean
+  PATH=/private/tmp/tlmc310-runtime/lean-4.19.0-darwin_aarch64/bin:$PATH lake build
+The final complete build succeeded: 2795/2795 targets; both owned modules built.
+No warning suppression was added. Early exploratory elaboration failures were
+resolved in source. The exploratory #check file is archived as
+records/Probe.lean.txt and is not part of the submission's source or build.
+
+Verification.lean checks the real measurable-space instance is exactly borel ℝ;
+the actual complete Boolean-algebra instance, CCC, cardinalities and simplicity;
+the nonidentity swap and its square; the impossibility of an automorphism moving
+zero to an atom; disjointness of the two nonzero atoms; the null interval becoming
+zero; mass and nonzeroness of the full interval; distinct positive quarter/half
+interval classes; disappearance of an interval outside [0,1]; distinct Cohen
+cylinders; both no-equivalence results; and the final quantified negation.
+
+All nine queried capstones have exactly these axioms:
+  [propext, Classical.choice, Quot.sound]
+The queries are aut_simple, randomClass_eq_iff_null_symmDiff,
+randomClass_unitRepresentative, randomClass_positive_iff, cohenFive_injective,
+randomFive_injective, four_counterexample,
+classification_carrier_consequence_false, conjunction_with_classification_false.
+The owned .lean files contain no sorry, admit, custom axiom, native_decide,
+or unsafe declaration. The textual prohibited-token scan produced no matches.
+
+4. Precisely bounded claims
+
+This is a disproof of the conjecture AS WRITTEN. It neither proves nor disproves
+the separate statement that the random algebra's automorphism group is simple,
+nor the statement about its maximal solvable subgroups. It does not claim to
+resolve an unstated version restricted to atomless algebras, infinite algebras,
+or nonabelian simple automorphism groups.
+
+For the two named targets, Lean constructs their actual carriers and proves the
+stronger obstruction that no carrier bijection exists. It does not construct
+all their complete Boolean-algebra operations or prove their ccc/completeness,
+because none of those facts is needed for the cardinality obstruction. Their
+standard presentations are identified in the definitions and the quotient's
+support/null/positive bridges are fully proved. Every Boolean/order algebra
+isomorphism is necessarily a carrier bijection; this is the only information
+about target operations used by the disproof.
+
+No auxiliary numerical program is needed or used as mathematical evidence.
+No LaTeX/PDF artifact was created: the root's artifact hold remains in force.
+These notes are plain author records, not a final report. The five frozen source,
+configuration and lock-file hashes are in SOURCE_SHA256SUMS.json. Any changes to
+those five files after freeze require coordination with root and renewed checks.

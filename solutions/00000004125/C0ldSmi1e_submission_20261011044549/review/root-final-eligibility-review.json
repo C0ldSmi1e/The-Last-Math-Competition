@@ -1,0 +1,24 @@
+{
+  "status": "PASS_ROOT_FINAL_ELIGIBILITY",
+  "candidate": "00000004125",
+  "manifest_members_rehashed": 163,
+  "raw_request_pairs_rehashed": 18,
+  "parsed_response_receipts_verified": 36,
+  "manifest_sha256": "e9330ef22fce777e3ee06208d16d03973c31e855a7c14cf2b81ea715ccf6a606",
+  "main_sha": "9b795e7a94a6076e49a65a6489e1caf9153abd23",
+  "observed_through": "2026-10-11T04:38:11.443720+00:00",
+  "lead_classification": [
+    {
+      "pr": 700,
+      "classification": "UNRELATED",
+      "reason": "Explicit submission for2221, Krull-dimension versus Stone-space cardinality; broad Boolean-algebra topic only. No4125claim."
+    },
+    {
+      "pr": 761,
+      "classification": "UNRELATED",
+      "reason": "Explicit submission for4124, cardinality ofccc non-Knaster posets; no4125 automorphism classification claim."
+    }
+  ],
+  "scope": "Current upstream path and paginated same-path commit API history; complete retained neutral catalog metadata plus bounded updated metadata and repository issue searches. No fork or full DAG history claim.",
+  "recorded_at": "2026-10-11T04:39:04.077174+00:00"
+}

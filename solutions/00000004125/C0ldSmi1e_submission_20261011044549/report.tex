@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Borel}{\operatorname{Borel}}
+\newcommand{\RO}{\operatorname{RO}}
+\newcommand{\interior}{\operatorname{int}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\title{A finite counterexample to conjecture 00000004125}
+\author{C0ldSmi1e}
+\date{October 11, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The four-element powerset Boolean algebra is complete and satisfies the countable chain condition. Its full automorphism group has order two and is therefore simple. It is isomorphic to neither the random algebra nor the Cohen algebra: each of their concrete standard carriers has at least five distinct elements. This disproves the classification conjunct of conjecture 00000004125 as written. The Lean development constructs the finite algebra, its full automorphism group, and the two named carriers, and proves the required cardinality obstruction without an assumed atomlessness theorem.
+\end{abstract}
+
+\section{The statement and the scope of the disproof}
+The original English statement is:
+\begin{quote}
+Definition: The random algebra is the forcing of positive-measure Borel sets modulo null sets. Conjecture: Its automorphism group is simple and its maximal solvable subgroups are trivial; the complete ccc Boolean algebras with simple automorphism group are exactly the random algebra and the Cohen algebra. (simplicity of the random algebra automorphism group)
+\end{quote}
+The complete bilingual source is supplied as \texttt{conjecture.md}. Both versions quantify over complete ccc Boolean algebras without requiring them to be atomless or infinite. Neither version requires the simple group to be nonabelian. We use the usual definition of a simple group: a nontrivial group with no proper nontrivial normal subgroup. In particular, a cyclic group of prime order is simple.
+
+The statement is a conjunction. We refute its classification clause. We do not assert a separate conclusion about simplicity of the random algebra's automorphism group or its maximal solvable subgroups. The finite example would not address a different classification restricted to atomless algebras or to nonabelian simple groups.
+
+\section{The finite algebra and its full automorphism group}
+Let $D=\{0,1\}$ and let $B=\mathcal P(D)$, ordered by inclusion. Its four elements are
+\[
+\varnothing,\quad \{0\},\quad \{1\},\quad D.
+\]
+Arbitrary unions and intersections, together with relative complement in $D$, make $B$ a complete Boolean algebra. The countable chain condition (ccc) says that every pairwise-disjoint family of nonzero elements is countable. Every family of elements of $B$ is finite, so $B$ is ccc.
+
+\begin{lemma}
+The full Boolean-algebra automorphism group of $B$ consists of the identity and the map interchanging the two singleton atoms. It has order two and is simple.
+\end{lemma}
+\begin{proof}
+An automorphism fixes $\varnothing$ and $D$ and maps atoms to atoms. The image of $\{0\}$ is therefore either $\{0\}$ or $\{1\}$. Preservation of complement determines the image of the other singleton. Thus there are at most two automorphisms. Both occur: the identity and inverse image under the transposition of $D$. The latter is distinct from the identity and has square equal to the identity. A group of prime order two has only the trivial and whole subgroups, so is simple.
+\end{proof}
+The Lean type of automorphisms is the full type $B\simeq_o B$ of order isomorphisms, with actual composition and inverse. This is exactly the appropriate automorphism group: order isomorphisms preserve Boolean operations and arbitrary joins; conversely, any bijection preserving binary joins is an order isomorphism. Both directions needed for this identification are included in the source. The proof does not replace this group by the group of all permutations of the four-element carrier.
+
+\section{Concrete random and Cohen carriers}
+To exclude an isomorphism, it suffices to exclude a bijection of carriers. Consequently no construction of the full target Boolean-algebra operations or their completeness is needed for this obstruction. The carriers themselves must still be the actual standard ones; they are not labels for arbitrary atomless types.
+
+\subsection{Random algebra}
+Let $\mu$ be Lebesgue measure restricted to $[0,1]$. For Borel sets $S,T\subseteq\mathbb R$, put
+\[
+S\sim T\quad\Longleftrightarrow\quad \mu(S\mathbin{\triangle}T)=0.
+\]
+The quotient $R=\Borel(\mathbb R)/{\sim}$ is a real-line presentation of the usual random algebra on the unit interval. Indeed, each class represented by $S$ also has the representative $S\cap[0,1]$, supported in the unit interval. The standard unit-interval presentation is stated in Goodearl--Wehrung, proof of Lemma 5-1.10~\cite{GW}.
+
+Lean defines the relation by equality almost everywhere and proves its equivalence with null symmetric difference, as well as $[S]=[S\cap[0,1]]$. The function $m([S])=\mu(S)$ is well-defined on the quotient. The class of the empty set is zero, and the source proves
+\[
+[S]\ne 0\quad\Longleftrightarrow\quad m([S])>0.
+\]
+Thus including zero gives the Boolean-algebra carrier, while its nonzero classes are exactly the positive-measure Borel conditions described in the conjecture.
+
+For $i\in\{0,1,2,3,4\}$, take $E_i=[0,i/4]$. The source computes
+\[
+m([E_i])=i/4.
+\]
+These five values are distinct, so the classes $[E_i]$ are distinct. Notice that $E_0=\{0\}$ is a null set and represents zero; $E_4=[0,1]$ has measure one. Therefore $R$ admits an injection from a five-element set and no bijection with $B$.
+
+\subsection{Cohen algebra}
+Let $X=\{0,1\}^{\mathbb N}$ carry the product of the discrete two-point topologies. The standard Cohen algebra has carrier
+\[
+C=\RO(X)=\{U\subseteq X:\ \interior(\overline U)=U\}.
+\]
+This regular-open presentation is the countable instance of the definition of $C(\kappa)$ in Shelah--Zapletal~\cite{SZ}.
+
+For each $n\in\mathbb N$, let $U_n=\{x\in X:x(n)=1\}$. The coordinate projection is continuous, so $U_n$ is clopen and hence regular open. If $n\ne m$, the binary sequence that equals one exactly at coordinate $n$ lies in $U_n$ and not in $U_m$. Hence $n\mapsto U_n$ is injective. Its restriction to $n=0,1,2,3,4$ gives five distinct elements of $C$, so again there is no bijection with $B$.
+
+\section{Formal conclusion and verification boundary}
+\begin{theorem}
+There is a complete ccc Boolean algebra whose full automorphism group is simple and which is isomorphic to neither the random algebra nor the Cohen algebra. Therefore conjecture 00000004125 is false as written.
+\end{theorem}
+\begin{proof}
+Use $B=\mathcal P(D)$. The preceding results prove all its required properties and show that its carrier has four elements while each named target carrier has at least five. Any Boolean-algebra isomorphism would induce a carrier bijection, which is impossible. Thus the claimed classification is false, and so is the original conjunction.
+\end{proof}
+
+The formal proposition \texttt{ClassificationCarrierConsequence} universally quantifies over complete Boolean algebras $A$ and states that ccc and simplicity of $\Aut(A)$ imply a carrier equivalence with $R$ or $C$. This is deliberately a \emph{necessary consequence} of the original classification. Its negation is stronger than the required nonisomorphism obstruction and is proved by the actual example $B$. It is not presented as a full formal definition of the two other conjectural clauses. The generic theorem \texttt{conjunction\_with\_classification\_false} records that adjoining any two propositions cannot repair the failed consequence.
+
+The principal source connections are:
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.37\textwidth}>{\raggedright\arraybackslash}p{0.57\textwidth}@{}}
+\toprule
+Mathematical obligation & Lean declaration (namespace \texttt{Conjecture4125})\\
+\midrule
+Complete ccc four-element algebra & \texttt{four\_complete}, \texttt{four\_ccc}, \texttt{four\_card}\\
+Full automorphism group and simplicity & \texttt{aut\_cases}, \texttt{aut\_card}, \texttt{aut\_simple}\\
+Random quotient and unit support & \texttt{randomClass\_eq\_iff\_null\_symmDiff}, \texttt{randomClass\_unitRepresentative}\\
+Five actual classes/cylinders & \texttt{randomFive\_injective}, \texttt{cohenFive\_injective}\\
+Counterexample and quantified negation & \texttt{four\_counterexample},\newline \texttt{classification\_carrier\_consequence\_false}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The project pins Lean 4.19.0 and Mathlib v4.19.0. Its two owned Lean modules are built with warnings treated as errors. \texttt{Verification.lean} checks the Borel measurable-space instance, both cardinalities, the nontrivial involution, preservation of zero, disjoint atoms, null/full/positive interval classes, support outside the unit interval, distinct cylinders, and the final negation. The nine printed capstone axiom lists use only \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+
+The accompanying independent finite computation enumerates every carrier permutation for powersets on zero through three atoms and checks the full order relation, complements, arbitrary joins, and normal subgroups. It corroborates automorphism orders $1,1,2,6$, with simplicity only in the two-atom case. It is not used to generate Lean proof terms or establish either named-algebra bridge.
+
+Reproduction commands and build, dependency-audit, auxiliary-computation, and independent-review records are supplied with the submission. Source compilation supplies Lean kernel checking; the additional inspector checks declaration dependencies and import identities. Supplied pinned-library compiled artifacts and the Lean runtime remain trusted inputs. Local verification is distinct from maintainer acceptance.
+
+\begin{thebibliography}{9}
+\bibitem{GW} K. R. Goodearl and F. Wehrung.
+\emph{The complete dimension theory of partially ordered systems with equivalence and orthogonality}.
+Memoirs Amer. Math. Soc. 176 (2005), no. 831.
+Proof of Lemma 5-1.10.
+\href{https://arxiv.org/abs/math/0403057}{arXiv:math/0403057}.
+\bibitem{SZ} S. Shelah and J. Zapletal.
+\emph{Embeddings of Cohen algebras}.
+Adv. Math. 126 (1997), 93--118.
+\href{https://arxiv.org/abs/math/9502230}{arXiv:math/9502230}.
+\end{thebibliography}
+\end{document}

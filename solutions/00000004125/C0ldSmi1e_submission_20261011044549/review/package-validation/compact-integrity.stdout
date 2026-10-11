@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "bundle_files": 28,
+  "archive_members": {
+    "records/frozen-input.tar.gz": 6,
+    "records/preflight.tar.gz": 37,
+    "records/preparation.tar.gz": 284,
+    "records/verification.tar.gz": 256
+  },
+  "bundle_manifest_sha256": "2c62d60ea4d7966d5277f7a9d9e3bda323eaad0e21060e33b858bd35b696ebfd",
+  "scope": "Content integrity and safe archive structure; not a fresh Lean proof replay."
+}

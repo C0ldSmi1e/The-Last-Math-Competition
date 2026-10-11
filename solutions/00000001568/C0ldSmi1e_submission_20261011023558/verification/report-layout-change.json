@@ -1,0 +1,16 @@
+{
+  "before": {
+    "path": "/private/tmp/tlmc1568-pdf-review/report-before-layout.tex",
+    "sha256": "aca74b50943ab572fb35d68394415971ec6baa8291eb1348d11357c84575e06c"
+  },
+  "after": {
+    "path": "/private/tmp/tlmc1568-proof/report.tex",
+    "sha256": "dd336d96b2ff37cb6314bc99bdd1a5cd9052e998955e3d68448aa12ec56ebae4"
+  },
+  "changes": [
+    "Mathlib revision moved to separate quote block",
+    "emergency stretch 2em",
+    "line break before parenthesized det_strict_side identifier"
+  ],
+  "mathematical_change": false
+}

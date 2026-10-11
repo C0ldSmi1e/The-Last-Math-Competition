@@ -1,0 +1,217 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\seg}[2]{[#1,#2]}
+\newcommand{\detp}[2]{\det\!\left(#1,#2\right)}
+\title{A direct proof of the geometric thrackle bound\\
+\large Conjecture 00000001568}
+\author{}
+\date{October 10, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a finite straight-edge graph in the real plane, suppose that every two
+distinct edges have exactly one common point. We prove that the number of
+edges is at most the number of vertices. The argument permits collinear
+vertices, intersections at endpoints, and nonincident vertices lying on
+edges. A complete Lean 4 proof accompanies the report.
+\end{abstract}
+
+\section{Statement and conventions}
+The supplied English statement defines a geometric thrackle as a
+``straight-edge graph in the plane in which every two edges intersect
+exactly once,'' and asks for the bound $|E|\leq |V|$. Both original language
+versions are preserved verbatim in \texttt{source/original.md}.
+
+We use the ordinary graph convention: a finite undirected simple graph
+$G=(V,E)$, with distinct vertices represented by distinct points of
+$\mathbb R^2$. For $u,v\in V$, write their positions simply as $u,v$, and
+draw an edge $uv$ as the closed segment
+\[
+ \seg uv=\{(1-t)u+tv:0\leq t\leq 1\}.
+\]
+An unordered edge is counted once. An isolated vertex is allowed.
+The hypothesis is that $\seg uv\cap\seg xy$ is a singleton for any two
+distinct edges $uv,xy$. In particular, incident edges meet only at their
+shared endpoint. We impose no general-position assumption and do not
+require a nonincident edge pair to cross in their relative interiors.
+Thus the proof also covers the more restrictive usual drawing convention
+that forbids a nonincident vertex from lying inside an edge. Parallel
+copies of a nondegenerate straight edge would have a whole segment in
+common and therefore cannot satisfy the hypothesis.
+
+\begin{theorem}\label{thm:main}
+Under these hypotheses, $|E|\leq |V|$.
+\end{theorem}
+
+The reference to the numerical coefficient $1.393$ in the supplied
+statement is background to the requested improvement. Our result is the
+stated stronger bound $|E|\leq |V|$; no historical or priority assertion
+about the bounds is needed in the proof.
+
+\section{A geometric sign lemma}
+For vectors $r=(r_1,r_2)$ and $s=(s_1,s_2)$ define
+$\detp rs=r_1s_2-r_2s_1$.
+
+\begin{lemma}\label{lem:sign}
+Let $v,a,b,x\in\mathbb R^2$, with $a\ne v$ and $b\ne v$. Suppose that
+\[
+ \seg va\cap\seg vb=\{v\},\qquad
+ \seg va\cap\seg ax=\{a\},\qquad
+ \seg vb\cap\seg ax\ne\varnothing.
+\]
+Then
+\[
+ \detp{a-v}{b-v}\,\detp{a-v}{x-v}>0.
+\]
+\end{lemma}
+
+\begin{proof}
+Choose $p\in\seg vb\cap\seg ax$. If $p=v$, then $v$ belongs to
+$\seg va\cap\seg ax=\{a\}$, contrary to $a\ne v$. If $p=a$, then $a$
+belongs to $\seg va\cap\seg vb=\{v\}$, again a contradiction.
+
+We claim $D=\detp{a-v}{p-v}\ne0$. Otherwise $v,a,p$ are collinear.
+Among three collinear points, one is between the other two, including the
+endpoints in the meaning of ``between.'' All cases give a contradiction:
+\begin{itemize}
+\item If $a\in\seg vp$, then $\seg vp\subseteq\seg vb$, so
+      $a\in\seg va\cap\seg vb=\{v\}$.
+\item If $p\in\seg va$, then $p\in\seg va\cap\seg vb=\{v\}$.
+\item If $v\in\seg ap$, then $\seg ap\subseteq\seg ax$, so
+      $v\in\seg va\cap\seg ax=\{a\}$.
+\end{itemize}
+These contradict respectively $a\ne v$, $p\ne v$, and $a\ne v$.
+The subset assertions follow from the convexity of a segment.
+
+Write $p=(1-t)v+tb=(1-s)a+sx$, where $s,t\in[0,1]$. As $p\ne v,a$,
+we have $t>0$ and $s>0$. Bilinearity and alternation of the determinant give
+\[
+ D=t\detp{a-v}{b-v}=s\detp{a-v}{x-v}.
+\]
+Hence
+\[
+ 0<D^2=st\detp{a-v}{b-v}\detp{a-v}{x-v}.
+\]
+Since $st>0$, the claimed strict inequality follows. This argument deals
+explicitly with possible collinearity rather than assuming it away.
+\end{proof}
+
+\section{At most two neighbors of degree other than one}
+Write $d(v)$ for the degree of a vertex. A leaf is a vertex of degree one.
+
+\begin{lemma}\label{lem:two}
+Every vertex has at most two neighbors that are not leaves.
+\end{lemma}
+
+\begin{proof}
+Let $a$ be a neighbor of $v$ that is not a leaf. Since it already has the
+neighbor $v$, its degree is at least two. Choose a neighbor $x\ne v$ of
+$a$. For any other neighbor $b\ne a$ of $v$, the edges $va,vb,ax$ are
+pairwise distinct: equality of $vb$ and $ax$ would force either $v=a$ or
+$v=x$, both excluded. Their singleton intersections satisfy
+Lemma~\ref{lem:sign}. Consequently,
+\[
+ \detp{a-v}{b-v}\,\detp{a-v}{x-v}>0
+ \quad\text{for every such }b.
+\]
+In particular all the determinants $\detp{a-v}{b-v}$, as $b$ ranges over
+the other neighbors of $v$, have the same strict sign. The same conclusion
+holds for each nonleaf neighbor in place of $a$.
+
+Suppose three distinct nonleaf neighbors $a,b,c$ exist, and put
+\[
+ A=\detp{a-v}{b-v},\qquad
+ B=\detp{a-v}{c-v},\qquad
+ C=\detp{b-v}{c-v}.
+\]
+The conclusion at $a$ gives $AB>0$. At $b$, determinant antisymmetry
+gives $(-A)C>0$. At $c$ it gives $(-B)(-C)=BC>0$. The first and third
+inequalities say that $A,B,C$ have the same strict sign, whereas the
+second says that $A,C$ have opposite signs. This contradiction proves the
+lemma.
+\end{proof}
+
+\section{Counting the edges}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $L$ be the set of leaves, let $\ell(v)$ be the number of leaf
+neighbors of $v$, and let $\mathbf1_L(v)$ be one when $v\in L$ and zero
+otherwise. Lemma~\ref{lem:two} gives
+$d(v)\leq2+\ell(v)$ for every vertex. If $v$ itself is a leaf then
+$d(v)+\mathbf1_L(v)=2\leq2+\ell(v)$; otherwise the indicator is zero.
+Thus, in all cases,
+\[
+ d(v)+\mathbf1_L(v)\leq2+\ell(v).
+\]
+Summing over vertices and reversing the order in the finite adjacency
+sum gives
+\[
+ \sum_{v\in V}\ell(v)
+ =\sum_{w\in L}\#\{v\in V:vw\in E\}
+ =\sum_{w\in L}d(w)=|L|.
+\]
+The degree-sum formula therefore yields
+\[
+ 2|E|+|L|\leq2|V|+|L|.
+\]
+Canceling $|L|$ and dividing by two proves $|E|\leq|V|$. This includes
+the empty graph, isolated vertices, disconnected graphs, and edges whose
+two endpoints are both leaves.
+\end{proof}
+
+\section{Formal statement and verification}
+The project uses Lean \texttt{4.19.0} and stock Mathlib at revision
+\texttt{c44e0c8ee63ca166450922a373c7409c5d26b00b}. The committed Lake
+manifest pins the complete dependency set.
+
+The structure \texttt{GeometricThrackle.Drawing G} contains an injective
+position map into $\mathbb R\times\mathbb R$, and an existence-and-uniqueness
+assertion for the intersection of each pair of distinct unordered edges.
+The custom segment definition is proved equal to Mathlib's real closed
+segment in \texttt{seg\_eq\_segment}. The final declaration is
+\begin{quote}\ttfamily\small
+GeometricThrackle.geometric\_thrackle\_bound
+\end{quote}
+and its conclusion is
+\begin{quote}\ttfamily\small
+G.edgeFinset.card $\leq$ Fintype.card V.
+\end{quote}
+The finite vertex type and simple graph are arbitrary. The decidable
+adjacency instance appearing in the Lean statement provides finite
+enumeration; it is available classically for every such graph and adds
+no mathematical restriction.
+
+The source files correspond directly to the preceding proof:
+\begin{itemize}
+\item \texttt{Geometry.lean}: the segment definition, collinearity step,
+      and Lemma~\ref{lem:sign} as \texttt{det\_strict\_side}.
+\item \texttt{Angular.lean}: the sign contradiction and the cardinal
+      bound on nonleaf neighbors.
+\item \texttt{Counting.lean}: the finite-sum cancellation proving the
+      edge bound from the local neighbor bound.
+\item \texttt{Main.lean}: the exact drawing hypotheses, their application
+      to the geometric lemma, and the final theorem.
+\end{itemize}
+The verification script rebuilds all four local modules, checks the
+pinned manifest and toolchain, scans the authored Lean sources for
+incomplete or unsafe proof mechanisms, and checks the printed axioms of
+the final theorem. The printed dependencies are precisely
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}, the
+standard foundational axioms used by Mathlib. There are no added axioms,
+admitted goals, or computation-based trust extensions. No auxiliary
+numerical computation is required by the proof.
+
+The proof was derived from the supplied statement and repository rules,
+with access to stock Mathlib and the pinned toolchain. No prior
+candidate-specific solution or online mathematical proof was consulted.
+The local provenance notes record the independent geometric assessment
+and the division of formalization work. This report makes no claim of
+historical novelty.
+\end{document}

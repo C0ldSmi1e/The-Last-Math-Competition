@@ -1,0 +1,2 @@
+'TLMC2685.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2685.closure_not_contained_preperiodic' depends on axioms: [propext, Classical.choice, Quot.sound]

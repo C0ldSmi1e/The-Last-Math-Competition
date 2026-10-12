@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-10-11T20:06:57+00:00",
+  "conjecture_id": "00000003829",
+  "upstream_commit": "9b795e7a94a6076e49a65a6489e1caf9153abd23",
+  "statement_blob_sha": "f6bbf2c4291942bdca45f4f848dcd5f455aed9bc",
+  "metadata_blob_sha": "9189d96240d7117f4ef1d96c2c84502aa7a3ca50",
+  "metadata_row": "00000003829,,,,,,false,false,,false,",
+  "solutions_directory_status": 404,
+  "solutions_directory_url": "https://api.github.com/repos/The-Last-Math-Competition/The-Last-Math-Competition/contents/solutions/00000003829",
+  "pull_request_searches": [
+    {
+      "query": "3829",
+      "state": "all",
+      "results": []
+    },
+    {
+      "query": "\"00000003829\"",
+      "state": "all",
+      "results": []
+    }
+  ],
+  "search_scope": "The-Last-Math-Competition/The-Last-Math-Competition",
+  "readme_blob_sha": "829fecaa6756f7f121556957cb49574d675a4811",
+  "publication_performed": false,
+  "final_recheck": "metadata and both all-state PR searches unchanged; solution directory still 404"
+}

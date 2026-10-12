@@ -1,0 +1,17 @@
+Lean (version 4.31.0, x86_64-unknown-linux-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)
+Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)
+ℹ [2/2] Built Basic (812ms)
+info: Basic.lean:219:0: 'TLMC3829.classify' depends on axioms: [propext, Quot.sound]
+info: Basic.lean:220:0: 'TLMC3829.singleton_border' depends on axioms: [propext, Quot.sound]
+info: Basic.lean:221:0: 'TLMC3829.component_count_one' depends on axioms: [propext, Quot.sound]
+info: Basic.lean:222:0: 'TLMC3829.connected_for_any_border_relation' depends on axioms: [propext, Quot.sound]
+info: Basic.lean:223:0: 'TLMC3829.counterexample' depends on axioms: [propext, Quot.sound]
+Build completed successfully (2 jobs).
+'TLMC3829.classify' depends on axioms: [propext, Quot.sound]
+'TLMC3829.singleton_border' depends on axioms: [propext, Quot.sound]
+'TLMC3829.component_count_one' depends on axioms: [propext, Quot.sound]
+'TLMC3829.connected_for_any_border_relation' depends on axioms: [propext, Quot.sound]
+'TLMC3829.counterexample' depends on axioms: [propext, Quot.sound]
+replaying Basic
+
+All formal checks passed.

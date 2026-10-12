@@ -1,0 +1,25 @@
+import Main
+#print axioms Conjecture3996.CNF.block_satisfied_of_not_clique
+#print axioms Conjecture3996.CNF.cliqueFree_implies_satisfiable
+#print axioms Conjecture3996.CNF.resolvent_sound
+#print axioms Conjecture3996.CNF.derivation_sound
+#print axioms Conjecture3996.CNF.satisfiable_excludes_refutation
+#print axioms Conjecture3996.CNF.cliqueFree_excludes_ramsey_refutation
+#print axioms Conjecture3996.Family.cycle5_clique_card
+#print axioms Conjecture3996.Family.cycle5_compl_clique_card
+#print axioms Conjecture3996.Family.clique_card_blocks
+#print axioms Conjecture3996.Family.red_blue_clique_card
+#print axioms Conjecture3996.Family.words_card
+#print axioms Conjecture3996.Family.diagonal_card_le
+#print axioms Conjecture3996.Family.clique_card_comap
+#print axioms Conjecture3996.Family.compl_comap_embedding
+#print axioms Conjecture3996.Family.diagonal_clique_card
+#print axioms Conjecture3996.Family.diagonal_cliqueFree
+#print axioms Conjecture3996.Family.diagonal_family
+#print axioms Conjecture3996.Family.beyond_every_threshold
+#print axioms Conjecture3996.Family.not_eventual_diagonal_ramsey
+#print axioms Conjecture3996.Family.diagonal_color_partition
+#print axioms Conjecture3996.beyond_every_threshold_satisfiable
+#print axioms Conjecture3996.beyond_every_threshold_no_refutation
+#print axioms Conjecture3996.necessary_finite_upper_bound_false
+#print axioms Conjecture3996.actual_diagonal_counterexamples

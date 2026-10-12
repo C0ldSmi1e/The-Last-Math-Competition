@@ -1,0 +1,59 @@
+{
+  "capstones": [
+    "Conjecture1925.counterexample",
+    "Conjecture1925.lp_norm_gap_all",
+    "Conjecture1925.averages_not_cauchy",
+    "Conjecture1925.no_Linfinity_limit",
+    "Conjecture1925.rotation_not_ergodic"
+  ],
+  "created_utc": "2026-10-12T20:36:21.245913+00:00",
+  "files": {
+    ".gitignore": "47f2e05258d3593cfc3e6ecc72029f5fe86698aa209bcf8afef9a1236b072dc3",
+    "Conjecture1925.lean": "b435f73aff88648460f911e0414bcd9da8a0a05a33562b5b61c174345bd35e07",
+    "Conjecture1925/Counterexample.lean": "24a4a7ae9efe504394716b2ec0e076b6098e88eabef812190c9d986322b49c96",
+    "Conjecture1925/Dynamics.lean": "d747a1e6cdbeb190569b136086238d42616c621a8dd85646d4072db8e17346bb",
+    "Conjecture1925/Measure.lean": "2355091f693ffd313bf6998e0bd9be1adee3ad9f684b64c10b4ffb6a76f391ec",
+    "Conjecture1925/Nonconvergence.lean": "1c0d8080bf6e7ab41e94793ebe84331680fb5e33fc3a75770dde4be799712d45",
+    "Conjecture1925/Tests.lean": "298bebc46554b2dd3a94bce8b4eb28bc88b83c9434f418dd1dc560b23b4fb566",
+    "README.txt": "0590150c6eff239dfd117132abd137ebbd80d7ca2a798f44a59eaac8e1d71c0b",
+    "lake-manifest.json": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637",
+    "lakefile.lean": "788270e7447dd911220311bd56edbb096d60080ea25397f4b39ee0c991b489ee",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+  },
+  "frozen_manifest_sha256": "bf918649c77eaa562ecd36add9416f6a02957bd56813c45fb539691945c96b2e",
+  "modules": [
+    "Conjecture1925",
+    "Conjecture1925.Counterexample",
+    "Conjecture1925.Dynamics",
+    "Conjecture1925.Measure",
+    "Conjecture1925.Nonconvergence",
+    "Conjecture1925.Tests"
+  ],
+  "source_review": {
+    "all_eleven_frozen_files_read": true,
+    "all_source_config_hashes_match": true,
+    "authored_hooks_macros_elaborators_IO_or_external_processes": false,
+    "both_pins_identical_to_expected_and_neutral": true,
+    "default_target": "Conjecture1925",
+    "default_target_covers_all_six_modules": true,
+    "engineering_findings": [],
+    "import_chain": [
+      "Conjecture1925",
+      "Conjecture1925.Tests",
+      "Conjecture1925.Counterexample",
+      "Conjecture1925.Nonconvergence",
+      "Conjecture1925.Measure",
+      "Conjecture1925.Dynamics"
+    ],
+    "semantic_scope_note": "Concrete fixed probability space and L-infinity quotient norm are used. Nonergodicity is explicitly included. Exact conjecture interpretation remains the separate semantic review.",
+    "source_features": "Ordinary definitions/instances, noncomputable sections, proof tactics, examples, and #print axioms only. Lake config contains package flags, pinned dependency declaration and default lean_lib."
+  },
+  "status": "PRE_EXECUTION_SOURCE_REVIEW_PASS",
+  "tool_sha256": {
+    "check_audit_graph.py": "c4b518f02a17db3778a09ddc3987016973ad67ff057c9d03e1b76ed3eeabae61",
+    "templates/ClosureAudit.lean.txt": "65cb76b47ad6bcfa369c446bc16887a8c6ec8409db96c21d17c9f7aca31babbd",
+    "test_hardening.py": "598da8afd239ec02a5b2a1a9a6914bf7bd06117653289dab148ab5094c6ada3f",
+    "verify.py": "7819063a85d89ad45d9fb31e282c941c3d89b27beb00d7ec459870423c078b89"
+  },
+  "verification_started": false
+}

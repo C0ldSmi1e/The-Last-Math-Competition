@@ -1,0 +1,43 @@
+{
+  "status": "PASS_SEMANTIC_SOURCE_REVIEW",
+  "reviewed_at": "2026-10-12T20:36:26.738426+00:00",
+  "frozen_manifest_sha256": "bf918649c77eaa562ecd36add9416f6a02957bd56813c45fb539691945c96b2e",
+  "original_sha256": "0a9933e43e3a5615bbab57ba6aecc8097a945bad2805aa69eff506bc4030efe3",
+  "full_source_files_read": {
+    ".gitignore": "47f2e05258d3593cfc3e6ecc72029f5fe86698aa209bcf8afef9a1236b072dc3",
+    "Conjecture1925/Counterexample.lean": "24a4a7ae9efe504394716b2ec0e076b6098e88eabef812190c9d986322b49c96",
+    "Conjecture1925/Dynamics.lean": "d747a1e6cdbeb190569b136086238d42616c621a8dd85646d4072db8e17346bb",
+    "Conjecture1925/Measure.lean": "2355091f693ffd313bf6998e0bd9be1adee3ad9f684b64c10b4ffb6a76f391ec",
+    "Conjecture1925/Nonconvergence.lean": "1c0d8080bf6e7ab41e94793ebe84331680fb5e33fc3a75770dde4be799712d45",
+    "Conjecture1925/Tests.lean": "298bebc46554b2dd3a94bce8b4eb28bc88b83c9434f418dd1dc560b23b4fb566",
+    "Conjecture1925.lean": "b435f73aff88648460f911e0414bcd9da8a0a05a33562b5b61c174345bd35e07",
+    "README.txt": "0590150c6eff239dfd117132abd137ebbd80d7ca2a798f44a59eaac8e1d71c0b",
+    "lake-manifest.json": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637",
+    "lakefile.lean": "788270e7447dd911220311bd56edbb096d60080ea25397f4b39ee0c991b489ee",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+  },
+  "capstones": [
+    "Conjecture1925.counterexample",
+    "Conjecture1925.lp_norm_gap_all",
+    "Conjecture1925.averages_not_cauchy",
+    "Conjecture1925.no_Linfinity_limit",
+    "Conjecture1925.rotation_not_ergodic"
+  ],
+  "interpretation": "The unqualified bilingual claim is read using normalized polynomial ergodic averages on a probability-preserving system with a bounded measurable observable. Neither language explicitly requires T to be ergodic or specifies a rate formula. Norm nonconvergence suffices to refute any vanishing norm-convergence rate on this class.",
+  "findings": [
+    "One fixed countable dependent sum of cycles, PMF, rotation and bounded observable; only positive-mass witness point varies with N.",
+    "Natural polynomial X^2 has degree2 and evaluates to actual square iteration times. Definition matches conventional normalized N-term average.",
+    "PMF geometric masses sum1; finite cycle normalization is proved for every nonzero size. Every atom has positive mass.",
+    "Rotation is an explicit equivalence with measurable inverse and preserves singleton masses; countability extends this to equality of measures.",
+    "Symbolic no-wrap and finite-sum arguments give 0 versus1/2 for every positive length. No finite simulation is substituted for a universal proof.",
+    "Every a.e. predicate holds everywhere since all atoms positive; Mathlib essential supremum and MemLp.toLp bridge witness values to the actual Lp infinity quotient metric/norm.",
+    "All positive N norm gaps imply a Cauchy contradiction beyond every tail index and exclusion of every possible Lp limit.",
+    "Invariant component0 mass1/2 formally establishes nonergodicity; counterexample capstone records this limitation explicitly.",
+    "Default library root includes all15 formal integration examples and all proof modules. Lake configuration has no custom hook. No admission, native_decide, custom axiom, unsafe authored proof or metaprogramming seen."
+  ],
+  "limitations": [
+    "Fresh full engineering verification is separate and currently running.",
+    "Report mathematics was read in full and draft3-page PDF inspected; final validation paragraph and final correspondence audit remain pending.",
+    "No result about an amended ergodic-only claim or an alternative specialized meaning of p-averages is asserted."
+  ]
+}

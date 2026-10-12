@@ -1,0 +1,17 @@
+{
+  "status": "PASS_ELIGIBLE_TO_SUBMIT",
+  "created_utc": "2026-10-12T20:39:15.951529+00:00",
+  "main_sha": "dbd621f487f21dd1f39e4a13653e2afc68cb0393",
+  "observed_through": "2026-10-12T20:36:47.559504+00:00",
+  "capture_review_manifest_sha256": "b1e82af34bbfd9c00aaeab7bbcc471fc916e8d9f331df9129c0c2ebcca61b7f5",
+  "metadata_review_sha256": "be1d436ee28908b7a843e637f71362d31b1e2ed57754df0ee7e42cafa844026c",
+  "rehashed_evidence_members": 213,
+  "reviewed_validation_checks": 796,
+  "root_read": "Original capture script, prepared script diff, entire offline validator and complete findings were read. Existing85 unrelated classifications retained by stated exact-equality/delta evidence. No new or changed context requires mathematical comparison.",
+  "scope": "Latest main source and operative rules unchanged; explicit unsolved flags, absent path and complete empty same-path history; bounded complete public claim searches and overlapping metadata deltas.",
+  "prior_root_review_sha256": "14f0e3d56225ecc4f6f9bba4a2cb903ee246c96c7937f91223d2669fdb29676e",
+  "limitations": [
+    "Public upstream metadata as observed; no claim covering unpublished work, every fork, or complete Git DAG.",
+    "Prior supplemental contexts retained through exact baseline identity and complete overlapping metadata deltas; only search-returned contexts have fresh title/body byte comparisons."
+  ]
+}

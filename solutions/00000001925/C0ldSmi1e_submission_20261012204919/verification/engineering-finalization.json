@@ -1,0 +1,151 @@
+{
+  "all_safe_roots_axioms_permitted": true,
+  "all_safe_roots_exclude_all_helpers_and_runtime_sentinels": true,
+  "capstones": [
+    "Conjecture1925.counterexample",
+    "Conjecture1925.lp_norm_gap_all",
+    "Conjecture1925.averages_not_cauchy",
+    "Conjecture1925.no_Linfinity_limit",
+    "Conjecture1925.rotation_not_ergodic"
+  ],
+  "classified_unsafe_generated_helpers": 22,
+  "closure_declarations": 20672,
+  "default_target_covers_all_modules": true,
+  "finished_utc": "2026-10-12T20:47:15.477200+00:00",
+  "frozen_files": {
+    ".gitignore": "47f2e05258d3593cfc3e6ecc72029f5fe86698aa209bcf8afef9a1236b072dc3",
+    "Conjecture1925.lean": "b435f73aff88648460f911e0414bcd9da8a0a05a33562b5b61c174345bd35e07",
+    "Conjecture1925/Counterexample.lean": "24a4a7ae9efe504394716b2ec0e076b6098e88eabef812190c9d986322b49c96",
+    "Conjecture1925/Dynamics.lean": "d747a1e6cdbeb190569b136086238d42616c621a8dd85646d4072db8e17346bb",
+    "Conjecture1925/Measure.lean": "2355091f693ffd313bf6998e0bd9be1adee3ad9f684b64c10b4ffb6a76f391ec",
+    "Conjecture1925/Nonconvergence.lean": "1c0d8080bf6e7ab41e94793ebe84331680fb5e33fc3a75770dde4be799712d45",
+    "Conjecture1925/Tests.lean": "298bebc46554b2dd3a94bce8b4eb28bc88b83c9434f418dd1dc560b23b4fb566",
+    "README.txt": "0590150c6eff239dfd117132abd137ebbd80d7ca2a798f44a59eaac8e1d71c0b",
+    "lake-manifest.json": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637",
+    "lakefile.lean": "788270e7447dd911220311bd56edbb096d60080ea25397f4b39ee0c991b489ee",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+  },
+  "frozen_manifest_sha256": "bf918649c77eaa562ecd36add9416f6a02957bd56813c45fb539691945c96b2e",
+  "full_lake_build_flags": [
+    "--no-cache",
+    "--wfail"
+  ],
+  "lean_control_fixtures": 6,
+  "limitations": [
+    "Cached dependency imports byte-matched supplied stock; full Mathlib was not rebuilt.",
+    "Supplied Lean runtime was not bootstrapped.",
+    "Semantic and PDF review are separate.",
+    "Unsafe generated runtime declarations are inventoried separately and require explicit classification if present.",
+    "PATH wrappers are safeguards only, not OS network isolation.",
+    "Auxiliary/configuration/metaprogrammatic source requires separate side-effect review.",
+    "Closure audit inspects dependencies; source compilation supplies kernel checking.",
+    "Runtime-only generated unsafe declarations include two lifted-lambda axiom entries; they remain inventoried and are absent from every safe originating-root closure.",
+    "Compiler source provenance is checked against the exact official release tree; runtime is not rebuilt.",
+    "One display-only helper probe failed due to unsupported pp.width; its corrected rerun passed and both receipts are retained."
+  ],
+  "local_declarations": 96,
+  "modules": [
+    "Conjecture1925",
+    "Conjecture1925.Counterexample",
+    "Conjecture1925.Dynamics",
+    "Conjecture1925.Measure",
+    "Conjecture1925.Nonconvergence",
+    "Conjecture1925.Tests"
+  ],
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "prior_summary_sha256": "2fae5ca06361369f0c840e8159011725a9f3a58f157495b13315e4a786436df0",
+  "prior_summary_status": "PASS_PENDING_RUNTIME_HELPER_CLASSIFICATION",
+  "reports": {
+    "compiler-provenance.json": "52504a1d9878543fc49b06e847e664cb41c061e9f7a5e6bda5192c5540d76a35",
+    "graph-consistency.json": "b48ee13153227e56e0c01a786322b5c0393f97c9f67c60b9e2d945df6003c831",
+    "packaging-evidence.json": "00d56a4732aa9b39b910ef9c47a1a83514fa35e65e066bed34eaec25eb99330a",
+    "receipt-review.json": "b9cb22473eac230c80f9425998dcd64009b091a2b30406cf33db691a5429bd71",
+    "runtime-helper-classification.json": "9d730b3a918585317a720e05e34e99dc036b612359a5492a42c44f7c9fc9b62a",
+    "safe-root-closure-review.json": "f3aabba0d1de8963d989b6502aeb3ec754c0446273e411fb287c23605cf69ee1"
+  },
+  "required_evidence_roots": [
+    "engineering-review-v1",
+    "engineering-review-v1-command",
+    "graph-consistency-v1-command",
+    "runtime-helper-review-v1",
+    "runtime-helper-review-v2",
+    "compiler-provenance-v1",
+    "compiler-provenance-v1-command",
+    "compiler-source-provenance-v1",
+    "compiler-source-provenance-v1-command",
+    "compiler-stage-provenance-v1",
+    "compiler-stage-provenance-v1-command",
+    "engineering-finalization-v1",
+    "engineering-finalization-v1-command"
+  ],
+  "reviewed_command_receipts": 68,
+  "safe_closure_union_size": 20635,
+  "safe_originating_declarations": 74,
+  "source_config_strict_replays": 7,
+  "source_pins": [
+    {
+      "inventory_sha256": "d24cf2e17393a46da5ca1ad3afacbd7d5017367bc912cb8915a8c86adfa3e9c4",
+      "package": "mathlib",
+      "revision": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+      "tracked_files": 6816
+    },
+    {
+      "inventory_sha256": "39355a97a3abe5845acf70e2f41d4b85f17921f445d9df2ee3088169761999c2",
+      "package": "plausible",
+      "revision": "77e08eddc486491d7b9e470926b3dbe50319451a",
+      "tracked_files": 18
+    },
+    {
+      "inventory_sha256": "920410b5d593196b96aacbc7524e0a8a44753905818445dd6bd0462c872e12e2",
+      "package": "LeanSearchClient",
+      "revision": "25078369972d295301f5a1e53c3e5850cf6d9d4c",
+      "tracked_files": 16
+    },
+    {
+      "inventory_sha256": "870bca003f207e8495be9bbcc35c180184888bbdaef65a76cb44e4cd5ab2dc6c",
+      "package": "importGraph",
+      "revision": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b",
+      "tracked_files": 33
+    },
+    {
+      "inventory_sha256": "3d62c945f4beb251507014d83b34d4e80e9ac2bdec85d92ea920fb42eba33283",
+      "package": "proofwidgets",
+      "revision": "c4919189477c3221e6a204008998b0d724f49904",
+      "tracked_files": 76
+    },
+    {
+      "inventory_sha256": "c479070f4e56eb4795c7ad59a9b37717302fa5ff96bb61e0400ea7f523856b26",
+      "package": "aesop",
+      "revision": "5d50b08dedd7d69b3d9b3176e0d58a23af228884",
+      "tracked_files": 249
+    },
+    {
+      "inventory_sha256": "d0bef309aab395b5277df1eea2c097bc5a653d828a0862ad27791d02a7688171",
+      "package": "Qq",
+      "revision": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02",
+      "tracked_files": 34
+    },
+    {
+      "inventory_sha256": "38cd195f8a39bcba8f0ab22cd659fd7dd00c688e5252fdf5741e957b26724bc5",
+      "package": "batteries",
+      "revision": "f5d04a9c4973d401c8c92500711518f7c656f034",
+      "tracked_files": 253
+    },
+    {
+      "inventory_sha256": "a84680d628166ad2bbde13cd91b5a800d586372c9b897a482ae65c28633f786a",
+      "package": "Cli",
+      "revision": "02dbd02bc00ec4916e99b04b2245b30200e200d0",
+      "tracked_files": 12
+    }
+  ],
+  "started_utc": "2026-10-12T20:47:14.966215+00:00",
+  "status": "PASS",
+  "stock_indexes_runtime_and_frozen_sources_unchanged": true,
+  "uniquely_resolved_imports": 4063,
+  "unsafe_generated_axiom_kind_helpers": 2,
+  "verifier_raw_receipts": 61
+}

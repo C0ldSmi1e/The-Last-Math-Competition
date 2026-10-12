@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Linfty}{L^{\infty}(\Omega,\mu)}
+\newcommand{\code}[1]{\texttt{\small #1}}
+\title{Quadratic ergodic averages need not converge in $L^\infty$\\
+\large Disproof of conjecture 00000001925 as written}
+\author{C0ldSmi1e}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct one invertible probability-preserving transformation and one bounded
+measurable observable for which the quadratic averages satisfy
+$\|A_{2N}f-A_Nf\|_\infty\geq 1/2$ for every $N\geq1$.
+Thus these averages have no $L^\infty$ limit, so no rate tending to zero can hold
+for the unqualified class in the conjecture. The example is nonergodic;
+a different statement requiring the transformation to be ergodic is not settled here.
+\end{abstract}
+
+\section{Original claim and precise scope}
+The English original reads:
+\begin{quote}
+Conjecture: The polynomial ergodic averages converge in L\textsuperscript{$\infty$}
+norm at a polylogarithmic multiple-logarithm rate (a Bernstein-type bound for p-averages).
+\end{quote}
+Neither this text nor its Chinese version specifies a rate formula or assumes
+that the transformation itself is ergodic. We use the usual meaning of
+\emph{polynomial ergodic averages}: on a probability space, for a
+measure-preserving transformation $T$, a bounded measurable real function $f$,
+and an integer-valued polynomial $p$, the averages are
+\[
+ A_Nf(x)=\frac1N\sum_{k=0}^{N-1} f(T^{p(k)}x),\qquad N\geq1.
+\]
+We choose $p(k)=k^2$, a genuine degree-two polynomial. ``Ergodic averages''
+names the averaging operation and does not impose ergodicity of $T$.
+The theorem below disproves qualitative norm convergence under these stated
+standard assumptions. It does not assign an invented meaning to the unspecified
+rate or prove anything about a stronger hypothesis of ergodicity.
+
+\section{One fixed probability-preserving system}
+For $n\in\N=\{0,1,2,\ldots\}$ let
+\[
+ q_n=4(n+1)^2+1,\qquad
+ \Omega=\bigsqcup_{n\geq0}\bigl(\{n\}\times\Z/q_n\Z\bigr),\qquad
+ w_n=2^{-(n+1)}.
+\]
+Equip this countable set with its full power-set sigma-algebra and put
+\[
+ \mu\{(n,j)\}=\frac{w_n}{q_n}.
+\]
+All atoms have positive measure, and summing first within a component gives
+$\mu(\Omega)=\sum_{n\geq0}w_n=1$.
+Define
+\[
+ T(n,j)=(n,j+1),\qquad
+ f(n,j)=\mathbf1_{\{[j]_{q_n}\geq(n+1)^2\}},
+\]
+where $[j]_{q_n}\in\{0,\ldots,q_n-1\}$ is the canonical residue.
+Both maps are measurable. The inverse of $T$ is $(n,j)\mapsto(n,j-1)$.
+Rotation permutes each finite component, whose atoms have equal mass, so
+$T$ preserves $\mu$. Also $0\leq f\leq1$, so $f\in\Linfty$.
+All this data is fixed once and for all, independently of $N$.
+
+\section{A uniform gap at every positive length}
+\begin{lemma}
+For every $N\geq1$, set $x_N=(N-1,0)$. Then
+$A_Nf(x_N)=0$ and $A_{2N}f(x_N)=1/2$.
+\end{lemma}
+\begin{proof}
+The component of $x_N$ has length $4N^2+1$. For $0\leq k<2N$,
+$k^2<4N^2+1$, so $T^{k^2}x_N=(N-1,k^2)$ has not wrapped around the cycle.
+The threshold defining $f$ on this component is $N^2$. Thus
+\[
+ f(T^{k^2}x_N)=
+ \begin{cases}
+ 0,&0\leq k<N,\\
+ 1,&N\leq k<2N.
+ \end{cases}
+\]
+The first average contains $N$ zeros. The doubled average contains $N$ zeros
+and $N$ ones, and its denominator is $2N$.
+\end{proof}
+
+\begin{theorem}
+In the genuine $L^\infty$ quotient space,
+\[
+ \|A_{2N}f-A_Nf\|_\infty\geq\frac12\quad(N\geq1).
+\]
+Consequently $(A_Nf)$ is not Cauchy in $L^\infty$ and does not converge to any
+$L^\infty$ function.
+\end{theorem}
+\begin{proof}
+At $x_N$ the absolute difference equals $1/2$, and
+\[
+ \mu\{x_N\}=\frac{2^{-N}}{4N^2+1}>0.
+\]
+Therefore this value cannot be removed by discarding a null set: the essential
+supremum of the difference is at least $1/2$. Although the witness atom depends
+on $N$ and its mass tends to zero, the space, measure, transformation, and
+observable do not depend on $N$.
+If the averages were Cauchy, beyond some index all pairwise distances would
+be strictly less than $1/2$. Taking $N$ beyond that index contradicts the displayed
+gap between $N$ and $2N$. Every convergent sequence in a normed space is Cauchy,
+so convergence to any possible limit is excluded.
+\end{proof}
+
+The invariant component $C_0=\{(0,j):j\in\Z/5\Z\}$ has measure $w_0=1/2$;
+this verifies the advertised nonergodicity. No claim is made about convergence
+for an amended problem restricted to ergodic transformations. The example
+already refutes norm convergence for the unqualified probability-preserving
+class, hence also any proposed norm-convergence rate on that class.
+
+\clearpage
+\section{Formal correspondence and verification}
+The accompanying project uses Lean 4.19.0 and Mathlib v4.19.0, with exact
+transitive dependency revisions in \code{lake-manifest.json}. Its core definitions
+are actual Mathlib objects, not surrogate numerical sequences:
+\begin{itemize}[leftmargin=1.5em,itemsep=3pt]
+\item \code{Dynamics.lean} defines the dependent sum of finite cyclic groups,
+the invertible rotation, the observable, and normalized sums of its actual
+square-time iterates. It proves the two values in Lemma 1 and pointwise bounds.
+\item \code{Measure.lean} defines a normalized probability mass function using
+geometric component weights, converts it to a measure, and proves positive
+singleton masses and preservation of that same measure by the rotation.
+\item \code{Nonconvergence.lean} proves essential boundedness and uses
+\code{MemLp.toLp} to put the averages in Mathlib's \code{Lp} space with exponent
+$\infty$. An essential-supremum estimate gives the quotient norm gap, followed by
+failure of the Cauchy condition and exclusion of every limit.
+\item \code{Counterexample.lean} defines the main theorem, \code{counterexample},
+which bundles the full statement and the explicit nonergodicity clause.
+\code{Tests.lean} contains 15 kernel-checked integration examples. The library
+root imports the tests and thereby includes every authored proof in the default build.
+\end{itemize}
+On this countable space every singleton has positive mass, so an almost-everywhere
+predicate holds exactly when it holds at every point. This is the formal bridge
+from the witness calculation to the essential supremum. The proof covers every
+positive integer length; no finite numerical sample is used as evidence for a
+universal claim. No auxiliary numerical computation is required.
+
+\paragraph{Recorded local validation.}
+The default Lake build and fresh replay of all six authored modules and the Lake
+configuration passed, with warnings treated as errors. All five designated
+capstone theorems have only the axiom dependencies \code{propext},
+\code{Classical.choice}, and \code{Quot.sound}. There are no authored admissions,
+custom axioms, or native-decision shortcuts in the mathematical project.
+
+A declaration audit recorded 96 originating declarations, a dependency graph of
+20,672 declarations, and 4,063 resolved imported modules. All 74 kernel-safe
+originating declarations passed the permitted-axiom and safe-dependency policy.
+The remaining 22 entries are generated runtime helpers, including two unsafe
+lambda-lifting axiom entries created by Lean's compiler. Their provenance was
+checked against the exact Lean 4.19.0 compiler source, and none is reachable from
+any of the 74 safe declaration closures. They are not assumptions of the proof.
+Six control fixtures checked that the audit accepts an ordinary proof and rejects
+custom/transitive axioms, an admitted proof, native decision, and unsafe code.
+
+A separate local semantic review checked the exact bilingual original, the full
+frozen source, and the complete mathematical report. The PDF was compiled and
+visually checked. The submission includes the verification tools, source hashes,
+review records, and compressed raw audit evidence. All mathematical identities
+are proved symbolically; no numerical helper program is needed for this disproof.
+
+\paragraph{Trust boundary.}
+All nine dependency revisions and their tracked sources were checked against the
+pins; cached imports were matched to the supplied pinned stock. Full Mathlib was
+not rebuilt, and the supplied Lean runtime was not bootstrapped. The dependency
+inspector is an audit tool, not an independent kernel rechecker; source compilation
+supplies kernel checking. These are local validation results, not a claim of
+maintainer acceptance.
+\end{document}

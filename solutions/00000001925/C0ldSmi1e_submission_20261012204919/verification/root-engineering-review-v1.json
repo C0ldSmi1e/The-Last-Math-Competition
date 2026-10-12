@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-12T20:48:51.874536+00:00",
+  "frozen_manifest_sha256": "bf918649c77eaa562ecd36add9416f6a02957bd56813c45fb539691945c96b2e",
+  "engineering_finalization_sha256": "c202afd5b920d9933d3f9c314c4a5240ae44ca86ee49e0d86537ef7e1037475a",
+  "reviewed_finalizer_sha256": "9854d6c4cbda024c3e7ddd999088b8f923bccbe2caf9aa1c3d31aa88e8b95382",
+  "validated_command_receipts": 68,
+  "source_config_replays": 7,
+  "safe_originating_roots": 74,
+  "safe_closure_union": 20635,
+  "classified_runtime_helpers": 22,
+  "independent_root_graph_review_sha256": "36009b288b6b2b48843b2699b52b63daec20e904c4ea18a65732a69e9941b54b",
+  "capstone_axioms": {
+    "Conjecture1925.averages_not_cauchy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Conjecture1925.counterexample": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Conjecture1925.lp_norm_gap_all": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Conjecture1925.no_Linfinity_limit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Conjecture1925.rotation_not_ergodic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "root_findings": [
+    "Read full finalizer and reports, strict build/replay and six control results. Rehashed every68recorded command receipt and both outputs.",
+    "Independently recomputed every safe root closure from graph edges; exact equality and no unsafe/missing/unavailable nodes, helper reachability or runtime sentinels.",
+    "Read exact official eager-lambda lifting and stage-registration source anchors; fetched source Git blob and SHA256 identities verified.",
+    "Failed unsupported display-option probe is preserved, corrected probe passed; no candidate mathematical source modification.",
+    "Frozen source remains exact; same version of verifier and template used."
+  ],
+  "limits": [
+    "Cached dependency imports byte-matched supplied stock; full Mathlib was not rebuilt.",
+    "Supplied Lean runtime was not bootstrapped.",
+    "Semantic and PDF review are separate.",
+    "Unsafe generated runtime declarations are inventoried separately and require explicit classification if present.",
+    "PATH wrappers are safeguards only, not OS network isolation.",
+    "Auxiliary/configuration/metaprogrammatic source requires separate side-effect review.",
+    "Closure audit inspects dependencies; source compilation supplies kernel checking.",
+    "Runtime-only generated unsafe declarations include two lifted-lambda axiom entries; they remain inventoried and are absent from every safe originating-root closure.",
+    "Compiler source provenance is checked against the exact official release tree; runtime is not rebuilt.",
+    "One display-only helper probe failed due to unsupported pp.width; its corrected rerun passed and both receipts are retained."
+  ]
+}

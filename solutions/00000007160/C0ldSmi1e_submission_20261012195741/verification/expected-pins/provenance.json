@@ -1,0 +1,6 @@
+{
+  "change": "Only root package display name tlmc_neutral -> hoffmanWielandt; every dependency pin and all other manifest fields identical",
+  "original_manifest_sha256": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637",
+  "expected_manifest_sha256": "17619b39e0d5ee7e914c197a1acdde917adbff3381c99c66cd4e220901b57d6c",
+  "verified_at": "2026-10-12T19:41:45.600644+00:00"
+}

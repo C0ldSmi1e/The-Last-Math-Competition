@@ -1,0 +1,35 @@
+{
+  "status": "PASS_ROOT_ENGINEERING_RECORD_REVIEW",
+  "reviewed_at": "2026-10-12T19:47:41.684430+00:00",
+  "raw_receipts_rehashed": 61,
+  "fresh_build_owned_modules": 6,
+  "all_source_and_copied_hashes_match": true,
+  "safe_owned_declarations": 36,
+  "runtime_helpers": [
+    "HoffmanWielandtVerification.A._closed_1._cstage2",
+    "HoffmanWielandtVerification.A._closed_2._cstage2",
+    "HoffmanWielandtVerification.A._closed_3._cstage2",
+    "HoffmanWielandtVerification.A._closed_4._cstage2",
+    "HoffmanWielandtVerification.A._closed_5._cstage2",
+    "HoffmanWielandtVerification.A._closed_6._cstage2",
+    "HoffmanWielandtVerification.A._cstage1",
+    "HoffmanWielandtVerification.A._cstage2",
+    "HoffmanWielandtVerification.B._closed_1._cstage2",
+    "HoffmanWielandtVerification.B._closed_2._cstage2",
+    "HoffmanWielandtVerification.B._closed_3._cstage2",
+    "HoffmanWielandtVerification.B._cstage1",
+    "HoffmanWielandtVerification.B._cstage2"
+  ],
+  "runtime_helper_classification": "Exactly13 Lean-generated cstage definitions for the two concrete Verification matrices A/B. Bodies inspected: matrix-vector construction/complex constants and lowered runtime objects, not theorem proofs. No safe originating declaration or capstone closure reaches them. No authored unsafe source.",
+  "dependency_graph_declarations": 30338,
+  "import_identities": 4152,
+  "capstones": [
+    "HoffmanWielandt.hoffman_wielandt_sq",
+    "HoffmanWielandt.hoffman_wielandt",
+    "HoffmanWielandt.normal_matrices_hoffman_wielandt_sq",
+    "HoffmanWielandt.normal_matrices_hoffman_wielandt"
+  ],
+  "source_manifest_sha256": "0b85642ff3f047345bbc185bb936c2fef979f3211a6b1f02cbff989cc3023a0c",
+  "audit_sha256": "e1f4f4d1baa1f321ee6101b5731e749cfa8d5558b65fbd324e0af90736cfc195",
+  "notes": "All raw recorded commands have expected exits. Root inspected exact helper dependency bodies and safe-root closures; engine baseline graph checker separately validates closure consistency. Cached Mathlib imports trusted as supplied pinned stock, no full Mathlib source rebuild or Lean bootstrap."
+}

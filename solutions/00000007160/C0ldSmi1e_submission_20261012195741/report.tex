@@ -1,0 +1,235 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\setlength{\emergencystretch}{3em}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{Conjecture 00000007160\\Hoffman--Wielandt spectral variation}
+\author{C0ldSmi1e}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We formulate the stated spectral Lipschitz claim using eigenvalues counted with
+algebraic multiplicity and optimal Euclidean matching. For two complex normal
+matrices of the same finite size, the squared matching cost is at most the
+squared Frobenius norm of their difference. The argument uses complete
+orthonormal eigenbases, Parseval's identity and the finite Birkhoff theorem.
+The accompanying Lean project proves the estimate for arbitrary complete
+eigenvalue lists, including repeated roots and zero dimension. Independent
+source review, a fresh project build and a dependency/axiom audit passed.
+These are local validation results, separate from maintainer acceptance.
+\end{abstract}
+
+\section{Statement and interpretation}
+The original English conjecture is: ``The spectra of normal matrices are
+Lipschitz with the Frobenius norm as constant.'' Both the English and Chinese
+versions explicitly name Hoffman--Wielandt. The prose does not specify a
+spectral metric. We use the conventional finite-dimensional formulation below.
+
+For $A\in\C^{n\times n}$, let $A^*$ denote its conjugate transpose. Normality
+means $AA^*=A^*A$. Set
+\[
+ \norm{A}_F^2=\sum_{i=1}^n\sum_{j=1}^n |A_{ij}|^2.
+\]
+A complete eigenvalue list $\alpha=(\alpha_1,\ldots,\alpha_n)$ records
+\emph{algebraic multiplicity}, equivalently
+$\det(tI-A)=\prod_i(t-\alpha_i)$. For two such lists define
+\[
+ d_2(\alpha,\beta)
+ =\min_{\sigma\in S_n}
+   \left(\sum_{i=1}^n |\alpha_i-\beta_{\sigma(i)}|^2\right)^{1/2}.
+\]
+The finite permutation set is nonempty, including $n=0$. Relabeling either
+list simply permutes the set of matching costs, so this quantity depends on
+the eigenvalue multisets. We interpret the Lipschitz claim as the following
+pairwise inequality; no globally consistent labeling is asserted.
+
+\begin{theorem}[Hoffman--Wielandt]
+For every $n\geq0$, if $A,B\in\C^{n\times n}$ are normal, and $\alpha,\beta$
+are their complete eigenvalue lists, then a permutation $\sigma\in S_n$ satisfies
+\[
+ \sum_i |\alpha_i-\beta_{\sigma(i)}|^2
+ \leq \sum_{i,j}|A_{ij}-B_{ij}|^2.
+\]
+Consequently $d_2(\alpha,\beta)\leq\norm{A-B}_F$.
+\end{theorem}
+The Lipschitz constant is $1$ relative to the Frobenius norm. The theorem
+allows repeated and nonreal eigenvalues, singular matrices, and pairs that
+do not commute. Complex matrices also include real normal matrices considered
+over $\C$. For $n=0$ all sums vanish. For $n=1$ equality holds, so the
+constant cannot be lowered in positive dimension.
+
+\section{Complete spectral data from normality}
+Let $T$ be a normal linear operator on a finite-dimensional complex inner
+product space. Its real and imaginary self-adjoint parts are
+\[
+ H=\frac{T+T^*}{2},\qquad K=\frac{T-T^*}{2i},\qquad T=H+iK.
+\]
+Normality gives $HK=KH$. The orthogonal eigenspace decomposition for $H$
+is preserved by $K$: if $Hx=ax$, then $H(Kx)=K(Hx)=aKx$.
+Diagonalizing the self-adjoint restriction of $K$ on each summand therefore
+gives a complete orthonormal basis of joint eigenvectors. On a joint
+eigenvector with eigenvalues $a,b$, the operator $T$ has eigenvalue $a+ib$.
+This also covers the zero-dimensional space with its empty basis.
+
+In this basis the matrix of $T$ is diagonal. Invariance of the characteristic
+polynomial under a change of basis yields
+\[
+ \chi_T(t)=\prod_i(t-\alpha_i).
+\]
+Thus the resulting list is complete with algebraic multiplicity, not merely
+a collection of values having eigenvectors. Any other complete list gives
+the same multiset of roots, and hence differs only by a permutation.
+
+\section{The squared Frobenius identity}
+Use the inner product convention that is conjugate-linear in the first
+argument and linear in the second. Let $(e_i)$ be a complete orthonormal
+eigenbasis for $A$ with eigenvalues $\alpha_i$, and $(f_j)$ one for $B$ with
+eigenvalues $\beta_j$. Define
+\[
+ w_{ij}=|\langle e_i,f_j\rangle|^2.
+\]
+Parseval's identity applied to each unit vector shows
+\[
+ w_{ij}\geq0,\qquad \sum_jw_{ij}=1,\qquad \sum_iw_{ij}=1.
+\]
+Thus $W=(w_{ij})$ is doubly stochastic. Since coordinates in the $e$ basis
+diagonalize $A$, for every vector $x$,
+$\langle e_i,Ax\rangle=\alpha_i\langle e_i,x\rangle$.
+It follows that
+\[
+ \langle e_i,(A-B)f_j\rangle
+ =(\alpha_i-\beta_j)\langle e_i,f_j\rangle.
+\]
+Apply Parseval in the $e$ basis and sum over $j$ to obtain
+\begin{equation}\label{eq:weighted}
+ \sum_{i,j}w_{ij}|\alpha_i-\beta_j|^2
+ =\sum_j\norm{(A-B)f_j}^2
+ =\norm{A-B}_F^2.
+\end{equation}
+For completeness, the last equality is basis invariance of this sum of
+squared norms. If $D=A-B$ and $(u_k)$ is the standard orthonormal basis, then
+\[
+ \begin{aligned}
+ \sum_j\norm{Df_j}^2
+ &=\sum_k\sum_j|\langle u_k,Df_j\rangle|^2\\
+ &=\sum_k\sum_j|\langle D^*u_k,f_j\rangle|^2
+ =\sum_k\norm{D^*u_k}^2
+ =\sum_{k,l}|D_{kl}|^2.
+ \end{aligned}
+\]
+Every sum here is finite; exchanging its order needs no convergence argument.
+
+\section{Selecting a matching}
+The finite Birkhoff theorem writes a doubly stochastic matrix as a convex
+combination of permutation matrices:
+\[
+ w_{ij}=\sum_{\sigma\in S_n}q_\sigma\,
+       \mathbf1_{\{j=\sigma(i)\}},
+ \qquad q_\sigma\geq0,\qquad\sum_\sigma q_\sigma=1.
+\]
+For any real cost matrix $C$, distributing finite sums gives
+\[
+ \sum_{i,j}w_{ij}C_{ij}
+ =\sum_\sigma q_\sigma\sum_i C_{i,\sigma(i)}.
+\]
+The minimum of the finitely many permutation costs is at most this convex
+average. Choose a minimizing permutation and set
+$C_{ij}=|\alpha_i-\beta_j|^2$. Equation~\eqref{eq:weighted} gives the squared
+inequality in the theorem. All quantities are nonnegative, so taking square
+roots proves its final assertion. Relabeling the two spectral lists preserves
+the set of permutation costs, giving the conclusion for arbitrary complete
+lists.
+
+\section{Formal correspondence and verification}
+The project pins Lean 4.19.0 and Mathlib v4.19.0, at commit
+\begin{center}\small\texttt{c44e0c8ee63ca166450922a373c7409c5d26b00b}\end{center}
+{\raggedright Its public capstones,
+in namespace \texttt{HoffmanWielandt}, are
+\texttt{hoffman\_wielandt\_sq} and \texttt{hoffman\_wielandt}. They accept
+arbitrary matrices, their explicit normality equations and arbitrary complete
+characteristic-polynomial eigenvalue lists. Separate existence theorems
+construct such lists from normality, so the formulation is not vacuous.\par}
+
+\begin{itemize}\raggedright
+\item \texttt{NormalSpectral.lean} proves the complete normal eigenbasis,
+diagonal coordinates and characteristic-polynomial factorization.
+\item \texttt{Frobenius.lean} proves the Parseval identities, doubly stochastic
+overlap property and exact weighted Frobenius identity. Its explicit norm is
+also proved equal to Mathlib's dedicated Frobenius norm instance.
+\item \texttt{Matching.lean} proves the permutation-cost bound from Birkhoff's
+theorem. \texttt{Reindexing.lean} proves that equal products of linear factors
+give a permutation of the complete lists, using root multiplicities.
+\item \texttt{HoffmanWielandt.lean} transfers between matrices and operators,
+assembles the estimate and handles arbitrary eigenvalue enumerations.
+\texttt{Verification.lean} checks the expanded statement, empty dimension,
+repeated nonreal roots, reversed enumeration, signed costs, sharp scalar
+equality and explicitly non-Hermitian, noncommuting normal matrices.
+\end{itemize}
+
+A fresh private project copy passed \texttt{lake --no-cache --wfail build}.
+All six mathematical source files and the Lake configuration were then
+replayed directly with warnings treated as errors. Both theorem and
+verification libraries are default build targets. The audit inventoried
+49 originating-module declarations and a dependency graph of 30,338
+declarations, and bound 4,152 imported module identities to the recorded
+runtime, pinned dependency copies and rebuilt local modules. All 36 safe originating declarations,
+including the four main capstones, use only \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound}, with no unsafe proof
+dependency. There are no admitted proofs, custom axioms or
+\texttt{native\_decide} calls in the submitted mathematical sources.
+
+The remaining 13 inventoried definitions are compiler-generated runtime
+helpers for the two explicit matrices in \texttt{Verification.lean}. Their
+exact names and dependency information were inspected separately. No safe
+originating declaration or capstone reaches them, and they are excluded from
+mathematical evidence. The raw pending-classification audit record is
+preserved; the separate final classification completes it. Generic negative
+controls confirmed rejection of admitted proofs, direct and indirect custom
+axioms, native-computation proof shortcuts and unsafe dependencies.
+
+All nine pinned dependency source trees were checked against their Git
+objects. This review used recorded stock dependency caches; it did not rebuild
+all of Mathlib or bootstrap the supplied Lean runtime. The dependency inspector
+and graph-consistency checker are not independent kernel recheckers: the
+fresh source compilations supply Lean's kernel checks. Independent mathematical
+review read the entire final source and the report's argument against both
+original language versions.
+
+The separate standard-library Python checker uses exact rational complex
+arithmetic. It checks 361 generated normal pairs in dimensions $0$--$3$,
+verifies their complete characteristic polynomials by the determinant formula,
+and enumerates every matching. Among these pairs, 194 do not commute, 335
+have a non-Hermitian member, 127 have repeated eigenvalues and 188 satisfy a
+strict inequality; these categories overlap. Four additional semantic controls
+exercise enumeration, multiplicity, the norm choice and the normality
+hypothesis. A separate review inspected the entire checker, replayed it and
+passed 71 implementation probes. These are finite sanity checks and do not
+establish the theorem for arbitrary matrices. No numerical example is a
+premise in the general Lean proof.
+
+\section{Reproduction and records}
+With Lean 4.19.0 and the locked dependency caches available, run these commands
+from the personal submission directory:
+\begin{verbatim}
+lake --wfail build
+python3 -B auxiliary/check_examples.py
+\end{verbatim}
+Compile the report source with LaTeX or Tectonic.
+
+The \texttt{verification} directory contains source identities, independent
+reviews, the engineering summary and runtime-helper classification. Its
+compressed raw-evidence archive retains the full dependency export, import
+identities and build/replay receipts, without dependency caches. Included
+verifier sources contain deliberately invalid negative-control fixtures;
+these are test inputs, never parts of the mathematical proof. These records
+document local validation, not maintainer acceptance.
+
+\end{document}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS_NATIVE_AND_TECTONIC_COMPILE_AND_VISUAL_REVIEW",
+  "operation_marker_succeeded": true,
+  "marker_tool_chunk_id": "6c448b",
+  "marker_count": 1,
+  "delivered": false,
+  "created_at": "2026-10-12T19:35:21.319923+00:00",
+  "source_sha256": "444277be1163d5b44011cc3e51fe4a7405ff02e8d62ebaf352c8100b529ef975",
+  "pdf_sha256": "18613c33cbf00395e297aee2fd4813322204d15ef38046c625cd54692eb6eaba",
+  "pages": 4,
+  "visual_review": "All final pages visually inspected; pages 1-3 byte-identical to previously inspected renderings, final page 4 directly inspected. No clipping, overlaps, or missing glyphs.",
+  "final_render_sha256": {
+    "final-page-1.png": "971d860ceab6e2f597cb14a37e7dabdd8d9c370284cd8c58d69cf9a115c3b241",
+    "final-page-2.png": "fd757339fa80d2ab8462b0d1020cb597cfb6a76bf597baebf47046cb78550f9e",
+    "final-page-3.png": "e804c4e4d8e141950278246c9f69f7527e5db1b4cd30b4dc8c8a185ebc12ba0b",
+    "final-page-4.png": "21784d979e952e5a24ec4345f8fcff350595c06e397f20fcd137cc7aade83f7d"
+  },
+  "updated_at": "2026-10-12T19:56:10.998089+00:00"
+}

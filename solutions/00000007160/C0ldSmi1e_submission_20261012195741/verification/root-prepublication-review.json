@@ -1,0 +1,11 @@
+{
+  "status": "PASS_ELIGIBLE_TO_SUBMIT_WITHIN_RECORDED_PUBLIC_SCOPE",
+  "candidate": "00000007160",
+  "observed_through": "2026-10-12T19:52:16.673615+00:00",
+  "main_sha": "65d4b6f8e745a57efeae42bcea831c3a6ed44700",
+  "root_offline_replay": "root-prepublication-validation.json",
+  "root_offline_replay_sha256": "32d64edd80331b92d0ad8c7e40bc04f244fb6db3a1e1f9e63d4f35ba1bba113b",
+  "review": "Root read both operative rule sections and both changed PR metadata records. PR 1008 concerns affine dynamics (2685); PR 1009 concerns weak-order antichains (2198). Complete stable-head filename scopes contain only those IDs. All prior matching contexts were unchanged and already classified as unrelated. Source, rules, unsolved metadata and empty candidate path/history were verified against raw captured responses. No candidate lead remains.",
+  "scope_limit": "Bounded current public upstream metadata, path/history and targeted searches; no claim about unpublished work, every fork, or the full Git DAG.",
+  "external_action": "None in eligibility review"
+}

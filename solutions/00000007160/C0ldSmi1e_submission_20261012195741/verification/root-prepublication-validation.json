@@ -1,0 +1,29 @@
+{
+  "manifest_members": 165,
+  "manifest_sha256": "c1f3fd77b0277651ba7b0ac7f40f4d702c0820f59174914aced46d836d266223",
+  "actual_requests": 22,
+  "raw_checks_complete": true,
+  "status": "PASS",
+  "checks": 455,
+  "main_sha": "65d4b6f8e745a57efeae42bcea831c3a6ed44700",
+  "observed_through": "2026-10-12T19:52:16.673615+00:00",
+  "candidate": "00000007160",
+  "source_and_operative_rules_unchanged": true,
+  "metadata_unsolved": true,
+  "current_path_and_same_path_history_empty": true,
+  "exact_candidate_searches_empty": true,
+  "changed_pr_metadata": [
+    {
+      "number": 1008,
+      "head": "790404cb294842085ac597dadbe33ff7ab29c00b",
+      "reviews": 0
+    },
+    {
+      "number": 1009,
+      "head": "4f272f4145850303b00ec7897f5c4fd61546c1b4",
+      "reviews": 0
+    }
+  ],
+  "new_or_changed_matching_contexts": 0,
+  "root_publication_decision_required": true
+}

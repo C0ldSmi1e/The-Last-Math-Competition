@@ -1,0 +1,22 @@
+{
+  "frozen": true,
+  "files": {
+    "NormalSpectral.lean": "79d5085f54cd810184c7ae56613827b63c967311ec6c5629c1b8c2af3473c0f3",
+    "Frobenius.lean": "98fc2aff33e116d5c7389529c5df114d0e9291c9ea6c6d13eacaa528ae0e5dc7",
+    "Matching.lean": "63635da80b55553c5f50417b55d19949383d127512fbed76507ebe7955b9e651",
+    "Reindexing.lean": "de07f7222dd64e8c11595086326881d2fdaadd2147eb2b8b6733630481fd73b3",
+    "HoffmanWielandt.lean": "84596cabafe24fe2e6447be0dba455e386cffd2dfdb85ada3a1f0ce1db2665a1",
+    "Verification.lean": "f6e68eb59ad1f1409c0879f3751f2340c3f099ffb7991fd0847d9384f6f42ace",
+    "lakefile.lean": "143c70050de6b91d35986d211511e78cb905b9b7ba84ff472a2d9e656d7c15f4",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "lake-manifest.json": "17619b39e0d5ee7e914c197a1acdde917adbff3381c99c66cd4e220901b57d6c"
+  },
+  "capstones": [
+    "HoffmanWielandt.hoffman_wielandt_sq",
+    "HoffmanWielandt.hoffman_wielandt",
+    "HoffmanWielandt.normal_matrices_hoffman_wielandt_sq",
+    "HoffmanWielandt.normal_matrices_hoffman_wielandt"
+  ],
+  "author_freeze_sha256": "cb5ffea4965a11c37b2a96893964ab09ea4bef186285e757767c71562fd7dfae",
+  "normalization": "Copied sha256 map into verifier files field without changing any source hash."
+}

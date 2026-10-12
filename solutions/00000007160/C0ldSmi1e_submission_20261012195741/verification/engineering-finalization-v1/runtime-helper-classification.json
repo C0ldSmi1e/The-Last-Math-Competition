@@ -1,0 +1,127 @@
+{
+  "all_safe_roots_disjoint_from_helpers": true,
+  "basis": "Every authored source was reviewed, with no authored unsafe declarations or environment injection. All 13 names are exact compiler-stage/closed-value forms owned by safe definitions A/B, and no safe declaration depends on them.",
+  "helpers": [
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.A._closed_1._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.A",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.A._closed_2._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.A",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.A._closed_3._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.A",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.A._closed_4._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.A",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.A._closed_5._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.A",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.A._closed_6._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.A",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.A._cstage1",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.A",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.A._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.A",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.B._closed_1._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.B",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.B._closed_2._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.B",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.B._closed_3._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.B",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.B._cstage1",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.B",
+      "trust_enforced": false
+    },
+    {
+      "classification": "Compiler stage/closed-value runtime helper for a reviewed explicit verification matrix definition",
+      "kind": "definition",
+      "mathematical_evidence": false,
+      "name": "HoffmanWielandtVerification.B._cstage2",
+      "originating_module": "Verification",
+      "owner": "HoffmanWielandtVerification.B",
+      "trust_enforced": false
+    }
+  ],
+  "limit": "The helper runtime computations are not mathematical evidence and are not claimed safe.",
+  "runtime_helper_count": 13,
+  "safe_root_count": 36,
+  "status": "PASS"
+}

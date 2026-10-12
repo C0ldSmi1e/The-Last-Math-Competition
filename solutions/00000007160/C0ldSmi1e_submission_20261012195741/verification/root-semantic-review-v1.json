@@ -1,0 +1,70 @@
+{
+  "status": "PASS_ROOT_FULL_SEMANTIC_REVIEW_PENDING_ENGINEERING",
+  "reviewed_at": "2026-10-12T19:42:42.425913+00:00",
+  "frozen_manifest_sha256": "0b85642ff3f047345bbc185bb936c2fef979f3211a6b1f02cbff989cc3023a0c",
+  "original_sha256": "9c06819d1b860698509318573cd687bcc668528517ad37872e78758a4c6254fd",
+  "files": [
+    {
+      "path": "NormalSpectral.lean",
+      "sha256": "79d5085f54cd810184c7ae56613827b63c967311ec6c5629c1b8c2af3473c0f3",
+      "lines": 91
+    },
+    {
+      "path": "Frobenius.lean",
+      "sha256": "98fc2aff33e116d5c7389529c5df114d0e9291c9ea6c6d13eacaa528ae0e5dc7",
+      "lines": 97
+    },
+    {
+      "path": "Matching.lean",
+      "sha256": "63635da80b55553c5f50417b55d19949383d127512fbed76507ebe7955b9e651",
+      "lines": 34
+    },
+    {
+      "path": "Reindexing.lean",
+      "sha256": "de07f7222dd64e8c11595086326881d2fdaadd2147eb2b8b6733630481fd73b3",
+      "lines": 28
+    },
+    {
+      "path": "HoffmanWielandt.lean",
+      "sha256": "84596cabafe24fe2e6447be0dba455e386cffd2dfdb85ada3a1f0ce1db2665a1",
+      "lines": 108
+    },
+    {
+      "path": "Verification.lean",
+      "sha256": "f6e68eb59ad1f1409c0879f3751f2340c3f099ffb7991fd0847d9384f6f42ace",
+      "lines": 119
+    },
+    {
+      "path": "lakefile.lean",
+      "sha256": "143c70050de6b91d35986d211511e78cb905b9b7ba84ff472a2d9e656d7c15f4",
+      "lines": 15
+    },
+    {
+      "path": "lean-toolchain",
+      "sha256": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+      "lines": 1
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "17619b39e0d5ee7e914c197a1acdde917adbff3381c99c66cd4e220901b57d6c",
+      "lines": 116
+    }
+  ],
+  "reading": "Root read all final mathematical source and configuration lines; stable helper files read at exact byte-identical helper paths. Manifest/toolchain parsed and exact dependency equality checked. Earlier draft reads are not substituted for changed final source.",
+  "findings": [
+    "Full complex normality: final hA/hB separately assert conjugate-transpose products commute; no mutual commutation, Hermitian, invertibility, simple-spectrum, positivity or dimension restriction.",
+    "NormalSpectral constructs commuting self-adjoint real/imaginary parts and complete orthonormal basis of joint eigenspaces; finite nonzero summands and subordinate basis cover dimension zero.",
+    "IsEigenvalueList is equality with the product of characteristic-polynomial linear factors. Existence capstones establish such lists for every normal matrix, avoiding a vacuous arbitrary-list statement.",
+    "NormalSpectral proves complete diagonal-coordinate matrix and characteristic polynomial factorization. eigenvalueList_roots identifies exact root multiset; Reindexing proves arbitrary lists differ by a bijection using multiplicity counts.",
+    "Frobenius norm is explicitly square root of all squared complex entry norms and separately agrees with Mathlib dedicated Frobenius instance. Local instance scope does not alter spectral proof definitions.",
+    "Parseval and adjoint identity establish basis independence and exact weighted cost identity; all overlaps nonnegative with both row and column sums one.",
+    "Matching derives convex permutation average from pinned Birkhoff theorem and picks finite minimum; costs may have any sign and permutation type remains nonempty at dimension zero.",
+    "Final capstone transports matrices via standard Euclidean orthonormal star-algebra equivalence, proves normality for each operator, obtains complete spectra, and reindexes using f inverse composed with sigma0 composed with e. Reindexing preserves the finite sum.",
+    "Final squared and square-root estimates have the required entrywise bound and arbitrary complete eigenvalue lists; taking finite optimal matching in report follows immediately without claiming a globally consistent labeling.",
+    "Verification source meaningfully exercises empty size, repeated nonreal roots, reversal of enumeration, signed costs, sharp one-dimensional equality, and explicitly normal non-Hermitian noncommuting matrices.",
+    "All authored source/config inspected: no admitted proof/custom axiom/native_decide/kernel bypass/unsafe declaration/side-effect build hooks. Independent exhaustive engineering audit is still pending."
+  ],
+  "report_math_sha256": "32bcf04ac091a3fbdeb5e410012bb421c2fbb441c030432b2ece92d0797ed04b",
+  "report_status": "Mathematical argument matches source; draft verification statements will be replaced only after fresh engineering and independent semantic review pass.",
+  "limits": "Semantic assessment, not substitute for full independent build/axiom/dependency checks; final PDF and publication eligibility refresh pending."
+}

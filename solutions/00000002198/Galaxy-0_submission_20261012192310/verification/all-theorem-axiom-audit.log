@@ -1,0 +1,42 @@
+'AntichainEnumeration.mem_enumerate_iff' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.nodup_enumerate' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.sublist_eq_of_same_members' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AntichainEnumeration.enumerated_eq_of_same_members' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AntichainEnumeration.selected_mem_enumerate' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.compatible_of_pairwise' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.pairwise_iff_unordered' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.selected_mem_enumerate_iff' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.maximal_iff_no_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.euler2_first' does not depend on any axioms
+'TLMC2198.euler2_outside' depends on axioms: [propext, Quot.sound]
+'TLMC2198.euler2_nine_lower' depends on axioms: [propext, Quot.sound]
+'TLMC2198.euler2_large' depends on axioms: [propext, Quot.sound]
+'TLMC2198.euler2_small_exclusions' does not depend on any axioms
+'TLMC2198.euler2_exclusions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.euler2_row_sum_exclusions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.entry_ofFunction' depends on axioms: [propext, Quot.sound]
+'TLMC2198.weakLE_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.valid_iff_injective' depends on axioms: [propext]
+'TLMC2198.valid_surjective' depends on axioms: [propext, Quot.sound]
+'TLMC2198.permutation_enumeration_complete' depends on axioms: [propext]
+'TLMC2198.permutation_mem_iff' depends on axioms: [propext]
+'TLMC2198.every_permutation_encoded' depends on axioms: [propext, Quot.sound]
+'TLMC2198.permutation_enumeration_nodup' does not depend on any axioms
+'TLMC2198.permutation_count' does not depend on any axioms
+'TLMC2198.compatible_symm' depends on axioms: [propext]
+'TLMC2198.compatible_irrefl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.antichain_complete' depends on axioms: [propext, Quot.sound]
+'TLMC2198.antichain_enumeration_nodup' depends on axioms: [propext, Quot.sound]
+'TLMC2198.canonical_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.actual_subset_bridge' depends on axioms: [propext, Quot.sound]
+'TLMC2198.maximal_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.maximal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.middle_antichain' depends on axioms: [propext]
+'TLMC2198.middle_length' does not depend on any axioms
+'TLMC2198.antichain_length_bound' does not depend on any axioms
+'TLMC2198.maximum_iff' depends on axioms: [propext, Quot.sound]
+'TLMC2198.all_antichain_count' does not depend on any axioms
+'TLMC2198.maximal_antichain_count' does not depend on any axioms
+'TLMC2198.maximum_antichain_count' does not depend on any axioms
+'TLMC2198.all_counts_not_eulerian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.all_counts_not_row_sum' depends on axioms: [propext, Classical.choice, Quot.sound]

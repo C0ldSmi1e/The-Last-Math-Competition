@@ -1,0 +1,5 @@
+Antichains by size: [1, 24, 149, 344, 266, 68, 4]
+Inclusion-maximal by size: [2, 3, 44, 89, 48, 4]
+Number of maximal antichains: 190
+Number of maximum antichains: 4
+Second-order Eulerian row: [1, 22, 58, 24] sum: 105

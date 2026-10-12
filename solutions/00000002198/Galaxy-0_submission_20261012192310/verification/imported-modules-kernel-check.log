@@ -1,0 +1,4 @@
+=== leanchecker EnumLemma ===
+leanchecker EnumLemma exit=0
+=== leanchecker Eulerian ===
+leanchecker Eulerian exit=0

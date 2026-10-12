@@ -1,0 +1,18 @@
+{
+  "status": "PASS_NATIVE_AND_TECTONIC_COMPILE_AND_VISUAL_REVIEW",
+  "operation_marker_succeeded": true,
+  "marker_tool_chunk_id": "0dcdf9",
+  "marker_count": 1,
+  "delivered": false,
+  "created_at": "2026-10-12T20:30:12.028762+00:00",
+  "source_sha256": "2234faa688f8abd687e3230d0395d83573decd3dd09137c8dc7091da6baf54d8",
+  "pdf_sha256": "b61c49a16a9d4efc91c21724d007653d593f7d648260231a1b05f4952be4a845",
+  "pages": 3,
+  "visual_review": "Root directly inspected all three final rendered pages. No clipping, overlaps, missing glyphs or layout defects. Final Tectonic compile has no warnings. Earlier overfull draft preserved; only module-note phrasing changed.",
+  "final_render_sha256": {
+    "page-1.png": "bba5a6790be6b8e1cdca47d0df661a590f5ddd97feef8106ecb73b39e26a0484",
+    "page-2.png": "a63d294e183ca04694269c1275b1240b31e4fe42fa690248135215843d3965f4",
+    "page-3.png": "20efcec0186224e6df3683b34b5adf88f65e967fbb5e11bb55d7804b344dd832"
+  },
+  "updated_at": "2026-10-12T20:46:25.551202+00:00"
+}

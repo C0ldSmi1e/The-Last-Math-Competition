@@ -744,7 +744,7 @@ id,well_definedness_level,importance,novelty,proof_difficulty,disproof_difficult
 00000000743,,,,,,false,false,,false,
 00000000744,,,,,,true,false,2026-10-02,true,SucRunBug
 00000000745,,,,,,false,true,2026-10-06,true,Jackmeson1
-00000000746,,,,,,false,false,,false,
+00000000746,,,,,,false,true,2026-10-12,true,idealistichacker
 00000000747,,,,,,false,true,2026-10-04,true,C0ldSmi1e
 00000000748,,,,,,false,true,2026-10-06,true,earthking11
 00000000749,,,,,,false,false,,false,
@@ -2344,7 +2344,7 @@ id,well_definedness_level,importance,novelty,proof_difficulty,disproof_difficult
 00000002343,,,,,,false,true,2026-10-11,true,gaochengzhecpu
 00000002344,,,,,,false,false,,false,
 00000002345,,,,,,false,false,,false,
-00000002346,,,,,,false,false,,false,
+00000002346,,,,,,false,true,2026-10-12,true,lizaixi01
 00000002347,,,,,,false,false,,false,
 00000002348,,,,,,false,true,2026-10-06,true,Jackmeson1
 00000002349,,,,,,false,false,,false,
@@ -3827,7 +3827,7 @@ id,well_definedness_level,importance,novelty,proof_difficulty,disproof_difficult
 00000003826,,,,,,false,false,,false,
 00000003827,,,,,,false,false,,false,
 00000003828,,,,,,false,false,,false,
-00000003829,,,,,,false,false,,false,
+00000003829,,,,,,false,true,2026-10-12,true,Galaxy-0
 00000003830,,,,,,false,false,,false,
 00000003831,,,,,,false,true,2026-10-04,true,jilint777
 00000003832,,,,,,false,false,,false,
@@ -3990,11 +3990,11 @@ id,well_definedness_level,importance,novelty,proof_difficulty,disproof_difficult
 00000003989,,,,,,false,false,,false,
 00000003990,,,,,,false,false,,false,
 00000003991,,,,,,false,true,2026-10-06,true,Jackmeson1
-00000003992,,,,,,false,false,,false,
+00000003992,,,,,,false,true,2026-10-12,true,idealistichacker
 00000003993,,,,,,false,false,,false,
 00000003994,,,,,,false,false,,false,
 00000003995,,,,,,false,false,,false,
-00000003996,,,,,,false,false,,false,
+00000003996,,,,,,false,true,2026-10-12,true,idealistichacker
 00000003997,,,,,,false,false,,false,
 00000003998,,,,,,false,false,,false,
 00000003999,,,,,,false,false,,false,

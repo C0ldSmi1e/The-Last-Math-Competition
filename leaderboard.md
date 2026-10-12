@@ -1,6 +1,6 @@
 # The Last Math Competition — Leaderboard
 
-Generated: 2026-10-11. Sources: all audited & merged submission pull requests plus the
+Generated: 2026-10-12. Sources: all audited & merged submission pull requests plus the
 local `lidangzzz` submissions (2026-09-12). Every submission passed the audit: LaTeX + PDF +
 a compiling Lean 4 project (Mathlib or self-contained core Lean), no `sorry`, no
 `native_decide`/extra axioms, a semantic review confirming the Lean theorem actually
@@ -10,7 +10,7 @@ archived under solutions/[number_ID]/review/. After the full re-audit of 2026-10
 reverted to open unless another valid submission remains); 98 PRs were closed unmerged with
 full review comments.
 
-**Total solved: 865 / 10000 conjectures** — 88 proven, 777 disproven.
+**Total solved: 870 / 10000 conjectures** — 88 proven, 782 disproven.
 
 Ranking is by **Solved** (accepted submissions), ties broken by first solves.
 
@@ -26,11 +26,11 @@ Ranking is by **Solved** (accepted submissions), ties broken by first solves.
 | 8 | [jilint777](https://github.com/jilint777) | 34 | 34 | 2 | 32 |
 | 9 | [SucRunBug](https://github.com/SucRunBug) | 18 | 18 | 2 | 16 |
 | 10 | [lidangzzz](https://github.com/lidangzzz) | 16 | 16 | 2 | 14 |
-| 11 | [lizaixi01](https://github.com/lizaixi01) | 14 | 14 | 2 | 12 |
-| 12 | [Galaxy-0](https://github.com/Galaxy-0) | 10 | 10 | 4 | 6 |
+| 11 | [lizaixi01](https://github.com/lizaixi01) | 15 | 15 | 2 | 13 |
+| 12 | [Galaxy-0](https://github.com/Galaxy-0) | 11 | 11 | 4 | 7 |
 | 13 | [AlyciaBHZ](https://github.com/AlyciaBHZ) | 8 | 8 | 2 | 6 |
-| 14 | [GodBlf](https://github.com/GodBlf) | 4 | 4 | 0 | 4 |
-| 15 | [idealistichacker](https://github.com/idealistichacker) | 4 | 4 | 2 | 2 |
+| 14 | [idealistichacker](https://github.com/idealistichacker) | 7 | 7 | 2 | 5 |
+| 15 | [GodBlf](https://github.com/GodBlf) | 4 | 4 | 0 | 4 |
 | 16 | [11zhangzheng](https://github.com/11zhangzheng) | 1 | 1 | 0 | 1 |
 | 17 | [asfigh665](https://github.com/asfigh665) | 1 | 1 | 0 | 1 |
 | 18 | [champagnepapihz](https://github.com/champagnepapihz) | 1 | 1 | 0 | 1 |
@@ -170,27 +170,27 @@ P = proof, D = disproof, ★ = first solve of the conjecture. Same-day ties (202
 #405★ (D), #416★ (D), #458★ (D), #578★ (D), #590★ (P), #1186★ (D), #1202★ (D), #1203★ (D), #1206★ (P)
 #1243★ (D), #1260★ (D), #1283★ (D), #1556★ (D), #2147★ (D), #2148★ (D), #2308★ (D)
 
-### lizaixi01 — 14 solved (14 first)
+### lizaixi01 — 15 solved (15 first)
 
-#146★ (D), #508★ (P), #1079★ (D), #1100★ (D), #2207★ (P), #2320★ (D), #3825★ (D), #3849★ (D), #4110★ (D)
-#4846★ (D), #7681★ (D), #7768★ (D), #7862★ (D), #7863★ (D)
+#146★ (D), #508★ (P), #1079★ (D), #1100★ (D), #2207★ (P), #2320★ (D), #2346★ (D), #3825★ (D), #3849★ (D)
+#4110★ (D), #4846★ (D), #7681★ (D), #7768★ (D), #7862★ (D), #7863★ (D)
 
-### Galaxy-0 — 10 solved (10 first)
+### Galaxy-0 — 11 solved (11 first)
 
-#205★ (P), #579★ (D), #585★ (P), #1043★ (D), #1184★ (D), #2222★ (P), #3714★ (P), #7147★ (D), #8196★ (D)
-#8420★ (D)
+#205★ (P), #579★ (D), #585★ (P), #1043★ (D), #1184★ (D), #2222★ (P), #3714★ (P), #3829★ (D), #7147★ (D)
+#8196★ (D), #8420★ (D)
 
 ### AlyciaBHZ — 8 solved (8 first)
 
 #399★ (P), #1209★ (D), #1337★ (P), #1672★ (D), #7701★ (D), #7713★ (D), #7885★ (D), #8482★ (D)
 
+### idealistichacker — 7 solved (7 first)
+
+#116★ (P), #118★ (P), #154★ (D), #746★ (D), #3992★ (D), #3996★ (D), #7842★ (D)
+
 ### GodBlf — 4 solved (4 first)
 
 #156★ (D), #469★ (D), #1255★ (D), #1457★ (D)
-
-### idealistichacker — 4 solved (4 first)
-
-#116★ (P), #118★ (P), #154★ (D), #7842★ (D)
 
 ### 11zhangzheng — 1 solved (1 first)
 

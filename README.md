@@ -30,7 +30,7 @@ This is The Last Math Competition — possibly the last mathematics competition 
 
 ## Leaderboard
 
-Current standings as of 2026-10-11 — **865 of the 10,000 conjectures solved** (88 proofs, 777 disproofs). Every submission below passed the full audit — LaTeX source, PDF, and a Lean 4 project (Mathlib or self-contained core Lean) that compiles with no `sorry`, no `native_decide`, and no extra axioms — together with a semantic review confirming that the Lean theorem establishes the conjecture or its negation. Complete per-solver conjecture lists: [leaderboard.md](./leaderboard.md).
+Current standings as of 2026-10-12 — **870 of the 10,000 conjectures solved** (88 proofs, 782 disproofs). Every submission below passed the full audit — LaTeX source, PDF, and a Lean 4 project (Mathlib or self-contained core Lean) that compiles with no `sorry`, no `native_decide`, and no extra axioms — together with a semantic review confirming that the Lean theorem establishes the conjecture or its negation. Complete per-solver conjecture lists: [leaderboard.md](./leaderboard.md).
 
 | # | GitHub ID | Solved | First solves | Proven | Disproven |
 |---|----------|-------:|-------------:|-------:|----------:|
@@ -44,11 +44,11 @@ Current standings as of 2026-10-11 — **865 of the 10,000 conjectures solved** 
 | 8 | [jilint777](https://github.com/jilint777) | 34 | 34 | 2 | 32 |
 | 9 | [SucRunBug](https://github.com/SucRunBug) | 18 | 18 | 2 | 16 |
 | 10 | [lidangzzz](https://github.com/lidangzzz) | 16 | 16 | 2 | 14 |
-| 11 | [lizaixi01](https://github.com/lizaixi01) | 14 | 14 | 2 | 12 |
-| 12 | [Galaxy-0](https://github.com/Galaxy-0) | 10 | 10 | 4 | 6 |
+| 11 | [lizaixi01](https://github.com/lizaixi01) | 15 | 15 | 2 | 13 |
+| 12 | [Galaxy-0](https://github.com/Galaxy-0) | 11 | 11 | 4 | 7 |
 | 13 | [AlyciaBHZ](https://github.com/AlyciaBHZ) | 8 | 8 | 2 | 6 |
-| 14 | [GodBlf](https://github.com/GodBlf) | 4 | 4 | 0 | 4 |
-| 15 | [idealistichacker](https://github.com/idealistichacker) | 4 | 4 | 2 | 2 |
+| 14 | [idealistichacker](https://github.com/idealistichacker) | 7 | 7 | 2 | 5 |
+| 15 | [GodBlf](https://github.com/GodBlf) | 4 | 4 | 0 | 4 |
 | 16 | [11zhangzheng](https://github.com/11zhangzheng) | 1 | 1 | 0 | 1 |
 | 17 | [asfigh665](https://github.com/asfigh665) | 1 | 1 | 0 | 1 |
 | 18 | [champagnepapihz](https://github.com/champagnepapihz) | 1 | 1 | 0 | 1 |

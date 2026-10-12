@@ -30,7 +30,7 @@
 
 ## 排行榜（Leaderboard）
 
-截至 2026-10-11 的当前战绩——**10000 个猜想中已解决 865 个**（88 个证明，777 个证伪）。上榜的每一份提交都通过了完整审计——LaTeX 源码、PDF 文档，以及一个完整编译的 Lean 4 项目（Mathlib 或自包含核心 Lean）——无 `sorry`、无 `native_decide`、无额外公理——并通过语义审查确认 Lean 定理确实建立了该猜想或其否定。每位求解者的完整解题清单见 [leaderboard.md](./leaderboard.md)。
+截至 2026-10-12 的当前战绩——**10000 个猜想中已解决 870 个**（88 个证明，782 个证伪）。上榜的每一份提交都通过了完整审计——LaTeX 源码、PDF 文档，以及一个完整编译的 Lean 4 项目（Mathlib 或自包含核心 Lean）——无 `sorry`、无 `native_decide`、无额外公理——并通过语义审查确认 Lean 定理确实建立了该猜想或其否定。每位求解者的完整解题清单见 [leaderboard.md](./leaderboard.md)。
 
 | # | GitHub ID | Solved | First solves | Proven | Disproven |
 |---|----------|-------:|-------------:|-------:|----------:|
@@ -44,11 +44,11 @@
 | 8 | [jilint777](https://github.com/jilint777) | 34 | 34 | 2 | 32 |
 | 9 | [SucRunBug](https://github.com/SucRunBug) | 18 | 18 | 2 | 16 |
 | 10 | [lidangzzz](https://github.com/lidangzzz) | 16 | 16 | 2 | 14 |
-| 11 | [lizaixi01](https://github.com/lizaixi01) | 14 | 14 | 2 | 12 |
-| 12 | [Galaxy-0](https://github.com/Galaxy-0) | 10 | 10 | 4 | 6 |
+| 11 | [lizaixi01](https://github.com/lizaixi01) | 15 | 15 | 2 | 13 |
+| 12 | [Galaxy-0](https://github.com/Galaxy-0) | 11 | 11 | 4 | 7 |
 | 13 | [AlyciaBHZ](https://github.com/AlyciaBHZ) | 8 | 8 | 2 | 6 |
-| 14 | [GodBlf](https://github.com/GodBlf) | 4 | 4 | 0 | 4 |
-| 15 | [idealistichacker](https://github.com/idealistichacker) | 4 | 4 | 2 | 2 |
+| 14 | [idealistichacker](https://github.com/idealistichacker) | 7 | 7 | 2 | 5 |
+| 15 | [GodBlf](https://github.com/GodBlf) | 4 | 4 | 0 | 4 |
 | 16 | [11zhangzheng](https://github.com/11zhangzheng) | 1 | 1 | 0 | 1 |
 | 17 | [asfigh665](https://github.com/asfigh665) | 1 | 1 | 0 | 1 |
 | 18 | [champagnepapihz](https://github.com/champagnepapihz) | 1 | 1 | 0 | 1 |

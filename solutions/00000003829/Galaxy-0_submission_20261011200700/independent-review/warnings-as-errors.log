@@ -1,0 +1,5 @@
+'TLMC3829.classify' depends on axioms: [propext, Quot.sound]
+'TLMC3829.singleton_border' depends on axioms: [propext, Quot.sound]
+'TLMC3829.component_count_one' depends on axioms: [propext, Quot.sound]
+'TLMC3829.connected_for_any_border_relation' depends on axioms: [propext, Quot.sound]
+'TLMC3829.counterexample' depends on axioms: [propext, Quot.sound]

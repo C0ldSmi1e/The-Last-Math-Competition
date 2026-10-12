@@ -1,0 +1,6 @@
+name = "tlmc3829"
+version = "1.0.0"
+defaultTargets = ["Basic"]
+
+[[lean_lib]]
+name = "Basic"

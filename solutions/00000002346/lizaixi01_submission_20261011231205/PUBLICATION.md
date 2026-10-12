@@ -1,0 +1,3 @@
+# Publication scope
+
+Only this personal submission directory is added. No conjecture, README, leaderboard, metadata or existing solution is changed. Verification reuses complete source-bound independent semantic/PDF, mechanical build/type/standard-axiom and official fresh receipts obtained before publication. A prior cold-build timeout is retained; one unchanged-source bounded retry completed successfully. The later verification was an infrastructure regression and does not retroactively change any historical experimental score. Current upstream eligibility and all-author historical/open PR paths are checked separately immediately before publication.

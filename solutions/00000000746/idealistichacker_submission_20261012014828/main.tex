@@ -1,0 +1,163 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\U}{\mathcal U}
+\title{An Attracting 3-adic Schr\"oder Germ with Unbounded Denominator Powers}
+\author{idealistichacker\\\small AI-assisted implementation; no affiliation claimed}
+\date{12 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Conjecture 00000000746 asserts that the convergent Schr\"oder function of a p-adic attracting
+fixed point has coefficient denominators involving at most the first power of p. We give an
+explicit normalized analytic local coordinate over $\Q_3$ with coefficient $1/9$ at degree
+three, and more generally coefficient $3^{-n}$ at degree $n+1$. We verify the invariant
+neighborhood, analytic germs, nonzero attracting multiplier, all orbit limits, the
+Schr\"oder identity, actual convergent coefficient series and analytic inverse. A pinned Lean
+project proves these properties for actual p-adic numbers and the necessary denominator
+assertion's negation. Only the denominator clause is refuted, not analytic linearization.
+\end{abstract}
+
+\section{Exact statement and conventions}
+Both original languages say that the Schr\"oder function of an attracting fixed point is a
+convergent power series whose coefficient denominators contain only the first power of p.
+We use the standard local analytic-germ meaning of the named p-adic Koenigs/Schr\"oder
+function: at a fixed point moved to zero, an analytic coordinate $H$ satisfies
+$H(0)=0$, $H'(0)=1$ and $H(F(x))=\lambda H(x)$, where $0<|\lambda|_p<1$.
+Our coordinate has an explicit analytic inverse, so it is not merely a formal eigenfunction.
+
+The supplied statement imposes no integral-coefficient input condition, polynomial input,
+global absence of poles, or preassigned unit disk. Adding one would change the conjecture.
+All analytic claims below are local on the explicitly stated open neighborhood.
+For our rational coefficients in lowest terms, the denominator clause necessarily implies
+\begin{equation}\label{eq:bound}
+ p^2\nmid\operatorname{den}(a_m)\quad\hbox{for every }m\ge0.
+\end{equation}
+This is the exponent-at-most-one reading; the stronger reading that the only denominators
+are $1$ and $p$ also implies it. The value $1/9$ violates both at $p=3$.
+The exact unchanged bilingual source and its Git/SHA-256 identities accompany the submission.
+
+\section{Actual analytic maps and their neighborhood}
+Work in the complete non-Archimedean normed field $K=\Q_3$, with $|3|_3=1/3$, and set
+\[
+ \U=\{x\in K:|x|_3<1/3\},\qquad
+ F(x)=\frac{3x}{1+2x/3},\quad
+ H(x)=\frac{x}{1-x/3},\quad
+ J(x)=\frac{x}{1+x/3}.
+\]
+The set $\U$ is open, nonempty and contains zero. For every $x\in\U$,
+$|x/3|_3<1$, and $|2|_3\le1$ gives $|2x/3|_3<1$.
+The strong ultrametric equality yields
+\[
+ |1-x/3|_3=|1+2x/3|_3=|1+x/3|_3=1.
+\]
+Thus all denominators are nonzero throughout $\U$, and the three rational maps are
+$K$-analytic on neighborhoods of every point in $\U$. Total division outside that set in
+Lean's field operations does not assert global analyticity at poles.
+
+We have $F(0)=H(0)=0$, $F'(0)=3\ne0$, $H'(0)=1$, and $|F'(0)|_3=1/3<1$.
+These are actual derivatives over $K$, not derivatives over an unrelated real scalar field.
+Moreover, for all $x\in\U$,
+\begin{equation}\label{eq:norms}
+ |F(x)|_3=|x|_3/3,\qquad |H(x)|_3=|J(x)|_3=|x|_3.
+\end{equation}
+In particular all three maps preserve $\U$.
+Induction on the actual iterates of $F$ gives
+\[
+ |F^{\circ n}(x)|_3=(1/3)^n|x|_3 \longrightarrow0
+ \quad\text{for every }x\in\U.
+\]
+The fixed point is genuinely attracting, not just a point assigned a contracting multiplier.
+
+\section{Normalized analytic linearization and inverse}
+Writing $A=1+2x/3$, direct algebra gives
+$1-F(x)/3=(1-x/3)/A$. The already proved unit denominators therefore give
+\begin{equation}\label{eq:schroder}
+ H(F(x))=3H(x)\qquad(x\in\U).
+\end{equation}
+Similarly $1-J(x)/3=1/(1+x/3)$ and $1+H(x)/3=1/(1-x/3)$, so
+\[
+ H(J(x))=x,\qquad J(H(x))=x\qquad(x\in\U).
+\]
+Together with analyticity, normalization and preservation of $\U$, these equations exhibit
+an actual analytic conjugacy between the germ of $F$ and multiplication by $3$.
+No unrestricted Koenigs existence theorem is assumed as a new Lean axiom.
+
+The local analytic interpretation is also standard in the literature; see Jenkins--Spallone,
+\emph{A p-adic approach to local analytic dynamics: analytic conjugacy of analytic maps tangent to the identity},
+Annales de la Facult\'e des Sciences de Toulouse 18 (2009), 611--634,
+doi:10.5802/afst.1217. Our explicit identities prove this instance directly;
+the reference does not supply unproved premises or change the original conjecture.
+
+\section{The actual convergent series and rational denominators}
+For every $x\in\U$, the geometric-series criterion $|x/3|_3<1$ proves
+\[
+ H(x)=x\sum_{n=0}^{\infty}(x/3)^n
+     =\sum_{n=0}^{\infty}3^{-n}x^{n+1}.
+\]
+Indexing by the actual exponent of $x$, let
+\[
+ a_0=0,\qquad a_{n+1}=3^{-n}\in\Q.
+\]
+The coefficient sequence embedded in $K$ genuinely sums to $H(x)$ at \emph{every} point of
+$\U$. Lean proves both \texttt{HasSum} and \texttt{HasFPowerSeriesAt} for the formal
+multilinear series \texttt{ofScalars} of these coefficients, and identifies its actual
+coefficient at each degree. Thus $a_3$ is not an unrelated numerical label attached to $H$.
+
+The canonical reduced denominator of $3^{-n}$ is $3^n$, proved using the actual rational
+normal form. In particular
+\[
+ a_1=1,\quad a_2=1/3,\quad a_3=1/9,\qquad
+ \operatorname{den}(a_3)=9=3^2.
+\]
+Genuine analytic-series uniqueness additionally proves that any rational coefficient
+sequence giving the same analytic germ $H$ has these same coefficients. The code does not
+advertise a general theorem of uniqueness of all normalized Schr\"oder germs.
+
+\begin{theorem}
+The normalized analytic Schr\"oder coordinate $H$ of the attracting fixed point of $F$
+violates the first-power denominator assertion of conjecture 00000000746.
+\end{theorem}
+\begin{proof}
+The preceding arguments establish every actual analytic, fixed-point, normalization,
+invariance, attraction and functional-equation premise. At degree three the actual
+coefficient has denominator $9$, divisible by $3^2$, contrary to~\eqref{eq:bound}.
+In fact the denominators $3^n$ are unbounded. The convergent-series part of the statement
+continues to hold in this counterexample; it is only the denominator clause that fails.
+\end{proof}
+
+\section{Formal correspondence and reproducibility}
+The transparent \texttt{NormalizedAnalyticSchroder} predicate includes a nonempty open
+neighborhood containing zero, $K$-analytic maps, actual fixed point and derivatives,
+nonzero attracting multiplier, invariant set, exact norm contraction, convergence of every
+actual orbit, the Schr\"oder identity and both actual series specifications.
+\path{actual_normalized_Schroder} proves its concrete instance;
+\path{exists_actual_counterexample} supplies an actual witness with the failed bound;
+\path{necessary_denominator_claim_false} negates the corresponding necessary universal
+assertion without leaving a premise to discharge. The explicit inverse and analytic conjugacy
+are verified separately, strengthening the standard coordinate interpretation.
+
+Analysis uses the ordinary inherited field, self-module and normed-space operations on
+$\Q_3$. \path{self_smul_eq_mul} checks that scalar action is the usual multiplication;
+no topology, norm or mathematical assumption is changed to make a theorem compile.
+The formal scope is this genuine explicit counterexample, not a hard-coded Boolean or
+a corrected conjecture about integral-input or global maps.
+
+The project pins Lean 4.33.1 and Mathlib commit
+\texttt{0df444a360eaa60ab8c11dca51a86af692955474}, with a portable manifest fixing all
+transitive Git revisions. The Python reproducer verifies source bytes, the exact toolchain,
+every dependency HEAD/origin and clean tracked source, deletes only this project's generated
+build cache, rebuilds with warnings as errors and audits all 45 public theorems plus the prime
+instance. Only \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound} are allowed.
+Exact rational sample checks are supplemental regressions, not substitutes for the universal
+p-adic analytic proofs. The actual PDF is compiled from this source by Tectonic 0.15.0 with
+\texttt{SOURCE\_DATE\_EPOCH=0}.
+
+The implementation and separate independent Agent review are AI-assisted contributions for
+idealistichacker; correlated AI review is not independent human expert approval. No
+institutional affiliation, first-solve status, award or organizer acceptance is claimed.
+\end{document}

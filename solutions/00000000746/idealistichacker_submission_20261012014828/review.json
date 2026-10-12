@@ -1,0 +1,467 @@
+{
+  "version": 1,
+  "id": "00000000746",
+  "reviewer": "Lovelace /01a12dd4-1793-7043-8b7d-4e9288f028e6",
+  "implementation_agent": "release coordinator / main Codex agent with Mendel and Bohr implementation workers",
+  "reviewed_at": "2026-10-12T02:17:13.504Z",
+  "verdict": "pass",
+  "scope": "Independent final review of the frozen explicit local Q3 analytic counterexample; NOT publication approval.",
+  "content_sha256": "3e83c726bef7f13a8dd4df8a11bcb530a43a0483e843b42ba1fef76dbbed489d",
+  "independent_content_sha256": "3e83c726bef7f13a8dd4df8a11bcb530a43a0483e843b42ba1fef76dbbed489d",
+  "source_git_blob": "95259c41c7cc222e6ab5992fcc1805ad164704d7",
+  "source_sha256": "21a4917976dcff64a3be77ba224647a09e9f563521962e30fe5af28cf2392a7a",
+  "pdf_sha256": "fdb221bf49bdb57624606c2e46caea9f9013eac7fc34ba6fbc259a44d193a17f",
+  "checks": {
+    "statement_alignment": true,
+    "mathematics": true,
+    "lean_bridge": true,
+    "reproduction": true,
+    "pdf_visual": true
+  },
+  "findings": [],
+  "mathematical_basis": [
+    "Both exact source languages were read independently from the Git blob, compared with source.md and both repository working sources; the source-commit path resolves to that blob.",
+    "Neither source language imposes integral Taylor coefficients, polynomial input, global analyticity or a fixed unit disc. The reviewed conclusion is only the necessary p-squared nondivisibility of canonical rational denominators.",
+    "The actual Q_[3] norm ball U is an open nonempty neighborhood of zero; an additional independently compiled check proves nonzero 9 belongs to U. Unit denominator proofs support all local analytic assertions.",
+    "F and H have actual K derivatives 3 and 1 at zero. Every actual F iterate stays in U and tends to zero. H(F(x))=3H(x) for every x in U.",
+    "The explicitly analytic inverse J preserves U and both inverse identities hold. H is a genuine normalized analytic linearizing coordinate, not a zero or formal-only eigenfunction.",
+    "Full HasSum and HasFPowerSeriesAt of ofScalars bind the actual H coefficients to a0=0 and a(n+1)=3^(-n). Rat canonical denominators give a3.den=9. The reviewer independently compiled the actual Q3 coefficient norm equality norm(a3)=9.",
+    "The transparent premise structure is inhabited by the closed F/H/U/a proof; existential witness and necessary universal-assertion negation are closed, not Boolean placeholders.",
+    "The coefficient uniqueness theorem concerns series of this same H only. No general normalized-Schroder-germ uniqueness theorem or general Koenigs theorem is advertised."
+  ],
+  "structure_review": {
+    "ordinary_operations": true,
+    "ordinary_norm_and_topology": true,
+    "standard_instance_probe_exit_code": 0,
+    "details": "Read the inherited AddCommGroup, NormedSpace and Module terms plus pinned Mathlib NormedAlgebra.id/toNormedSpace, Padic normed-field and analytic-series definitions. Outside the author namespace, standard-instance probes accept all three analytic maps, both derivatives, the actual power series and actual orbit convergence. Self scalar multiplication is definitionally field multiplication. The transparency option changes elaboration behavior only; no new axioms, weakened topology or modified norm were found."
+  },
+  "lean": {
+    "version": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "mathlib_revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "declarations": 46,
+    "theorems": 45,
+    "prime_instances": 1,
+    "full_type_inventory_checked": true,
+    "axiom_inventory_checked": true,
+    "axiom_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "axioms_by_declaration": {
+      "Conjecture746.self_smul_eq_mul": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.coeff_P": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.norm_three": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.norm_div_three_lt_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_hasSum": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_hasFPowerSeriesAt": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.a_succ_den": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.a_three_den": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.actual_third_coefficient": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.F_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.zero_mem_U": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.U_nonempty": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.U_isOpen": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.norm_two_mul_div_three_lt_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_den_norm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.F_den_norm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_den_ne_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.F_den_ne_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.norm_H": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.norm_F": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.F_mem_U": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.F_mapsTo_U": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_derivative_at_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.F_derivative_at_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_analyticOnNhd": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.F_analyticOnNhd": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.Schroder_on_U": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.iterate_mem_U": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.iterate_norm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.iterate_tendsto_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_rational_coefficients_unique": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.a_violates_denominator_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.actual_normalized_Schroder": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.exists_actual_counterexample": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.necessary_denominator_claim_false": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.J_den_norm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.J_den_ne_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.norm_J": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.J_mem_U": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_mem_U": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.H_J": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.J_H": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.J_analyticOnNhd": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.actual_analytic_conjugacy_on_U": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Conjecture746.prime_three": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "physical_git_dependencies": [
+      {
+        "name": "mathlib",
+        "head": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "origin": "https://github.com/leanprover-community/mathlib4.git",
+        "tracked_source_clean": true,
+        "physical_checkout": true
+      },
+      {
+        "name": "plausible",
+        "head": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+        "origin": "https://github.com/leanprover-community/plausible",
+        "tracked_source_clean": true,
+        "physical_checkout": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "head": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+        "origin": "https://github.com/leanprover-community/LeanSearchClient",
+        "tracked_source_clean": true,
+        "physical_checkout": true
+      },
+      {
+        "name": "importGraph",
+        "head": "16f02aa7642864af59f1ff0e384a015994db9118",
+        "origin": "https://github.com/leanprover-community/import-graph",
+        "tracked_source_clean": true,
+        "physical_checkout": true
+      },
+      {
+        "name": "proofwidgets",
+        "head": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+        "origin": "https://github.com/leanprover-community/ProofWidgets4",
+        "tracked_source_clean": true,
+        "physical_checkout": true
+      },
+      {
+        "name": "aesop",
+        "head": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+        "origin": "https://github.com/leanprover-community/aesop",
+        "tracked_source_clean": true,
+        "physical_checkout": true
+      },
+      {
+        "name": "Qq",
+        "head": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+        "origin": "https://github.com/leanprover-community/quote4",
+        "tracked_source_clean": true,
+        "physical_checkout": true
+      },
+      {
+        "name": "batteries",
+        "head": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+        "origin": "https://github.com/leanprover-community/batteries",
+        "tracked_source_clean": true,
+        "physical_checkout": true
+      },
+      {
+        "name": "Cli",
+        "head": "6130a47896ce867c6a4a55373441e59e565bad0f",
+        "origin": "https://github.com/leanprover/lean4-cli",
+        "tracked_source_clean": true,
+        "physical_checkout": true
+      }
+    ]
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\jh\\scoop\\apps\\anaconda3\\current\\App\\python.exe",
+        "-Xutf8",
+        "reproduce.py",
+        "--repo",
+        "D:/W746",
+        "--lake",
+        "D:\\AStudy\\开源杂\\LastMathC\\.local\\tools\\lean-4.33.1-windows\\bin\\lake.exe",
+        "--skip-update"
+      ],
+      "cwd": "D:\\W746\\solutions\\00000000746\\idealistichacker_submission_20261012014828",
+      "exit_code": 0,
+      "started_at_utc": "2026-10-12T02:11:40.026452+00:00",
+      "finished_at_utc": "2026-10-12T02:12:21.072564+00:00",
+      "log_sha256": "fa834cddfba5227a7c638633348947485bcff498c719a182bce60001a5937ac7",
+      "details": "Independent execution of the actual frozen reproducer with --skip-update; own-project clean build, warning-as-error source replay, all46 audits and exact dependency verification before and after."
+    },
+    {
+      "command": [
+        "D:/AStudy/开源杂/LastMathC/.local/tools/lean-4.33.1-windows/bin/lean.exe",
+        "-DwarningAsError=true",
+        "--stdin"
+      ],
+      "exit_code": 0,
+      "input_sha256": "24edb3f8111babad9579a1963b7605a162d902a3bdbead675255e22f2d81cb62",
+      "log_sha256": "07808081ab290a9f60201b820ad66181bc6bc08319cf1e536157f7b59d8a2574",
+      "details": "Fresh Main source from stdin, all46 pp.all full types, transparent predicate definitions, all46 axiom audits and independent standard-instance probes; no author cache writes."
+    },
+    {
+      "command": [
+        "C:/Users/jh/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/pdftoppm.exe",
+        "-r",
+        "120",
+        "-png",
+        "D:/W746/solutions/00000000746/idealistichacker_submission_20261012014828/main.pdf",
+        "D:/AStudy/开源杂/LastMathC/.local/audits/746-independent-20261012/pdf-page"
+      ],
+      "exit_code": 0,
+      "details": "Independently rendered all three actual frozen PDF pages, then explicitly viewed every image."
+    },
+    {
+      "command": [
+        "C:/Users/jh/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/pdfinfo.exe",
+        "D:/W746/solutions/00000000746/idealistichacker_submission_20261012014828/main.pdf"
+      ],
+      "exit_code": 0,
+      "details": "Actual PDF: three A4 pages,70701 bytes, unencrypted, no JavaScript."
+    }
+  ],
+  "pdf_pages": [
+    {
+      "page": 1,
+      "render_sha256": "f39834b1b402efafb58c7c30c8b6d6588a4f668667d848ce9e052176b025f83e",
+      "viewed": true,
+      "visual_result": "Legible mathematics and text; no clipping, overlap, missing glyphs or broken equations."
+    },
+    {
+      "page": 2,
+      "render_sha256": "e0a260d017c2774bc1c81748a2db0c7d5812ece39d793bdb92c4e59c2d56a052",
+      "viewed": true,
+      "visual_result": "Legible mathematics and text; no clipping, overlap, missing glyphs or broken equations."
+    },
+    {
+      "page": 3,
+      "render_sha256": "6145db35ec7ff5c29e82d8601cd342d4bb34da121fe49816a56c80183caacd79",
+      "viewed": true,
+      "visual_result": "Legible mathematics and text; no clipping, overlap, missing glyphs or broken equations."
+    }
+  ],
+  "hash_binding": {
+    "content_before": "3e83c726bef7f13a8dd4df8a11bcb530a43a0483e843b42ba1fef76dbbed489d",
+    "content_after": "3e83c726bef7f13a8dd4df8a11bcb530a43a0483e843b42ba1fef76dbbed489d",
+    "pdf_before": "fdb221bf49bdb57624606c2e46caea9f9013eac7fc34ba6fbc259a44d193a17f",
+    "pdf_after": "fdb221bf49bdb57624606c2e46caea9f9013eac7fc34ba6fbc259a44d193a17f",
+    "author_files_unchanged_during_final_source_replay": true,
+    "content_hash_function": "scripts/contributor.py content_hash, invoked independently before and after actual reproduction; top-level review.json excluded by that function."
+  },
+  "reviewed_files": [
+    "source.md",
+    "README.md",
+    "statement-alignment.md",
+    "main.tex",
+    "main.pdf",
+    "reproduce.py",
+    "submission.json",
+    "lean4/Main.lean",
+    "lean4/Check.lean",
+    "lean4/lakefile.lean",
+    "lean4/lake-manifest.json",
+    "lean4/lean-toolchain"
+  ],
+  "assumptions": [
+    "Ordinary local analytic-germ/normalized analytic-coordinate interpretation of the named p-adic Koenigs/Schroder function.",
+    "Standard Lean foundations propext, Classical.choice and Quot.sound and the exactly pinned Mathlib dependency trust boundary."
+  ],
+  "limitations": [
+    "No refutation of corrected integral-input, polynomial-input, global-map or preassigned-unit-disc statements; no assertion that convergence fails.",
+    "Only uniqueness of rational coefficient series for this H is formalized; no general Koenigs or all-Schroder-germ uniqueness theorem is claimed.",
+    "Mathlib dependency binaries were reused after physical Git HEAD/origin/clean tracked-source verification. Dependencies themselves were not rebuilt from scratch.",
+    "PDF was independently rendered and all three pages viewed; optional TeX/PDF byte rebuild was not attempted. Coordinator mandatory recompilation/byte comparison remains separate.",
+    "The Jenkins-Spallone citation is contextual only and supplies no mathematical premise. No network retrieval or independent external bibliographic/priority verification was performed.",
+    "Correlated independent AI-context review is not human expert certification, affiliation, organizer acceptance or first-solve credit.",
+    "Fresh upstream source/duplicate/WIP/identity and publication gates belong to the coordinator and were not performed here."
+  ],
+  "diagnostics": [
+    "Two reviewer-only supplemental norm-probe attempts failed because of over-eager simplification and a missing explicit Rat cast bridge; both logs retained locally. The corrected probe and complete source/type/axiom replay exited0. No author edit was required.",
+    "Optional pdftotext.exe was absent (command exit1); the required direct three-page visual review and full TeX reading were completed. This was not a skipped required gate."
+  ],
+  "resources": {
+    "network_access": false,
+    "credential_access": false,
+    "commits_or_pushes": false,
+    "author_source_edits": false,
+    "author_generated_build_cache_cleaned_only_by_authorized_reproducer": true,
+    "prior_preflight": "Read as evidence only; no verdict inherited."
+  }
+}

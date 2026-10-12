@@ -1,0 +1,18 @@
+Date: 2026-10-12 UTC
+Lean: 4.31.0, commit 68218e876d2a38b1985b8590fff244a83c321783
+Main.lean SHA256: 327f19d49b7b0e53f2985c143538aa449e7d3eb40b8661bdca33d9a827ecc237
+Checks:
+- lake build: exit 0
+- direct lean -o Main.olean Main.lean: exit 0
+- separate leanchecker Main: exit 0
+- independent reviewer copied frozen Main.lean and repeated compilation and
+  leanchecker: both exit 0; matching SHA256
+- main and auxiliary audited theorems depend only on standard propext,
+  Classical.choice, Quot.sound
+- no added axioms, proof holes, sorry, or native_decide proof steps
+- PDF: 2 A4 pages, compiled twice, pdftoppm rendering successful
+- Both final page PNGs visually reviewed: no clipping, overlap, missing
+  mathematical glyphs, or unreadable text
+- Last LaTeX pass: no overfull/underfull boxes or unresolved references
+Formal scope: rational affine plane and rational-polynomial Zariski closure.
+Paper scope: any characteristic-zero field, with scope differences disclosed.

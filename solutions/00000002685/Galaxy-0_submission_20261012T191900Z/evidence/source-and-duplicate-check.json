@@ -1,0 +1,65 @@
+{
+  "checked_at_utc": "2026-10-12T19:23:40Z",
+  "source": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Action completed."
+      }
+    ],
+    "structuredContent": {
+      "content": "# 00000002685\n\n**English.** Definition: Zariski-dense orbits: orbit closures of semigroup actions. Conjecture: The dichotomy of orbit closures of multidimensional endomorphism semigroups: the closure is either the preperiodic point set or Zariski dense; the criterion is emptiness of the multiplicative zero set of the Jacobian determinants, verifiable computably for at most two maps. (semigroup orbit closure dichotomy)\n\n**中文。** 定义：Zariski 密度轨道：半群作用的轨道闭包。猜想：多维自同态半群的轨道闭包二分：闭包或为预周期点集或为 Zariski 稠密；二分的判据为 Jacobi 行列式的乘性零点集为空且判据在不超过两个映射时可计算验证。（半群轨道闭包二分）\n",
+      "encoding": "utf-8",
+      "sha": "8d6a6cbadf48e960123f588074f14019237a7581",
+      "display_url": "https://github.com/The-Last-Math-Competition/The-Last-Math-Competition/blob/main/conjectures/00000002685.md",
+      "display_title": "00000002685.md"
+    },
+    "isError": false
+  },
+  "prs": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Action completed."
+      }
+    ],
+    "structuredContent": {
+      "issues": []
+    },
+    "isError": false
+  },
+  "code": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Action completed."
+      }
+    ],
+    "structuredContent": {
+      "results": [
+        {
+          "url": "https://github.com/The-Last-Math-Competition/The-Last-Math-Competition/blob/65d4b6f8e745a57efeae42bcea831c3a6ed44700/conjectures/00000002685.md",
+          "path": "conjectures/00000002685.md",
+          "display_url": "https://github.com/The-Last-Math-Competition/The-Last-Math-Competition/blob/65d4b6f8e745a57efeae42bcea831c3a6ed44700/conjectures/00000002685.md",
+          "display_title": "conjectures/00000002685.md",
+          "text_matches": [
+            {
+              "property": "content",
+              "fragment": "# 00000002685\n\n**English.** Definition: Zariski-dense orbits: orbit closures of semigroup actions. Conjecture: The dichotomy of orbit closures of multidimensional endomorphism semigroups: the closure is either the preperiodic point set or Zariski dense; the criterion is emptiness of the multiplicative zero set of the Jacobian determinants, verifiable computably for at most two maps. (semigroup orbit closure dichotomy)\n\n**中文。** 定义：Zariski 密度轨道：半群作用的轨道闭包。猜想：多维自同态半群的轨道闭包二分：闭包或为预周期点集或为 Zariski 稠密；二分的判据为 Jacobi 行列式的乘性零点集为空且判据在不超过两个映射时可计算验证。（半群轨道闭包二分）",
+              "matches": [
+                {
+                  "text": "00000002685",
+                  "indices": [
+                    2,
+                    13
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "isError": false
+  }
+}

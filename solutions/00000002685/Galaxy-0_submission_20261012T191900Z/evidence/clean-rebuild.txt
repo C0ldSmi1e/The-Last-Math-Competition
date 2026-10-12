@@ -1,0 +1,10 @@
+Lean (version 4.31.0, x86_64-unknown-linux-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)
+info: tlmc2685: no previous manifest, creating one from scratch
+info: toolchain not updated; already up-to-date
+ℹ [2/3] Built Main (741ms)
+info: Main.lean:190:0: 'TLMC2685.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:191:0: 'TLMC2685.closure_not_contained_preperiodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3 jobs).
+'TLMC2685.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2685.closure_not_contained_preperiodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+Lean compilation and independent kernel recheck succeeded.

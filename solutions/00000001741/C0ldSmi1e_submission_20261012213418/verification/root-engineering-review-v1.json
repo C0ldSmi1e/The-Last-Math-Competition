@@ -1,0 +1,45 @@
+{
+  "status": "PASS_ROOT_ENGINEERING_REVIEW",
+  "checked_at": "2026-10-12T21:32:56.807256+00:00",
+  "frozen_manifest_sha256": "cc71436281a2a43d5f941c8f209338540ea3803cec4a88c44090dd256f043c05",
+  "engineering_verdict_sha256": "4dbd341eae530d832fd49dea2dd042a079505752676b112217b82b93d81ac5f0",
+  "engineering_manifest_sha256": "c5f4b44dab3c04d921d37b23cec6a0ece0bd530705c57c1f0782e658a150efcf",
+  "evidence_files_rehashed": 413,
+  "command_receipts_rehashed": 80,
+  "source_and_config_read_in_full": true,
+  "reviewed_operational_drivers": [
+    "verify.py",
+    "check_audit_graph.py",
+    "test_hardening.py",
+    "author/verify.py",
+    "run_preparation_v2.py",
+    "run_full_v1.py",
+    "run_helper_provenance_v1.py",
+    "finalize_engineering_v1.py"
+  ],
+  "safe_roots": 15,
+  "compiler_helpers": [
+    "HallReverse.gap._cstage1",
+    "HallReverse.gap._cstage2"
+  ],
+  "helper_classification": "Exact fresh reproduction types, direct dependency edges and printed bodies compared; neither helper reachable from any safe source declaration or capstone. Runtime-only findings retained.",
+  "checks": [
+    "Fresh full Lake build and direct replay succeeded with warnings fatal",
+    "Both modules are default targets; 13 examples compiled",
+    "All safe roots have only permitted axioms and no unsafe dependency",
+    "Seven principal theorem printed audits match standard three axioms",
+    "4057 import identities checked and graph checker/control runs passed",
+    "Frozen original source unchanged; relevant receipt bytes rehashed",
+    "All supplied auxiliary verification scripts executed"
+  ],
+  "retained_failure": "Extra preflight incorrectly required nonempty Cli cache; it was corrected before full build, with original failure retained. No dependency restoration needed.",
+  "limits": [
+    "Engineering verdict only; semantic correspondence to the informal candidate and independent mathematical review are separate.",
+    "Pinned generic dependency source bytes match Git objects; dependency oleans are bound to supplied cached bytes and were not independently authenticated or rebuilt.",
+    "The supplied Lean runtime was hashed and checked stable, not bootstrapped.",
+    "The closure inspector exports dependency evidence; kernel checking is supplied by the fresh Lean compilations.",
+    "The independent Python graph checker recomputes the exported graph, not a second Lean environment extraction.",
+    "The two reproduced unsafe compiler helpers retain all runtime findings; none is reachable from any safe owned declaration or capstone.",
+    "Offline PATH wrappers are safeguards, not OS network isolation."
+  ]
+}

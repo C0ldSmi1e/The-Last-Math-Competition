@@ -1,0 +1,654 @@
+{
+  "capstones": [
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "kind": "theorem",
+      "name": "HallReverse.infinitelyMany_mono",
+      "raw_type": "Lean.Expr.forallE\n  `a\n  (Lean.Expr.const `Real [])\n  (Lean.Expr.forallE\n    `b\n    (Lean.Expr.const `Real [])\n    (Lean.Expr.forallE\n      `hab\n      (Lean.Expr.app\n        (Lean.Expr.app\n          (Lean.Expr.app\n            (Lean.Expr.app (Lean.Expr.const `LE.le [Lean.Level.zero]) (Lean.Expr.const `Real []))\n            (Lean.Expr.const `Real.instLE []))\n          (Lean.Expr.bvar 1))\n        (Lean.Expr.bvar 0))\n      (Lean.Expr.forallE\n        `h\n        (Lean.Expr.app (Lean.Expr.const `HallReverse.infinitelyMany []) (Lean.Expr.bvar 2))\n        (Lean.Expr.app (Lean.Expr.const `HallReverse.infinitelyMany []) (Lean.Expr.bvar 2))\n        (Lean.BinderInfo.default))\n      (Lean.BinderInfo.default))\n    (Lean.BinderInfo.implicit))\n  (Lean.BinderInfo.implicit)",
+      "type": "\u2200 {a b : Real}, @LE.le.{0} Real Real.instLE a b \u2192 HallReverse.infinitelyMany a \u2192 HallReverse.infinitelyMany b",
+      "unsafe_dependencies": []
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "kind": "theorem",
+      "name": "HallReverse.quarter_infinitude_refutes_optimality",
+      "raw_type": "Lean.Expr.forallE\n  `h\n  (Lean.Expr.app\n    (Lean.Expr.const `HallReverse.infinitelyMany [])\n    (Lean.Expr.app\n      (Lean.Expr.app\n        (Lean.Expr.app\n          (Lean.Expr.app\n            (Lean.Expr.app\n              (Lean.Expr.app\n                (Lean.Expr.const `HDiv.hDiv [Lean.Level.zero, Lean.Level.zero, Lean.Level.zero])\n                (Lean.Expr.const `Real []))\n              (Lean.Expr.const `Real []))\n            (Lean.Expr.const `Real []))\n          (Lean.Expr.app\n            (Lean.Expr.app (Lean.Expr.const `instHDiv [Lean.Level.zero]) (Lean.Expr.const `Real []))\n            (Lean.Expr.app\n              (Lean.Expr.app (Lean.Expr.const `DivInvMonoid.toDiv [Lean.Level.zero]) (Lean.Expr.const `Real []))\n              (Lean.Expr.const `Real.instDivInvMonoid []))))\n        (Lean.Expr.app\n          (Lean.Expr.app\n            (Lean.Expr.app (Lean.Expr.const `OfNat.ofNat [Lean.Level.zero]) (Lean.Expr.const `Real []))\n            (Lean.Expr.lit (Lean.Literal.natVal 1)))\n          (Lean.Expr.app\n            (Lean.Expr.app (Lean.Expr.const `One.toOfNat1 [Lean.Level.zero]) (Lean.Expr.const `Real []))\n            (Lean.Expr.const `Real.instOne []))))\n      (Lean.Expr.app\n        (Lean.Expr.app\n          (Lean.Expr.app (Lean.Expr.const `OfNat.ofNat [Lean.Level.zero]) (Lean.Expr.const `Real []))\n          (Lean.Expr.lit (Lean.Literal.natVal 4)))\n        (Lean.Expr.app\n          (Lean.Expr.app\n            (Lean.Expr.app\n              (Lean.Expr.app (Lean.Expr.const `instOfNatAtLeastTwo [Lean.Level.zero]) (Lean.Expr.const `Real []))\n              (Lean.Expr.lit (Lean.Literal.natVal 4)))\n            (Lean.Expr.const `Real.instNatCast []))\n          (Lean.Expr.app\n            (Lean.Expr.const `instNatAtLeastTwo [])\n            (Lean.Expr.app\n              (Lean.Expr.app\n                (Lean.Expr.app (Lean.Expr.const `OfNat.ofNat [Lean.Level.zero]) (Lean.Expr.const `Nat []))\n                (Lean.Expr.lit (Lean.Literal.natVal 2)))\n              (Lean.Expr.app (Lean.Expr.const `instOfNatNat []) (Lean.Expr.lit (Lean.Literal.natVal 2)))))))))\n  (Lean.Expr.app (Lean.Expr.const `Not []) (Lean.Expr.const `HallReverse.cannotIncrease []))\n  (Lean.BinderInfo.default)",
+      "type": "HallReverse.infinitelyMany\n    (@HDiv.hDiv.{0, 0, 0} Real Real Real (@instHDiv.{0} Real (@DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid))\n      (@OfNat.ofNat.{0} Real 1 (@One.toOfNat1.{0} Real Real.instOne))\n      (@OfNat.ofNat.{0} Real 4 (@instOfNatAtLeastTwo.{0} Real 4 Real.instNatCast \u22ef))) \u2192\n  Not HallReverse.cannotIncrease",
+      "unsafe_dependencies": []
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "kind": "theorem",
+      "name": "HallReverse.conjecture_false",
+      "raw_type": "Lean.Expr.app (Lean.Expr.const `Not []) (Lean.Expr.const `HallReverse.conjecture [])",
+      "type": "Not HallReverse.conjecture",
+      "unsafe_dependencies": []
+    }
+  ],
+  "checks": {
+    "adversarial_driver_controls": true,
+    "all_frozen_original_and_private_source_bytes_unchanged": true,
+    "all_owned_library_outputs_attributed": true,
+    "author_verifier_executed_in_fresh_private_copy": true,
+    "default_lake_build_warnings_fatal": true,
+    "every_owned_lean_module_replayed_warnings_fatal": true,
+    "fresh_generic_positive_and_negative_controls": true,
+    "full_type_body_recursor_inductive_dependency_audit": true,
+    "independent_exported_graph_recomputation": true,
+    "lakefile_executed_under_strict_lean": true,
+    "no_network_or_dependency_restoration_needed": true
+  },
+  "closure_declarations": 13883,
+  "created_utc": "2026-10-12T21:32:00.386397+00:00",
+  "exported_local_declarations": 17,
+  "finalizer_sha256": "1657e4e28bc0e37b1bde53a92353331307adf03827ea745fec6e2cede47efbc6",
+  "frozen_manifest_sha256": "cc71436281a2a43d5f941c8f209338540ea3803cec4a88c44090dd256f043c05",
+  "imported_modules": 4057,
+  "imported_modules_by_package": {
+    "Lean-runtime": 1272,
+    "LeanSearchClient": 4,
+    "Qq": 12,
+    "aesop": 130,
+    "batteries": 78,
+    "importGraph": 2,
+    "mathlib": 2537,
+    "owned": 3,
+    "plausible": 8,
+    "proofwidgets": 11
+  },
+  "module_counts": [
+    {
+      "declarations": 17,
+      "module": "HallReverse"
+    },
+    {
+      "declarations": 0,
+      "module": "Verification"
+    }
+  ],
+  "owned_modules": [
+    "HallReverse",
+    "Verification"
+  ],
+  "receipt_review": [
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0001.json",
+      "sha256": "b4dda7d8248001fe55bf7a8735490505b21dda7bdff272b182e8637bf4295381"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0002.json",
+      "sha256": "116ae22590abfd9efdf9541a37eb2a23bf030876c6b4000f931b19c13ad43852"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0003.json",
+      "sha256": "8d999ffa29057795444cf24cd9f8c5e3f7f5dbf84883876231213f5bf918942d"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0004.json",
+      "sha256": "d1b095e1c546824f57d7e423f3101db014c94d1a23b19c0279b1c88b15076748"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0005.json",
+      "sha256": "8da540f84c13db11ed5112d52a5d662fc9e8af12d3af11e48ca2a7b41fb3e6c5"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0006.json",
+      "sha256": "8ede85171427840a05b049e0856360b885b9fd7bcebbd9e398afdaefab153d3f"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "prepare-001/receipts/0007.json",
+      "sha256": "52a1056277e8c6cc283813073477cc3914314568e7dbf98699939aa8fd64b71b"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0008.json",
+      "sha256": "618eddfcd3f87d8280f03274d93067f0ee6df4550985c87450d04f688494dd99"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "prepare-001/receipts/0009.json",
+      "sha256": "dbbe710546623b7e0cc2d0232fcebfc47fc666d622d601eceef6fba3a6c1bb2d"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "prepare-001/receipts/0010.json",
+      "sha256": "970420350c99ce0339d74ceea9ab94f4346d433eed8db965d7b4fb37d3d390ef"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0011.json",
+      "sha256": "dc5ff21fb5096cdca16a7989981c3fe0718e7f0eb87873b63864942434380d95"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "prepare-001/receipts/0012.json",
+      "sha256": "b14fc076e7b4e2d1b1411bdea1abc41a8c13d4a098a82e58a990d39c5fbf1d6b"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0013.json",
+      "sha256": "cfb1285a6276949f84ae2e64d1b99d19707b0d573f86e6dcba20c2bfb69f954c"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "prepare-001/receipts/0014.json",
+      "sha256": "c82df4b7649a2c27f0a384620ff69cfe9b714c0c1b9005175039c98f83db48fd"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-001/receipts/0015.json",
+      "sha256": "95b409f4408b95cc0ebeb957bf6619e2c8dfb47055c615c5b6a44e28ef1b205f"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "prepare-001/receipts/0016.json",
+      "sha256": "31bc40cbebc17dbacf956b7e3561ea737f842e7aa2e8acaa0b4ac7cc21165d98"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0001.json",
+      "sha256": "77bdc54eea733c3cef99dd895fe433338a404a3ae301b4599cd0efe3b1f24b1d"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0002.json",
+      "sha256": "2dcb6fc261cc14f3c286db5378625f2fb61a002212363cedc51ed93439f2a4c4"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0003.json",
+      "sha256": "35c5b2e645961ad9f73148087df12263aa63c352326eb4024f351f2c809569bb"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0004.json",
+      "sha256": "0e73f7363d85c97e13db66a8a08c65636bacddec9b8c70ce48094b3fe5c1f833"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0005.json",
+      "sha256": "c5b0aa5416300de250cd70c8437e0d6c34142bf75dbcca36783bb542d96ee5cc"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0006.json",
+      "sha256": "fc18c41e8b77f4a134d76efef083e3a8ee05f800fc171cc408215285f9504902"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0007.json",
+      "sha256": "fbde44c0a078bb2612827c005ff746b28a07fc6e1affaa601c25eef424b601ab"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0008.json",
+      "sha256": "837a5ea0c639c66669b980b73cfdb0517d1b4cb01c5884207edadbc2d63c09c1"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0009.json",
+      "sha256": "1333bc144d74e90a3e520d53ee957ffebfea45c3b12b78d86f39fb7860ec00e9"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0010.json",
+      "sha256": "8b49524ef3cefcb54d1e429d52c1a537896c1be63c8f4b51a50203efcfb8cc7a"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0011.json",
+      "sha256": "6bdfc94ca28e2d0b0fafae83a04c7ba116acdcb3ea0e0669bc620d581303d149"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0012.json",
+      "sha256": "6bf7b95a32817e8fe5fcdb36b60e29772aa529dce68bec367100c3f5427ee551"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0013.json",
+      "sha256": "26331b77678a8131451d608148bb72e4c68ecfec75c6a114005406ea69d23d46"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0014.json",
+      "sha256": "700f7f1c3fabc7b3f3e5c34a3196b021941a13c8b3830138f80843b5d7761dce"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0015.json",
+      "sha256": "1c5eb97a99a54dca1534d74dd20be6dfe72d5da5795ecf3acfc9268c3b95685c"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0016.json",
+      "sha256": "f20f9a3645eede99d6817b9efb079b5f69eb0592e47fb7d85491e40dbe6e2552"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0017.json",
+      "sha256": "679f5cdd8531dff88cad7fc06f5f4caaab447c3eaa04fb6b481bf73f0df925c7"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0018.json",
+      "sha256": "b65504d266fee50dd898d2686046c75eb13d49a0ae81dfe357b5054b9f072ae0"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0019.json",
+      "sha256": "8e605db2b0c93a339ca4c75c4a3b1a2008f48e657ba179dc0e4903a1af35f0ca"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0020.json",
+      "sha256": "4affdea12c804db61f7a14f16e79528485a7aee3c1a8a00ff1c9228a0186ed36"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0021.json",
+      "sha256": "f91b9acaee42345e3a94b74eb0446691eb29366150dcdf690c68a36c60ac4b99"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0022.json",
+      "sha256": "bbf3668bfd33db9ea95682b7fa8a937c3559d3819388a78db8f84d2c0992fba6"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0023.json",
+      "sha256": "335d0fdf99ccd91d35b752943ad7ec80a073c780a024c4e7909396ddcf58ba18"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0024.json",
+      "sha256": "a48fa57c50ca8b7f826aef254596248a5d070a333fd64a92fa9ab6f250e3e4e8"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0025.json",
+      "sha256": "ee497c48763b6a81deda503827f363dbd50013a6657974fa6dd3790409202f5e"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0026.json",
+      "sha256": "0b1b2c1cdf9e209ca5269105e31e1c4d00ba5ca7956f25cbebfc2d2526957079"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0027.json",
+      "sha256": "59ba18eec1dc18bbaf1c94ca5c71631e2ba4934c6573a52f23661ea218817950"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0028.json",
+      "sha256": "c5f703b79c3570a14409ebb58549046048a00321a58b21544209150b291f92c7"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0029.json",
+      "sha256": "c3ec75f7a2b108cc0079ff37f41e85e23cb9931a8d2f593fff34813556f36464"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0030.json",
+      "sha256": "84af95616c53cd26d1ba118112b7a17ad2a3e9697def21ce492338af4ee8352a"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0031.json",
+      "sha256": "5a442bfa890c3406c4bec42ba5a6a29ac2b11c25ed6e8f5303258e790e6d2b66"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0032.json",
+      "sha256": "6fb7bf51dfbf8331a4f51f11e6b32a20bae58dffc1f37846713bb7c1e3812e74"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0033.json",
+      "sha256": "f9dee9160c3e04455dc805e67a876240aafb6b9f1de21eacda125cf9efc85856"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0034.json",
+      "sha256": "7e57200a4a1eabee58ad2c9e53f3d0433d96670ebc03f9b18fd7d183678f974a"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0035.json",
+      "sha256": "297b28720b58862d3ef6d56610c9e5306ebdcb911a18977b55dc98ae035c068e"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0036.json",
+      "sha256": "7c702cc3774f379b0789ecd918be06d6296a594b3425b6798927ffcae54e90e8"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0037.json",
+      "sha256": "1230510b7fcca2d5c19280421031e54cecc66fdeaaa726f7e02a02c65d3c9dfc"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0038.json",
+      "sha256": "04f0ce08fd680d112465cba1ace78f4af10c85d8e7d1cdcac1aee18f77e30461"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0039.json",
+      "sha256": "0cc30cd4c166a523fe315b0ebbe625b127485e444fc657cf11cc063310e437e2"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0040.json",
+      "sha256": "ca1c31c6661fad654f0e1143df22e6f95cac8d42498c32c70222dae49e84cefb"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0041.json",
+      "sha256": "fed98b620f3c22cc54cc2ab0ae08cec80944e2d696954d0456f706628e3a941a"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0042.json",
+      "sha256": "800ab30b886a7bc5bb83ecaca3d1d39e882865af9caf23a9da51574697562721"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0043.json",
+      "sha256": "9375f4afd54db579fe2d65f248d2832574b8527e13e873f66fa6159c27cf2e40"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0044.json",
+      "sha256": "03fe6883a3bcdfab4d4ea9f3e1bc6c791e6e6f4854dcb94e8ad7c54d5c2e41a5"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0045.json",
+      "sha256": "90a0c19301fed5f18facea7f8b1f59935de71e623b02117bd856dd5902946c07"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0046.json",
+      "sha256": "c05bae9bdbd353c3aa86b2d5d3101058ddb6b900b9fbf4bedb8a79eb4de3ee86"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0047.json",
+      "sha256": "841da5b178ec6e9de27595c4c893db9665b830d61acd9dff521949c613de312e"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "full-v1/receipts/0048.json",
+      "sha256": "b002fb4efe924370d6edd371031b2a80f3e0641e24b7fd504dc66c8b586bb06b"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0049.json",
+      "sha256": "6385ff6f22a7be1c89843b329eb86404551a747869a42b723502c995350a8cfe"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "full-v1/receipts/0050.json",
+      "sha256": "84fe1f654f19dfffbf69b7cbf88a140d62f4b5a902f757f0e31da042d2a81efc"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "full-v1/receipts/0051.json",
+      "sha256": "035d38296382ec1692a3618ccaa690d2faef46b93ad3206451a1a9a00196a7d1"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0052.json",
+      "sha256": "244b8dd3c17b6d655dc05012f22e053c62c9f3047ba157bd9b579208c6f24413"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "full-v1/receipts/0053.json",
+      "sha256": "fe1164210c3134c731b5191ae585417e3a75876ef9d5bb73d8e3a2518a8c5d57"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0054.json",
+      "sha256": "7a6570817d32eb23cf674d89bc03696ee5de9419e93d910de8e2e71464c6cf97"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "full-v1/receipts/0055.json",
+      "sha256": "7a448830fb0e5c278c459e49efe085dfc43fe3cfb8b110a35bac7f450f3455db"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1/receipts/0056.json",
+      "sha256": "0710ae8d987131b04f63e83cddfa0a4b5c1f08968bcacffde3b62020785d28a9"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit": "nonzero",
+      "path": "full-v1/receipts/0057.json",
+      "sha256": "0c4eed26c3814aafd79889c575348ea5443497f2168cbefa3f7eb6674470bf3d"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1-command-receipts/author-verifier.json",
+      "sha256": "94098b05b0dccbd33eaebd4b3f5a0ca564e75b231f417b46c804d3cdfe2fec1c"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1-command-receipts/full-verifier.json",
+      "sha256": "1d06cda1ea1c0ddea6458fa15f09d28d1ab8f210009b59a62d7fe3860266697b"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1-command-receipts/graph-check.json",
+      "sha256": "4178dfb438971f8543f48f8fa41578ae1fdab36beee304e3ce88cd11a3d469fe"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "full-v1-command-receipts/hardening.json",
+      "sha256": "a07973de786479ebc3792f453bd60a29c3de661e9d13d41cf17fa63ecc1f6fb1"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "helper-provenance-v1/compile.json",
+      "sha256": "9fdc279f623d1c2572a33f5b796de5f0d119c1368619ccafaf466123a1393370"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "helper-provenance-v1/inspect.json",
+      "sha256": "d5689640b2ea53ca48959222b8d1cb9f5c70d26858f52ad24aad3719fc1e7ddf"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit": 0,
+      "path": "prepare-command.json",
+      "sha256": "80a85d062d7031b52ba764c142f2124cfeec125a05ba0e0d4bd0946c281c1ce5"
+    }
+  ],
+  "retained_failure_explanation": "Initial extra preflight incorrectly required every package cache to be nonempty. Cli was empty. The failed preflight was preserved; full default build, replay, and all actual imports subsequently passed with existing caches.",
+  "retained_unexpected_failures": [
+    "retained-failure-001/observed-result.json"
+  ],
+  "runtime_helpers": {
+    "driver_sha256": "58dd1db91911f06fc868bb52946717d309da603641017a600f9288c43c2d1e69",
+    "fixture_audit_sha256": "dff7518b04b3e955478c036469801066a1bcafdb99789ace6317a3611f8bf0c2",
+    "fixture_source_sha256": "0decda8c946b2bcad014801d3c802ac14b7e79ed1d9081e1d3845e444d33889e",
+    "helpers": [
+      {
+        "capstones_reaching_helper": [],
+        "classification": "Generated compiler-stage implementation of the source gap definition; excluded from kernel evidence",
+        "fresh_reproduction": "EngineeringGapFixture.gap._cstage1",
+        "fresh_reproduction_comparisons": {
+          "body_dependencies": true,
+          "inductive_dependencies": true,
+          "kind": true,
+          "raw_type": true,
+          "recursor_dependencies": true,
+          "type": true,
+          "type_dependencies": true,
+          "unsafe": true
+        },
+        "name": "HallReverse.gap._cstage1",
+        "remaining_runtime_findings": [
+          "HallReverse.gap._cstage1: unsafe dependency HallReverse.gap._cstage1"
+        ],
+        "safe_owned_roots_reaching_helper": [],
+        "source_definition": "def gap (x y : \u2115) : \u211d := |(x : \u211d) ^ 3 - (y : \u211d) ^ 2|",
+        "source_line": 19,
+        "source_path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/1741/author/HallReverse.lean",
+        "source_sha256": "cd4886721c5149d8ab3497feee968ec58df1ad5cfefc820b10a9074071710633"
+      },
+      {
+        "capstones_reaching_helper": [],
+        "classification": "Generated compiler-stage implementation of the source gap definition; excluded from kernel evidence",
+        "fresh_reproduction": "EngineeringGapFixture.gap._cstage2",
+        "fresh_reproduction_comparisons": {
+          "body_dependencies": true,
+          "inductive_dependencies": true,
+          "kind": true,
+          "raw_type": true,
+          "recursor_dependencies": true,
+          "type": true,
+          "type_dependencies": true,
+          "unsafe": true
+        },
+        "name": "HallReverse.gap._cstage2",
+        "remaining_runtime_findings": [
+          "HallReverse.gap._cstage2: forbidden axiom Nat.cast._at.Real.instNatCast._spec_2",
+          "HallReverse.gap._cstage2: forbidden axiom abs._at.Rat.nnabs._spec_1",
+          "HallReverse.gap._cstage2: forbidden axiom abs._at.Real.nnabs._spec_1",
+          "HallReverse.gap._cstage2: forbidden axiom lcProof",
+          "HallReverse.gap._cstage2: forbidden axiom npowRec._at.Real.commRing._spec_2",
+          "HallReverse.gap._cstage2: unsafe dependency HallReverse.gap._cstage2",
+          "HallReverse.gap._cstage2: unsafe dependency Nat.cast._at.Real.instNatCast._spec_2",
+          "HallReverse.gap._cstage2: unsafe dependency abs._at.Rat.nnabs._spec_1",
+          "HallReverse.gap._cstage2: unsafe dependency abs._at.Real.nnabs._spec_1",
+          "HallReverse.gap._cstage2: unsafe dependency lcProof",
+          "HallReverse.gap._cstage2: unsafe dependency npowRec._at.Real.commRing._spec_2",
+          "HallReverse.gap._cstage2: missing dependency _obj"
+        ],
+        "safe_owned_roots_reaching_helper": [],
+        "source_definition": "def gap (x y : \u2115) : \u211d := |(x : \u211d) ^ 3 - (y : \u211d) ^ 2|",
+        "source_line": 19,
+        "source_path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/1741/author/HallReverse.lean",
+        "source_sha256": "cd4886721c5149d8ab3497feee968ec58df1ad5cfefc820b10a9074071710633"
+      }
+    ],
+    "original_audit_sha256": "e14e5885c771d5fd1a27a112f61826ff32e2cf3a224e01e16aad3706117ea2b9",
+    "scope": "The two compiler helper roots are reproduced from the exact safe source definition in a fresh module. Runtime-only findings remain recorded; none is reachable from any safe owned root or any capstone. This is not a waiver for other unsafe roots.",
+    "source_gap_safe": true,
+    "source_gap_unsafe_dependencies": [],
+    "status": "PASS_EXPLICIT_GENERATED_HELPER_CLASSIFICATION"
+  },
+  "safe_exported_local_declarations": 15,
+  "scope_limits": [
+    "Engineering verdict only; semantic correspondence to the informal candidate and independent mathematical review are separate.",
+    "Pinned generic dependency source bytes match Git objects; dependency oleans are bound to supplied cached bytes and were not independently authenticated or rebuilt.",
+    "The supplied Lean runtime was hashed and checked stable, not bootstrapped.",
+    "The closure inspector exports dependency evidence; kernel checking is supplied by the fresh Lean compilations.",
+    "The independent Python graph checker recomputes the exported graph, not a second Lean environment extraction.",
+    "The two reproduced unsafe compiler helpers retain all runtime findings; none is reachable from any safe owned declaration or capstone.",
+    "Offline PATH wrappers are safeguards, not OS network isolation."
+  ],
+  "status": "PASS_ENGINEERING_FOR_FROZEN_V1",
+  "verification_examples_note": "Verification.lean exports no persistent declarations because its checks are examples; the complete file compiled in both default Lake build and strict direct replay."
+}

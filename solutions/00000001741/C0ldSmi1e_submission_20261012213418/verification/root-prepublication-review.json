@@ -1,0 +1,19 @@
+{
+  "status": "PASS_PREPUBLICATION_ELIGIBILITY",
+  "checked_at": "2026-10-12T21:32:27.119228+00:00",
+  "observed_through": "2026-10-12T21:31:09.046735+00:00",
+  "main_sha": "dbd621f487f21dd1f39e4a13653e2afc68cb0393",
+  "root_rehashed_members": 200,
+  "validation_checks": 989,
+  "comparison_sha256": "27c4bb0792993c8be3de36656644debadf8fdd5a2387e2f9c905bac206ff4cb2",
+  "manifest_sha256": "aa809ef88aef5c3fa4c83218787cb30f761e4c010bd7569918ac5478ea91cc80",
+  "initial_root_classification_sha256": "65cc3916a4c7ff6c60b2282ff76bc6308c6495ec295e2a27e69507e6d0c9a54c",
+  "all_114_metadata_leads_unchanged": true,
+  "context_packet_byte_equal": true,
+  "33_nonlead_records_independently_compared": true,
+  "source_rules_metadata_path_and_history_unchanged": true,
+  "limits": [
+    "Current documented public upstream metadata, not every fork or unpublished work.",
+    "No proof-source read or external comment made."
+  ]
+}

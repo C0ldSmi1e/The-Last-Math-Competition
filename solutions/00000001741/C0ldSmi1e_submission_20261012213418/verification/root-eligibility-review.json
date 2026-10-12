@@ -1,0 +1,183 @@
+{
+  "status": "PASS_ELIGIBILITY_AT_CAPTURED_STATE",
+  "candidate": "00000001741",
+  "checked_at": "2026-10-12T21:26:05.757755+00:00",
+  "observed_through": "2026-10-12T21:21:34.024525+00:00",
+  "main_sha": "dbd621f487f21dd1f39e4a13653e2afc68cb0393",
+  "validation_sha256": "8daf6de1a1e04763e6679dd5a1fd1a0f2bb2b0ec6f298046b0bd981a53162670",
+  "grouping_manifest_sha256": "97746cd7a5f951a9c56d72acb639a94355c2bfdbc0d1795c2d73e7551692fa60",
+  "root_rehashed_members": 193,
+  "offline_validation_checks": 986,
+  "reviewed_code": [
+    "check.py",
+    "validate.py",
+    "group_contexts.py"
+  ],
+  "actual_pattern_classifications": {
+    "137": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Singer difference-set multiplier action; Hall/Galois refers to finite fields, not the cube-square infinitude claim.",
+      "full_matching_parent_and_feedback_read": true
+    },
+    "192": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Finite-field Kakeya line-coordinate match.",
+      "full_matching_parent_and_feedback_read": true
+    },
+    "246": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Planar difference sets and projective-plane citation to Hall.",
+      "full_matching_parent_and_feedback_read": true
+    },
+    "535": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Suzuki-Tits ovoid coordinates over GF(8), not positive integer Hall approximation.",
+      "full_matching_parent_and_feedback_read": true
+    },
+    "724": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Hall inner product of symmetric functions.",
+      "full_matching_parent_and_feedback_read": true
+    },
+    "746": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Quarter logarithmic exponent in Euclidean minimum-spanning-tree asymptotics.",
+      "full_matching_parent_and_feedback_read": true
+    },
+    "783": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Binary-form Waring/cactus ranks and cubes of linear forms.",
+      "full_matching_parent_and_feedback_read": true
+    },
+    "830": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Fractional Hall bound of finite graphs.",
+      "full_matching_parent_and_feedback_read": true
+    },
+    "838": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Hall ray contained in a real spectrum/Cantor set.",
+      "full_matching_parent_and_feedback_read": true
+    },
+    "840": {
+      "result": "UNRELATED_TO_1741",
+      "reason": "Cubic prism graph and Cartesian square-product wording.",
+      "full_matching_parent_and_feedback_read": true
+    }
+  },
+  "broad_search_classification": {
+    "count": 96,
+    "result": "NO_CANDIDATE_CLAIM_IDENTIFIED",
+    "review_scope": "All titles read; full bodies read for generic titles and plausible number-theoretic/quarter-exponent leads. Whole title/body/feedback/captured-filename regex recomputation found no candidate descriptor for these search-only hits. Original broad search hit is not treated as a solved claim.",
+    "numbers": [
+      2,
+      3,
+      4,
+      11,
+      40,
+      42,
+      44,
+      64,
+      85,
+      89,
+      92,
+      93,
+      94,
+      128,
+      130,
+      131,
+      136,
+      138,
+      163,
+      167,
+      196,
+      204,
+      205,
+      207,
+      218,
+      227,
+      253,
+      255,
+      261,
+      278,
+      283,
+      285,
+      286,
+      294,
+      319,
+      343,
+      364,
+      377,
+      409,
+      411,
+      412,
+      434,
+      450,
+      452,
+      465,
+      468,
+      469,
+      484,
+      485,
+      492,
+      513,
+      539,
+      540,
+      546,
+      547,
+      549,
+      577,
+      580,
+      582,
+      616,
+      625,
+      634,
+      637,
+      644,
+      647,
+      649,
+      662,
+      664,
+      665,
+      671,
+      692,
+      693,
+      694,
+      708,
+      713,
+      734,
+      739,
+      754,
+      760,
+      775,
+      779,
+      782,
+      839,
+      857,
+      883,
+      888,
+      895,
+      901,
+      931,
+      946,
+      956,
+      960,
+      977,
+      978,
+      997,
+      1008
+    ]
+  },
+  "basis": [
+    "Explicit proven=false and disproven=false metadata",
+    "Current solution path absent; complete main same-path history empty",
+    "Exact ID, padded ID and path searches empty",
+    "Full reviewed neutral baseline plus empty overlapping changed issue/comment/inline/PR metadata",
+    "Exact bilingual conjecture and current operative rules unchanged"
+  ],
+  "limitations": [
+    "Current public upstream scope, not every fork/unpublished/deleted-history or full DAG.",
+    "Eligibility must be refreshed immediately before publication.",
+    "No candidate mathematical acceptance implied."
+  ]
+}

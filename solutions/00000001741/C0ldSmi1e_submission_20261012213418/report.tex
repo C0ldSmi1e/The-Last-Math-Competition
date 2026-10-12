@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\title{Conjecture 00000001741:\\disproof of the stated upward optimality}
+\author{C0ldSmi1e}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The conjecture asserts infinitude of positive integer pairs satisfying a
+cube--square gap bound, together with the assertion that its logarithmic
+exponent cannot be increased. We prove that infinitude for this upper bound
+is preserved by every increase of the exponent. Consequently the two stated
+clauses cannot both hold. This does not decide the infinitude clause by itself,
+Hall's conjecture, or a corrected optimality assertion involving a decrease
+of the exponent.
+\end{abstract}
+
+\section{Exact assertion and formal interpretation}
+The English conjecture reads:
+\begin{quote}
+The reverse direction of Hall's conjecture: there exist infinitely many pairs
+with $0<|x^3-y^2|<\sqrt{x}\,(\log x)^{1/4}$; the logarithmic correction is optimal
+(the exponent $1/4$ cannot be increased).
+\end{quote}
+The Chinese version also explicitly says that the exponent cannot be increased.
+The exact bilingual source is included as \texttt{conjecture.md}. Both variables
+are positive integers, as specified in the source's definition paragraph.
+That paragraph provides background; no form of Hall's conjecture is assumed
+as a hypothesis in this proof.
+
+We use the natural logarithm and Mathlib's real powers. At boundary values,
+these total functions use $\log 0=0$, $0^0=1$, and $0^a=0$ for $a\ne0$.
+This makes the following definitions meaningful for every natural coordinate
+and real exponent. The conjecture itself uses only positive coordinates and
+positive exponents, where the usual nonnegative-base interpretation applies.
+For $a\in\R$, write
+\[
+ B_a(x)=\sqrt{x}\,(\log x)^a,
+ \qquad D(x,y)=|x^3-y^2|,
+\]
+\[
+ S_a=\{(x,y)\in\N^2: x>0,\ y>0,\ 0<D(x,y)<B_a(x)\},
+ \qquad I(a)\ \Longleftrightarrow\ S_a\text{ is infinite}.
+\]
+Subtraction in $D$ is over $\R$, after casting the natural-number coordinates;
+it is not truncated subtraction. The condition $D>0$ excludes exact
+cube--square coincidences. The statement is infinitude of distinct pairs.
+
+The parenthetical specifies the direction of optimality. Its literal reading
+in the displayed infinitude assertion gives the conjunction
+\begin{equation}\label{eq:claim}
+ C=I(1/4)\ \wedge\
+       \bigl(\forall b\in\R,\ b>1/4\ \Longrightarrow\ \neg I(b)\bigr).
+\end{equation}
+We prove $\neg C$. The witness exponent will be $b=1$, so allowing only
+rational larger exponents would not change the disproof. We do not replace
+``increased'' by ``decreased'' or move the logarithm into a denominator.
+
+\section{Finite exceptional pairs}
+Increasing the exponent need not increase the bound when $0<\log x<1$.
+Those small first coordinates must be treated separately, including their
+possible second coordinates.
+
+\begin{lemma}\label{lem:fiber}
+For every real $a$ and fixed $x\in\N$, the set of pairs in $S_a$ with first
+coordinate $x$ is finite. Consequently, for every $N\in\N$, the set of pairs
+in $S_a$ with $x<N$ is finite.
+\end{lemma}
+\begin{proof}
+Choose a natural number $M>x^3+B_a(x)$, using the Archimedean property of
+$\R$. If $(x,y)\in S_a$, the strict absolute-value bound implies
+\[
+ y^2<x^3+B_a(x)<M.
+\]
+Since $y$ is a positive integer, $y\le y^2$, hence $y<M$. Thus this fiber is
+contained in the finite set $\{(x,y):y\in\N,\ y<M\}$.
+There are finitely many $x<N$, so the union of these finite fibers is finite.
+\end{proof}
+
+\begin{lemma}\label{lem:tail}
+If $I(a)$ holds, then for every natural $N$ the set
+$\{(x,y)\in S_a:N\le x\}$ is infinite.
+\end{lemma}
+\begin{proof}
+Remove the finite set from Lemma~\ref{lem:fiber} from the infinite set $S_a$.
+The remaining pairs have $x\ge N$.
+\end{proof}
+
+\section{Increasing the exponent preserves infinitude}
+\begin{theorem}\label{thm:mono}
+For all real $a\le b$, $I(a)$ implies $I(b)$.
+\end{theorem}
+\begin{proof}
+Choose a natural $N\ge\exp(1)$. For $x\ge N$, monotonicity of the logarithm
+gives $\log x\ge1$. Real exponentiation with base at least one is
+nondecreasing in its exponent, so
+\[
+ (\log x)^a\le(\log x)^b,
+ \qquad B_a(x)\le B_b(x).
+\]
+Multiplication by $\sqrt{x}\ge0$ preserves the inequality. Thus each pair in
+$S_a$ with $x\ge N$ is also in $S_b$: the positivity and nonzero-gap
+conditions remain true and $D(x,y)<B_a(x)\le B_b(x)$.
+By Lemma~\ref{lem:tail}, that subset of $S_a$ is infinite if $I(a)$ holds.
+Therefore $S_b$ is infinite.
+\end{proof}
+
+\begin{theorem}
+The literal conjecture~\eqref{eq:claim} is false.
+\end{theorem}
+\begin{proof}
+Assume $C$. Its first clause is $I(1/4)$. Theorem~\ref{thm:mono}, with
+$a=1/4$ and $b=1$, gives $I(1)$. Since $1>1/4$, the second clause of $C$
+gives $\neg I(1)$, a contradiction.
+\end{proof}
+
+This is a negation of a conjunction, not a construction of an infinite
+approximation family and not a proof that $S_{1/4}$ is finite. In fact the
+stronger implication $I(1/4)\Rightarrow I(b)$ is established for every
+$b\ge1/4$. The choice of natural logarithm only fixes the finite cutoff;
+the same argument works with any fixed logarithm base greater than one.
+
+\clearpage
+\section{Lean correspondence and reproduction}
+The project uses Lean~4.19.0 and Mathlib~v4.19.0, with all transitive package
+revisions pinned in \texttt{lean/lake-manifest.json}. The mathematical source
+is \texttt{lean/HallReverse.lean}. In namespace \texttt{HallReverse},
+\texttt{gap}, \texttt{upperBound}, \texttt{admissible}, and
+\texttt{infinitelyMany} define $D$, $B$, $S$, and $I$ directly using
+\texttt{Real.sqrt}, \texttt{Real.log}, real powers, and \texttt{Set.Infinite}.
+The definitions \texttt{cannotIncrease} and \texttt{conjecture} give the
+second clause and the full conjunction in~\eqref{eq:claim}.
+
+The lemmas \texttt{finite\_fiber}, \texttt{finite\_below}, and
+\texttt{infinite\_tail} prove the finite-exception argument.
+The theorem \texttt{infinitelyMany\_mono} is Theorem~\ref{thm:mono}.
+The final theorem is
+\begin{center}
+\texttt{HallReverse.conjecture\_false : $\neg$ HallReverse.conjecture}.
+\end{center}
+It has no extra assumptions. The source prints axiom dependencies for all
+seven principal theorems.
+
+\texttt{lean/Verification.lean} contains 13 kernel-checked examples: both
+signs of the integer gap; exclusion of zero coordinates; exclusion of every
+perfect cube--square coincidence; the zero bound and exclusion at $x=1$;
+the fully expanded admissibility predicate; infinitude beyond any cutoff;
+two specific larger exponents; general exponent monotonicity; and the
+negation of the conjunction with every defining expression exposed.
+Both modules are default Lake targets. From \texttt{lean/}, a standard
+reproduction is:
+\begin{verbatim}
+lake exe cache get
+lake --wfail build
+lake env lean -DwarningAsError=true HallReverse.lean
+lake env lean -DwarningAsError=true Verification.lean
+\end{verbatim}
+
+The package includes local verification records and an independent AI-agent
+semantic review. These are contributor checks, not maintainer acceptance.
+Verification covers a fresh build of the submitted modules, direct source
+replay with warnings treated as errors, dependency-closure and axiom checks,
+and explicit positive and negative controls for the auditing tool. The only
+permitted foundational axioms are \texttt{propext}, \texttt{Classical.choice},
+and \texttt{Quot.sound}; there are no admitted proofs, custom axioms, or
+\texttt{native\_decide} proofs in the submitted mathematical modules.
+Archived negative controls intentionally contain rejected constructs to test
+the auditing tools; they are outside the mathematical proof library.
+No auxiliary numerical computation is needed for the mathematics.
+
+Pinned dependency sources and supplied cached imports are checked by identity;
+the complete Mathlib library is not rebuilt, and the supplied Lean executable
+is not bootstrapped. The source, tests, report, and recorded file hashes allow
+the local validation to be distinguished from those trust assumptions.
+\end{document}

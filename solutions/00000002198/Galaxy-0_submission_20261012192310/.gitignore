@@ -1,0 +1,9 @@
+.lake/
+*.olean
+*.ilean
+*.c
+*.aux
+*.log
+*.out
+.tex-cache/
+!verification/*.log

@@ -1,0 +1,28 @@
+info: tlmc2198: no previous manifest, creating one from scratch
+info: toolchain not updated; already up-to-date
+ℹ [2/5] Built EnumLemma (705ms)
+info: EnumLemma.lean:206:0: 'AntichainEnumeration.mem_enumerate_iff' depends on axioms: [propext, Quot.sound]
+info: EnumLemma.lean:207:0: 'AntichainEnumeration.nodup_enumerate' depends on axioms: [propext, Quot.sound]
+info: EnumLemma.lean:208:0: 'AntichainEnumeration.sublist_eq_of_same_members' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EnumLemma.lean:209:0: 'AntichainEnumeration.selected_mem_enumerate' depends on axioms: [propext, Quot.sound]
+info: EnumLemma.lean:210:0: 'AntichainEnumeration.pairwise_iff_unordered' depends on axioms: [propext, Quot.sound]
+info: EnumLemma.lean:213:0: 'AntichainEnumeration.selected_mem_enumerate_iff' depends on axioms: [propext, Quot.sound]
+info: EnumLemma.lean:215:0: 'AntichainEnumeration.maximal_iff_no_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3/5] Built Eulerian (1.1s)
+info: Eulerian.lean:111:0: 'TLMC2198.euler2_exclusions' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Eulerian.lean:112:0: 'TLMC2198.euler2_row_sum_exclusions' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4/5] Built Main (38s)
+info: Main.lean:175:0: 'TLMC2198.every_permutation_encoded' depends on axioms: [propext, Quot.sound]
+info: Main.lean:176:0: 'TLMC2198.actual_subset_bridge' depends on axioms: [propext, Quot.sound]
+info: Main.lean:177:0: 'TLMC2198.permutation_enumeration_complete' depends on axioms: [propext]
+info: Main.lean:178:0: 'TLMC2198.valid_iff_injective' depends on axioms: [propext]
+info: Main.lean:179:0: 'TLMC2198.valid_surjective' depends on axioms: [propext, Quot.sound]
+info: Main.lean:180:0: 'TLMC2198.weakLE_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:181:0: 'TLMC2198.antichain_complete' depends on axioms: [propext, Quot.sound]
+info: Main.lean:182:0: 'TLMC2198.antichain_enumeration_nodup' depends on axioms: [propext, Quot.sound]
+info: Main.lean:183:0: 'TLMC2198.canonical_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:184:0: 'TLMC2198.maximal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:185:0: 'TLMC2198.maximum_iff' depends on axioms: [propext, Quot.sound]
+info: Main.lean:186:0: 'TLMC2198.all_counts_not_eulerian' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:187:0: 'TLMC2198.all_counts_not_row_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (5 jobs).

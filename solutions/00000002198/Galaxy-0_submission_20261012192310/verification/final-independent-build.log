@@ -1,0 +1,37 @@
+2026-10-12T19:28:38Z
+Lean (version 4.31.0, x86_64-unknown-linux-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)
+f403ecfe7068f702be155d31f9a1e7b2af616184156ca8a0b38cdc836defd5cc  EnumLemma.lean
+74c77fee7a1257e384b58e16d293eebf968f9e9ba456a28cd9a424122a43d4ef  Eulerian.lean
+6008444e9d4df78dd87492a7ff75f91c2f5dbf80ca4ad6096b3df7ab2abcdc63  Main.lean
+
+=== Fresh compile EnumLemma ===
+'AntichainEnumeration.mem_enumerate_iff' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.nodup_enumerate' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.sublist_eq_of_same_members' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AntichainEnumeration.selected_mem_enumerate' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.pairwise_iff_unordered' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.selected_mem_enumerate_iff' depends on axioms: [propext, Quot.sound]
+'AntichainEnumeration.maximal_iff_no_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+=== Fresh compile Eulerian ===
+'TLMC2198.euler2_exclusions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.euler2_row_sum_exclusions' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+=== Fresh compile Main ===
+'TLMC2198.every_permutation_encoded' depends on axioms: [propext, Quot.sound]
+'TLMC2198.actual_subset_bridge' depends on axioms: [propext, Quot.sound]
+'TLMC2198.permutation_enumeration_complete' depends on axioms: [propext]
+'TLMC2198.valid_iff_injective' depends on axioms: [propext]
+'TLMC2198.valid_surjective' depends on axioms: [propext, Quot.sound]
+'TLMC2198.weakLE_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.antichain_complete' depends on axioms: [propext, Quot.sound]
+'TLMC2198.antichain_enumeration_nodup' depends on axioms: [propext, Quot.sound]
+'TLMC2198.canonical_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.maximal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.maximum_iff' depends on axioms: [propext, Quot.sound]
+'TLMC2198.all_counts_not_eulerian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TLMC2198.all_counts_not_row_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+=== Independent kernel checker Main ===
+
+leanchecker Main exited 0

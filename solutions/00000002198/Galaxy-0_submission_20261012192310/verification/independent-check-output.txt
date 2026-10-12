@@ -1,0 +1,14 @@
+Right weak order maximal antichains: 190
+Size distribution: [(1, 2), (2, 3), (3, 44), (4, 89), (5, 48), (6, 4)]
+width: 6 maximum antichain count: 4
+Cover reachability matches inverse inversion containment for every ordered pair.
+E2 row 0: [1]
+E2 row 1 : [1]
+E2 row 2 : [1, 2]
+E2 row 3 : [1, 8, 6]
+E2 row 4 : [1, 22, 58, 24]
+E2 row 5 : [1, 52, 328, 444, 120]
+E2 row 6 : [1, 114, 1452, 4400, 3708, 720]
+E2 row 7 : [1, 240, 5610, 32120, 58140, 33984, 5040]
+For n>=7 non-first entries remain >=240 by recurrence; outside triangle =0.
+All antichains by size, including empty: (1, 24, 149, 344, 266, 68, 4) total: 856

@@ -1,0 +1,98 @@
+\pdfmapfile{+symbols.map}
+\pdfmapfile{+cm.map}
+\pdfmapfile{+cmextra.map}
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\title{Weak-order antichains do not count second-order Eulerian numbers\\\large A counterexample to TLMC 00000002198}
+\author{Galaxy-0 (AI-assisted submission)}
+\date{12 October 2026}
+\begin{document}
+\sloppy
+\maketitle
+\begin{abstract}
+The weak order on the 24 permutations of four letters has 190 inclusion-maximal antichains, four maximum-cardinality antichains, and 856 antichains in total. None of these three numbers occurs anywhere in the second-order Eulerian triangle, or as the sum of any row of that triangle. Thus the asserted counting equality fails under both the English ``maximal'' and Chinese ``maximum'' readings, without choosing a missing Eulerian index. A self-contained Lean 4.31.0 development certifies the actual permutations, order, complete duplicate-free enumeration, semantic maximality, and global arithmetic exclusion.
+\end{abstract}
+
+\section{Statement and interpretation}
+The exact English conjecture reads:
+\begin{quote}
+Definition: The weak order lattice is the poset of permutations under weak order. Conjecture: The count of its maximal antichains is given by an explicit bijection of Eulerian numbers (the bijection via balancing double staircases); the antichain count equals second-order Eulerian numbers.
+\end{quote}
+The Chinese text uses ``maximum antichain'' rather than ``maximal antichain.'' We check both meanings, as well as the unqualified count of all antichains. The source does not specify either index of the two-parameter Eulerian triangle. The proof therefore excludes \emph{every} entry and every row sum, rather than supplying an unstated indexing convention. We use the standard second-order Eulerian numbers, not ordinary Eulerian numbers, Stirling numbers, arbitrary sums of triangle entries, or a newly defined array. A claim about a different unspecified statistic would be a different statement.
+
+\section{The finite counterexample}
+Write a permutation of $\{0,1,2,3\}$ as a tuple $p=(p_0,p_1,p_2,p_3)$ of distinct elements of that set. Put
+\[
+ I(p)=\{(i,j):0\leq i<j<4,\ p_i>p_j\},\qquad
+ p\preceq q\ \Longleftrightarrow\ I(p)\subseteq I(q).
+\]
+This is the inversion-set presentation of weak order. It is often called left weak order; switching to right weak order inverts the permutations and gives an isomorphic poset. All counts below are consequently independent of this choice.
+An antichain is a subset whose distinct elements are incomparable. It is inclusion-maximal if it has no proper antichain superset, and maximum if no antichain has larger cardinality.
+
+\begin{center}
+\begin{tabular}{c*{7}{r}}
+\toprule
+Cardinality &0&1&2&3&4&5&6\\
+\midrule
+All antichains&1&24&149&344&266&68&4\\
+Inclusion-maximal&0&2&3&44&89&48&4\\
+\bottomrule
+\end{tabular}
+\end{center}
+There are no antichains of cardinality greater than six. Summing gives 856 antichains, of which 190 are inclusion-maximal. Precisely four have the maximum cardinality six.
+
+\section{Why the enumeration is a proof}
+The permutation list is generated from all $4^4$ tuples, filtering out repeated entries. Lean proves that membership is equivalent to having distinct entries, that these tuples represent precisely injective (and surjective) maps on four points, and that the list has length 24 and no repetitions. An explicit encoding recovers every function on the four-point set. The six Boolean inversion coordinates are proved equivalent to the quantified inversion-set inclusion above; they are not an externally supplied order table.
+
+Fix this duplicate-free list $U$. A subset is represented by its unique sublist of $U$. Let $C(x,y)$ mean that $x$ and $y$ are incomparable. Recursively enumerate antichains by
+\[
+ E([])=\{[]\},\qquad
+ E(x::V)=E(V)\ \sqcup\ \{x::a:a\in E(V),\ \forall y\in a,\ C(x,y)\}.
+\]
+An induction on $U$ proves that $a\in E(U)$ if and only if $a$ is a sublist of $U$ and its elements are pairwise compatible. Another induction proves no duplicate lists occur. Canonical sublists with the same members are equal. For any predicate-defined subset, filtering $U$ gives exactly its canonical sublist, and pairwise incomparability implies that this sublist belongs to the enumeration. These statements establish soundness, completeness and uniqueness for actual subsets, not only for the lists encountered by a search.
+
+Inclusion-maximality is checked by
+\[
+ \forall x\in U:\quad x\in a\quad\text{or}\quad
+ \exists y\in a:\ \neg C(x,y).
+\]
+The formal development proves this criterion equivalent to the absence of a proper antichain superset. It also proves that filtering for cardinality six is equivalent to being maximum: every enumerated antichain has size at most six, and the rank-three inversion layer provides an actual size-six antichain.
+
+Finally Lean's kernel evaluates the resulting finite expressions, obtaining the three counts above. This computation visits only 856 antichains, using the proved recursion. It neither accepts Python output as evidence nor relies on an unverified pruning rule. The accompanying Python enumeration independently recomputes the histogram.
+
+\section{Exclusion from the whole Eulerian triangle}
+Use zero-based columns and write $A(n,k)$ for second-order Eulerian numbers. Set $A(0,0)=1$, $A(0,k)=0$ for $k>0$, $A(n,0)=1$, and
+\[
+ A(n+1,k+1)=(k+2)A(n,k+1)+(2n-k)A(n,k).
+\]
+Entries outside the row, $k\ge n>0$, are zero. This is the standard recurrence with the column shifted from the convention that counts the terminal descent. The first nontrivial rows include
+\[
+ (1),\quad(1,2),\quad(1,8,6),\quad(1,22,58,24).
+\]
+In particular the fourth row and its sum $105$ already contradict the intended size-four comparison. To remove all indexing ambiguity we prove the stronger assertion
+\[
+ \forall n,k\ge0:\quad A(n,k)\notin\{4,190,856\}.
+\]
+For $n<9$, all in-range entries are checked exactly in a $9\times9$ table. In row nine every noninitial in-range entry is at least $1004$. The recurrence preserves this lower bound in every later row: an interior entry contains a positive multiple of a noninitial entry of the preceding row; at the last column its second term contains a positive multiple of the preceding last entry. Initial entries are one and outside entries zero. Thus no later entry equals any of the three counts.
+
+The same conclusion holds for row sums. For rows before nine, compute the sums exactly. For every later row the sum is at least its column-one entry, hence at least $1004$. Consequently no row sum equals $4$, $190$ or $856$. All these infinite-index exclusions are proved in Lean by induction, not extrapolated from a finite table.
+
+\section{Formal theorem and reproduction}
+The main conclusions are \texttt{all\_counts\_not\_eulerian} and \texttt{all\_counts\_not\_row\_sum}. Their counts are linked to actual antichains by \texttt{antichain\_complete}, to actual inclusion-maximality by \texttt{maximal\_iff}, and to maximum-cardinality antichains by \texttt{maximum\_iff}. No part of the decisive counting or exclusion argument is left as a hypothesis.
+
+The project uses Lean 4.31.0 with its bundled standard library, no Mathlib dependency. Run \texttt{python3 reproduce.py} with the option\\
+\texttt{--lean /path/to/lean}; the script checks the version, performs a clean warning-as-error build and axiom audit, and independently recomputes the finite data. Compile this report with \texttt{pdflatex -halt-on-error report.tex}. Verification records accompany the submission. The only permitted axiom dependencies are Lean's standard \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}; there is no admitted theorem, \texttt{native\_decide}, or custom axiom.
+
+This is a proposed disproof for review, not a claim of maintainer acceptance, first-solve credit or external expert endorsement. Only the numerical assertion needed for a contradiction is refuted; no meaning is invented for the source's unspecified ``balancing double staircases.''
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{source} The Last Math Competition, conjecture 00000002198, Git blob
+\texttt{3f22952e5248a56aacb7e805496bc2977ca6eb98}.\\
+\url{https://github.com/The-Last-Math-Competition/The-Last-Math-Competition/blob/main/conjectures/00000002198.md}.
+\bibitem{recurrence} \emph{Statistics on trapezoidal words and $k$-inversion sequences}, Discrete Applied Mathematics (2022), second-order Eulerian recurrence in the introduction.\\
+\url{https://www.sciencedirect.com/science/article/abs/pii/S0166218X22003894}.
+\end{thebibliography}
+\end{document}

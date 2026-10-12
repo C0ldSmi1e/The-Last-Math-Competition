@@ -1,0 +1,30 @@
+{
+  "stage": "independent auxiliary source inspection and replay",
+  "input": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/auxiliary/check_examples.py",
+  "sha256_before": "37d2866b5ef589820a73c48d91b8df95d0ad17a50ee1ebd955669181fb4dc136",
+  "sha256_after": "37d2866b5ef589820a73c48d91b8df95d0ad17a50ee1ebd955669181fb4dc136",
+  "source_unchanged": true,
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/auxiliary/check_examples.py"
+  ],
+  "working_directory": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/independent-review",
+  "python_version": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 17.0.0 (clang-1700.4.4.1)]",
+  "exit_code": 0,
+  "stdout_sha256": "11f5acb2774037ef76d4764e44b656c1bd5f6c1f850e5f75c84eecdef89f1417",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "claim_limit": "Finite exact sanity checks only, not a proof of the general theorem",
+  "independent_probes": {
+    "source": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/independent-review/independent_auxiliary_probes.py",
+    "source_sha256": "5b95df74c780b6c60bb775a6281ca5db12db8ec384047bd5a42ee6a9766a055b",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/independent-review/independent_auxiliary_probes.py"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bdb8a9721274d3dbe656b6a2ea1d3833d565016f15ca19fdba6b3dd4a8134805",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

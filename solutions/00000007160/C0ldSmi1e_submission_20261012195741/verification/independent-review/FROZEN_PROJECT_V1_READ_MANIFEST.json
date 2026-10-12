@@ -1,0 +1,96 @@
+{
+  "stage": "full final-source semantic review",
+  "original_manifest": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/author/frozen-project-v1.json",
+  "original_manifest_sha256": "cb5ffea4965a11c37b2a96893964ab09ea4bef186285e757767c71562fd7dfae",
+  "source_directory": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/author/project",
+  "snapshot_directory": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/independent-review/frozen-project-v1-reviewed",
+  "files": [
+    {
+      "file": "NormalSpectral.lean",
+      "sha256": "79d5085f54cd810184c7ae56613827b63c967311ec6c5629c1b8c2af3473c0f3",
+      "lines": 91,
+      "identical_to_reviewed_draft": true
+    },
+    {
+      "file": "Frobenius.lean",
+      "sha256": "98fc2aff33e116d5c7389529c5df114d0e9291c9ea6c6d13eacaa528ae0e5dc7",
+      "lines": 97,
+      "identical_to_reviewed_draft": true
+    },
+    {
+      "file": "Matching.lean",
+      "sha256": "63635da80b55553c5f50417b55d19949383d127512fbed76507ebe7955b9e651",
+      "lines": 34,
+      "identical_to_reviewed_draft": true
+    },
+    {
+      "file": "Reindexing.lean",
+      "sha256": "de07f7222dd64e8c11595086326881d2fdaadd2147eb2b8b6733630481fd73b3",
+      "lines": 28,
+      "identical_to_reviewed_draft": false
+    },
+    {
+      "file": "HoffmanWielandt.lean",
+      "sha256": "84596cabafe24fe2e6447be0dba455e386cffd2dfdb85ada3a1f0ce1db2665a1",
+      "lines": 108,
+      "identical_to_reviewed_draft": false
+    },
+    {
+      "file": "Verification.lean",
+      "sha256": "f6e68eb59ad1f1409c0879f3751f2340c3f099ffb7991fd0847d9384f6f42ace",
+      "lines": 119,
+      "identical_to_reviewed_draft": false
+    },
+    {
+      "file": "lakefile.lean",
+      "sha256": "143c70050de6b91d35986d211511e78cb905b9b7ba84ff472a2d9e656d7c15f4",
+      "lines": 15,
+      "identical_to_reviewed_draft": false
+    },
+    {
+      "file": "lean-toolchain",
+      "sha256": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+      "lines": 1,
+      "identical_to_reviewed_draft": false
+    },
+    {
+      "file": "lake-manifest.json",
+      "sha256": "17619b39e0d5ee7e914c197a1acdde917adbff3381c99c66cd4e220901b57d6c",
+      "lines": 116,
+      "identical_to_reviewed_draft": false
+    }
+  ],
+  "additional_generic_library_declaration_checks": [
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/runtime/stock7160/Mathlib/Algebra/Polynomial/Roots.lean",
+      "sha256": "75c68c28c309b2b6b688634c8365824d465df862686c849b18bb27dca28e1dbf",
+      "scope": "selected declarations and surrounding source only"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/runtime/stock7160/Mathlib/Logic/Equiv/Basic.lean",
+      "sha256": "f732262fad879d70eceaab9caeb8f020bd25a1a3bf8d16cddf34e0917770ad32",
+      "scope": "selected declarations and surrounding source only"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/runtime/stock7160/Mathlib/Analysis/InnerProductSpace/Adjoint.lean",
+      "sha256": "91a59b80fff8fc459d03babc6de3b06a7b75a0d6b4e2d6daf1ba6b1365e45024",
+      "scope": "selected declarations and surrounding source only"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/runtime/stock7160/Mathlib/Data/Matrix/ConjTranspose.lean",
+      "sha256": "2491fdd5155d27f216488ccf868568f1f38d2a8bb306f1b461516e4548c42ebf",
+      "scope": "selected declarations and surrounding source only"
+    }
+  ],
+  "mathematical_source_review": {
+    "status": "no defect found",
+    "reviewed_all_final_files": true,
+    "total_source_lines": 609,
+    "source_and_snapshot_hashes_reverified": true,
+    "whole_package_verified": false,
+    "pending": [
+      "independent final engineering build and trust audit",
+      "final report verification-text and PDF delta review"
+    ]
+  }
+}

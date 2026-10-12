@@ -1,0 +1,44 @@
+Conjecture 00000007160: locally verified proof of the Hoffman-Wielandt bound
+
+Run from the personal submission directory:
+  lake --wfail build
+  python3 -B auxiliary/check_examples.py
+  python3 -B independent-review/independent_auxiliary_probes.py
+
+Lean 4.19.0 and Mathlib v4.19.0 are pinned. The nine exact frozen proof/configuration
+files are listed in frozen-v1.json. Both Lean libraries are default build targets.
+The accompanying report defines eigenvalue multiplicity and optimal Euclidean
+matching and relates the general theorem to the original bilingual statement.
+
+Local validation passed: complete independent source/report reviews; fresh build;
+warning-as-error replay of all six mathematical modules plus Lake configuration;
+axiom/dependency audit; 361 exact finite examples and 71 independent checker probes;
+native and Tectonic report compilation and visual review of all four PDF pages.
+
+engineering-finalization-v1/summary.json is the final PASS record. It supersedes
+only the pending runtime-helper classification in the preserved original audit.
+All 36 safe originating declarations use only propext, Classical.choice and
+Quot.sound. None reaches the 13 compiler-generated matrix runtime helpers.
+
+raw-evidence.tar.gz contains the original full dependency export, all 61 audit
+command receipts, import identities, dependency source/cache identity inventories,
+negative-control results and final classification. raw-evidence-members.json
+hashes every archive member. It also contains prior build/auxiliary review evidence.
+Recorded absolute paths describe the original verification host; archived relative
+paths preserve each record's original directory name. No dependency caches are
+bundled. The templates and scripts under tools are audit utilities. Their deliberately
+invalid control fixtures test rejection and are not mathematical proof sources or
+default project targets. Inspection programs are archival data, separate from the
+submitted mathematical project. No custom axiom, admission or native_decide is
+used in the mathematical proof.
+
+The audit matches dependency imports to supplied stock caches; it does not rebuild
+all Mathlib or bootstrap Lean. The dependency inspector and graph checker are not
+independent kernel recheckers; fresh source compilation supplies kernel checking.
+Finite examples and auditing-tool controls are not a proof of the general theorem.
+The source/proof was AI-assisted and independently reviewed by another agent; these
+are internal local checks, not external expert endorsement or maintainer acceptance.
+
+Eligibility was checked against recorded current public upstream metadata, source,
+rules, solution-path history, and targeted searches through 2026-10-12 19:52:16 UTC.
+No earlier submission for this conjecture was found within that documented scope.

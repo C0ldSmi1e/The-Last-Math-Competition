@@ -1,0 +1,81 @@
+{
+  "audit_failures": [],
+  "axiom_allowlist": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "capstones": [
+    "HoffmanWielandt.hoffman_wielandt_sq",
+    "HoffmanWielandt.hoffman_wielandt",
+    "HoffmanWielandt.normal_matrices_hoffman_wielandt_sq",
+    "HoffmanWielandt.normal_matrices_hoffman_wielandt"
+  ],
+  "closure_declaration_count": 30338,
+  "declaration_audit_sha256": "e1f4f4d1baa1f321ee6101b5731e749cfa8d5558b65fbd324e0af90736cfc195",
+  "frozen_manifest_sha256": "0b85642ff3f047345bbc185bb936c2fef979f3211a6b1f02cbff989cc3023a0c",
+  "generated_runtime_helper_count": 13,
+  "graph_consistency": "PASS",
+  "helper_classification_sha256": "6fbb5bedba2e33f46e566a35df1af37528cca6ad4e9faa7b7a629744d878c302",
+  "import_identity_count": 4152,
+  "import_packages": {
+    "Lean-runtime": 1272,
+    "LeanSearchClient": 4,
+    "Qq": 12,
+    "aesop": 130,
+    "batteries": 78,
+    "importGraph": 2,
+    "mathlib": 2628,
+    "owned": 7,
+    "plausible": 8,
+    "proofwidgets": 11
+  },
+  "lake_build": "--no-cache --wfail build passed",
+  "limits": [
+    "Cached dependency imports byte-matched supplied stock; full Mathlib was not rebuilt.",
+    "Supplied Lean runtime was not bootstrapped.",
+    "Semantic and PDF review are separate.",
+    "Unsafe generated runtime declarations are inventoried separately and require explicit classification if present.",
+    "PATH wrappers are safeguards only, not OS network isolation.",
+    "Auxiliary/configuration/metaprogrammatic source requires separate side-effect review.",
+    "Closure audit inspects dependencies; source compilation supplies kernel checking.",
+    "Generated runtime helpers are excluded from mathematical evidence; none is reachable from any safe local declaration.",
+    "Source compilation supplies kernel checking; the inspector and graph checker are not independent kernel recheckers.",
+    "Semantic and report reviews are outside this engineering result."
+  ],
+  "local_declaration_count": 49,
+  "module_counts": {
+    "Frobenius": 10,
+    "HoffmanWielandt": 7,
+    "Matching": 1,
+    "NormalSpectral": 5,
+    "Reindexing": 3,
+    "Verification": 23
+  },
+  "raw_command_receipts": 61,
+  "runtime_identities_unchanged": true,
+  "safe_declaration_count": 36,
+  "source_modules": [
+    "Frobenius",
+    "HoffmanWielandt",
+    "Matching",
+    "NormalSpectral",
+    "Reindexing",
+    "Verification"
+  ],
+  "source_replay": "All six mathematical source files and lakefile.lean directly replayed with warningAsError=true",
+  "status": "PASS",
+  "stock_source_cache_indexes_unchanged": true,
+  "supersedes_pending_classification_status_only": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/summary.json",
+  "tested_source_sha256": {
+    "Frobenius.lean": "98fc2aff33e116d5c7389529c5df114d0e9291c9ea6c6d13eacaa528ae0e5dc7",
+    "HoffmanWielandt.lean": "84596cabafe24fe2e6447be0dba455e386cffd2dfdb85ada3a1f0ce1db2665a1",
+    "Matching.lean": "63635da80b55553c5f50417b55d19949383d127512fbed76507ebe7955b9e651",
+    "NormalSpectral.lean": "79d5085f54cd810184c7ae56613827b63c967311ec6c5629c1b8c2af3473c0f3",
+    "Reindexing.lean": "de07f7222dd64e8c11595086326881d2fdaadd2147eb2b8b6733630481fd73b3",
+    "Verification.lean": "f6e68eb59ad1f1409c0879f3751f2340c3f099ffb7991fd0847d9384f6f42ace",
+    "lake-manifest.json": "17619b39e0d5ee7e914c197a1acdde917adbff3381c99c66cd4e220901b57d6c",
+    "lakefile.lean": "143c70050de6b91d35986d211511e78cb905b9b7ba84ff472a2d9e656d7c15f4",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+  }
+}

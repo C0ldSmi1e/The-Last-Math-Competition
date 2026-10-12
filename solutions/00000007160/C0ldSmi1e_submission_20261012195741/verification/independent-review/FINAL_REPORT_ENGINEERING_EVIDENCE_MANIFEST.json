@@ -1,0 +1,89 @@
+{
+  "stage": "final report engineering-claim consistency review",
+  "records": [
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-finalization-v1/summary.json",
+      "sha256": "e05934b9828e80a8393b161f1e21149edf4f696fff0bbccc8e97baf9a6627c7e"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-finalization-v1/runtime-helper-classification.json",
+      "sha256": "6fbb5bedba2e33f46e566a35df1af37528cca6ad4e9faa7b7a629744d878c302"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/root-engineering-review-v1.json",
+      "sha256": "feeb4d6c0c8e566f9e4cd518cfce86899f51cb5d4dfe84d5a6bff31c4fb6f1c2"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/summary.json",
+      "sha256": "e38e0709650edc9cd365b6abd668f129410aba4e8a6315cfd9adcdf1d2dd488a"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/control-results.json",
+      "sha256": "1b4cf5af97a03bfd0b1f99574f895eb33f53265ebec4f0bc3e58566006c7f5a5"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/package-identities.json",
+      "sha256": "6975fbe0306c6d2a1c65256e54726c1b737bf2e60733b0b2ad36e97673f7a055"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/driver.py.txt",
+      "sha256": "7819063a85d89ad45d9fb31e282c941c3d89b27beb00d7ec459870423c078b89"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/stock/mathlib.json",
+      "sha256": "d24cf2e17393a46da5ca1ad3afacbd7d5017367bc912cb8915a8c86adfa3e9c4"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/stock/plausible.json",
+      "sha256": "39355a97a3abe5845acf70e2f41d4b85f17921f445d9df2ee3088169761999c2"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/stock/LeanSearchClient.json",
+      "sha256": "920410b5d593196b96aacbc7524e0a8a44753905818445dd6bd0462c872e12e2"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/stock/importGraph.json",
+      "sha256": "870bca003f207e8495be9bbcc35c180184888bbdaef65a76cb44e4cd5ab2dc6c"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/stock/proofwidgets.json",
+      "sha256": "3d62c945f4beb251507014d83b34d4e80e9ac2bdec85d92ea920fb42eba33283"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/stock/aesop.json",
+      "sha256": "c479070f4e56eb4795c7ad59a9b37717302fa5ff96bb61e0400ea7f523856b26"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/stock/Qq.json",
+      "sha256": "d0bef309aab395b5277df1eea2c097bc5a653d828a0862ad27791d02a7688171"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/stock/batteries.json",
+      "sha256": "38cd195f8a39bcba8f0ab22cd659fd7dd00c688e5252fdf5741e957b26724bc5"
+    },
+    {
+      "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/engineering-review-v1/stock/Cli.json",
+      "sha256": "a84680d628166ad2bbde13cd91b5a800d586372c9b897a482ae65c28633f786a"
+    }
+  ],
+  "checks": {
+    "source_hashes_match_reviewed_frozen_v1": true,
+    "declarations_total": 49,
+    "safe_declarations": 36,
+    "excluded_runtime_helpers": 13,
+    "dependency_closure_declarations": 30338,
+    "import_module_identities": 4152,
+    "owned_import_identities": 7,
+    "negative_control_categories": 5,
+    "passing_control_categories": 1,
+    "pinned_dependency_source_trees": 9,
+    "tracked_source_files": 7507,
+    "all_recorded_inventory_hashes_verified": true
+  },
+  "manifest_identity_note": {
+    "engineering_frozen_manifest_sha256": "0b85642ff3f047345bbc185bb936c2fef979f3211a6b1f02cbff989cc3023a0c",
+    "reviewed_author_manifest_sha256": "cb5ffea4965a11c37b2a96893964ab09ea4bef186285e757767c71562fd7dfae",
+    "relationship": "Distinct manifest representations; all nine tested source hashes match exactly."
+  },
+  "scope": "Read the final report, specified finalization/root records, control results, package identities, and selected driver source. Verified recorded inventory hashes/counts; did not rerun the engineering build or independently reconstruct every dependency edge."
+}

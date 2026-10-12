@@ -1,0 +1,90 @@
+{
+  "status": "PASS_GENERIC_PREPARATION_RECEIPT_REVIEW",
+  "reviewed_at": "2026-10-12T19:28:35.149687+00:00",
+  "lean_controls": 6,
+  "python_controls": 7,
+  "lean_raw_receipts": [
+    {
+      "receipt": "7160/engineering-preparation/receipts/0001.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0002.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0003.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0004.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0005.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0006.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0007.json",
+      "exit_code": 1,
+      "expected": "nonzero"
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0008.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0009.json",
+      "exit_code": 1,
+      "expected": "nonzero"
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0010.json",
+      "exit_code": 1,
+      "expected": "nonzero"
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0011.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0012.json",
+      "exit_code": 1,
+      "expected": "nonzero"
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0013.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0014.json",
+      "exit_code": 1,
+      "expected": "nonzero"
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0015.json",
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "receipt": "7160/engineering-preparation/receipts/0016.json",
+      "exit_code": 1,
+      "expected": "nonzero"
+    }
+  ],
+  "source_driver_full_read": true,
+  "limits": "Generic controls only. No 7160 mathematics or engineering checked yet. Agent stability inventory reviewed, not independently rehashed wholesale here."
+}

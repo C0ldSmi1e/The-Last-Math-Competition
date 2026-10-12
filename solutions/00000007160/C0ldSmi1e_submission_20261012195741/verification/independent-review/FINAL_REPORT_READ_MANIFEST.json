@@ -1,0 +1,24 @@
+{
+  "stage": "complete final report-source semantic review",
+  "report_source": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/report/report.tex",
+  "report_sha256": "444277be1163d5b44011cc3e51fe4a7405ff02e8d62ebaf352c8100b529ef975",
+  "snapshot": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/independent-review/report-final-reviewed.tex",
+  "snapshot_sha256": "444277be1163d5b44011cc3e51fe4a7405ff02e8d62ebaf352c8100b529ef975",
+  "lines_read_in_full": 235,
+  "mathematical_sections_1_through_4_byte_identical_to_reviewed_draft": true,
+  "all_frozen_project_source_hashes_reverified": true,
+  "auxiliary_source_hash_reverified": true,
+  "factual_wording_correction": "The import-identity claim includes rebuilt local modules as well as runtime and pinned dependencies.",
+  "evidence_manifest": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/independent-review/FINAL_REPORT_ENGINEERING_EVIDENCE_MANIFEST.json",
+  "evidence_manifest_sha256": "14bde021344d0487b49fb91587f489e6f20424be1595e908004b50c3c3cd6d32",
+  "review_scope": "Full report and frozen-source semantic correspondence; engineering evidence consistency, not a duplicate complete engineering rerun.",
+  "pdf_visual_review": "Handled separately by root; not performed by this reviewer.",
+  "final_packaging_review": "Archive and record layout promised by root; contents not independently inspected in this review stage.",
+  "status": "PASS_REPORT_SOURCE_SEMANTIC_REVIEW",
+  "associated_pdf_identity_only": {
+    "path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/7160/report/report.pdf",
+    "sha256": "18613c33cbf00395e297aee2fd4813322204d15ef38046c625cd54692eb6eaba",
+    "visual_review": "Performed separately by root; this reviewer checked identity only."
+  },
+  "final_layout_delta_reviewed": "Read complete final 235-line source after shortening Section 6; no mathematical or factual change requiring correction."
+}

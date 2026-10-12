@@ -1,0 +1,20 @@
+{
+  "arithmetic": "exact rational complex",
+  "coverage": {
+    "dimensions": {
+      "0": 1,
+      "1": 120,
+      "2": 120,
+      "3": 120
+    },
+    "noncommuting_pairs": 194,
+    "nonhermitian_pairs": 335,
+    "normal_pairs": 361,
+    "repeated_eigenvalue_pairs": 127,
+    "strict_inequalities": 188
+  },
+  "limits": "Finite sanity examples and invalid-strengthening controls only; not a general proof.",
+  "seed": 7160,
+  "semantic_controls": 4,
+  "status": "PASS"
+}

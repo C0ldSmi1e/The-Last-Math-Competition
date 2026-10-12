@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "id": "00000003996",
+  "solver": "idealistichacker",
+  "implementation_agent": "release coordinator / main Codex agent with Curie family worker",
+  "verdict": "disproved",
+  "title": "The selected Ramsey diagonal is satisfiable beyond every threshold",
+  "source_commit": "65d4b6f8e745a57efeae42bcea831c3a6ed44700",
+  "source_git_blob": "4afb4a31e851c0f313914e6b68b82ca0a9ab3d64",
+  "source_sha256": "17f1cb4541b4bb90c8deaeabab134b017193ebaa276d272d9fc02811c27f102d",
+  "source_sha256_convention": "Exact raw UTF-8 Git blob; source.md preserves both languages, working comparisons normalize CRLF.",
+  "statement_alignment": "The matching finite resolution upper-bound claim at n=k^2 entails eventual refutability of the standard Ramsey CNF. The actual C5 lexicographic word graphs have5^t vertices and both actual color clique sizes at most2^t. For t>=2 restrict via a genuine injection to k_t^2 vertices, k_t=2^t+1, preserving both clique-free properties. These parameters are unbounded. The actual coloring satisfies every clause of the standard CNF; general resolution soundness excludes any refutation. Thus the necessary eventual finite-upper-bound assertion is false, not just a small-k exception or a disproof of the lower bound alone.",
+  "formal_scope": "Actual recursive SimpleGraph family and complement, all-clique image/fiber cardinality induction, actual vertex count5^t and diagonal size inequality, genuine finite embedding/comap/complement bridge, beyond-every-threshold graphs on Fin(k^2). Standard CNF over actual unordered complete-graph edges with both blocking clauses for everyk-subset; all-clause satisfaction from actual graphs, unrestricted ordinary resolution/weakening soundness and exclusion of the empty clause. Actual graph/coloring/non-refutability witnesses and closed necessary-clause negation are proved. All24 public theorem transitive axioms are printed.",
+  "limitations": "Uses the ordinary two-edge-color Ramsey counterexample CNF and resolution. Refutes the required finite matching upper bound/contradictory status at the stated diagonal, not the lower bound alone or Ramsey theorem. A conditional bound requiring n>=R(k,k) would change the statement. Finite DAG/listed proofs unroll to the proof-tree relation in the paper, not an additional general Lean DAG theorem. Finite restriction uses standard Classical.choice; no lexicographic initial-segment computation is claimed. No optimal Ramsey number, proof length of a satisfiable CNF, human endorsement, affiliation, first-solve credit or acceptance is asserted.",
+  "theorems": [
+    "Conjecture3996.CNF.block_satisfied_of_not_clique",
+    "Conjecture3996.CNF.cliqueFree_implies_satisfiable",
+    "Conjecture3996.CNF.resolvent_sound",
+    "Conjecture3996.CNF.derivation_sound",
+    "Conjecture3996.CNF.satisfiable_excludes_refutation",
+    "Conjecture3996.CNF.cliqueFree_excludes_ramsey_refutation",
+    "Conjecture3996.Family.cycle5_clique_card",
+    "Conjecture3996.Family.cycle5_compl_clique_card",
+    "Conjecture3996.Family.clique_card_blocks",
+    "Conjecture3996.Family.red_blue_clique_card",
+    "Conjecture3996.Family.words_card",
+    "Conjecture3996.Family.diagonal_card_le",
+    "Conjecture3996.Family.clique_card_comap",
+    "Conjecture3996.Family.compl_comap_embedding",
+    "Conjecture3996.Family.diagonal_clique_card",
+    "Conjecture3996.Family.diagonal_cliqueFree",
+    "Conjecture3996.Family.diagonal_family",
+    "Conjecture3996.Family.beyond_every_threshold",
+    "Conjecture3996.Family.not_eventual_diagonal_ramsey",
+    "Conjecture3996.Family.diagonal_color_partition",
+    "Conjecture3996.beyond_every_threshold_satisfiable",
+    "Conjecture3996.beyond_every_threshold_no_refutation",
+    "Conjecture3996.necessary_finite_upper_bound_false",
+    "Conjecture3996.actual_diagonal_counterexamples"
+  ],
+  "pdf_build": {
+    "engine": "tectonic0.15.0",
+    "source_date_epoch": 0
+  },
+  "reproduction": {
+    "entrypoint": "reproduce.py",
+    "online_mode": "Default pinned Git lake update, then exact checkout and clean own-project warning-as-error build with every theorem axiom audit.",
+    "offline_exact_dependencies": "Explicit --skip-update requires all physical Git dependency HEAD/origin/clean tracked source to match the portable exact manifest; never a generic network bypass.",
+    "trust": "Lean4.33.1 and Mathlib0df444a360eaa60ab8c11dca51a86af692955474; only propext/Classical.choice/Quot.sound."
+  },
+  "ai_disclosure": "AI-assisted coordinator/CNF/integration and separate Curie family implementation, followed by a different independent Agent reviewer. No human expert endorsement or affiliation claimed.",
+  "affiliation": null
+}

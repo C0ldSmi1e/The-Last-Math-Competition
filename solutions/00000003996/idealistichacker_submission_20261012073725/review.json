@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "reviewer": "Newton /01a12eb6-de73-7853-bf39-02c605c5cae2",
+  "implementation_agent": "release coordinator / main Codex agent with Curie family worker",
+  "reviewed_at": "2026-10-12T08:28:56Z",
+  "verdict": "pass",
+  "content_sha256": "2b919eef45a9018a888ca60c01fb63aa716426b4f0641ad1922ce180e7d458e9",
+  "independent_content_sha256": "2b919eef45a9018a888ca60c01fb63aa716426b4f0641ad1922ce180e7d458e9",
+  "checks": {
+    "statement_alignment": true,
+    "mathematics": true,
+    "lean_bridge": true,
+    "reproduction": true,
+    "pdf_visual": true
+  },
+  "summary": "Independent final review of the exact frozen package found no blocking issue. Both exact source languages and all submission materials/proofs were read. The actual unbounded C5 word-graph family, injection/comap/complement bridges, all-subset Ramsey CNF satisfaction and general resolution/weakening soundness prove the closed negation of the necessary eventual finite-upper-bound clause. The lower bound alone is not refuted.",
+  "source_git_blob": "4afb4a31e851c0f313914e6b68b82ca0a9ab3d64",
+  "source_sha256": "17f1cb4541b4bb90c8deaeabab134b017193ebaa276d272d9fc02811c27f102d",
+  "pdf_sha256": "7b9b14424e06de5517dabe0f7749ae5ef85fce81c91beb5b2bf79e4b8f2e7ab0",
+  "reproduction": {
+    "executed": true,
+    "exit_code": 0,
+    "command": "python -B -X utf8 reproduce.py --repo D:/W3996 --lake D:/AStudy/开源杂/LastMathC/.local/tools/lean-4.33.1-windows/bin/lake.exe --skip-update",
+    "clean_own_project_build": true,
+    "warning_as_error_replay": true,
+    "configured_jobs": 3029,
+    "physical_git_dependencies_verified_before_and_after": 9,
+    "public_theorems_audited": 24,
+    "actual_theorem_types_independently_printed": 24,
+    "unexpected_axioms": [],
+    "allowed_axioms": ["propext", "Classical.choice", "Quot.sound"]
+  },
+  "pdf_visual": {
+    "actual_render_exit_code": 0,
+    "actual_page_count": 3,
+    "individually_viewed_pages": [1, 2, 3],
+    "all_pages_readable_and_aligned_with_tex": true,
+    "independent_tex_pdf_byte_rebuild_executed": false
+  },
+  "evidence": {
+    "report": "D:/AStudy/开源杂/LastMathC/.local/audits/3996-final/final-review.md",
+    "record": "D:/AStudy/开源杂/LastMathC/.local/audits/3996-final/evidence.json",
+    "reproduction_log": "D:/AStudy/开源杂/LastMathC/.local/audits/3996-final/reproduction.log",
+    "theorem_types_log": "D:/AStudy/开源杂/LastMathC/.local/audits/3996-final/theorem-types.log",
+    "pdf_renders": "D:/AStudy/开源杂/LastMathC/.local/audits/3996-final/renders"
+  },
+  "assumptions_and_limits": [
+    "Standard two-edge-color Ramsey counterexample CNF and ordinary resolution; no hidden n>=R(k,k) promise or unsatisfiable-only subsequence",
+    "Disproves the finite matching-upper-bound/contradictory-status clause, not the lower bound alone or Ramsey theorem",
+    "Finite DAG/listed proofs unroll to proof trees as a paper argument, not an additional general Lean DAG theorem or size-preserving result",
+    "The genuine restriction injection uses standard Classical.choice, not a computed lexicographic initial segment",
+    "Exact physical Git dependencies are verified, but existing generated dependency caches/tool binaries are trusted; no clean full dependency rebuild or compiler audit",
+    "The distinct Agent review is an AI check with possible model/history correlation, not human expert endorsement, affiliation or organizer acceptance",
+    "No independent TeX/PDF byte rebuild was performed by this reviewer; mandatory coordinator validation still must do that",
+    "Fresh source, duplicate/PR267, WIP/auth identity and all publication gates remain separate coordinator responsibilities"
+  ],
+  "release_authorized": false,
+  "live_publication_gates_checked_by_reviewer": false,
+  "human_expert_certification": false
+}

@@ -1,0 +1,156 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}
+\title{Satisfiable Ramsey Diagonals Beyond Every Threshold\\A Counterexample to Conjecture 00000003996}
+\author{idealistichacker\\\small AI-assisted implementation; no affiliation claimed}
+\date{12 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The proposed diagonal $n=k^2$ does not supply contradictory Ramsey CNFs, even eventually.
+For every threshold there is a larger $k$ and a real two-coloring of the complete graph on
+$k^2$ vertices with no monochromatic $k$-clique. The standard Ramsey CNF is therefore
+satisfiable and admits no resolution refutation, so the claimed matching finite upper bound
+cannot hold. Our unbounded family uses lexicographic powers of the five-cycle and an actual
+finite injection. The pinned Lean project proves both color clique bounds, the cardinality
+and restriction bridges, satisfaction of every standard CNF clause, general resolution
+soundness and a closed negation of eventual refutability. A single small counterexample is
+not used as a substitute for the asymptotic argument.
+\end{abstract}
+
+\section{The exact claim and the clause being refuted}
+Both original languages describe a formalized contradictory Ramsey principle, a resolution
+length lower bound $2^{\Omega(k)}$, and the selection $n=k^2$ making upper and lower exponent
+constants match. We use the ordinary two-edge-color Ramsey counterexample CNF: it forbids
+every all-red and every all-blue $k$-vertex subset of the complete graph on $n$ vertices.
+A satisfying assignment is precisely a coloring with no monochromatic $k$-clique.
+
+Any finite asymptotic resolution upper bound for this selected diagonal necessarily entails
+\begin{equation}\label{eq:necessary}
+ \exists K\;\forall k\ge K:\quad \mathrm{RAM}(k^2,k)
+ \text{ has a finite resolution refutation}.
+\end{equation}
+We prove the negation of this necessary clause. We do \emph{not} claim the lower bound alone
+is false: a satisfiable formula has no refutation, so a lower-bound-only convention assigning
+infinite minimal length would not produce a contradiction. It is the asserted contradictory
+status and finite matching upper bound that fail. Conditioning the diagonal on $n\ge R(k,k)$,
+or selecting only an unspecified unsatisfiable subsequence, would be a different statement.
+The unchanged exact bilingual conjecture and its Git/SHA-256 identities are included.
+
+\section{Actual recursive graphs and both clique bounds}
+Let $C_5$ be the cycle on digits $\{0,1,2,3,4\}$, with adjacent consecutive digits modulo five.
+Both $C_5$ and its complement have clique size at most two; the formal project checks this
+for all actual finite digit subsets, not by assigning a clique number.
+
+Define $W_0$ to contain the empty word, and $W_{t+1}=\{0,1,2,3,4\}\times W_t$.
+Then $|W_t|=5^t$. The red graph $G_t$ is the following real simple graph on $W_t$:
+for different words, inspect the first digit where they differ; the edge is red exactly
+when those two digits are adjacent in $C_5$. Equivalently, at unequal first digits use
+$C_5$ adjacency, and inside an equal-first-digit block use the suffix graph $G_{t-1}$.
+The blue graph is the actual complement, not an unrelated graph with an assigned bound.
+
+We prove by induction that every red or blue clique has at most $2^t$ vertices.
+At $t=0$ the only vertex makes the bound $1$ immediate. At the successor step, the first
+digits occupied by a monochromatic clique form a clique in $C_5$ or its complement, hence
+occupy at most two blocks. Within each block, suffixes form a clique of the same color and
+have size at most $2^t$ by induction. The image/fiber cardinality sum therefore gives
+$2\cdot2^t=2^{t+1}$. Lean proves this generic block lemma and the induction for
+\emph{every actual clique}, rather than enumerating finitely many word lengths.
+
+\section{The genuine diagonal restriction and unbounded parameters}
+For $t\ge2$ put $k_t=2^t+1$ and $n_t=k_t^2$. There are enough words:
+\[
+ (2^t+1)^2\le5^t.
+\]
+The base case is $25=25$. In the induction step, writing $a=2^t$, the exact nonnegative
+difference is
+\[
+ 5(a+1)^2-(2a+1)^2=a^2+6a+4\ge0.
+\]
+Thus the successor inequality follows from the preceding one and $5^{t+1}=5\cdot5^t$.
+
+Choose an actual injection from $\mathrm{Fin}(n_t)$ into $W_t$ and pull back $G_t$.
+The formal choice uses the proved finite cardinality comparison and standard
+\texttt{Classical.choice}; no prescribed lexicographic initial segment is assumed or
+claimed as a computed output. Clique cardinalities cannot increase under an injective
+pullback, and complement commutes with that pullback. Hence this genuine graph on exactly
+$k_t^2$ vertices has no red or blue $k_t$-clique, since $2^t<k_t$.
+
+The parameters $k_t$ are unbounded. In particular, for every natural threshold $K$ the
+project proves existence of $k\ge K$ and an actual graph on $\mathrm{Fin}(k^2)$ whose red
+graph and actual complement are both $k$-clique-free. This covers the eventual/asymptotic
+quantifier, not merely a finite-prefix failure.
+
+\section{Standard CNF and ordinary resolution are formally connected}
+The edge variables are the actual unordered edges of the complete graph, excluding loops.
+For every $k$-subset $S$, the CNF contains the two clauses
+\[
+ \bigvee_{e\in\binom S2}\neg x_e,\qquad
+ \bigvee_{e\in\binom S2}x_e.
+\]
+They forbid respectively the all-red and all-blue coloring. For a real graph $g$, assign
+$x_e$ true exactly when its edge lies in $g$. If $g$ and $g^c$ are both $k$-clique-free,
+every $k$-subset has an edge of each color. The project proves that this actual assignment
+satisfies \emph{every generated clause}, with no omitted subsets, arbitrary named variables
+or unused forbidden patterns. Repeated clauses may be deduplicated without changing truth.
+
+Clauses are finite signed-literal sets. Ordinary resolution removes opposite pivot literals
+from the two earlier parent clauses and unions the remaining literals; weakening enlarges
+an earlier clause. The proof relation has only input, resolution and weakening constructors.
+For every assignment, satisfaction of the parents entails satisfaction of the resolvent.
+Structural induction proves soundness of any such derivation over any finite vertex set.
+A satisfying assignment therefore excludes derivation of the empty clause, with no bound
+on proof length. Finite DAG or listed proofs unroll to these trees without changing the
+existence of a finite proof; this standard mathematical correspondence is explained in
+prose, not advertised as an additional general Lean DAG theorem.
+
+Applying soundness to the graphs from the previous section proves
+\[
+ \forall K\;\exists k\ge K:\quad
+ \mathrm{RAM}(k^2,k)\text{ is satisfiable and has no resolution refutation}.
+\]
+\begin{theorem}
+Conjecture 00000003996's finite matching-upper-bound claim for the selected diagonal
+$n=k^2$ is false under the standard Ramsey CNF and ordinary resolution conventions.
+\end{theorem}
+\begin{proof}
+An eventual finite upper bound implies~\eqref{eq:necessary}. Given its threshold $K$, the
+actual coloring family supplies $k\ge K$ with a satisfying assignment. Soundness excludes
+the alleged resolution refutation. This contradicts~\eqref{eq:necessary}.
+\end{proof}
+
+\clearpage
+\section{Formal scope, reproduction and limitations}
+\path{Family.red_blue_clique_card} proves the full recursive bound;
+\path{Family.diagonal_family} and \path{Family.beyond_every_threshold} give actual restricted
+graphs on the selected diagonal. \,\path{CNF.cliqueFree_implies_satisfiable} connects them to
+the actual CNF.
+
+\path{CNF.satisfiable_excludes_refutation} applies general soundness.
+\path{necessary_finite_upper_bound_false} proves the closed necessary-clause negation;
+\path{actual_diagonal_counterexamples} exhibits the actual graph, both clique-free properties,
+assignment and exclusion of any refutation beyond every threshold.
+
+The portable project pins Lean 4.33.1 and Mathlib commit
+\begin{center}
+\texttt{0df444a360eaa60ab8c11dca51a86af692955474}.
+\end{center}
+Every transitive Git revision is fixed.
+The reproducer checks the exact bilingual source, toolchain and every dependency's actual
+HEAD/origin/clean tracked source, clean-builds only this project's code with warnings as
+errors and prints every public theorem's transitive axioms. Only \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound} are allowed. Exact finite regressions are
+supplemental, not substitutes for the unrestricted induction and threshold quantifiers.
+The actual PDF is compiled from this source using Tectonic 0.15.0 and
+\texttt{SOURCE\_DATE\_EPOCH=0}.
+
+No optimal Ramsey number, general resolution-length lower bound, new proof system, finite
+proof-complexity value for a satisfiable CNF or merely finite $k=4$ asymptotic refutation is
+claimed. This is a disproof of the source's required finite-upper-bound premise, not a
+disproof of Ramsey's theorem. AI-assisted implementation and a different independent
+Agent review are correlated AI checks, not human expert endorsement. No affiliation,
+first-solve credit, award or organizer acceptance is claimed.
+\end{document}

@@ -1,0 +1,9 @@
+Independent mathematical plan recorded 2026-10-12T21:22:11.867296+00:00
+
+Derived exclusively from clean-author-input original statement and rules; sent to root before implementation. Root semantic approval received before this file was written; no Lean source has yet been written.
+
+For each real a let S(a) be the set of pairs (x,y) of natural numbers satisfying x>0, y>0, 0<abs((x:Real)^3-(y:Real)^2), and that absolute gap < sqrt(x)*(log(x))^a. Define I(a) as Set.Infinite S(a). The exact literal conjunction is I(1/4) and (for every a>1/4, not I(a)).
+
+Prove I(a) implies I(b) whenever a<=b. Choose a natural cutoff N>=exp(1). For each fixed x, the upper gap bound implies y^2<x^3+sqrt(x)*(log(x))^a; because y is a positive natural, y<=y^2. Thus each y fiber is finite by an Archimedean natural bound. The portion with x<N is a finite union of finite fibers. Remove it from S(a), leaving an infinite set. On that remainder log(x)>=1, hence rpow is nondecreasing in the exponent and S(a) is included in S(b). The larger-exponent instance b=1 contradicts the literal optimality conjunct at a=1/4.
+
+No Hall conjecture hypothesis is used. This disproves the full written conjunction; it neither proves nor disproves its standalone infinitude clause, and does not address a repaired claim involving a decreased exponent or division by a logarithmic factor.

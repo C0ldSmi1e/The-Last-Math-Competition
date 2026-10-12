@@ -1,0 +1,18 @@
+{
+  "frozen": true,
+  "files": {
+    "HallReverse.lean": "cd4886721c5149d8ab3497feee968ec58df1ad5cfefc820b10a9074071710633",
+    "Verification.lean": "0a8f742c33f543b54e13f1b6f2d10458b7fe267ce042b60ac4a5fc674669f6c9",
+    "lakefile.lean": "1ebcf86cfde6ef62f6dd75476e491ae79cdddf34844c3de3b9a3540e54197e57",
+    "lake-manifest.json": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "verify.py": "bd0a080f9b285c88be1d164f0b8fac12f3ee4bc0953c053375a6a604299dd6b5",
+    "independent-plan.txt": "fcbdb08ea45b97fed328c97e14c0d59241e354b73dd6fc2a7062dcee3ab78a02",
+    "source-read-manifest.json": "561dfc3316ddb69620cc030ad7f94a3b3b0b067ab62b49f3920a062ab8205e38"
+  },
+  "capstones": [
+    "HallReverse.infinitelyMany_mono",
+    "HallReverse.quarter_infinitude_refutes_optimality",
+    "HallReverse.conjecture_false"
+  ]
+}

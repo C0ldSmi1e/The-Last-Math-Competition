@@ -1,0 +1,71 @@
+{
+  "driver_sha256": "58dd1db91911f06fc868bb52946717d309da603641017a600f9288c43c2d1e69",
+  "fixture_audit_sha256": "dff7518b04b3e955478c036469801066a1bcafdb99789ace6317a3611f8bf0c2",
+  "fixture_source_sha256": "0decda8c946b2bcad014801d3c802ac14b7e79ed1d9081e1d3845e444d33889e",
+  "helpers": [
+    {
+      "capstones_reaching_helper": [],
+      "classification": "Generated compiler-stage implementation of the source gap definition; excluded from kernel evidence",
+      "fresh_reproduction": "EngineeringGapFixture.gap._cstage1",
+      "fresh_reproduction_comparisons": {
+        "body_dependencies": true,
+        "inductive_dependencies": true,
+        "kind": true,
+        "raw_type": true,
+        "recursor_dependencies": true,
+        "type": true,
+        "type_dependencies": true,
+        "unsafe": true
+      },
+      "name": "HallReverse.gap._cstage1",
+      "remaining_runtime_findings": [
+        "HallReverse.gap._cstage1: unsafe dependency HallReverse.gap._cstage1"
+      ],
+      "safe_owned_roots_reaching_helper": [],
+      "source_definition": "def gap (x y : \u2115) : \u211d := |(x : \u211d) ^ 3 - (y : \u211d) ^ 2|",
+      "source_line": 19,
+      "source_path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/1741/author/HallReverse.lean",
+      "source_sha256": "cd4886721c5149d8ab3497feee968ec58df1ad5cfefc820b10a9074071710633"
+    },
+    {
+      "capstones_reaching_helper": [],
+      "classification": "Generated compiler-stage implementation of the source gap definition; excluded from kernel evidence",
+      "fresh_reproduction": "EngineeringGapFixture.gap._cstage2",
+      "fresh_reproduction_comparisons": {
+        "body_dependencies": true,
+        "inductive_dependencies": true,
+        "kind": true,
+        "raw_type": true,
+        "recursor_dependencies": true,
+        "type": true,
+        "type_dependencies": true,
+        "unsafe": true
+      },
+      "name": "HallReverse.gap._cstage2",
+      "remaining_runtime_findings": [
+        "HallReverse.gap._cstage2: forbidden axiom Nat.cast._at.Real.instNatCast._spec_2",
+        "HallReverse.gap._cstage2: forbidden axiom abs._at.Rat.nnabs._spec_1",
+        "HallReverse.gap._cstage2: forbidden axiom abs._at.Real.nnabs._spec_1",
+        "HallReverse.gap._cstage2: forbidden axiom lcProof",
+        "HallReverse.gap._cstage2: forbidden axiom npowRec._at.Real.commRing._spec_2",
+        "HallReverse.gap._cstage2: unsafe dependency HallReverse.gap._cstage2",
+        "HallReverse.gap._cstage2: unsafe dependency Nat.cast._at.Real.instNatCast._spec_2",
+        "HallReverse.gap._cstage2: unsafe dependency abs._at.Rat.nnabs._spec_1",
+        "HallReverse.gap._cstage2: unsafe dependency abs._at.Real.nnabs._spec_1",
+        "HallReverse.gap._cstage2: unsafe dependency lcProof",
+        "HallReverse.gap._cstage2: unsafe dependency npowRec._at.Real.commRing._spec_2",
+        "HallReverse.gap._cstage2: missing dependency _obj"
+      ],
+      "safe_owned_roots_reaching_helper": [],
+      "source_definition": "def gap (x y : \u2115) : \u211d := |(x : \u211d) ^ 3 - (y : \u211d) ^ 2|",
+      "source_line": 19,
+      "source_path": "/Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/1741/author/HallReverse.lean",
+      "source_sha256": "cd4886721c5149d8ab3497feee968ec58df1ad5cfefc820b10a9074071710633"
+    }
+  ],
+  "original_audit_sha256": "e14e5885c771d5fd1a27a112f61826ff32e2cf3a224e01e16aad3706117ea2b9",
+  "scope": "The two compiler helper roots are reproduced from the exact safe source definition in a fresh module. Runtime-only findings remain recorded; none is reachable from any safe owned root or any capstone. This is not a waiver for other unsafe roots.",
+  "source_gap_safe": true,
+  "source_gap_unsafe_dependencies": [],
+  "status": "PASS_EXPLICIT_GENERATED_HELPER_CLASSIFICATION"
+}

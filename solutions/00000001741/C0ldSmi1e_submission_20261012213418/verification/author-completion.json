@@ -1,0 +1,39 @@
+{
+  "problem": "00000001741",
+  "frozen_utc": "2026-10-12T21:25:07.033140+00:00",
+  "source_original_sha256": "c703aa91d423fbc1e16edad2b866bb0e66324fbdb5ff0532e32b20d748a04179",
+  "independent_derivation": "Exact original and rules only before plan. Generic Mathlib API searches only after approval. No prior candidate proof or solution source read.",
+  "formal_statement": "HallReverse.conjecture is the conjunction of infinitelyMany (1/4) and cannotIncrease, where cannotIncrease quantifies all real b>1/4 and denies infinitelyMany b.",
+  "capstones": [
+    "HallReverse.infinitelyMany_mono",
+    "HallReverse.quarter_infinitude_refutes_optimality",
+    "HallReverse.conjecture_false"
+  ],
+  "strict_build": "python3 verify.py --runtime-root /Users/daniel/.codex/visualizations/2026/10/04/01a10508-f155-7f33-b06c-d34f02168fbf/competition-work/runtime",
+  "strict_build_result": "PASS, Lean 4.19.0, warnings treated as errors, both modules freshly compiled to .verification-build.",
+  "standard_project_build": "lake --wfail build (both HallReverse and Verification are default targets; requires pinned cached/fetched dependencies).",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "verification_example_count": 13,
+  "verification_coverage": [
+    "real subtraction and absolute value on both signs",
+    "x=0 exclusion",
+    "y=0 exclusion",
+    "every perfect-power coincidence excluded",
+    "quarter-exponent upper bound at x=1 equals zero",
+    "x=1 exclusion at quarter exponent",
+    "all admissibility guards and expressions definitionally expanded",
+    "infinite tails past arbitrary natural cutoff",
+    "quarter to one exponent implication",
+    "quarter to five-quarters exponent implication",
+    "arbitrary monotonicity of infinitude predicate",
+    "complete literal conjunction negation expanded"
+  ],
+  "auxiliary_mathematical_computation": "None. All mathematical claims, including boundary examples, are Lean kernel checked; verify.py only orchestrates builds and checks pins/source tokens/axiom output.",
+  "scope_limit": "Does not settle standalone infinitude, and does not address a corrected optimality claim involving decreased exponents or division by a logarithmic factor. No Hall conjecture premise is used.",
+  "report_status": "No report or PDF authored; source frozen for independent review.",
+  "frozen_hash_manifest": "FROZEN_SOURCE_HASHES.json"
+}

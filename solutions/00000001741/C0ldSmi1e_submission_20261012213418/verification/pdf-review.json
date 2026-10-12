@@ -1,0 +1,20 @@
+{
+  "status": "PASS_NATIVE_AND_TECTONIC_COMPILE_AND_VISUAL_REVIEW",
+  "operation_marker_succeeded": true,
+  "marker_tool_chunk_id": "e78383",
+  "marker_count": 1,
+  "delivered": false,
+  "created_at": "2026-10-12T21:27:12.766865+00:00",
+  "source_sha256": "297b9c4061e5b196a456d62f7f0a2b6f6548c886ca0773abe34f85ef75a7e854",
+  "pdf_sha256": "ff6371c03449b2109fdbed1cd95b8f41d603f141967f4e93685ccf02e8c6d523",
+  "pages": 3,
+  "visual_review": "Root inspected final revised page3; re-rendered pages1/2 are byte-identical to the previously inspected pages. All three final pages have no clipping, overlap, missing glyphs, or layout defects. Native compile and Tectonic export succeeded without warnings.",
+  "final_render_sha256": {
+    "page-1.png": "fb3336a8d3a171b427fc603ec7846b886af4eefaed7d84b8d83e5545e8b770af",
+    "page-2.png": "33c7944af1a9f39b8ec6bc5e0467338d8e72acc021f449db97bfb981e0cf430a",
+    "page-3.png": "f3d034c5b53668f8a605039f899602ea0b58101dac127c4cbc68150c403cc4df"
+  },
+  "updated_at": "2026-10-12T21:38:21.239011+00:00",
+  "resolved_report_issue": "Initial ordinary-real-power wording did not cover totalized boundary values in general all-real-exponent lemmas. Final report explicitly specifies log0=0 and zero-real-power conventions. No mathematical Lean source changed.",
+  "resolved_package_wording": "No-admission/custom-axiom/native-decide assertion narrowed to mathematical modules; archived intentionally bad audit controls explicitly distinguished."
+}

@@ -1,0 +1,31 @@
+{
+  "status": "PASS_COMPLETE_LITERAL_CLAIM_AND_REPORT_SEMANTICS",
+  "checked_at": "2026-10-12T21:39:30.215258+00:00",
+  "frozen_manifest_sha256": "cc71436281a2a43d5f941c8f209338540ea3803cec4a88c44090dd256f043c05",
+  "reviewed_source_sha256": {
+    "HallReverse.lean": "cd4886721c5149d8ab3497feee968ec58df1ad5cfefc820b10a9074071710633",
+    "Verification.lean": "0a8f742c33f543b54e13f1b6f2d10458b7fe267ce042b60ac4a5fc674669f6c9",
+    "lakefile.lean": "1ebcf86cfde6ef62f6dd75476e491ae79cdddf34844c3de3b9a3540e54197e57",
+    "lake-manifest.json": "56f7aa9722d120b38ffe868179164054411be9398660939609cb8a0c55e48637",
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "verify.py": "bd0a080f9b285c88be1d164f0b8fac12f3ee4bc0953c053375a6a604299dd6b5",
+    "independent-plan.txt": "fcbdb08ea45b97fed328c97e14c0d59241e354b73dd6fc2a7062dcee3ab78a02",
+    "source-read-manifest.json": "561dfc3316ddb69620cc030ad7f94a3b3b0b067ab62b49f3920a062ab8205e38"
+  },
+  "report_source_sha256": "297b9c4061e5b196a456d62f7f0a2b6f6548c886ca0773abe34f85ef75a7e854",
+  "independent_source_review_sha256": "7c7e5736605940480c39ce925c312d775f97e97c5a0692de15a29a79a141d175",
+  "independent_report_review_sha256": "0d106cd42c1c62d4f9f3e5770b344ea7b0d026a8643ede397de36cf7b830f179",
+  "original_sha256": "c703aa91d423fbc1e16edad2b866bb0e66324fbdb5ff0532e32b20d748a04179",
+  "root_reads": [
+    "Entire bilingual original and both operative rule sections",
+    "Complete HallReverse.lean and Verification.lean",
+    "Final lakefile.lean and author verify.py",
+    "Complete final report and both independent reviews",
+    "Pinned Mathlib zero-log and zero-real-power lemmas"
+  ],
+  "conclusion": "Full literal conjunction is negated without a Hall hypothesis. General monotonicity, finite fibers and tails are proved. No standalone infinitude or corrected-exponent problem is claimed.",
+  "resolved_issue": "Report initially called all-real-exponent operations ordinary despite boundary totalization; exact conventions are now explicit, original positive-exponent claim unaffected.",
+  "build_verification": "Separate engineering review; this record certifies semantic mapping, source inspection and report consistency.",
+  "independence": "Fresh author saw only original/rules/pins and generic APIs; separate AI agent derived semantic plan and reviewed frozen implementation/report. No external human review or maintainer acceptance claimed.",
+  "resolved_package_precision": "Report now restricts no-admission/custom-axiom/native-decide claim to submitted mathematical modules, explicitly distinguishes intentional rejected archive controls. No mathematical source change."
+}

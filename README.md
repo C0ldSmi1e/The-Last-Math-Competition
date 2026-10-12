@@ -30,7 +30,7 @@ This is The Last Math Competition — possibly the last mathematics competition 
 
 ## Leaderboard
 
-Current standings as of 2026-10-12 — **873 of the 10,000 conjectures solved** (89 proofs, 784 disproofs). Every submission below passed the full audit — LaTeX source, PDF, and a Lean 4 project (Mathlib or self-contained core Lean) that compiles with no `sorry`, no `native_decide`, and no extra axioms — together with a semantic review confirming that the Lean theorem establishes the conjecture or its negation. Complete per-solver conjecture lists: [leaderboard.md](./leaderboard.md).
+Current standings as of 2026-10-12 — **875 of the 10,000 conjectures solved** (89 proofs, 786 disproofs). Every submission below passed the full audit — LaTeX source, PDF, and a Lean 4 project (Mathlib or self-contained core Lean) that compiles with no `sorry`, no `native_decide`, and no extra axioms — together with a semantic review confirming that the Lean theorem establishes the conjecture or its negation. Complete per-solver conjecture lists: [leaderboard.md](./leaderboard.md).
 
 | # | GitHub ID | Solved | First solves | Proven | Disproven |
 |---|----------|-------:|-------------:|-------:|----------:|
@@ -38,7 +38,7 @@ Current standings as of 2026-10-12 — **873 of the 10,000 conjectures solved** 
 | 2 | [Jackmeson1](https://github.com/Jackmeson1) | 173 | 173 | 32 | 141 |
 | 3 | [gaochengzhecpu](https://github.com/gaochengzhecpu) | 121 | 121 | 7 | 114 |
 | 4 | [earthking11](https://github.com/earthking11) | 101 | 94 | 1 | 100 |
-| 5 | [C0ldSmi1e](https://github.com/C0ldSmi1e) | 74 | 74 | 9 | 65 |
+| 5 | [C0ldSmi1e](https://github.com/C0ldSmi1e) | 76 | 76 | 9 | 67 |
 | 6 | [orionsheep](https://github.com/orionsheep) | 73 | 64 | 0 | 73 |
 | 7 | [feiyuceng06-prog](https://github.com/feiyuceng06-prog) | 37 | 36 | 8 | 29 |
 | 8 | [jilint777](https://github.com/jilint777) | 34 | 34 | 2 | 32 |

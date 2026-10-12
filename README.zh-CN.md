@@ -30,7 +30,7 @@
 
 ## 排行榜（Leaderboard）
 
-截至 2026-10-12 的当前战绩——**10000 个猜想中已解决 873 个**（89 个证明，784 个证伪）。上榜的每一份提交都通过了完整审计——LaTeX 源码、PDF 文档，以及一个完整编译的 Lean 4 项目（Mathlib 或自包含核心 Lean）——无 `sorry`、无 `native_decide`、无额外公理——并通过语义审查确认 Lean 定理确实建立了该猜想或其否定。每位求解者的完整解题清单见 [leaderboard.md](./leaderboard.md)。
+截至 2026-10-12 的当前战绩——**10000 个猜想中已解决 875 个**（89 个证明，786 个证伪）。上榜的每一份提交都通过了完整审计——LaTeX 源码、PDF 文档，以及一个完整编译的 Lean 4 项目（Mathlib 或自包含核心 Lean）——无 `sorry`、无 `native_decide`、无额外公理——并通过语义审查确认 Lean 定理确实建立了该猜想或其否定。每位求解者的完整解题清单见 [leaderboard.md](./leaderboard.md)。
 
 | # | GitHub ID | Solved | First solves | Proven | Disproven |
 |---|----------|-------:|-------------:|-------:|----------:|
@@ -38,7 +38,7 @@
 | 2 | [Jackmeson1](https://github.com/Jackmeson1) | 173 | 173 | 32 | 141 |
 | 3 | [gaochengzhecpu](https://github.com/gaochengzhecpu) | 121 | 121 | 7 | 114 |
 | 4 | [earthking11](https://github.com/earthking11) | 101 | 94 | 1 | 100 |
-| 5 | [C0ldSmi1e](https://github.com/C0ldSmi1e) | 74 | 74 | 9 | 65 |
+| 5 | [C0ldSmi1e](https://github.com/C0ldSmi1e) | 76 | 76 | 9 | 67 |
 | 6 | [orionsheep](https://github.com/orionsheep) | 73 | 64 | 0 | 73 |
 | 7 | [feiyuceng06-prog](https://github.com/feiyuceng06-prog) | 37 | 36 | 8 | 29 |
 | 8 | [jilint777](https://github.com/jilint777) | 34 | 34 | 2 | 32 |

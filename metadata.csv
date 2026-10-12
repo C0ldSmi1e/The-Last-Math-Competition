@@ -1739,7 +1739,7 @@ id,well_definedness_level,importance,novelty,proof_difficulty,disproof_difficult
 00000001738,,,,,,false,false,,false,
 00000001739,,,,,,false,false,,false,
 00000001740,,,,,,false,false,,false,
-00000001741,,,,,,false,false,,false,
+00000001741,,,,,,false,true,2026-10-12,true,C0ldSmi1e
 00000001742,,,,,,false,false,,false,
 00000001743,,,,,,false,false,,false,
 00000001744,,,,,,false,false,,false,
@@ -1923,7 +1923,7 @@ id,well_definedness_level,importance,novelty,proof_difficulty,disproof_difficult
 00000001922,,,,,,false,false,,false,
 00000001923,,,,,,false,false,,false,
 00000001924,,,,,,false,false,,false,
-00000001925,,,,,,false,false,,false,
+00000001925,,,,,,false,true,2026-10-12,true,C0ldSmi1e
 00000001926,,,,,,false,false,,false,
 00000001927,,,,,,false,false,,false,
 00000001928,,,,,,false,false,,false,

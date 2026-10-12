@@ -10,7 +10,7 @@ archived under solutions/[number_ID]/review/. After the full re-audit of 2026-10
 reverted to open unless another valid submission remains); 98 PRs were closed unmerged with
 full review comments.
 
-**Total solved: 873 / 10000 conjectures** — 89 proven, 784 disproven.
+**Total solved: 875 / 10000 conjectures** — 89 proven, 786 disproven.
 
 Ranking is by **Solved** (accepted submissions), ties broken by first solves.
 
@@ -20,7 +20,7 @@ Ranking is by **Solved** (accepted submissions), ties broken by first solves.
 | 2 | [Jackmeson1](https://github.com/Jackmeson1) | 173 | 173 | 32 | 141 |
 | 3 | [gaochengzhecpu](https://github.com/gaochengzhecpu) | 121 | 121 | 7 | 114 |
 | 4 | [earthking11](https://github.com/earthking11) | 101 | 94 | 1 | 100 |
-| 5 | [C0ldSmi1e](https://github.com/C0ldSmi1e) | 74 | 74 | 9 | 65 |
+| 5 | [C0ldSmi1e](https://github.com/C0ldSmi1e) | 76 | 76 | 9 | 67 |
 | 6 | [orionsheep](https://github.com/orionsheep) | 73 | 64 | 0 | 73 |
 | 7 | [feiyuceng06-prog](https://github.com/feiyuceng06-prog) | 37 | 36 | 8 | 29 |
 | 8 | [jilint777](https://github.com/jilint777) | 34 | 34 | 2 | 32 |
@@ -121,17 +121,17 @@ P = proof, D = disproof, ★ = first solve of the conjecture. Same-day ties (202
 #7766★ (D), #8234★ (D), #8304★ (D), #8371★ (D), #8417★ (D), #8419★ (D), #8422★ (D), #8434★ (D), #8458★ (D)
 #8848★ (D), #9496★ (P)
 
-### C0ldSmi1e — 74 solved (74 first)
+### C0ldSmi1e — 76 solved (76 first)
 
 #69★ (D), #105★ (D), #106★ (P), #141★ (D), #161★ (D), #214★ (D), #236★ (D), #240★ (D), #257★ (D)
 #283★ (D), #302★ (P), #308★ (D), #310★ (D), #331★ (D), #347★ (P), #360★ (D), #367★ (D), #374★ (D)
 #407★ (D), #420★ (D), #428★ (D), #464★ (D), #525★ (D), #545★ (D), #574★ (D), #637★ (D), #747★ (D)
 #930★ (D), #934★ (P), #973★ (D), #978★ (D), #989★ (D), #1066★ (D), #1227★ (P), #1259★ (D), #1277★ (D)
 #1451★ (D), #1473★ (D), #1478★ (D), #1554★ (D), #1561★ (D), #1568★ (P), #1569★ (D), #1624★ (D), #1663★ (D)
-#1735★ (D), #2131★ (D), #2161★ (D), #2187★ (D), #2531★ (D), #2802★ (D), #2821★ (D), #3348★ (D), #3794★ (D)
-#4107★ (D), #4125★ (D), #4289★ (D), #4607★ (D), #5754★ (D), #5960★ (P), #6480★ (P), #6891★ (D), #7158★ (D)
-#7160★ (P), #7662★ (D), #7668★ (D), #7718★ (D), #7744★ (D), #7767★ (D), #7788★ (D), #7790★ (D), #7914★ (D)
-#9028★ (D), #9700★ (D)
+#1735★ (D), #1741★ (D), #1925★ (D), #2131★ (D), #2161★ (D), #2187★ (D), #2531★ (D), #2802★ (D), #2821★ (D)
+#3348★ (D), #3794★ (D), #4107★ (D), #4125★ (D), #4289★ (D), #4607★ (D), #5754★ (D), #5960★ (P), #6480★ (P)
+#6891★ (D), #7158★ (D), #7160★ (P), #7662★ (D), #7668★ (D), #7718★ (D), #7744★ (D), #7767★ (D), #7788★ (D)
+#7790★ (D), #7914★ (D), #9028★ (D), #9700★ (D)
 
 ### orionsheep — 73 solved (64 first)
 

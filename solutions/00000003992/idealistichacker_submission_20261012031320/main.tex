@@ -1,0 +1,149 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}
+\title{A Parity Obstruction to the Exact Tseitin Width Claim\\Conjecture 00000003992}
+\author{idealistichacker\\\small AI-assisted implementation; no affiliation claimed}
+\date{12 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+On the connected triangle with original vertex charges all equal to one, the standard Tseitin
+parity CNF has resolution width exactly two. Every subgraph of that actual charged graph with
+odd inherited charge has an odd number of vertices, and hence never two vertices. This refutes
+even the existence required by equality of width with the smallest odd-charge-subgraph size.
+The obstruction is independent of additional connectedness, inducedness or empty-boundary
+restrictions on admissible subgraphs. The pinned Lean project connects the actual graph,
+incidence parity and generated CNF, proves soundness of the resolution calculus, gives a
+width-two refutation and excludes all lower-width derivations, then proves the all-subgraph
+parity obstruction and necessary source clause's negation.
+\end{abstract}
+
+\section{Source clause and conventions}
+Both exact source languages define a Tseitin contradictory system on a connected charged
+graph and claim its resolution width equals the vertex count of its smallest odd-charge
+subgraph, without an additive correction. We use the ordinary parity CNF encoding and
+resolution width: the maximum number of distinct literals in any used input or derived clause.
+Unused inputs need not occur. Resolution and weakening both require previously derived parents.
+An explicit finite derivation unfolds into our inductive proof trees; conversely those trees
+can be topologically listed as proofs. Sharing or unrolling parents does not increase width.
+
+Charge on a subgraph means the sum modulo two of its inherited original vertex labels.
+The source does not specify an admissible subgraph subclass. We do \emph{not} select one:
+if exact equality to a smallest member holds for any nonempty such subclass, an odd-charge
+subgraph of vertex count equal to the width must exist. We refute this weaker necessary
+existence clause for \emph{all actual subgraphs}. An empty admissible class has no smallest
+member and cannot supply the asserted equality. Arbitrarily recharging a boundary-conditioned
+formula or replacing CNF resolution by direct XOR inference changes the input or proof system
+and is not silently introduced here.
+
+\section{Actual graph, parity equations and generated CNF}
+Let $G=K_3$, with vertices $0,1,2$, indexed edges $e_i=\{i,i+1\pmod3\}$ and charge
+$\chi(v)=1$ at every vertex. This is finite, simple and connected, with total charge
+$1+1+1=1\pmod2$. The code uses the actual Mathlib complete graph, proves these indexed
+edges bijectively enumerate its unordered edge set, and identifies their incidence at each
+vertex with the graph's actual incidence set.
+
+Let $x,y,z$ be the edge variables. Its three incidence-parity equations are
+\[
+ x\oplus y=1,\qquad y\oplus z=1,\qquad z\oplus x=1.
+\]
+Their sum modulo two is $0=1$, so the system is contradictory. Standard parity CNF
+for each vertex excludes each forbidden assignment to that vertex's incident variables.
+A blocking clause contains the literal opposite to the assignment on every incident edge.
+The generated complete formula is exactly
+\begin{align*}
+F=\{&x\vee y,\;\neg x\vee\neg y,\;y\vee z,\;\neg y\vee\neg z,\\
+    &z\vee x,\;\neg z\vee\neg x\}.
+\end{align*}
+Lean defines this generator from the actual incidence/parity data rather than merely
+assigning a six-clause list. It proves equality with the displayed CNF, and for \emph{every}
+edge assignment proves CNF satisfaction equivalent to all vertex parity equations.
+The finite checks are kernel proofs of full equivalence over the actual finite domains,
+not an unrelated hard-coded Boolean surrogate.
+
+\section{Standard resolution width is exactly two}
+Clauses are finite sets of signed edge variables. Resolving $C$ containing $u$ with $D$
+containing $\neg u$ yields $(C\setminus\{u\})\cup(D\setminus\{\neg u\})$.
+Weakening is enlargement to a superset. The bounded inductive calculus requires the
+cardinality of \emph{each input, resolvent and weakened clause} to be at most the width bound.
+The code proves resolution soundness for every assignment, then induction proves the entire
+calculus sound. In particular a refutation entails actual CNF unsatisfiability.
+
+All six inputs have width two. A derivation of width less than two cannot start: an input
+violates that bound, and resolution or weakening requires earlier derivations. Formally,
+induction on \emph{any} purported derivation yields a contradiction at an input leaf.
+Thus every refutation has width at least two, not just the exhibited proof.
+
+For the upper bound, use all inputs of width two and the following five valid steps:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Parents & Pivot & Resolvent\\
+\midrule
+$x\vee y$, $\neg y\vee\neg z$ & $y$ & $x\vee\neg z$\\
+$z\vee x$, $x\vee\neg z$ & $z$ & $x$\\
+$y\vee z$, $\neg x\vee\neg y$ & $y$ & $z\vee\neg x$\\
+$z\vee\neg x$, $\neg z\vee\neg x$ & $z$ & $\neg x$\\
+$x$, $\neg x$ & $x$ & empty clause\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every line has width at most two. This gives a genuine bounded-calculus refutation.
+Combining it with the universal lower bound establishes the actual minimum width $2$;
+the code also proves uniqueness of any value satisfying the minimum-width specification.
+We do not deduce proof width from an assigned constant or an unsatisfiability truth table.
+
+\section{All odd-charge subgraphs have odd vertex count}
+For \emph{every actual Mathlib subgraph} $H$ of $K_3$,
+\[
+ \sum_{v\in V(H)}\chi(v)=|V(H)|\pmod2.
+\]
+Since every original label is one, an odd inherited charge forces $|V(H)|$ odd.
+Hence no odd-charge subgraph has two vertices. The statement covers arbitrary edge
+subsets, connected or disconnected subgraphs, induced subgraphs and all smaller
+admissible classes. Ordinary subgraphs include an odd singleton of size one.
+If instead one requires empty boundary or a contradictory subsystem of the original
+equations, only the entire connected triangle can qualify; it has size three.
+Neither observation is needed for the stronger all-subgraph obstruction.
+
+\begin{theorem}
+Conjecture 00000003992's exact width--odd-charge-subgraph-size clause is false for the
+connected triangle with all original charges one, under standard parity CNF resolution.
+\end{theorem}
+\begin{proof}
+The actual width is two. Exact equality to a smallest odd-charge-subgraph size requires
+an odd-charge subgraph with two vertices. None exists, since every such subgraph has odd
+vertex count. No choice of a nonempty admissible inherited-odd-charge subclass changes this
+parity contradiction. Therefore the full exact-equality assertion fails.
+\end{proof}
+
+\section{Formal correspondence and reproducibility}
+The graph/edge/incidence bridge precedes the standard CNF generator and its full semantic
+equivalence. \,\path{DerivesWithin} has only bounded input, ordinary resolution and sound
+weakening constructors. \,\path{no_derivation_below_two} quantifies over arbitrary proof trees;
+\path{width_two_refutation} is the actual exhibited derivation. The minimum specification
+\path{IsResolutionWidth} is proved, not defined to be two.
+\path{odd_charge_implies_odd_vertex_count} quantifies over every actual subgraph and actual
+vertex set, not a selected list of witnesses. \,\path{necessary_width_charge_clause_false}
+negates the existence consequence required by the source's exact minimum equality.
+\path{actual_graph_counterexample} packages actual graph connectivity, odd original charge,
+unsatisfiability, exact resolution width and the all-subgraph exclusion.
+
+The project pins Lean 4.33.1 and Mathlib
+\texttt{0df444a360eaa60ab8c11dca51a86af692955474}, with every transitive Git revision fixed.
+The reproducer verifies exact bilingual source bytes, toolchain, dependency HEAD/origin and
+clean tracked source, clean-builds this project's code with warnings as errors and prints
+every public theorem's transitive axioms. Only \texttt{propext}, \texttt{Classical.choice} and
+\texttt{Quot.sound} are allowed. Its exact finite Python regressions supplement, not replace,
+the universal all-proof and all-subgraph kernel theorems. The actual PDF is compiled from
+this source by Tectonic 0.15.0 with \texttt{SOURCE\_DATE\_EPOCH=0}.
+
+No general Tseitin/treewidth theorem, other proof-system encoding, recharged conditional
+formula or arbitrary alternate graph invariant is advertised. The original bilingual source,
+its Git blob and SHA-256 are preserved. AI-assisted implementation and a different independent
+Agent review are not independent human expert endorsement. No institutional affiliation,
+first-solve credit, award or organizer acceptance is claimed.
+\end{document}
